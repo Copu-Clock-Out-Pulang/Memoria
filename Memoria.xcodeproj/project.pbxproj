@@ -16,6 +16,10 @@
 		9B1C4D2529EEF03500F03AFF /* MemoriaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1C4D2429EEF03500F03AFF /* MemoriaUITestsLaunchTests.swift */; };
 		9B1C4DB429EF19E400F03AFF /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1C4DB329EF19E400F03AFF /* SplashViewController.swift */; };
 		9B1C4DB629EF1A1800F03AFF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1C4DB529EF1A1800F03AFF /* HomeViewController.swift */; };
+		9B1C4DB929EF1AE700F03AFF /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 9B1C4DB829EF1AE700F03AFF /* Swinject */; };
+		9B1C4DBB29EF1BDA00F03AFF /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 9B1C4DBA29EF1BDA00F03AFF /* README.md */; };
+		9B1C4DBD29EF1CEC00F03AFF /* InjectionContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1C4DBC29EF1CEC00F03AFF /* InjectionContainer.swift */; };
+		9B1C4DC029EF1D8E00F03AFF /* SwinjectAutoregistration in Frameworks */ = {isa = PBXBuildFile; productRef = 9B1C4DBF29EF1D8E00F03AFF /* SwinjectAutoregistration */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,8 @@
 		9B1C4D2429EEF03500F03AFF /* MemoriaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoriaUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		9B1C4DB329EF19E400F03AFF /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		9B1C4DB529EF1A1800F03AFF /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		9B1C4DBA29EF1BDA00F03AFF /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		9B1C4DBC29EF1CEC00F03AFF /* InjectionContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjectionContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +62,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B1C4DB929EF1AE700F03AFF /* Swinject in Frameworks */,
+				9B1C4DC029EF1D8E00F03AFF /* SwinjectAutoregistration in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +87,7 @@
 		9B1C4CF529EEF03400F03AFF = {
 			isa = PBXGroup;
 			children = (
+				9B1C4DBA29EF1BDA00F03AFF /* README.md */,
 				9B1C4D0029EEF03400F03AFF /* Memoria */,
 				9B1C4D1729EEF03500F03AFF /* MemoriaTests */,
 				9B1C4D2129EEF03500F03AFF /* MemoriaUITests */,
@@ -188,6 +197,7 @@
 		9B1C4D7329EF0CF500F03AFF /* DI */ = {
 			isa = PBXGroup;
 			children = (
+				9B1C4DBC29EF1CEC00F03AFF /* InjectionContainer.swift */,
 			);
 			path = DI;
 			sourceTree = "<group>";
@@ -671,6 +681,10 @@
 			dependencies = (
 			);
 			name = Memoria;
+			packageProductDependencies = (
+				9B1C4DB829EF1AE700F03AFF /* Swinject */,
+				9B1C4DBF29EF1D8E00F03AFF /* SwinjectAutoregistration */,
+			);
 			productName = Memoria;
 			productReference = 9B1C4CFE29EEF03400F03AFF /* Memoria.app */;
 			productType = "com.apple.product-type.application";
@@ -743,6 +757,10 @@
 				Base,
 			);
 			mainGroup = 9B1C4CF529EEF03400F03AFF;
+			packageReferences = (
+				9B1C4DB729EF1AE700F03AFF /* XCRemoteSwiftPackageReference "Swinject" */,
+				9B1C4DBE29EF1D8E00F03AFF /* XCRemoteSwiftPackageReference "SwinjectAutoregistration" */,
+			);
 			productRefGroup = 9B1C4CFF29EEF03400F03AFF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -759,6 +777,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B1C4DBB29EF1BDA00F03AFF /* README.md in Resources */,
 				9B1C4D0E29EEF03500F03AFF /* LaunchScreen.storyboard in Resources */,
 				9B1C4D0B29EEF03500F03AFF /* Assets.xcassets in Resources */,
 			);
@@ -786,6 +805,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B1C4DB429EF19E400F03AFF /* SplashViewController.swift in Sources */,
+				9B1C4DBD29EF1CEC00F03AFF /* InjectionContainer.swift in Sources */,
 				9B1C4D0229EEF03400F03AFF /* AppDelegate.swift in Sources */,
 				9B1C4D0429EEF03400F03AFF /* SceneDelegate.swift in Sources */,
 				9B1C4DB629EF1A1800F03AFF /* HomeViewController.swift in Sources */,
@@ -1120,6 +1140,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9B1C4DB729EF1AE700F03AFF /* XCRemoteSwiftPackageReference "Swinject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:Swinject/Swinject.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+		9B1C4DBE29EF1D8E00F03AFF /* XCRemoteSwiftPackageReference "SwinjectAutoregistration" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:Swinject/SwinjectAutoregistration.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.8.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9B1C4DB829EF1AE700F03AFF /* Swinject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9B1C4DB729EF1AE700F03AFF /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = Swinject;
+		};
+		9B1C4DBF29EF1D8E00F03AFF /* SwinjectAutoregistration */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9B1C4DBE29EF1D8E00F03AFF /* XCRemoteSwiftPackageReference "SwinjectAutoregistration" */;
+			productName = SwinjectAutoregistration;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9B1C4CF629EEF03400F03AFF /* Project object */;
 }
