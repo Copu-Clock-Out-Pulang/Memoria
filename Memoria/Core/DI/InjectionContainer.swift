@@ -6,8 +6,6 @@
 //
 
 import Foundation
-
-import Foundation
 import Swinject
 import SwinjectAutoregistration
 
@@ -18,10 +16,12 @@ final class InjectionContainer {
     
     var container: Container {
         get {
-            if _container == nil {
-                _container = buildContainer()
+            guard let contain = _container else {
+                let newContainer = buildContainer()
+                _container = newContainer
+                return newContainer
             }
-            return _container!
+            return contain
         }
         set {
             _container = newValue
@@ -30,9 +30,9 @@ final class InjectionContainer {
     
     private func buildContainer() -> Container {
         let container = Container()
-        //register component here
+        // register component here
         
-        return container;
+        return container
     }
     
 }
