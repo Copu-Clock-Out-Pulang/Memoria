@@ -1,0 +1,46 @@
+ci/cd:
+  - .github/workflows/*
+
+core:
+  - Memoria/Core/**
+
+shared:
+  - Memoria/Shared/**
+
+resource:
+  - Memoria/Resource/**
+
+domain:
+  - Memoria/Features/**/Domain/**
+
+data:
+  - Memoria/Features/**/Data/**
+
+presentation:
+  - Memoria/Features/**/Presentation/**
+
+feature:
+  - Memoria/Features/**
+
+feature-home:
+  - Memoria/Features/Home/**
+
+feature-destination:
+  - Memoria/Features/Destination/**
+
+feature-splash:
+  - Memoria/Features/Splash/**
+
+feature-scrapbook:
+  - Memoria/Features/Scrapbook/**
+
+feature-image-generator:
+  - Memoria/Features/ImageGenerator/**
+
+test:
+  - MemoriaTests/**
+  - MemoriaUITests/**
+
+documentation:
+  - README.md
+  - ./*.md
