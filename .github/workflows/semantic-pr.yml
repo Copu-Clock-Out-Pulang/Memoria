@@ -1,4 +1,4 @@
-name: "Lint PR"
+name: Lint PR
 
 on:
   pull_request_target:
@@ -9,6 +9,7 @@ on:
 
 jobs:
   main:
+    permissions: write-all
     name: Validate PR title
     runs-on: ubuntu-latest
     steps:
