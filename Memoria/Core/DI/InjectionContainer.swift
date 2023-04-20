@@ -10,10 +10,10 @@ import Swinject
 import SwinjectAutoregistration
 
 final class InjectionContainer {
-    
+
     static let shared = InjectionContainer()
     private var _container: Container?
-    
+
     var container: Container {
         get {
             guard let contain = _container else {
@@ -27,12 +27,12 @@ final class InjectionContainer {
             _container = newValue
         }
     }
-    
+
     private func buildContainer() -> Container {
         let container = Container()
         // register component here
-        
+
         return container
     }
-    
+
 }
