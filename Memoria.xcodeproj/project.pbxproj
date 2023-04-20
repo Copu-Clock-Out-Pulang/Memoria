@@ -23,6 +23,7 @@
 		9B1F50CD29F1184C00BEEE8C /* Failure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1F50CC29F1184C00BEEE8C /* Failure.swift */; };
 		9B1F50D029F1264A00BEEE8C /* UIImage+CustomExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1F50CE29F1251700BEEE8C /* UIImage+CustomExtensions.swift */; };
 		9B1F50D629F1399600BEEE8C /* ImageSegmentorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1F50D529F1399600BEEE8C /* ImageSegmentorTests.swift */; };
+		9B1F50DA29F1418A00BEEE8C /* DreamImageGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1F50D929F1418A00BEEE8C /* DreamImageGenerator.swift */; };
 		9B2C3EE929F0391900FF554C /* DeepLabV3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 9B2C3EE829F0391900FF554C /* DeepLabV3.mlmodel */; };
 		9B2C3EFE29F03B9300FF554C /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2C3EED29F03B9300FF554C /* Array+Extensions.swift */; };
 		9B2C3EFF29F03B9300FF554C /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2C3EEE29F03B9300FF554C /* Math.swift */; };
@@ -83,6 +84,7 @@
 		9B1F50CC29F1184C00BEEE8C /* Failure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Failure.swift; sourceTree = "<group>"; };
 		9B1F50CE29F1251700BEEE8C /* UIImage+CustomExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+CustomExtensions.swift"; sourceTree = "<group>"; };
 		9B1F50D529F1399600BEEE8C /* ImageSegmentorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSegmentorTests.swift; sourceTree = "<group>"; };
+		9B1F50D929F1418A00BEEE8C /* DreamImageGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamImageGenerator.swift; sourceTree = "<group>"; };
 		9B2C3EE829F0391900FF554C /* DeepLabV3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = DeepLabV3.mlmodel; sourceTree = "<group>"; };
 		9B2C3EED29F03B9300FF554C /* Array+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 		9B2C3EEE29F03B9300FF554C /* Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
@@ -768,6 +770,7 @@
 			isa = PBXGroup;
 			children = (
 				9B2C3F0F29F03C2F00FF554C /* ImageSegmentor.swift */,
+				9B1F50D929F1418A00BEEE8C /* DreamImageGenerator.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -970,6 +973,7 @@
 				9B1F50D029F1264A00BEEE8C /* UIImage+CustomExtensions.swift in Sources */,
 				9B1C4DB429EF19E400F03AFF /* SplashViewController.swift in Sources */,
 				9B2C3F0A29F03B9300FF554C /* NonMaxSuppression.swift in Sources */,
+				9B1F50DA29F1418A00BEEE8C /* DreamImageGenerator.swift in Sources */,
 				9B2C3F0729F03B9300FF554C /* CoreML+Combine.swift in Sources */,
 				9B2C3EFE29F03B9300FF554C /* Array+Extensions.swift in Sources */,
 				9B2C3F0229F03B9300FF554C /* UIImage+Extensions.swift in Sources */,

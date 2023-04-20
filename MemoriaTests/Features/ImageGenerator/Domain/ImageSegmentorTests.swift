@@ -12,38 +12,37 @@ import Combine
 final class ImageSegmentorTests: XCTestCase {
     
     var sut: ImageSegmentorImpl!
-        var cancellable: AnyCancellable!
+    var cancellable: AnyCancellable!
 
-        override func setUp() {
-            super.setUp()
-            sut = ImageSegmentorImpl()
-            cancellable = nil
-        }
+    override func setUp() {
+        super.setUp()
+        sut = ImageSegmentorImpl()
+        cancellable = nil
+    }
 
-        override func tearDown() {
-            sut = nil
-            cancellable = nil
-            super.tearDown()
-        }
+    override func tearDown() {
+        sut = nil
+        cancellable = nil
+        super.tearDown()
+    }
 
-        func testDetectPersonReturnsSuccess() {
-            // given
-            let image = I.imageTest.image
-            let expectation = self.expectation(description: "Should succeed")
-
-            // when
-            cancellable = sut.detectPerson(input: image)
-                .sink(receiveCompletion: { result in
-                    switch result {
+    func testDetectPersonReturnsSuccess() {
+        // given
+        let image = I.imageTest.image
+        let expectation = self.expectation(description: "Should succeed")
+        // when
+        cancellable = sut.detectPerson(input: image)
+            .sink(receiveCompletion: { result in
+                switch result {
                     case .finished:
                         expectation.fulfill()
                     case .failure(let error):
                         XCTFail("Expected success but got failure with error: \(error.localizedDescription)")
-                    }
-                }, receiveValue: { output in
-                    // then
-                    XCTAssertNotNil(output)
-                    XCTAssertTrue(output.size.equalTo(image.size))
+                }
+            }, receiveValue: { output in
+                // then
+                XCTAssertNotNil(output)
+                XCTAssertTrue(output.size.equalTo(image.size))
 //                    guard let data = output.pngData() else {
 //                        debugPrint("Cannot convert output image to PNG data")
 //                        return
@@ -56,32 +55,31 @@ final class ImageSegmentorTests: XCTestCase {
 //                    } catch {
 //                        debugPrint("Cannot save output image: \(error)")
 //                    }
-            })
+        })
 
-            // then
-            waitForExpectations(timeout: 10, handler: nil)
-        }
+        // then
+        waitForExpectations(timeout: 10, handler: nil)
+    }
 
-        func testDetectPersonReturnsFailure() {
-            // given
-            let image: UIImage? = nil
-            let expectation = self.expectation(description: "Should fail")
-
-            // when
-            cancellable = sut.detectPerson(input: image)
-                .sink(receiveCompletion: { result in
-                    switch result {
+    func testDetectPersonReturnsFailure() {
+        // given
+        let image: UIImage? = nil
+        let expectation = self.expectation(description: "Should fail")
+        // when
+        cancellable = sut.detectPerson(input: image)
+            .sink(receiveCompletion: { result in
+                switch result {
                     case .finished:
                         XCTFail("Expected failure but got success")
                     case .failure(let error):
                         XCTAssertEqual(error, .imageGenerationFailure)
                         expectation.fulfill()
                     }
-                }, receiveValue: { output in
-                    XCTFail("Expected failure but got success with output: \(output)")
-                })
+            }, receiveValue: { output in
+                XCTFail("Expected failure but got success with output: \(output)")
+            })
 
-            // then
-            waitForExpectations(timeout: 10, handler: nil)
-        }
+        // then
+        waitForExpectations(timeout: 10, handler: nil)
+    }
 }
