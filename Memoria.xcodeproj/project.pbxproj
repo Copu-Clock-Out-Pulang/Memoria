@@ -106,15 +106,6 @@
 		9BB5045A29F2225B00C0D04C /* Failure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Failure.swift; sourceTree = "<group>"; };
 		9BB5045F29F2230B00C0D04C /* UIImage+CustomExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+CustomExtensions.swift"; sourceTree = "<group>"; };
 		9BB5046829F223E000C0D04C /* UseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCase.swift; sourceTree = "<group>"; };
-		9BBF6CF429F2439A00162C6A /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
-		9BBF6CF629F2439A00162C6A /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
-		9BBF6CF829F2439A00162C6A /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
-		9BBF6CFB29F2439A00162C6A /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
-		9BBF6CFD29F2439A00162C6A /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
-		9BBF6CFF29F2439A00162C6A /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
-		9BBF6D0229F2439A00162C6A /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
-		9BBF6D0429F2439A00162C6A /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
-		9BBF6D0629F2439A00162C6A /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		9BBF6D4B29F2439A00162C6A /* ImageSegmentorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageSegmentorTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -900,7 +891,6 @@
 		9BBF6CF329F2439A00162C6A /* Datasources */ = {
 			isa = PBXGroup;
 			children = (
-				9BBF6CF429F2439A00162C6A /* .gitkeep */,
 			);
 			path = Datasources;
 			sourceTree = "<group>";
@@ -908,7 +898,6 @@
 		9BBF6CF529F2439A00162C6A /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				9BBF6CF629F2439A00162C6A /* .gitkeep */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -916,7 +905,6 @@
 		9BBF6CF729F2439A00162C6A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				9BBF6CF829F2439A00162C6A /* .gitkeep */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -934,7 +922,6 @@
 		9BBF6CFA29F2439A00162C6A /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				9BBF6CFB29F2439A00162C6A /* .gitkeep */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -942,7 +929,6 @@
 		9BBF6CFC29F2439A00162C6A /* Usecases */ = {
 			isa = PBXGroup;
 			children = (
-				9BBF6CFD29F2439A00162C6A /* .gitkeep */,
 			);
 			path = Usecases;
 			sourceTree = "<group>";
@@ -950,7 +936,6 @@
 		9BBF6CFE29F2439A00162C6A /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				9BBF6CFF29F2439A00162C6A /* .gitkeep */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -968,7 +953,6 @@
 		9BBF6D0129F2439A00162C6A /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				9BBF6D0229F2439A00162C6A /* .gitkeep */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -976,7 +960,6 @@
 		9BBF6D0329F2439A00162C6A /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				9BBF6D0429F2439A00162C6A /* .gitkeep */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -984,7 +967,6 @@
 		9BBF6D0529F2439A00162C6A /* Pages */ = {
 			isa = PBXGroup;
 			children = (
-				9BBF6D0629F2439A00162C6A /* .gitkeep */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
