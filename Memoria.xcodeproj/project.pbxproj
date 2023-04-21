@@ -45,6 +45,7 @@
 		9BB5046629F2237D00C0D04C /* SwinjectAutoregistration in Frameworks */ = {isa = PBXBuildFile; productRef = 9BB5046529F2237D00C0D04C /* SwinjectAutoregistration */; };
 		9BB5046929F223E000C0D04C /* UseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB5046829F223E000C0D04C /* UseCase.swift */; };
 		9BBF6D8629F2439A00162C6A /* ImageSegmentorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBF6D4B29F2439A00162C6A /* ImageSegmentorTests.swift */; };
+		9BEF3E1529F2475B00F0D384 /* DeepLabV3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 9B2C3EE829F0391900FF554C /* DeepLabV3.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1602,6 +1603,7 @@
 				9B1AF19E29F23D1000BEF767 /* CVPixelBuffer+Resize.swift in Sources */,
 				9B1AF19A29F23D1000BEF767 /* CGImage+CVPixelBuffer.swift in Sources */,
 				9BB5046029F2230B00C0D04C /* UIImage+CustomExtensions.swift in Sources */,
+				9BEF3E1529F2475B00F0D384 /* DeepLabV3.mlmodel in Sources */,
 				9B1AF19429F23D1000BEF767 /* CGImagePropertyOrientation.swift in Sources */,
 				9B1AF19F29F23D1000BEF767 /* CVPixelBuffer+Rotate.swift in Sources */,
 				9B1AF19329F23D1000BEF767 /* UIImage+Extensions.swift in Sources */,
