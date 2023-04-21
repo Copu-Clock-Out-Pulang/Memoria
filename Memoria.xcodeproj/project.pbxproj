@@ -16,35 +16,16 @@
 		9B1C4D2529EEF03500F03AFF /* MemoriaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1C4D2429EEF03500F03AFF /* MemoriaUITestsLaunchTests.swift */; };
 		9B1C4DB429EF19E400F03AFF /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1C4DB329EF19E400F03AFF /* SplashViewController.swift */; };
 		9B1C4DB629EF1A1800F03AFF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1C4DB529EF1A1800F03AFF /* HomeViewController.swift */; };
-		9B1C4DB929EF1AE700F03AFF /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 9B1C4DB829EF1AE700F03AFF /* Swinject */; };
 		9B1C4DBB29EF1BDA00F03AFF /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 9B1C4DBA29EF1BDA00F03AFF /* README.md */; };
 		9B1C4DBD29EF1CEC00F03AFF /* InjectionContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1C4DBC29EF1CEC00F03AFF /* InjectionContainer.swift */; };
-		9B1C4DC029EF1D8E00F03AFF /* SwinjectAutoregistration in Frameworks */ = {isa = PBXBuildFile; productRef = 9B1C4DBF29EF1D8E00F03AFF /* SwinjectAutoregistration */; };
-		9B1F50CD29F1184C00BEEE8C /* Failure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1F50CC29F1184C00BEEE8C /* Failure.swift */; };
-		9B1F50D029F1264A00BEEE8C /* UIImage+CustomExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1F50CE29F1251700BEEE8C /* UIImage+CustomExtensions.swift */; };
-		9B1F50D629F1399600BEEE8C /* ImageSegmentorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1F50D529F1399600BEEE8C /* ImageSegmentorTests.swift */; };
-		9B2C3EE929F0391900FF554C /* DeepLabV3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 9B2C3EE829F0391900FF554C /* DeepLabV3.mlmodel */; };
-		9B2C3EFE29F03B9300FF554C /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2C3EED29F03B9300FF554C /* Array+Extensions.swift */; };
-		9B2C3EFF29F03B9300FF554C /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2C3EEE29F03B9300FF554C /* Math.swift */; };
-		9B2C3F0029F03B9300FF554C /* UIImage+CVPixelBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2C3EEF29F03B9300FF554C /* UIImage+CVPixelBuffer.swift */; };
-		9B2C3F0129F03B9300FF554C /* Predictions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2C3EF029F03B9300FF554C /* Predictions.swift */; };
-		9B2C3F0229F03B9300FF554C /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2C3EF129F03B9300FF554C /* UIImage+Extensions.swift */; };
-		9B2C3F0329F03B9300FF554C /* CGImagePropertyOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2C3EF229F03B9300FF554C /* CGImagePropertyOrientation.swift */; };
-		9B2C3F0429F03B9300FF554C /* UIImage+RawBytes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2C3EF329F03B9300FF554C /* UIImage+RawBytes.swift */; };
-		9B2C3F0529F03B9300FF554C /* MLMultiArray+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2C3EF429F03B9300FF554C /* MLMultiArray+Helpers.swift */; };
-		9B2C3F0629F03B9300FF554C /* MLModel+Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2C3EF529F03B9300FF554C /* MLModel+Images.swift */; };
-		9B2C3F0729F03B9300FF554C /* CoreML+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2C3EF629F03B9300FF554C /* CoreML+Combine.swift */; };
-		9B2C3F0829F03B9300FF554C /* CVPixelBuffer+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2C3EF729F03B9300FF554C /* CVPixelBuffer+Create.swift */; };
-		9B2C3F0929F03B9300FF554C /* CGImage+CVPixelBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2C3EF829F03B9300FF554C /* CGImage+CVPixelBuffer.swift */; };
-		9B2C3F0A29F03B9300FF554C /* NonMaxSuppression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2C3EF929F03B9300FF554C /* NonMaxSuppression.swift */; };
-		9B2C3F0B29F03B9300FF554C /* CGImage+RawBytes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2C3EFA29F03B9300FF554C /* CGImage+RawBytes.swift */; };
-		9B2C3F0C29F03B9300FF554C /* MLMultiArray+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2C3EFB29F03B9300FF554C /* MLMultiArray+Image.swift */; };
-		9B2C3F0D29F03B9300FF554C /* CVPixelBuffer+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2C3EFC29F03B9300FF554C /* CVPixelBuffer+Resize.swift */; };
-		9B2C3F0E29F03B9300FF554C /* CVPixelBuffer+Rotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2C3EFD29F03B9300FF554C /* CVPixelBuffer+Rotate.swift */; };
-		9B2C3F1029F03C2F00FF554C /* ImageSegmentor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2C3F0F29F03C2F00FF554C /* ImageSegmentor.swift */; };
 		9B487FAE29EFAB0400F5208A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9B487FAD29EFAB0400F5208A /* Localizable.strings */; };
 		9B487FB129EFABE000F5208A /* XCAssets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B487FAF29EFABE000F5208A /* XCAssets+Generated.swift */; };
 		9B487FB229EFABE000F5208A /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B487FB029EFABE000F5208A /* Strings+Generated.swift */; };
+		9BB5045B29F2225B00C0D04C /* Failure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB5045A29F2225B00C0D04C /* Failure.swift */; };
+		9BB5046029F2230B00C0D04C /* UIImage+CustomExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB5045F29F2230B00C0D04C /* UIImage+CustomExtensions.swift */; };
+		9BB5046329F2235400C0D04C /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 9BB5046229F2235400C0D04C /* Swinject */; };
+		9BB5046629F2237D00C0D04C /* SwinjectAutoregistration in Frameworks */ = {isa = PBXBuildFile; productRef = 9BB5046529F2237D00C0D04C /* SwinjectAutoregistration */; };
+		9BB5046929F223E000C0D04C /* UseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB5046829F223E000C0D04C /* UseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +86,9 @@
 		9B487FAD29EFAB0400F5208A /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		9B487FAF29EFABE000F5208A /* XCAssets+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCAssets+Generated.swift"; sourceTree = "<group>"; };
 		9B487FB029EFABE000F5208A /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
+		9BB5045A29F2225B00C0D04C /* Failure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Failure.swift; sourceTree = "<group>"; };
+		9BB5045F29F2230B00C0D04C /* UIImage+CustomExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+CustomExtensions.swift"; sourceTree = "<group>"; };
+		9BB5046829F223E000C0D04C /* UseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,8 +96,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B1C4DB929EF1AE700F03AFF /* Swinject in Frameworks */,
-				9B1C4DC029EF1D8E00F03AFF /* SwinjectAutoregistration in Frameworks */,
+				9BB5046329F2235400C0D04C /* Swinject in Frameworks */,
+				9BB5046629F2237D00C0D04C /* SwinjectAutoregistration in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,7 +246,8 @@
 		9B1C4D7429EF0D2000F03AFF /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				9B1F50CB29F1183C00BEEE8C /* Failure */,
+				9BB5046729F223AF00C0D04C /* Usecases */,
+				9BB5045929F2223D00C0D04C /* Failure */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -270,7 +255,7 @@
 		9B1C4D7529EF0D2E00F03AFF /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				9B1F50CE29F1251700BEEE8C /* UIImage+CustomExtensions.swift */,
+				9BB5045F29F2230B00C0D04C /* UIImage+CustomExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -725,83 +710,20 @@
 			path = Pages;
 			sourceTree = "<group>";
 		};
-		9B1F50CB29F1183C00BEEE8C /* Failure */ = {
+		9BB5045929F2223D00C0D04C /* Failure */ = {
 			isa = PBXGroup;
 			children = (
-				9B1F50CC29F1184C00BEEE8C /* Failure.swift */,
+				9BB5045A29F2225B00C0D04C /* Failure.swift */,
 			);
 			path = Failure;
 			sourceTree = "<group>";
 		};
-		9B1F50D129F1395500BEEE8C /* Features */ = {
+		9BB5046729F223AF00C0D04C /* Usecases */ = {
 			isa = PBXGroup;
 			children = (
-				9B1F50D229F1395E00BEEE8C /* ImageGenerator */,
+				9BB5046829F223E000C0D04C /* UseCase.swift */,
 			);
-			path = Features;
-			sourceTree = "<group>";
-		};
-		9B1F50D229F1395E00BEEE8C /* ImageGenerator */ = {
-			isa = PBXGroup;
-			children = (
-				9B1F50D429F1396C00BEEE8C /* Domain */,
-			);
-			path = ImageGenerator;
-			sourceTree = "<group>";
-		};
-		9B1F50D429F1396C00BEEE8C /* Domain */ = {
-			isa = PBXGroup;
-			children = (
-				9B1F50D529F1399600BEEE8C /* ImageSegmentorTests.swift */,
-			);
-			path = Domain;
-			sourceTree = "<group>";
-		};
-		9B1F50D829F13B0A00BEEE8C /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		9B2C3EEA29F0398300FF554C /* Domain */ = {
-			isa = PBXGroup;
-			children = (
-				9B2C3F0F29F03C2F00FF554C /* ImageSegmentor.swift */,
-			);
-			path = Domain;
-			sourceTree = "<group>";
-		};
-		9B2C3EEB29F03B6C00FF554C /* External */ = {
-			isa = PBXGroup;
-			children = (
-				9B2C3EEC29F03B9300FF554C /* CoreMLHelpers */,
-			);
-			path = External;
-			sourceTree = "<group>";
-		};
-		9B2C3EEC29F03B9300FF554C /* CoreMLHelpers */ = {
-			isa = PBXGroup;
-			children = (
-				9B2C3EED29F03B9300FF554C /* Array+Extensions.swift */,
-				9B2C3EEE29F03B9300FF554C /* Math.swift */,
-				9B2C3EEF29F03B9300FF554C /* UIImage+CVPixelBuffer.swift */,
-				9B2C3EF029F03B9300FF554C /* Predictions.swift */,
-				9B2C3EF129F03B9300FF554C /* UIImage+Extensions.swift */,
-				9B2C3EF229F03B9300FF554C /* CGImagePropertyOrientation.swift */,
-				9B2C3EF329F03B9300FF554C /* UIImage+RawBytes.swift */,
-				9B2C3EF429F03B9300FF554C /* MLMultiArray+Helpers.swift */,
-				9B2C3EF529F03B9300FF554C /* MLModel+Images.swift */,
-				9B2C3EF629F03B9300FF554C /* CoreML+Combine.swift */,
-				9B2C3EF729F03B9300FF554C /* CVPixelBuffer+Create.swift */,
-				9B2C3EF829F03B9300FF554C /* CGImage+CVPixelBuffer.swift */,
-				9B2C3EF929F03B9300FF554C /* NonMaxSuppression.swift */,
-				9B2C3EFA29F03B9300FF554C /* CGImage+RawBytes.swift */,
-				9B2C3EFB29F03B9300FF554C /* MLMultiArray+Image.swift */,
-				9B2C3EFC29F03B9300FF554C /* CVPixelBuffer+Resize.swift */,
-				9B2C3EFD29F03B9300FF554C /* CVPixelBuffer+Rotate.swift */,
-			);
-			path = CoreMLHelpers;
+			path = Usecases;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -822,8 +744,8 @@
 			);
 			name = Memoria;
 			packageProductDependencies = (
-				9B1C4DB829EF1AE700F03AFF /* Swinject */,
-				9B1C4DBF29EF1D8E00F03AFF /* SwinjectAutoregistration */,
+				9BB5046229F2235400C0D04C /* Swinject */,
+				9BB5046529F2237D00C0D04C /* SwinjectAutoregistration */,
 			);
 			productName = Memoria;
 			productReference = 9B1C4CFE29EEF03400F03AFF /* Memoria.app */;
@@ -898,8 +820,8 @@
 			);
 			mainGroup = 9B1C4CF529EEF03400F03AFF;
 			packageReferences = (
-				9B1C4DB729EF1AE700F03AFF /* XCRemoteSwiftPackageReference "Swinject" */,
-				9B1C4DBE29EF1D8E00F03AFF /* XCRemoteSwiftPackageReference "SwinjectAutoregistration" */,
+				9BB5046129F2235400C0D04C /* XCRemoteSwiftPackageReference "Swinject" */,
+				9BB5046429F2237D00C0D04C /* XCRemoteSwiftPackageReference "SwinjectAutoregistration" */,
 			);
 			productRefGroup = 9B1C4CFF29EEF03400F03AFF /* Products */;
 			projectDirPath = "";
@@ -967,7 +889,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B1F50D029F1264A00BEEE8C /* UIImage+CustomExtensions.swift in Sources */,
+				9BB5045B29F2225B00C0D04C /* Failure.swift in Sources */,
 				9B1C4DB429EF19E400F03AFF /* SplashViewController.swift in Sources */,
 				9B2C3F0A29F03B9300FF554C /* NonMaxSuppression.swift in Sources */,
 				9B2C3F0729F03B9300FF554C /* CoreML+Combine.swift in Sources */,
@@ -981,20 +903,13 @@
 				9B2C3F0829F03B9300FF554C /* CVPixelBuffer+Create.swift in Sources */,
 				9B2C3F0329F03B9300FF554C /* CGImagePropertyOrientation.swift in Sources */,
 				9B487FB129EFABE000F5208A /* XCAssets+Generated.swift in Sources */,
-				9B2C3F0B29F03B9300FF554C /* CGImage+RawBytes.swift in Sources */,
-				9B2C3F0E29F03B9300FF554C /* CVPixelBuffer+Rotate.swift in Sources */,
+				9BB5046929F223E000C0D04C /* UseCase.swift in Sources */,
 				9B487FB229EFABE000F5208A /* Strings+Generated.swift in Sources */,
 				9B2C3F0C29F03B9300FF554C /* MLMultiArray+Image.swift in Sources */,
 				9B1F50CD29F1184C00BEEE8C /* Failure.swift in Sources */,
 				9B1C4D0429EEF03400F03AFF /* SceneDelegate.swift in Sources */,
 				9B1C4DB629EF1A1800F03AFF /* HomeViewController.swift in Sources */,
-				9B2C3F0929F03B9300FF554C /* CGImage+CVPixelBuffer.swift in Sources */,
-				9B2C3F0629F03B9300FF554C /* MLModel+Images.swift in Sources */,
-				9B2C3F0429F03B9300FF554C /* UIImage+RawBytes.swift in Sources */,
-				9B2C3EE929F0391900FF554C /* DeepLabV3.mlmodel in Sources */,
-				9B2C3EFF29F03B9300FF554C /* Math.swift in Sources */,
-				9B2C3F1029F03C2F00FF554C /* ImageSegmentor.swift in Sources */,
-				9B2C3F0D29F03B9300FF554C /* CVPixelBuffer+Resize.swift in Sources */,
+				9BB5046029F2230B00C0D04C /* UIImage+CustomExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1329,33 +1244,33 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		9B1C4DB729EF1AE700F03AFF /* XCRemoteSwiftPackageReference "Swinject" */ = {
+		9BB5046129F2235400C0D04C /* XCRemoteSwiftPackageReference "Swinject" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "git@github.com:Swinject/Swinject.git";
+			repositoryURL = "https://github.com/Swinject/Swinject.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
+				minimumVersion = 2.8.3;
 			};
 		};
-		9B1C4DBE29EF1D8E00F03AFF /* XCRemoteSwiftPackageReference "SwinjectAutoregistration" */ = {
+		9BB5046429F2237D00C0D04C /* XCRemoteSwiftPackageReference "SwinjectAutoregistration" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "git@github.com:Swinject/SwinjectAutoregistration.git";
+			repositoryURL = "https://github.com/Swinject/SwinjectAutoregistration.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 2.8.0;
+				minimumVersion = 2.8.3;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		9B1C4DB829EF1AE700F03AFF /* Swinject */ = {
+		9BB5046229F2235400C0D04C /* Swinject */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9B1C4DB729EF1AE700F03AFF /* XCRemoteSwiftPackageReference "Swinject" */;
+			package = 9BB5046129F2235400C0D04C /* XCRemoteSwiftPackageReference "Swinject" */;
 			productName = Swinject;
 		};
-		9B1C4DBF29EF1D8E00F03AFF /* SwinjectAutoregistration */ = {
+		9BB5046529F2237D00C0D04C /* SwinjectAutoregistration */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9B1C4DBE29EF1D8E00F03AFF /* XCRemoteSwiftPackageReference "SwinjectAutoregistration" */;
+			package = 9BB5046429F2237D00C0D04C /* XCRemoteSwiftPackageReference "SwinjectAutoregistration" */;
 			productName = SwinjectAutoregistration;
 		};
 /* End XCSwiftPackageProductDependency section */
