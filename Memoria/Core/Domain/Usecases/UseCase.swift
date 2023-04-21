@@ -18,13 +18,13 @@ protocol UseCaseProtocol {
 struct AnyUseCase<T, P: Equatable>: UseCaseProtocol {
    
     init<U>(useCase: U) where U: UseCaseProtocol, U.ReturnType == T, U.Params == P {
-        _execute = useCase.execute
+        proceed = useCase.execute
     }
     func execute(params: P) -> AnyPublisher<T, Failure> {
-        _execute(params)
+        proceed(params)
     }
     
-    let _execute: (P) -> AnyPublisher<T, Failure>
+    let proceed: (P) -> AnyPublisher<T, Failure>
     
     typealias ReturnType = T
     typealias Params = P
