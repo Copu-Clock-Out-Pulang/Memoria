@@ -11,7 +11,7 @@ import Combine
 
 final class ImageSegmentorTests: XCTestCase {
 
-    var sut: ImageSegmentorImpl!
+    var sut: ImageSegmentor!
     var cancellable: AnyCancellable!
 
     override func setUp() {
