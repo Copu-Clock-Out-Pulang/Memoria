@@ -8,7 +8,8 @@
 import UIKit
 
 class SplashViewController: UIViewController {
-
+    //Migration starts here (LightWeight)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBlue
