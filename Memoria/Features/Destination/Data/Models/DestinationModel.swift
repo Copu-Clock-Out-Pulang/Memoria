@@ -17,6 +17,18 @@ struct DestinationModel: Identifiable {
     let ticketPrice: String?
     let website: String?
     let instagram: String?
-}
+};
 
-//extension, untuk static function, ngemapping dari destination dengan output destination model, paramsnya object destination (xcdatamodel), keyword coredata populate coredata
+extension Destination {
+    func toModel() -> DestinationModel? {
+        guard let id = self.id,
+              let name = self.name,
+              let photo = self.photo,
+              let address = self.address,
+              let latitude = self.latitude as? Double,
+              let longitude = self.longitude as? Double else {
+            return nil
+        }
+        return DestinationModel(id: id, name: name, photo: photo, address: address, latitude: latitude, longitude: longitude, ticketPrice: self.ticketPrice, website: self.website, instagram: self.instagram)
+    }
+}
