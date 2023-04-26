@@ -11,11 +11,17 @@ import Vision
 import Combine
 
 protocol ImageSegmentor {
+    /**
+     Generate Segmentation Mask by seperating object and background
+     - Parameter input: An Image with a person
+     - Returns: A black and white image mask
+     */
     func detectPerson(input: UIImage?) -> AnyPublisher<UIImage, Failure>
 }
 
 class ImageSegmentorImpl: ImageSegmentor {
 
+    // MARK: - Implementations
     func detectPerson(input: UIImage?) -> AnyPublisher<UIImage, Failure> {
         
         return Future {[weak self] promise in
@@ -48,6 +54,7 @@ class ImageSegmentorImpl: ImageSegmentor {
                 promise(.failure(Failure.imageGenerationFailure))
                 return
             }
+            
             guard let cgImage = image.cgImage else {
                 debugPrint("Cannot convert to CIImage")
                 promise(.failure(Failure.imageGenerationFailure))
@@ -71,6 +78,7 @@ class ImageSegmentorImpl: ImageSegmentor {
             }
 
             let segmentationMap = observation.first?.featureValue.multiArrayValue
+            
             let segmentationMask = segmentationMap?.image(min: 0, max: 1)
             guard let outputMask = segmentationMask?.resizedImage(for: image.size) else {
                 debugPrint("cannot create output mask")
@@ -86,6 +94,8 @@ class ImageSegmentorImpl: ImageSegmentor {
 
 
     }
+    
+    // MARK: - Private Function
 
     private func createRequest(model: VNCoreMLModel) -> VNCoreMLRequest? {
         let request = VNCoreMLRequest(model: model) { _, error in
