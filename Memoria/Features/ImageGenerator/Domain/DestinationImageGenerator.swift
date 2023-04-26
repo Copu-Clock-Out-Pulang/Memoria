@@ -80,12 +80,9 @@ class DestinationImageGeneratorImpl: DestinationImageGenerator {
             return nil
         }
         
-        print("before composite")
         guard let composite = filter.outputImage else {
-            print("composite error happened")
             return nil
         }
-        print("after composite")
         
         let context = CIContext(options: nil)
         guard let filteredImageRef = context.createCGImage(composite, from: composite.extent) else {
