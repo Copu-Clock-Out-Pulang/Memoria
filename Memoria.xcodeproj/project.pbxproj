@@ -8,17 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		9111763329F690BC007852F7 /* MemoriaCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9111763129F690BC007852F7 /* MemoriaCoreData.xcdatamodeld */; };
-		9111763429F690BC007852F7 /* MemoriaCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9111763129F690BC007852F7 /* MemoriaCoreData.xcdatamodeld */; };
-		9111763529F690BC007852F7 /* MemoriaCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9111763129F690BC007852F7 /* MemoriaCoreData.xcdatamodeld */; };
 		9111763729F69216007852F7 /* DestinationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9111763629F69216007852F7 /* DestinationModel.swift */; };
-		9111763829F69216007852F7 /* DestinationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9111763629F69216007852F7 /* DestinationModel.swift */; };
-		9111763929F69216007852F7 /* DestinationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9111763629F69216007852F7 /* DestinationModel.swift */; };
 		9111763B29F6950D007852F7 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9111763A29F6950D007852F7 /* PersistenceController.swift */; };
-		9111763C29F6950D007852F7 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9111763A29F6950D007852F7 /* PersistenceController.swift */; };
-		9111763D29F6950D007852F7 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9111763A29F6950D007852F7 /* PersistenceController.swift */; };
 		9111763F29F7794F007852F7 /* DestinationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9111763E29F7794F007852F7 /* DestinationViewModel.swift */; };
-		9111764029F7794F007852F7 /* DestinationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9111763E29F7794F007852F7 /* DestinationViewModel.swift */; };
-		9111764129F7794F007852F7 /* DestinationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9111763E29F7794F007852F7 /* DestinationViewModel.swift */; };
 		9111764329F78204007852F7 /* DestinationMigration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9111764229F78203007852F7 /* DestinationMigration.swift */; };
 		9B12C65429FA4682007B3B3F /* Destination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12C65329FA4682007B3B3F /* Destination.swift */; };
 		9B12C65629FA46E6007B3B3F /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12C65529FA46E6007B3B3F /* Coordinate.swift */; };
@@ -1717,12 +1709,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9111763829F69216007852F7 /* DestinationModel.swift in Sources */,
-				9111764029F7794F007852F7 /* DestinationViewModel.swift in Sources */,
 				9BBF6D8629F2439A00162C6A /* ImageSegmentorTests.swift in Sources */,
-				9111763429F690BC007852F7 /* MemoriaCoreData.xcdatamodeld in Sources */,
 				9B1C4D1929EEF03500F03AFF /* MemoriaTests.swift in Sources */,
-				9111763C29F6950D007852F7 /* PersistenceController.swift in Sources */,
 				9BF0036A29F6C2DE007CD42B /* DestinationImageGeneratorTest.swift in Sources */,
 				9B1C4D1929EEF03500F03AFF /* MemoriaTests.swift in Sources */,
 				9BF0037329F6D137007CD42B /* GeneratedMocks.swift in Sources */,
@@ -1733,12 +1721,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9111763929F69216007852F7 /* DestinationModel.swift in Sources */,
-				9111764129F7794F007852F7 /* DestinationViewModel.swift in Sources */,
 				9B1C4D2329EEF03500F03AFF /* MemoriaUITests.swift in Sources */,
-				9111763529F690BC007852F7 /* MemoriaCoreData.xcdatamodeld in Sources */,
 				9B1C4D2529EEF03500F03AFF /* MemoriaUITestsLaunchTests.swift in Sources */,
-				9111763D29F6950D007852F7 /* PersistenceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
