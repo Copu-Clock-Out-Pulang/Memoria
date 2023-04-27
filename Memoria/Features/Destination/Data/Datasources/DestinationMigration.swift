@@ -5,60 +5,72 @@
 //  Created by Winxen Ryandiharvin on 25/04/23.
 //
 
-import Foundation
 import CoreData
 
-class DestinationMigration{
-    //alternative way to get NSFetchRequest atau NSAsynchronousFetchResult, instead of using SwiftUI (dokumentasi CoreData)
+class DestinationMigration {
     
-    private var destinations: NSFetchRequest<Destination>
+    let persistentContainer = PersistenceController()
     
-    var destinationList: [DestinationModel] {
-        destinations.map { DestinationModel(
-            id: $0.id!,
-            name: $0.name!,
-            photo: $0.photo!,
-            address: $0.address!,
-            latitude: $0.latitude,
-            longitude: $0.longitude,
-            ticketPrice: $0.ticketPrice!,
-            website: $0.website,
-            instagram: $0.instagram
-       )}
-    }
-    //function for migration located here, ngebaca data dari destinationList
-    
-    func addDestination(name: String, photo: String?, address: String, latitude: Double, longitude: Double, ticketPrice: String?, website: String?, instagram: String?) {
-
-            let newDestination = Destination(context: viewContext)
-            newDestination.id = UUID()
-            newDestination.name = name
-            newDestination.photo = photo
-            newDestination.address = address
-            newDestination.latitude = latitude
-            newDestination.longitude = longitude
-            newDestination.ticketPrice = ticketPrice
-            newDestination.website = website
-            newDestination.instagram = instagram
-            
-            do {
-                try viewContext.save()
-            } catch {
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
+    func saveDestination() {
+        do {
+            try persistentContainer.container.viewContext.save()
+        } catch let error as NSError {
+            print("Error saving context: \(error.localizedDescription)")
+        }
     }
     
-    func deleteDestination(destination: Destination) {
-            let destinationToDelete = destinations.first { $0.id == destination.id }
-            if let destinationToDelete = destinationToDelete {
-                viewContext.delete(destinationToDelete)
-                do {
-                    try viewContext.save()
-                } catch {
-                    let nsError = error as NSError
-                    fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-                }
-            }
+    func createDestination(from model: DestinationModel) -> DestinationCoreDataModel? {
+        let destination = NSEntityDescription.insertNewObject(
+            forEntityName: "DestinationCoreDataModel",
+            into: persistentContainer.container.viewContext) as? DestinationCoreDataModel
+        destination?.id = model.id
+        destination?.name = model.name
+        destination?.photo = model.photo
+        destination?.address = model.address
+        destination?.latitude = model.latitude
+        destination?.longitude = model.longitude
+        destination?.ticketPrice = model.ticketPrice
+        destination?.website = model.website
+        destination?.instagram = model.instagram
+        saveDestination()
+        return destination
+    }
+    
+    func getAllDestinations() -> [DestinationModel]? {
+        let fetchRequest: NSFetchRequest<DestinationCoreDataModel> = DestinationCoreDataModel.fetchRequest()
+        do {
+            let destinations = try persistentContainer.container.viewContext.fetch(fetchRequest)
+            let destinationModels = destinations.compactMap { $0.toModel() }
+            return destinationModels
+        } catch let error as NSError {
+            print("Error fetching destinations: \(error.localizedDescription)")
+            return nil
+        }
+    }
+    
+    func updateDestination(_ destination: DestinationCoreDataModel, with model: DestinationModel) {
+        destination.id = model.id
+        destination.name = model.name
+        destination.photo = model.photo
+        destination.address = model.address
+        destination.latitude = model.latitude
+        destination.longitude = model.longitude
+        destination.ticketPrice = model.ticketPrice
+        destination.website = model.website
+        destination.instagram = model.instagram
+        saveDestination()
+    }
+    
+    func deleteDestination(_ destinationModel: DestinationModel) {
+        let fetchRequest: NSFetchRequest<DestinationCoreDataModel> = DestinationCoreDataModel.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "id == %@", destinationModel.id as CVarArg)
+        do {
+            let results = try persistentContainer.container.viewContext.fetch(fetchRequest)
+            guard let destination = results.first else { return }
+            persistentContainer.container.viewContext.delete(destination)
+            saveDestination()
+        } catch let error as NSError {
+            print("Error deleting destination: \(error.localizedDescription)")
+        }
     }
 }
