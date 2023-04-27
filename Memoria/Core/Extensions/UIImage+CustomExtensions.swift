@@ -80,9 +80,15 @@ extension UIImage {
            // Figure out what our orientation is, and use that to form the rectangle
            let newSize: CGSize
            if widthRatio > heightRatio {
-               newSize = CGSize(width: floor(originalSize.width * heightRatio), height: floor(originalSize.height * heightRatio))
+               newSize = CGSize(
+                width: floor(originalSize.width * heightRatio),
+                height: floor(originalSize.height * heightRatio)
+               )
            } else {
-               newSize = CGSize(width: floor(originalSize.width * widthRatio), height: floor(originalSize.height * widthRatio))
+               newSize = CGSize(
+                width: floor(originalSize.width * widthRatio),
+                height: floor(originalSize.height * widthRatio)
+               )
            }
 
            // This is the rect that we've calculated out and this is what is actually used below
@@ -92,7 +98,10 @@ extension UIImage {
            let format = UIGraphicsImageRendererFormat()
            format.scale = newScale
            format.opaque = true
-           let newImage = UIGraphicsImageRenderer(bounds: rect, format: format).image() { _ in
+           let newImage = UIGraphicsImageRenderer(
+            bounds: rect,
+            format: format
+           ).image { _ in
                self.draw(in: rect)
            }
 

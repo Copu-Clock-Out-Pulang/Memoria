@@ -19,6 +19,11 @@
 		9B12C65F29FA488C007B3B3F /* ScrapPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12C65E29FA488C007B3B3F /* ScrapPage.swift */; };
 		9B12C66129FA55E2007B3B3F /* Recommendation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12C66029FA55E2007B3B3F /* Recommendation.swift */; };
 		9B12C66329FA574E007B3B3F /* Area.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12C66229FA574E007B3B3F /* Area.swift */; };
+		9B12C66529FA5C6B007B3B3F /* DestinationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12C66429FA5C6B007B3B3F /* DestinationRepository.swift */; };
+		9B12C66929FA5D44007B3B3F /* GetTripArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12C66829FA5D44007B3B3F /* GetTripArea.swift */; };
+		9B12C66B29FA5DF7007B3B3F /* GetTripDestinationByArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12C66A29FA5DF7007B3B3F /* GetTripDestinationByArea.swift */; };
+		9B12C66D29FA5EB6007B3B3F /* GenerateRecommendation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12C66C29FA5EB6007B3B3F /* GenerateRecommendation.swift */; };
+		9B12C66F29FA8E46007B3B3F /* Publishers+CustomExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12C66E29FA8E46007B3B3F /* Publishers+CustomExtensions.swift */; };
 		9B1AF17B29F23C8100BEF767 /* ImageSegmentor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1AF17A29F23C8100BEF767 /* ImageSegmentor.swift */; };
 		9B1AF18F29F23D1000BEF767 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1AF17E29F23D1000BEF767 /* Array+Extensions.swift */; };
 		9B1AF19029F23D1000BEF767 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1AF17F29F23D1000BEF767 /* Math.swift */; };
@@ -51,6 +56,9 @@
 		9B487FAE29EFAB0400F5208A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9B487FAD29EFAB0400F5208A /* Localizable.strings */; };
 		9B487FB129EFABE000F5208A /* XCAssets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B487FAF29EFABE000F5208A /* XCAssets+Generated.swift */; };
 		9B487FB229EFABE000F5208A /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B487FB029EFABE000F5208A /* Strings+Generated.swift */; };
+		9B5C5F6A29FAC5DD0032BA64 /* GetTripAreaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5C5F6929FAC5DD0032BA64 /* GetTripAreaTests.swift */; };
+		9B5C5F6C29FAD04F0032BA64 /* GetTripDestinationByAreaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5C5F6B29FAD04F0032BA64 /* GetTripDestinationByAreaTests.swift */; };
+		9B5C5F6E29FADB870032BA64 /* GenerateRecommendationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5C5F6D29FADB870032BA64 /* GenerateRecommendationTests.swift */; };
 		9B82DB7529F978FA00606EE2 /* CIImage+CustomExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B82DB7429F978FA00606EE2 /* CIImage+CustomExtension.swift */; };
 		9B983DE029F26A5600BCAD3A /* DestinationImageGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B983DDF29F26A5600BCAD3A /* DestinationImageGenerator.swift */; };
 		9BB5045B29F2225B00C0D04C /* Failure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB5045A29F2225B00C0D04C /* Failure.swift */; };
@@ -95,6 +103,11 @@
 		9B12C65E29FA488C007B3B3F /* ScrapPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrapPage.swift; sourceTree = "<group>"; };
 		9B12C66029FA55E2007B3B3F /* Recommendation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recommendation.swift; sourceTree = "<group>"; };
 		9B12C66229FA574E007B3B3F /* Area.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Area.swift; sourceTree = "<group>"; };
+		9B12C66429FA5C6B007B3B3F /* DestinationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationRepository.swift; sourceTree = "<group>"; };
+		9B12C66829FA5D44007B3B3F /* GetTripArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTripArea.swift; sourceTree = "<group>"; };
+		9B12C66A29FA5DF7007B3B3F /* GetTripDestinationByArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTripDestinationByArea.swift; sourceTree = "<group>"; };
+		9B12C66C29FA5EB6007B3B3F /* GenerateRecommendation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateRecommendation.swift; sourceTree = "<group>"; };
+		9B12C66E29FA8E46007B3B3F /* Publishers+CustomExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publishers+CustomExtensions.swift"; sourceTree = "<group>"; };
 		9B1AF17A29F23C8100BEF767 /* ImageSegmentor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageSegmentor.swift; sourceTree = "<group>"; };
 		9B1AF17E29F23D1000BEF767 /* Array+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 		9B1AF17F29F23D1000BEF767 /* Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
@@ -132,6 +145,9 @@
 		9B487FAD29EFAB0400F5208A /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		9B487FAF29EFABE000F5208A /* XCAssets+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCAssets+Generated.swift"; sourceTree = "<group>"; };
 		9B487FB029EFABE000F5208A /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
+		9B5C5F6929FAC5DD0032BA64 /* GetTripAreaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTripAreaTests.swift; sourceTree = "<group>"; };
+		9B5C5F6B29FAD04F0032BA64 /* GetTripDestinationByAreaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTripDestinationByAreaTests.swift; sourceTree = "<group>"; };
+		9B5C5F6D29FADB870032BA64 /* GenerateRecommendationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateRecommendationTests.swift; sourceTree = "<group>"; };
 		9B82DB7429F978FA00606EE2 /* CIImage+CustomExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CIImage+CustomExtension.swift"; sourceTree = "<group>"; };
 		9B983DDF29F26A5600BCAD3A /* DestinationImageGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationImageGenerator.swift; sourceTree = "<group>"; };
 		9BB5045A29F2225B00C0D04C /* Failure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Failure.swift; sourceTree = "<group>"; };
@@ -318,6 +334,7 @@
 		9B1AF1A929F23D9800BEF767 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				9B12C66429FA5C6B007B3B3F /* DestinationRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -325,6 +342,9 @@
 		9B1AF1AA29F23D9800BEF767 /* Usecases */ = {
 			isa = PBXGroup;
 			children = (
+				9B12C66829FA5D44007B3B3F /* GetTripArea.swift */,
+				9B12C66A29FA5DF7007B3B3F /* GetTripDestinationByArea.swift */,
+				9B12C66C29FA5EB6007B3B3F /* GenerateRecommendation.swift */,
 			);
 			path = Usecases;
 			sourceTree = "<group>";
@@ -820,6 +840,7 @@
 			children = (
 				9BB5045F29F2230B00C0D04C /* UIImage+CustomExtensions.swift */,
 				9B82DB7429F978FA00606EE2 /* CIImage+CustomExtension.swift */,
+				9B12C66E29FA8E46007B3B3F /* Publishers+CustomExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1431,6 +1452,9 @@
 		9BBF6D5729F2439A00162C6A /* Usecases */ = {
 			isa = PBXGroup;
 			children = (
+				9B5C5F6929FAC5DD0032BA64 /* GetTripAreaTests.swift */,
+				9B5C5F6B29FAD04F0032BA64 /* GetTripDestinationByAreaTests.swift */,
+				9B5C5F6D29FADB870032BA64 /* GenerateRecommendationTests.swift */,
 			);
 			path = Usecases;
 			sourceTree = "<group>";
@@ -1650,7 +1674,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ $ACTION == \"indexbuild\" ]; then\n  echo \"Not running Cuckoo generator during indexing.\"\n  exit 0\nfi\n\n# Skip for preview builds\nif [ \"${ENABLE_PREVIEWS}\" = \"YES\" ]; then\n  echo \"Not running Cuckoo generator during preview builds.\"\n  exit 0\nfi\n\n# Define output file. Change \"${PROJECT_DIR}/${PROJECT_NAME}Tests\" to your test's root source folder, if it's not the default name.\nOUTPUT_FILE=\"${PROJECT_DIR}/${PROJECT_NAME}Tests/GeneratedMocks.swift\"\necho \"Generated Mocks File = ${OUTPUT_FILE}\"\n\n# Define input directory. Change \"${PROJECT_DIR}/${PROJECT_NAME}\" to your project's root source folder, if it's not the default name.\nINPUT_DIR=\"${PROJECT_DIR}/${PROJECT_NAME}\"\necho \"Mocks Input Directory = ${INPUT_DIR}\"\n\n# Generate mock files, include as many input files as you'd like to create mocks for.\n\"${PROJECT_DIR}/run\" --download generate --testable \"${PROJECT_NAME}\" \\\n--output \"${OUTPUT_FILE}\" \\\n\"${INPUT_DIR}/Features/ImageGenerator/Domain/ImageSegmentor.swift\"\n# ... and so forth, the last line should never end with a backslash\n\n# After running once, locate `GeneratedMocks.swift` and drag it into your Xcode test target group.\n";
+			shellScript = "if [ $ACTION == \"indexbuild\" ]; then\n  echo \"Not running Cuckoo generator during indexing.\"\n  exit 0\nfi\n\n# Skip for preview builds\nif [ \"${ENABLE_PREVIEWS}\" = \"YES\" ]; then\n  echo \"Not running Cuckoo generator during preview builds.\"\n  exit 0\nfi\n\n# Define output file. Change \"${PROJECT_DIR}/${PROJECT_NAME}Tests\" to your test's root source folder, if it's not the default name.\nOUTPUT_FILE=\"${PROJECT_DIR}/${PROJECT_NAME}Tests/GeneratedMocks.swift\"\necho \"Generated Mocks File = ${OUTPUT_FILE}\"\n\n# Define input directory. Change \"${PROJECT_DIR}/${PROJECT_NAME}\" to your project's root source folder, if it's not the default name.\nINPUT_DIR=\"${PROJECT_DIR}/${PROJECT_NAME}\"\necho \"Mocks Input Directory = ${INPUT_DIR}\"\n\n# Generate mock files, include as many input files as you'd like to create mocks for.\n\"${PROJECT_DIR}/run\" --download generate --testable \"${PROJECT_NAME}\" \\\n--output \"${OUTPUT_FILE}\" \\\n\"${INPUT_DIR}/Features/ImageGenerator/Domain/ImageSegmentor.swift\" \\\n\"${INPUT_DIR}/Features/Destination/Domain/Repositories/DestinationRepository.swift\" \\\n\"${INPUT_DIR}/Features/ImageGenerator/Domain/DestinationImageGenerator.swift\"\n# ... and so forth, the last line should never end with a backslash\n\n# After running once, locate `GeneratedMocks.swift` and drag it into your Xcode test target group.\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1663,23 +1687,28 @@
 				9BB5045B29F2225B00C0D04C /* Failure.swift in Sources */,
 				9B1AF19029F23D1000BEF767 /* Math.swift in Sources */,
 				9B1C4DB429EF19E400F03AFF /* SplashViewController.swift in Sources */,
+				9B12C66929FA5D44007B3B3F /* GetTripArea.swift in Sources */,
 				9B1C4DBD29EF1CEC00F03AFF /* InjectionContainer.swift in Sources */,
 				9B82DB7529F978FA00606EE2 /* CIImage+CustomExtension.swift in Sources */,
+				9B12C66D29FA5EB6007B3B3F /* GenerateRecommendation.swift in Sources */,
 				9B983DE029F26A5600BCAD3A /* DestinationImageGenerator.swift in Sources */,
 				9B12C65D29FA478F007B3B3F /* ScrapBook.swift in Sources */,
 				9B1AF19829F23D1000BEF767 /* CoreML+Combine.swift in Sources */,
 				9B1C4D0229EEF03400F03AFF /* AppDelegate.swift in Sources */,
+				9B12C66529FA5C6B007B3B3F /* DestinationRepository.swift in Sources */,
 				9B487FB129EFABE000F5208A /* XCAssets+Generated.swift in Sources */,
 				9B1AF19529F23D1000BEF767 /* UIImage+RawBytes.swift in Sources */,
 				9BB5046929F223E000C0D04C /* UseCase.swift in Sources */,
 				9B487FB229EFABE000F5208A /* Strings+Generated.swift in Sources */,
 				9B1AF18F29F23D1000BEF767 /* Array+Extensions.swift in Sources */,
+				9B12C66B29FA5DF7007B3B3F /* GetTripDestinationByArea.swift in Sources */,
 				9B1AF19729F23D1000BEF767 /* MLModel+Images.swift in Sources */,
 				9B12C65429FA4682007B3B3F /* Destination.swift in Sources */,
 				9B1C4D0429EEF03400F03AFF /* SceneDelegate.swift in Sources */,
 				9111764329F78204007852F7 /* DestinationMigration.swift in Sources */,
 				9B1AF19629F23D1000BEF767 /* MLMultiArray+Helpers.swift in Sources */,
 				9B1AF19229F23D1000BEF767 /* Predictions.swift in Sources */,
+				9B12C66F29FA8E46007B3B3F /* Publishers+CustomExtensions.swift in Sources */,
 				9B1AF19C29F23D1000BEF767 /* CGImage+RawBytes.swift in Sources */,
 				9B1AF19D29F23D1000BEF767 /* MLMultiArray+Image.swift in Sources */,
 				9111763729F69216007852F7 /* DestinationModel.swift in Sources */,
@@ -1709,11 +1738,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B5C5F6A29FAC5DD0032BA64 /* GetTripAreaTests.swift in Sources */,
 				9BBF6D8629F2439A00162C6A /* ImageSegmentorTests.swift in Sources */,
 				9B1C4D1929EEF03500F03AFF /* MemoriaTests.swift in Sources */,
 				9BF0036A29F6C2DE007CD42B /* DestinationImageGeneratorTest.swift in Sources */,
 				9B1C4D1929EEF03500F03AFF /* MemoriaTests.swift in Sources */,
+				9B5C5F6E29FADB870032BA64 /* GenerateRecommendationTests.swift in Sources */,
 				9BF0037329F6D137007CD42B /* GeneratedMocks.swift in Sources */,
+				9B5C5F6C29FAD04F0032BA64 /* GetTripDestinationByAreaTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
