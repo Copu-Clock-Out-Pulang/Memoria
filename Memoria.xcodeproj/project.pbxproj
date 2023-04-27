@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9111763329F690BC007852F7 /* Destinations.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9111763129F690BC007852F7 /* Destinations.xcdatamodeld */; };
-		9111763429F690BC007852F7 /* Destinations.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9111763129F690BC007852F7 /* Destinations.xcdatamodeld */; };
-		9111763529F690BC007852F7 /* Destinations.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9111763129F690BC007852F7 /* Destinations.xcdatamodeld */; };
+		9111763329F690BC007852F7 /* MemoriaCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9111763129F690BC007852F7 /* MemoriaCoreData.xcdatamodeld */; };
+		9111763429F690BC007852F7 /* MemoriaCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9111763129F690BC007852F7 /* MemoriaCoreData.xcdatamodeld */; };
+		9111763529F690BC007852F7 /* MemoriaCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9111763129F690BC007852F7 /* MemoriaCoreData.xcdatamodeld */; };
 		9111763729F69216007852F7 /* DestinationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9111763629F69216007852F7 /* DestinationModel.swift */; };
 		9111763829F69216007852F7 /* DestinationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9111763629F69216007852F7 /* DestinationModel.swift */; };
 		9111763929F69216007852F7 /* DestinationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9111763629F69216007852F7 /* DestinationModel.swift */; };
@@ -713,7 +713,7 @@
 		9B1C4D3229EF057D00F03AFF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				9111763129F690BC007852F7 /* Destinations.xcdatamodeld */,
+				9111763129F690BC007852F7 /* MemoriaCoreData.xcdatamodeld */,
 				9B2C3EE829F0391900FF554C /* DeepLabV3.mlmodel */,
 				9B487FB029EFABE000F5208A /* Strings+Generated.swift */,
 				9B487FAF29EFABE000F5208A /* XCAssets+Generated.swift */,
@@ -1616,7 +1616,7 @@
 				9B1AF19F29F23D1000BEF767 /* CVPixelBuffer+Rotate.swift in Sources */,
 				9B1AF19329F23D1000BEF767 /* UIImage+Extensions.swift in Sources */,
 				9B1AF19B29F23D1000BEF767 /* NonMaxSuppression.swift in Sources */,
-				9111763329F690BC007852F7 /* Destinations.xcdatamodeld in Sources */,
+				9111763329F690BC007852F7 /* MemoriaCoreData.xcdatamodeld in Sources */,
 				9B1AF19929F23D1000BEF767 /* CVPixelBuffer+Create.swift in Sources */,
 				9111763B29F6950D007852F7 /* PersistenceController.swift in Sources */,
 			);
@@ -1629,7 +1629,7 @@
 				9111763829F69216007852F7 /* DestinationModel.swift in Sources */,
 				9111764029F7794F007852F7 /* DestinationViewModel.swift in Sources */,
 				9BBF6D8629F2439A00162C6A /* ImageSegmentorTests.swift in Sources */,
-				9111763429F690BC007852F7 /* Destinations.xcdatamodeld in Sources */,
+				9111763429F690BC007852F7 /* MemoriaCoreData.xcdatamodeld in Sources */,
 				9B1C4D1929EEF03500F03AFF /* MemoriaTests.swift in Sources */,
 				9111763C29F6950D007852F7 /* PersistenceController.swift in Sources */,
 			);
@@ -1642,7 +1642,7 @@
 				9111763929F69216007852F7 /* DestinationModel.swift in Sources */,
 				9111764129F7794F007852F7 /* DestinationViewModel.swift in Sources */,
 				9B1C4D2329EEF03500F03AFF /* MemoriaUITests.swift in Sources */,
-				9111763529F690BC007852F7 /* Destinations.xcdatamodeld in Sources */,
+				9111763529F690BC007852F7 /* MemoriaCoreData.xcdatamodeld in Sources */,
 				9B1C4D2529EEF03500F03AFF /* MemoriaUITestsLaunchTests.swift in Sources */,
 				9111763D29F6950D007852F7 /* PersistenceController.swift in Sources */,
 			);
@@ -1999,13 +1999,13 @@
 /* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
-		9111763129F690BC007852F7 /* Destinations.xcdatamodeld */ = {
+		9111763129F690BC007852F7 /* MemoriaCoreData.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				9111763229F690BC007852F7 /* Destinations.xcdatamodel */,
 			);
 			currentVersion = 9111763229F690BC007852F7 /* Destinations.xcdatamodel */;
-			path = Destinations.xcdatamodeld;
+			path = MemoriaCoreData.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
