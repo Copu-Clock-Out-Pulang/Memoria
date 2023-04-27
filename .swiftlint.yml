@@ -33,7 +33,6 @@ opt_in_rules:
   - fatal_error_message
   - first_where
   - implicitly_unwrapped_optional
-  - indentation_width
   - last_where
   - legacy_random
   - literal_expression_end_indentation
@@ -82,9 +81,7 @@ identifier_name:
     - x
     - y
     - z
-
-indentation_width:
-  indentation_width: 4
+    - to
 
 line_length:
   ignores_urls: true

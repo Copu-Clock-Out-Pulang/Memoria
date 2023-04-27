@@ -20,6 +20,13 @@
 		9111764029F7794F007852F7 /* DestinationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9111763E29F7794F007852F7 /* DestinationViewModel.swift */; };
 		9111764129F7794F007852F7 /* DestinationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9111763E29F7794F007852F7 /* DestinationViewModel.swift */; };
 		9111764329F78204007852F7 /* DestinationMigration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9111764229F78203007852F7 /* DestinationMigration.swift */; };
+		9B12C65429FA4682007B3B3F /* Destination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12C65329FA4682007B3B3F /* Destination.swift */; };
+		9B12C65629FA46E6007B3B3F /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12C65529FA46E6007B3B3F /* Coordinate.swift */; };
+		9B12C65B29FA475E007B3B3F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12C65A29FA475E007B3B3F /* User.swift */; };
+		9B12C65D29FA478F007B3B3F /* ScrapBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12C65C29FA478F007B3B3F /* ScrapBook.swift */; };
+		9B12C65F29FA488C007B3B3F /* ScrapPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12C65E29FA488C007B3B3F /* ScrapPage.swift */; };
+		9B12C66129FA55E2007B3B3F /* Recommendation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12C66029FA55E2007B3B3F /* Recommendation.swift */; };
+		9B12C66329FA574E007B3B3F /* Area.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12C66229FA574E007B3B3F /* Area.swift */; };
 		9B1AF17B29F23C8100BEF767 /* ImageSegmentor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1AF17A29F23C8100BEF767 /* ImageSegmentor.swift */; };
 		9B1AF18F29F23D1000BEF767 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1AF17E29F23D1000BEF767 /* Array+Extensions.swift */; };
 		9B1AF19029F23D1000BEF767 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1AF17F29F23D1000BEF767 /* Math.swift */; };
@@ -52,6 +59,8 @@
 		9B487FAE29EFAB0400F5208A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9B487FAD29EFAB0400F5208A /* Localizable.strings */; };
 		9B487FB129EFABE000F5208A /* XCAssets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B487FAF29EFABE000F5208A /* XCAssets+Generated.swift */; };
 		9B487FB229EFABE000F5208A /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B487FB029EFABE000F5208A /* Strings+Generated.swift */; };
+		9B82DB7529F978FA00606EE2 /* CIImage+CustomExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B82DB7429F978FA00606EE2 /* CIImage+CustomExtension.swift */; };
+		9B983DE029F26A5600BCAD3A /* DestinationImageGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B983DDF29F26A5600BCAD3A /* DestinationImageGenerator.swift */; };
 		9BB5045B29F2225B00C0D04C /* Failure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB5045A29F2225B00C0D04C /* Failure.swift */; };
 		9BB5046029F2230B00C0D04C /* UIImage+CustomExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB5045F29F2230B00C0D04C /* UIImage+CustomExtensions.swift */; };
 		9BB5046329F2235400C0D04C /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 9BB5046229F2235400C0D04C /* Swinject */; };
@@ -59,6 +68,9 @@
 		9BB5046929F223E000C0D04C /* UseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB5046829F223E000C0D04C /* UseCase.swift */; };
 		9BBF6D8629F2439A00162C6A /* ImageSegmentorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBF6D4B29F2439A00162C6A /* ImageSegmentorTests.swift */; };
 		9BEF3E1529F2475B00F0D384 /* DeepLabV3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 9B2C3EE829F0391900FF554C /* DeepLabV3.mlmodel */; };
+		9BF0036A29F6C2DE007CD42B /* DestinationImageGeneratorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF0036929F6C2DE007CD42B /* DestinationImageGeneratorTest.swift */; };
+		9BF0037029F6CC8C007CD42B /* Cuckoo in Frameworks */ = {isa = PBXBuildFile; productRef = 9BF0036F29F6CC8C007CD42B /* Cuckoo */; };
+		9BF0037329F6D137007CD42B /* GeneratedMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF0037229F6D137007CD42B /* GeneratedMocks.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +96,13 @@
 		9111763A29F6950D007852F7 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		9111763E29F7794F007852F7 /* DestinationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationViewModel.swift; sourceTree = "<group>"; };
 		9111764229F78203007852F7 /* DestinationMigration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationMigration.swift; sourceTree = "<group>"; };
+		9B12C65329FA4682007B3B3F /* Destination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Destination.swift; sourceTree = "<group>"; };
+		9B12C65529FA46E6007B3B3F /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
+		9B12C65A29FA475E007B3B3F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		9B12C65C29FA478F007B3B3F /* ScrapBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrapBook.swift; sourceTree = "<group>"; };
+		9B12C65E29FA488C007B3B3F /* ScrapPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrapPage.swift; sourceTree = "<group>"; };
+		9B12C66029FA55E2007B3B3F /* Recommendation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recommendation.swift; sourceTree = "<group>"; };
+		9B12C66229FA574E007B3B3F /* Area.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Area.swift; sourceTree = "<group>"; };
 		9B1AF17A29F23C8100BEF767 /* ImageSegmentor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageSegmentor.swift; sourceTree = "<group>"; };
 		9B1AF17E29F23D1000BEF767 /* Array+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 		9B1AF17F29F23D1000BEF767 /* Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
@@ -121,10 +140,14 @@
 		9B487FAD29EFAB0400F5208A /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		9B487FAF29EFABE000F5208A /* XCAssets+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCAssets+Generated.swift"; sourceTree = "<group>"; };
 		9B487FB029EFABE000F5208A /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
+		9B82DB7429F978FA00606EE2 /* CIImage+CustomExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CIImage+CustomExtension.swift"; sourceTree = "<group>"; };
+		9B983DDF29F26A5600BCAD3A /* DestinationImageGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationImageGenerator.swift; sourceTree = "<group>"; };
 		9BB5045A29F2225B00C0D04C /* Failure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Failure.swift; sourceTree = "<group>"; };
 		9BB5045F29F2230B00C0D04C /* UIImage+CustomExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+CustomExtensions.swift"; sourceTree = "<group>"; };
 		9BB5046829F223E000C0D04C /* UseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCase.swift; sourceTree = "<group>"; };
 		9BBF6D4B29F2439A00162C6A /* ImageSegmentorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageSegmentorTests.swift; sourceTree = "<group>"; };
+		9BF0036929F6C2DE007CD42B /* DestinationImageGeneratorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationImageGeneratorTest.swift; sourceTree = "<group>"; };
+		9BF0037229F6D137007CD42B /* GeneratedMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedMocks.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +164,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BF0037029F6CC8C007CD42B /* Cuckoo in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,10 +178,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9B12C65729FA4745007B3B3F /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				9B12C65829FA474B007B3B3F /* Domain */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		9B12C65829FA474B007B3B3F /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				9B12C65929FA4750007B3B3F /* Entities */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		9B12C65929FA4750007B3B3F /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				9B12C65329FA4682007B3B3F /* Destination.swift */,
+				9B12C65529FA46E6007B3B3F /* Coordinate.swift */,
+				9B12C65A29FA475E007B3B3F /* User.swift */,
+				9B12C65C29FA478F007B3B3F /* ScrapBook.swift */,
+				9B12C65E29FA488C007B3B3F /* ScrapPage.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
 		9B1AF17929F23C8100BEF767 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
 				9B1AF17A29F23C8100BEF767 /* ImageSegmentor.swift */,
+				9B983DDF29F26A5600BCAD3A /* DestinationImageGenerator.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -287,6 +340,8 @@
 		9B1AF1AB29F23D9800BEF767 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				9B12C66029FA55E2007B3B3F /* Recommendation.swift */,
+				9B12C66229FA574E007B3B3F /* Area.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -673,6 +728,7 @@
 		9B1C4D0029EEF03400F03AFF /* Memoria */ = {
 			isa = PBXGroup;
 			children = (
+				9B12C65729FA4745007B3B3F /* Shared */,
 				9B1AF17C29F23D1000BEF767 /* External */,
 				9B1C4D3429EF059B00F03AFF /* Features */,
 				9B1C4D3329EF059300F03AFF /* Core */,
@@ -688,6 +744,7 @@
 			children = (
 				9BBF6CF029F2439A00162C6A /* Features */,
 				9B1C4D1829EEF03500F03AFF /* MemoriaTests.swift */,
+				9BF0037229F6D137007CD42B /* GeneratedMocks.swift */,
 			);
 			path = MemoriaTests;
 			sourceTree = "<group>";
@@ -770,6 +827,7 @@
 			isa = PBXGroup;
 			children = (
 				9BB5045F29F2230B00C0D04C /* UIImage+CustomExtensions.swift */,
+				9B82DB7429F978FA00606EE2 /* CIImage+CustomExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1315,6 +1373,7 @@
 			isa = PBXGroup;
 			children = (
 				9BBF6D4B29F2439A00162C6A /* ImageSegmentorTests.swift */,
+				9BF0036929F6C2DE007CD42B /* DestinationImageGeneratorTest.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -1451,6 +1510,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9B1C4D2B29EEF03500F03AFF /* Build configuration list for PBXNativeTarget "MemoriaTests" */;
 			buildPhases = (
+				9BF0037129F6CCE7007CD42B /* Generate Mocks */,
 				9B1C4D1029EEF03500F03AFF /* Sources */,
 				9B1C4D1129EEF03500F03AFF /* Frameworks */,
 				9B1C4D1229EEF03500F03AFF /* Resources */,
@@ -1461,6 +1521,9 @@
 				9B1C4D1629EEF03500F03AFF /* PBXTargetDependency */,
 			);
 			name = MemoriaTests;
+			packageProductDependencies = (
+				9BF0036F29F6CC8C007CD42B /* Cuckoo */,
+			);
 			productName = MemoriaTests;
 			productReference = 9B1C4D1429EEF03500F03AFF /* MemoriaTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -1518,6 +1581,7 @@
 			packageReferences = (
 				9BB5046129F2235400C0D04C /* XCRemoteSwiftPackageReference "Swinject" */,
 				9BB5046429F2237D00C0D04C /* XCRemoteSwiftPackageReference "SwinjectAutoregistration" */,
+				9BF0036E29F6CC8C007CD42B /* XCRemoteSwiftPackageReference "Cuckoo" */,
 			);
 			productRefGroup = 9B1C4CFF29EEF03400F03AFF /* Products */;
 			projectDirPath = "";
@@ -1578,6 +1642,24 @@
 			shellPath = /bin/sh;
 			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
+		9BF0037129F6CCE7007CD42B /* Generate Mocks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Generate Mocks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ $ACTION == \"indexbuild\" ]; then\n  echo \"Not running Cuckoo generator during indexing.\"\n  exit 0\nfi\n\n# Skip for preview builds\nif [ \"${ENABLE_PREVIEWS}\" = \"YES\" ]; then\n  echo \"Not running Cuckoo generator during preview builds.\"\n  exit 0\nfi\n\n# Define output file. Change \"${PROJECT_DIR}/${PROJECT_NAME}Tests\" to your test's root source folder, if it's not the default name.\nOUTPUT_FILE=\"${PROJECT_DIR}/${PROJECT_NAME}Tests/GeneratedMocks.swift\"\necho \"Generated Mocks File = ${OUTPUT_FILE}\"\n\n# Define input directory. Change \"${PROJECT_DIR}/${PROJECT_NAME}\" to your project's root source folder, if it's not the default name.\nINPUT_DIR=\"${PROJECT_DIR}/${PROJECT_NAME}\"\necho \"Mocks Input Directory = ${INPUT_DIR}\"\n\n# Generate mock files, include as many input files as you'd like to create mocks for.\n\"${PROJECT_DIR}/run\" --download generate --testable \"${PROJECT_NAME}\" \\\n--output \"${OUTPUT_FILE}\" \\\n\"${INPUT_DIR}/Features/ImageGenerator/Domain/ImageSegmentor.swift\"\n# ... and so forth, the last line should never end with a backslash\n\n# After running once, locate `GeneratedMocks.swift` and drag it into your Xcode test target group.\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1585,10 +1667,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B12C66329FA574E007B3B3F /* Area.swift in Sources */,
 				9BB5045B29F2225B00C0D04C /* Failure.swift in Sources */,
 				9B1AF19029F23D1000BEF767 /* Math.swift in Sources */,
 				9B1C4DB429EF19E400F03AFF /* SplashViewController.swift in Sources */,
 				9B1C4DBD29EF1CEC00F03AFF /* InjectionContainer.swift in Sources */,
+				9B82DB7529F978FA00606EE2 /* CIImage+CustomExtension.swift in Sources */,
+				9B983DE029F26A5600BCAD3A /* DestinationImageGenerator.swift in Sources */,
+				9B12C65D29FA478F007B3B3F /* ScrapBook.swift in Sources */,
 				9B1AF19829F23D1000BEF767 /* CoreML+Combine.swift in Sources */,
 				9B1C4D0229EEF03400F03AFF /* AppDelegate.swift in Sources */,
 				9B487FB129EFABE000F5208A /* XCAssets+Generated.swift in Sources */,
@@ -1597,6 +1683,7 @@
 				9B487FB229EFABE000F5208A /* Strings+Generated.swift in Sources */,
 				9B1AF18F29F23D1000BEF767 /* Array+Extensions.swift in Sources */,
 				9B1AF19729F23D1000BEF767 /* MLModel+Images.swift in Sources */,
+				9B12C65429FA4682007B3B3F /* Destination.swift in Sources */,
 				9B1C4D0429EEF03400F03AFF /* SceneDelegate.swift in Sources */,
 				9111764329F78204007852F7 /* DestinationMigration.swift in Sources */,
 				9B1AF19629F23D1000BEF767 /* MLMultiArray+Helpers.swift in Sources */,
@@ -1609,14 +1696,18 @@
 				9B1AF19129F23D1000BEF767 /* UIImage+CVPixelBuffer.swift in Sources */,
 				9B1AF17B29F23C8100BEF767 /* ImageSegmentor.swift in Sources */,
 				9B1AF19E29F23D1000BEF767 /* CVPixelBuffer+Resize.swift in Sources */,
+				9B12C65B29FA475E007B3B3F /* User.swift in Sources */,
 				9B1AF19A29F23D1000BEF767 /* CGImage+CVPixelBuffer.swift in Sources */,
+				9B12C66129FA55E2007B3B3F /* Recommendation.swift in Sources */,
 				9BB5046029F2230B00C0D04C /* UIImage+CustomExtensions.swift in Sources */,
+				9B12C65F29FA488C007B3B3F /* ScrapPage.swift in Sources */,
 				9BEF3E1529F2475B00F0D384 /* DeepLabV3.mlmodel in Sources */,
 				9B1AF19429F23D1000BEF767 /* CGImagePropertyOrientation.swift in Sources */,
 				9B1AF19F29F23D1000BEF767 /* CVPixelBuffer+Rotate.swift in Sources */,
 				9B1AF19329F23D1000BEF767 /* UIImage+Extensions.swift in Sources */,
 				9B1AF19B29F23D1000BEF767 /* NonMaxSuppression.swift in Sources */,
 				9111763329F690BC007852F7 /* MemoriaCoreData.xcdatamodeld in Sources */,
+				9B12C65629FA46E6007B3B3F /* Coordinate.swift in Sources */,
 				9B1AF19929F23D1000BEF767 /* CVPixelBuffer+Create.swift in Sources */,
 				9111763B29F6950D007852F7 /* PersistenceController.swift in Sources */,
 			);
@@ -1632,6 +1723,9 @@
 				9111763429F690BC007852F7 /* MemoriaCoreData.xcdatamodeld in Sources */,
 				9B1C4D1929EEF03500F03AFF /* MemoriaTests.swift in Sources */,
 				9111763C29F6950D007852F7 /* PersistenceController.swift in Sources */,
+				9BF0036A29F6C2DE007CD42B /* DestinationImageGeneratorTest.swift in Sources */,
+				9B1C4D1929EEF03500F03AFF /* MemoriaTests.swift in Sources */,
+				9BF0037329F6D137007CD42B /* GeneratedMocks.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1983,6 +2077,14 @@
 				minimumVersion = 2.8.3;
 			};
 		};
+		9BF0036E29F6CC8C007CD42B /* XCRemoteSwiftPackageReference "Cuckoo" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Brightify/Cuckoo.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.9.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1995,6 +2097,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9BB5046429F2237D00C0D04C /* XCRemoteSwiftPackageReference "SwinjectAutoregistration" */;
 			productName = SwinjectAutoregistration;
+		};
+		9BF0036F29F6CC8C007CD42B /* Cuckoo */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9BF0036E29F6CC8C007CD42B /* XCRemoteSwiftPackageReference "Cuckoo" */;
+			productName = Cuckoo;
 		};
 /* End XCSwiftPackageProductDependency section */
 
