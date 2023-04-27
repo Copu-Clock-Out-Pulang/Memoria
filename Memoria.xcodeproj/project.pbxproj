@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9111763329F690BC007852F7 /* MemoriaCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9111763129F690BC007852F7 /* MemoriaCoreData.xcdatamodeld */; };
+		9111763729F69216007852F7 /* DestinationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9111763629F69216007852F7 /* DestinationModel.swift */; };
+		9111763B29F6950D007852F7 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9111763A29F6950D007852F7 /* PersistenceController.swift */; };
+		9111763F29F7794F007852F7 /* DestinationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9111763E29F7794F007852F7 /* DestinationViewModel.swift */; };
+		9111764329F78204007852F7 /* DestinationMigration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9111764229F78203007852F7 /* DestinationMigration.swift */; };
 		9B12C65429FA4682007B3B3F /* Destination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12C65329FA4682007B3B3F /* Destination.swift */; };
 		9B12C65629FA46E6007B3B3F /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12C65529FA46E6007B3B3F /* Coordinate.swift */; };
 		9B12C65B29FA475E007B3B3F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12C65A29FA475E007B3B3F /* User.swift */; };
@@ -78,6 +83,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9111763229F690BC007852F7 /* Destinations.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Destinations.xcdatamodel; sourceTree = "<group>"; };
+		9111763629F69216007852F7 /* DestinationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationModel.swift; sourceTree = "<group>"; };
+		9111763A29F6950D007852F7 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		9111763E29F7794F007852F7 /* DestinationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationViewModel.swift; sourceTree = "<group>"; };
+		9111764229F78203007852F7 /* DestinationMigration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationMigration.swift; sourceTree = "<group>"; };
 		9B12C65329FA4682007B3B3F /* Destination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Destination.swift; sourceTree = "<group>"; };
 		9B12C65529FA46E6007B3B3F /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
 		9B12C65A29FA475E007B3B3F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -242,6 +252,7 @@
 		9B1AF1A129F23D9800BEF767 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				9111763E29F7794F007852F7 /* DestinationViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -273,6 +284,8 @@
 		9B1AF1A529F23D9800BEF767 /* Datasources */ = {
 			isa = PBXGroup;
 			children = (
+				9111763A29F6950D007852F7 /* PersistenceController.swift */,
+				9111764229F78203007852F7 /* DestinationMigration.swift */,
 			);
 			path = Datasources;
 			sourceTree = "<group>";
@@ -287,6 +300,7 @@
 		9B1AF1A729F23D9800BEF767 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				9111763629F69216007852F7 /* DestinationModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -748,6 +762,7 @@
 		9B1C4D3229EF057D00F03AFF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9111763129F690BC007852F7 /* MemoriaCoreData.xcdatamodeld */,
 				9B2C3EE829F0391900FF554C /* DeepLabV3.mlmodel */,
 				9B487FB029EFABE000F5208A /* Strings+Generated.swift */,
 				9B487FAF29EFABE000F5208A /* XCAssets+Generated.swift */,
@@ -1662,11 +1677,14 @@
 				9B1AF19729F23D1000BEF767 /* MLModel+Images.swift in Sources */,
 				9B12C65429FA4682007B3B3F /* Destination.swift in Sources */,
 				9B1C4D0429EEF03400F03AFF /* SceneDelegate.swift in Sources */,
+				9111764329F78204007852F7 /* DestinationMigration.swift in Sources */,
 				9B1AF19629F23D1000BEF767 /* MLMultiArray+Helpers.swift in Sources */,
 				9B1AF19229F23D1000BEF767 /* Predictions.swift in Sources */,
 				9B1AF19C29F23D1000BEF767 /* CGImage+RawBytes.swift in Sources */,
 				9B1AF19D29F23D1000BEF767 /* MLMultiArray+Image.swift in Sources */,
+				9111763729F69216007852F7 /* DestinationModel.swift in Sources */,
 				9B1C4DB629EF1A1800F03AFF /* HomeViewController.swift in Sources */,
+				9111763F29F7794F007852F7 /* DestinationViewModel.swift in Sources */,
 				9B1AF19129F23D1000BEF767 /* UIImage+CVPixelBuffer.swift in Sources */,
 				9B1AF17B29F23C8100BEF767 /* ImageSegmentor.swift in Sources */,
 				9B1AF19E29F23D1000BEF767 /* CVPixelBuffer+Resize.swift in Sources */,
@@ -1680,8 +1698,10 @@
 				9B1AF19F29F23D1000BEF767 /* CVPixelBuffer+Rotate.swift in Sources */,
 				9B1AF19329F23D1000BEF767 /* UIImage+Extensions.swift in Sources */,
 				9B1AF19B29F23D1000BEF767 /* NonMaxSuppression.swift in Sources */,
+				9111763329F690BC007852F7 /* MemoriaCoreData.xcdatamodeld in Sources */,
 				9B12C65629FA46E6007B3B3F /* Coordinate.swift in Sources */,
 				9B1AF19929F23D1000BEF767 /* CVPixelBuffer+Create.swift in Sources */,
+				9111763B29F6950D007852F7 /* PersistenceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1690,6 +1710,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9BBF6D8629F2439A00162C6A /* ImageSegmentorTests.swift in Sources */,
+				9B1C4D1929EEF03500F03AFF /* MemoriaTests.swift in Sources */,
 				9BF0036A29F6C2DE007CD42B /* DestinationImageGeneratorTest.swift in Sources */,
 				9B1C4D1929EEF03500F03AFF /* MemoriaTests.swift in Sources */,
 				9BF0037329F6D137007CD42B /* GeneratedMocks.swift in Sources */,
@@ -2067,6 +2088,19 @@
 			productName = Cuckoo;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		9111763129F690BC007852F7 /* MemoriaCoreData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9111763229F690BC007852F7 /* Destinations.xcdatamodel */,
+			);
+			currentVersion = 9111763229F690BC007852F7 /* Destinations.xcdatamodel */;
+			path = MemoriaCoreData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 9B1C4CF629EEF03400F03AFF /* Project object */;
 }
