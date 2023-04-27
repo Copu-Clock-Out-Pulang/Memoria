@@ -6,3 +6,21 @@
 //
 
 import Foundation
+
+struct User: Equatable, Identifiable {
+    let id: UUID
+    let name: String
+}
+
+
+extension User {
+    func with(
+        id: UUID?? = nil,
+        name: String?? = nil
+    ) -> User {
+        User(
+            id: (id ?? self.id)!,
+            name: (name ?? self.name)!
+        )
+    }
+}

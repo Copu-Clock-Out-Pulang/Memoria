@@ -6,3 +6,21 @@
 //
 
 import Foundation
+
+struct Area: Equatable, Identifiable {
+    let id: UUID
+    let name: String
+    
+}
+
+extension Area {
+    func with(
+        id: UUID?? = nil,
+        name: String?? = nil
+    ) -> Area {
+        Area(
+            id: (id ?? self.id)!,
+            name: (name ?? self.name)!
+        )
+    }
+}
