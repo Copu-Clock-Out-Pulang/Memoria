@@ -19,14 +19,14 @@ struct DestinationModel: Identifiable {
     let instagram: String?
 }
 
-extension DestinationCoreDataModel{
+extension DestinationCoreDataModel {
     func toModel() -> DestinationModel? {
         guard let id = self.id,
-            let name = self.name,
-            let photo = self.photo,
-            let address = self.address,
-            let latitude = self.latitude as? Double,
-            let longitude = self.longitude as? Double
+              let name = self.name,
+              let photo = self.photo,
+              let address = self.address,
+              let latitude = self.latitude as? Double,
+              let longitude = self.longitude as? Double
         else {
             return nil
         }
