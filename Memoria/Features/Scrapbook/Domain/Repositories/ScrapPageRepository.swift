@@ -8,12 +8,15 @@
 import Foundation
 import Combine
 
-protocol ScrapPageManager {
-    
-    func AddScrapPage()
-    
-    func EditScrapPage()
-    
-    func DeleteScrapPage()
-    
+protocol ScrapPageRepository {
+
+    func addScrapPage(scrapPage: ScrapPage) ->
+    AnyPublisher<ScrapPage, Failure>
+
+    func editScrapPage(scrapPage: ScrapPage) ->
+    AnyPublisher<ScrapPage, Failure>
+
+    func deleteScrapPage(scrapPage: ScrapPage) ->
+    AnyPublisher<Void, Failure>
+
 }
