@@ -8,5 +8,14 @@
 import Foundation
 
 enum Failure: Error {
+    // MARK: - Image Generation Failures
     case imageGenerationFailure
+
+    // MARK: - Destination Failures
+    case generateRecommendationFailure
+    case fetchAreaFailure
+    case fetchDestinationFailure
+
+    // MARK: - ScrapBook Failures
+    case createScrapBookFailure
 }
