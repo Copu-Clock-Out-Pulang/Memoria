@@ -32,8 +32,8 @@ final class GenerateRecommendationTests: XCTestCase {
            // Given
         let familyPhoto = I.imageTest.image
            let destinations = [
-            Destination(id: UUID(), area: Area(id: UUID(), name: "Jabodetabek"), name: "Ancol", description: "Lorem ipsum", photo: "ancol", address: "Jakarta Utara", coordinate: Coordinate(latitude: 1.000, longitude: 1.000), ticketPrice: "150000", webstite: nil, instagram: nil),
-            Destination(id: UUID(), area: Area(id: UUID(), name: "Jabodetabek"), name: "Mall Pondok Indah", description: "Lorem ipsum", photo: "pim", address: "Jakarta Selaran", coordinate: Coordinate(latitude: 2.000, longitude: 2.000), ticketPrice: nil, webstite: nil, instagram: nil)
+            Destination(id: UUID(), area: Area(id: UUID(), name: "Jabodetabek", province: "Jakarta", description: "desc", image: "image"), name: "Ancol", description: "Lorem ipsum", photo: "ancol", address: "Jakarta Utara", coordinate: Coordinate(latitude: 1.000, longitude: 1.000), ticketPrice: "150000", webstite: nil, instagram: nil),
+            Destination(id: UUID(), area: Area(id: UUID(), name: "Jabodetabek", province: "Jakarta", description: "desc", image: "image"), name: "Mall Pondok Indah", description: "Lorem ipsum", photo: "pim", address: "Jakarta Selaran", coordinate: Coordinate(latitude: 2.000, longitude: 2.000), ticketPrice: nil, webstite: nil, instagram: nil)
            ]
            let expectedRecommendations = destinations.map { destination in
                let destinationPhoto = I.outputTest.image

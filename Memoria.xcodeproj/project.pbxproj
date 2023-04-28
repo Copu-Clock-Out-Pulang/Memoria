@@ -59,6 +59,7 @@
 		9B5C5F6A29FAC5DD0032BA64 /* GetTripAreaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5C5F6929FAC5DD0032BA64 /* GetTripAreaTests.swift */; };
 		9B5C5F6C29FAD04F0032BA64 /* GetTripDestinationByAreaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5C5F6B29FAD04F0032BA64 /* GetTripDestinationByAreaTests.swift */; };
 		9B5C5F6E29FADB870032BA64 /* GenerateRecommendationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5C5F6D29FADB870032BA64 /* GenerateRecommendationTests.swift */; };
+		9B5C5F7029FAE0920032BA64 /* CreateScrapBookForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5C5F6F29FAE0920032BA64 /* CreateScrapBookForm.swift */; };
 		9B82DB7529F978FA00606EE2 /* CIImage+CustomExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B82DB7429F978FA00606EE2 /* CIImage+CustomExtension.swift */; };
 		9B983DE029F26A5600BCAD3A /* DestinationImageGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B983DDF29F26A5600BCAD3A /* DestinationImageGenerator.swift */; };
 		9BB5045B29F2225B00C0D04C /* Failure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB5045A29F2225B00C0D04C /* Failure.swift */; };
@@ -67,6 +68,9 @@
 		9BB5046629F2237D00C0D04C /* SwinjectAutoregistration in Frameworks */ = {isa = PBXBuildFile; productRef = 9BB5046529F2237D00C0D04C /* SwinjectAutoregistration */; };
 		9BB5046929F223E000C0D04C /* UseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB5046829F223E000C0D04C /* UseCase.swift */; };
 		9BBF6D8629F2439A00162C6A /* ImageSegmentorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBF6D4B29F2439A00162C6A /* ImageSegmentorTests.swift */; };
+		9BDA3E5129FBD8B9002D7227 /* ScrapBookRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDA3E5029FBD8B9002D7227 /* ScrapBookRepository.swift */; };
+		9BDA3E5329FBD93D002D7227 /* CreateScrapBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDA3E5229FBD93D002D7227 /* CreateScrapBook.swift */; };
+		9BDA3E5529FBDA51002D7227 /* CreateScrapBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDA3E5429FBDA51002D7227 /* CreateScrapBook.swift */; };
 		9BEF3E1529F2475B00F0D384 /* DeepLabV3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 9B2C3EE829F0391900FF554C /* DeepLabV3.mlmodel */; };
 		9BF0036A29F6C2DE007CD42B /* DestinationImageGeneratorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF0036929F6C2DE007CD42B /* DestinationImageGeneratorTest.swift */; };
 		9BF0037029F6CC8C007CD42B /* Cuckoo in Frameworks */ = {isa = PBXBuildFile; productRef = 9BF0036F29F6CC8C007CD42B /* Cuckoo */; };
@@ -148,12 +152,16 @@
 		9B5C5F6929FAC5DD0032BA64 /* GetTripAreaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTripAreaTests.swift; sourceTree = "<group>"; };
 		9B5C5F6B29FAD04F0032BA64 /* GetTripDestinationByAreaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTripDestinationByAreaTests.swift; sourceTree = "<group>"; };
 		9B5C5F6D29FADB870032BA64 /* GenerateRecommendationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateRecommendationTests.swift; sourceTree = "<group>"; };
+		9B5C5F6F29FAE0920032BA64 /* CreateScrapBookForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateScrapBookForm.swift; sourceTree = "<group>"; };
 		9B82DB7429F978FA00606EE2 /* CIImage+CustomExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CIImage+CustomExtension.swift"; sourceTree = "<group>"; };
 		9B983DDF29F26A5600BCAD3A /* DestinationImageGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationImageGenerator.swift; sourceTree = "<group>"; };
 		9BB5045A29F2225B00C0D04C /* Failure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Failure.swift; sourceTree = "<group>"; };
 		9BB5045F29F2230B00C0D04C /* UIImage+CustomExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+CustomExtensions.swift"; sourceTree = "<group>"; };
 		9BB5046829F223E000C0D04C /* UseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCase.swift; sourceTree = "<group>"; };
 		9BBF6D4B29F2439A00162C6A /* ImageSegmentorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageSegmentorTests.swift; sourceTree = "<group>"; };
+		9BDA3E5029FBD8B9002D7227 /* ScrapBookRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrapBookRepository.swift; sourceTree = "<group>"; };
+		9BDA3E5229FBD93D002D7227 /* CreateScrapBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateScrapBook.swift; sourceTree = "<group>"; };
+		9BDA3E5429FBDA51002D7227 /* CreateScrapBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateScrapBook.swift; sourceTree = "<group>"; };
 		9BF0036929F6C2DE007CD42B /* DestinationImageGeneratorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationImageGeneratorTest.swift; sourceTree = "<group>"; };
 		9BF0037229F6D137007CD42B /* GeneratedMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedMocks.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -550,6 +558,7 @@
 		9B1AF1C429F23EDF00BEF767 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				9BDA3E5029FBD8B9002D7227 /* ScrapBookRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -557,6 +566,7 @@
 		9B1AF1C529F23EDF00BEF767 /* Usecases */ = {
 			isa = PBXGroup;
 			children = (
+				9BDA3E5229FBD93D002D7227 /* CreateScrapBook.swift */,
 			);
 			path = Usecases;
 			sourceTree = "<group>";
@@ -564,6 +574,7 @@
 		9B1AF1C629F23EDF00BEF767 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				9B5C5F6F29FAE0920032BA64 /* CreateScrapBookForm.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -1023,6 +1034,7 @@
 		9BBF6CFC29F2439A00162C6A /* Usecases */ = {
 			isa = PBXGroup;
 			children = (
+				9BDA3E5429FBDA51002D7227 /* CreateScrapBook.swift */,
 			);
 			path = Usecases;
 			sourceTree = "<group>";
@@ -1674,7 +1686,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ $ACTION == \"indexbuild\" ]; then\n  echo \"Not running Cuckoo generator during indexing.\"\n  exit 0\nfi\n\n# Skip for preview builds\nif [ \"${ENABLE_PREVIEWS}\" = \"YES\" ]; then\n  echo \"Not running Cuckoo generator during preview builds.\"\n  exit 0\nfi\n\n# Define output file. Change \"${PROJECT_DIR}/${PROJECT_NAME}Tests\" to your test's root source folder, if it's not the default name.\nOUTPUT_FILE=\"${PROJECT_DIR}/${PROJECT_NAME}Tests/GeneratedMocks.swift\"\necho \"Generated Mocks File = ${OUTPUT_FILE}\"\n\n# Define input directory. Change \"${PROJECT_DIR}/${PROJECT_NAME}\" to your project's root source folder, if it's not the default name.\nINPUT_DIR=\"${PROJECT_DIR}/${PROJECT_NAME}\"\necho \"Mocks Input Directory = ${INPUT_DIR}\"\n\n# Generate mock files, include as many input files as you'd like to create mocks for.\n\"${PROJECT_DIR}/run\" --download generate --testable \"${PROJECT_NAME}\" \\\n--output \"${OUTPUT_FILE}\" \\\n\"${INPUT_DIR}/Features/ImageGenerator/Domain/ImageSegmentor.swift\" \\\n\"${INPUT_DIR}/Features/Destination/Domain/Repositories/DestinationRepository.swift\" \\\n\"${INPUT_DIR}/Features/ImageGenerator/Domain/DestinationImageGenerator.swift\"\n# ... and so forth, the last line should never end with a backslash\n\n# After running once, locate `GeneratedMocks.swift` and drag it into your Xcode test target group.\n";
+			shellScript = "if [ $ACTION == \"indexbuild\" ]; then\n  echo \"Not running Cuckoo generator during indexing.\"\n  exit 0\nfi\n\n# Skip for preview builds\nif [ \"${ENABLE_PREVIEWS}\" = \"YES\" ]; then\n  echo \"Not running Cuckoo generator during preview builds.\"\n  exit 0\nfi\n\n# Define output file. Change \"${PROJECT_DIR}/${PROJECT_NAME}Tests\" to your test's root source folder, if it's not the default name.\nOUTPUT_FILE=\"${PROJECT_DIR}/${PROJECT_NAME}Tests/GeneratedMocks.swift\"\necho \"Generated Mocks File = ${OUTPUT_FILE}\"\n\n# Define input directory. Change \"${PROJECT_DIR}/${PROJECT_NAME}\" to your project's root source folder, if it's not the default name.\nINPUT_DIR=\"${PROJECT_DIR}/${PROJECT_NAME}\"\necho \"Mocks Input Directory = ${INPUT_DIR}\"\n\n# Generate mock files, include as many input files as you'd like to create mocks for.\n\"${PROJECT_DIR}/run\" --download generate --testable \"${PROJECT_NAME}\" \\\n--output \"${OUTPUT_FILE}\" \\\n\"${INPUT_DIR}/Features/ImageGenerator/Domain/ImageSegmentor.swift\" \\\n\"${INPUT_DIR}/Features/Destination/Domain/Repositories/DestinationRepository.swift\" \\\n\"${INPUT_DIR}/Features/ImageGenerator/Domain/DestinationImageGenerator.swift\" \\\n\"${INPUT_DIR}/Features/Scrapbook/Domain/Repositories/ScrapBookRepository.swift\"\n# ... and so forth, the last line should never end with a backslash\n\n# After running once, locate `GeneratedMocks.swift` and drag it into your Xcode test target group.\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1685,6 +1697,8 @@
 			files = (
 				9B12C66329FA574E007B3B3F /* Area.swift in Sources */,
 				9BB5045B29F2225B00C0D04C /* Failure.swift in Sources */,
+				9BDA3E5129FBD8B9002D7227 /* ScrapBookRepository.swift in Sources */,
+				9BDA3E5329FBD93D002D7227 /* CreateScrapBook.swift in Sources */,
 				9B1AF19029F23D1000BEF767 /* Math.swift in Sources */,
 				9B1C4DB429EF19E400F03AFF /* SplashViewController.swift in Sources */,
 				9B12C66929FA5D44007B3B3F /* GetTripArea.swift in Sources */,
@@ -1716,6 +1730,7 @@
 				9111763F29F7794F007852F7 /* DestinationViewModel.swift in Sources */,
 				9B1AF19129F23D1000BEF767 /* UIImage+CVPixelBuffer.swift in Sources */,
 				9B1AF17B29F23C8100BEF767 /* ImageSegmentor.swift in Sources */,
+				9B5C5F7029FAE0920032BA64 /* CreateScrapBookForm.swift in Sources */,
 				9B1AF19E29F23D1000BEF767 /* CVPixelBuffer+Resize.swift in Sources */,
 				9B12C65B29FA475E007B3B3F /* User.swift in Sources */,
 				9B1AF19A29F23D1000BEF767 /* CGImage+CVPixelBuffer.swift in Sources */,
@@ -1741,6 +1756,7 @@
 				9B5C5F6A29FAC5DD0032BA64 /* GetTripAreaTests.swift in Sources */,
 				9BBF6D8629F2439A00162C6A /* ImageSegmentorTests.swift in Sources */,
 				9B1C4D1929EEF03500F03AFF /* MemoriaTests.swift in Sources */,
+				9BDA3E5529FBDA51002D7227 /* CreateScrapBook.swift in Sources */,
 				9BF0036A29F6C2DE007CD42B /* DestinationImageGeneratorTest.swift in Sources */,
 				9B1C4D1929EEF03500F03AFF /* MemoriaTests.swift in Sources */,
 				9B5C5F6E29FADB870032BA64 /* GenerateRecommendationTests.swift in Sources */,

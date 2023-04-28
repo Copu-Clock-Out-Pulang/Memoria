@@ -14,10 +14,11 @@ struct ScrapBook: Equatable, Identifiable {
     let scrapPages: [ScrapPage]
     let quote: String
     let name: String
-    let date: Date
+    let startDate: Date?
+    let endDate: Date?
     let createdAt: Date
     let updatedAt: Date
-    
+
 }
 
 extension ScrapBook {
@@ -28,7 +29,8 @@ extension ScrapBook {
         scrapPages: [ScrapPage]?? = nil,
         quote: String?? = nil,
         name: String?? = nil,
-        date: Date?? = nil,
+        startDate: Date?? = nil,
+        endDate: Date?? = nil,
         createdAt: Date?? = nil,
         updatedAt: Date?? = nil
     ) -> ScrapBook {
@@ -39,7 +41,8 @@ extension ScrapBook {
             scrapPages: (scrapPages ?? self.scrapPages)!,
             quote: (quote ?? self.quote)!,
             name: (name ?? self.name)!,
-            date: (date ?? self.date)!,
+            startDate: startDate ?? self.startDate,
+            endDate: endDate ?? self.endDate,
             createdAt: (createdAt ?? self.createdAt)!,
             updatedAt: (updatedAt ?? self.updatedAt)!
         )

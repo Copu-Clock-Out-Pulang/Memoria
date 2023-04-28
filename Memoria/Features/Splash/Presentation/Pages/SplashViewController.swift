@@ -8,11 +8,11 @@
 import UIKit
 
 class SplashViewController: UIViewController {
-    
-    //Migration starts here (LightWeight)
-    
-    //below are the codes for debugging purpose
-    
+
+    // Migration starts here (LightWeight)
+
+    // below are the codes for debugging purpose
+
     let destination1 = DestinationModel(
         id: UUID(),
         name: "Eiffel Tower",
@@ -23,7 +23,7 @@ class SplashViewController: UIViewController {
         ticketPrice: "€16",
         website: "https://www.toureiffel.paris/en",
         instagram: "@toureiffel")
-    
+
     let destination2 = DestinationModel(
         id: UUID(),
         name: "Statue of Liberty",
@@ -34,7 +34,7 @@ class SplashViewController: UIViewController {
         ticketPrice: "$18.50",
         website: "https://www.nps.gov/stli/index.htm",
         instagram: "@statueoflibertynyc")
-    
+
     let destination3 = DestinationModel(
         id: UUID(),
         name: "Great Wall of China",
@@ -51,22 +51,22 @@ class SplashViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBlue
-        
-//     Create the first destination
-    let destination1CD = migration.createDestination(from: destination1)
-    if destination1CD != nil {
-        print("Successfully created destination with id \(destination1CD!.id)")
-    }
-    // Create the second destination
-    let destination2CD = migration.createDestination(from: destination2)
-    if destination2CD != nil {
-        print("Successfully created destination with id \(destination2CD!.id)")
-    }
-    // Create the third destination
-    let destination3CD = migration.createDestination(from: destination3)
-    if destination3CD != nil {
-        print("Successfully created destination with id \(destination3CD!.id)")
-    }
+
+        //     Create the first destination
+        let destination1CD = migration.createDestination(from: destination1)
+        if destination1CD != nil {
+            print("Successfully created destination with id \(destination1CD!.id)")
+        }
+        // Create the second destination
+        let destination2CD = migration.createDestination(from: destination2)
+        if destination2CD != nil {
+            print("Successfully created destination with id \(destination2CD!.id)")
+        }
+        // Create the third destination
+        let destination3CD = migration.createDestination(from: destination3)
+        if destination3CD != nil {
+            print("Successfully created destination with id \(destination3CD!.id)")
+        }
 
     }
 }

@@ -1,4 +1,4 @@
-// MARK: - Mocks generated from file: Memoria/Features/Destination/Domain/Repositories/DestinationRepository.swift at 2023-04-27 16:49:04 +0000
+// MARK: - Mocks generated from file: Memoria/Features/Destination/Domain/Repositories/DestinationRepository.swift at 2023-04-28 15:10:57 +0000
 
 //
 //  File.swift
@@ -184,7 +184,7 @@ import Foundation
 
 
 
-// MARK: - Mocks generated from file: Memoria/Features/ImageGenerator/Domain/DestinationImageGenerator.swift at 2023-04-27 16:49:04 +0000
+// MARK: - Mocks generated from file: Memoria/Features/ImageGenerator/Domain/DestinationImageGenerator.swift at 2023-04-28 15:10:57 +0000
 
 //
 //  DestinationImageGenerator.swift
@@ -440,7 +440,7 @@ import UIKit
 
 
 
-// MARK: - Mocks generated from file: Memoria/Features/ImageGenerator/Domain/ImageSegmentor.swift at 2023-04-27 16:49:04 +0000
+// MARK: - Mocks generated from file: Memoria/Features/ImageGenerator/Domain/ImageSegmentor.swift at 2023-04-28 15:10:57 +0000
 
 //
 //  ImageSegmentor.swift
@@ -688,6 +688,141 @@ import Vision
     
      override func detectPerson(input: UIImage?) -> AnyPublisher<UIImage, Failure>  {
         return DefaultValueRegistry.defaultValue(for: (AnyPublisher<UIImage, Failure>).self)
+    }
+    
+    
+}
+
+
+
+
+
+// MARK: - Mocks generated from file: Memoria/Features/Scrapbook/Domain/Repositories/ScrapBookRepository.swift at 2023-04-28 15:10:57 +0000
+
+//
+//  ScrapBookRepository.swift
+//  Memoria
+//
+//  Created by Adryan Eka Vandra on 28/04/23.
+//
+
+import Cuckoo
+@testable import Memoria
+
+import Combine
+import Foundation
+
+
+
+
+
+
+ class MockScrapBookRepository: ScrapBookRepository, Cuckoo.ProtocolMock {
+    
+     typealias MocksType = ScrapBookRepository
+    
+     typealias Stubbing = __StubbingProxy_ScrapBookRepository
+     typealias Verification = __VerificationProxy_ScrapBookRepository
+
+     let cuckoo_manager = Cuckoo.MockManager.preconfiguredManager ?? Cuckoo.MockManager(hasParent: false)
+
+    
+    private var __defaultImplStub: ScrapBookRepository?
+
+     func enableDefaultImplementation(_ stub: ScrapBookRepository) {
+        __defaultImplStub = stub
+        cuckoo_manager.enableDefaultStubImplementation()
+    }
+    
+
+    
+
+    
+
+    
+    
+    
+    
+     func createScrapBook(form: CreateScrapBookForm) -> AnyPublisher<ScrapBook, Failure> {
+        
+    return cuckoo_manager.call(
+    """
+    createScrapBook(form: CreateScrapBookForm) -> AnyPublisher<ScrapBook, Failure>
+    """,
+            parameters: (form),
+            escapingParameters: (form),
+            superclassCall:
+                
+                Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                ,
+            defaultCall: __defaultImplStub!.createScrapBook(form: form))
+        
+    }
+    
+    
+
+     struct __StubbingProxy_ScrapBookRepository: Cuckoo.StubbingProxy {
+        private let cuckoo_manager: Cuckoo.MockManager
+    
+         init(manager: Cuckoo.MockManager) {
+            self.cuckoo_manager = manager
+        }
+        
+        
+        
+        
+        func createScrapBook<M1: Cuckoo.Matchable>(form: M1) -> Cuckoo.ProtocolStubFunction<(CreateScrapBookForm), AnyPublisher<ScrapBook, Failure>> where M1.MatchedType == CreateScrapBookForm {
+            let matchers: [Cuckoo.ParameterMatcher<(CreateScrapBookForm)>] = [wrap(matchable: form) { $0 }]
+            return .init(stub: cuckoo_manager.createStub(for: MockScrapBookRepository.self, method:
+    """
+    createScrapBook(form: CreateScrapBookForm) -> AnyPublisher<ScrapBook, Failure>
+    """, parameterMatchers: matchers))
+        }
+        
+        
+    }
+
+     struct __VerificationProxy_ScrapBookRepository: Cuckoo.VerificationProxy {
+        private let cuckoo_manager: Cuckoo.MockManager
+        private let callMatcher: Cuckoo.CallMatcher
+        private let sourceLocation: Cuckoo.SourceLocation
+    
+         init(manager: Cuckoo.MockManager, callMatcher: Cuckoo.CallMatcher, sourceLocation: Cuckoo.SourceLocation) {
+            self.cuckoo_manager = manager
+            self.callMatcher = callMatcher
+            self.sourceLocation = sourceLocation
+        }
+    
+        
+    
+        
+        
+        
+        @discardableResult
+        func createScrapBook<M1: Cuckoo.Matchable>(form: M1) -> Cuckoo.__DoNotUse<(CreateScrapBookForm), AnyPublisher<ScrapBook, Failure>> where M1.MatchedType == CreateScrapBookForm {
+            let matchers: [Cuckoo.ParameterMatcher<(CreateScrapBookForm)>] = [wrap(matchable: form) { $0 }]
+            return cuckoo_manager.verify(
+    """
+    createScrapBook(form: CreateScrapBookForm) -> AnyPublisher<ScrapBook, Failure>
+    """, callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+        }
+        
+        
+    }
+}
+
+
+ class ScrapBookRepositoryStub: ScrapBookRepository {
+    
+
+    
+
+    
+    
+    
+    
+     func createScrapBook(form: CreateScrapBookForm) -> AnyPublisher<ScrapBook, Failure>  {
+        return DefaultValueRegistry.defaultValue(for: (AnyPublisher<ScrapBook, Failure>).self)
     }
     
     

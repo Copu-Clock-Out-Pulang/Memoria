@@ -15,17 +15,17 @@ struct Recommendation: Equatable, Identifiable {
 }
 
 extension Recommendation {
-    
+
     func with(
         id: UUID?? = nil,
         destination: Destination?? = nil,
         generatedPhoto: UIImage?? = nil
     )
     -> Recommendation {
-    Recommendation(
-        id: (id ?? self.id)!,
-        destination: (destination ?? self.destination)!,
-        generatedPhoto: (generatedPhoto ?? self.generatedPhoto)!
-    )
-}
+        Recommendation(
+            id: (id ?? self.id)!,
+            destination: (destination ?? self.destination)!,
+            generatedPhoto: (generatedPhoto ?? self.generatedPhoto)!
+        )
+    }
 }

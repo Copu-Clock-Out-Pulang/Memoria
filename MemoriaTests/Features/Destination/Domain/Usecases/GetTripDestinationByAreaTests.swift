@@ -31,8 +31,8 @@ final class GetTripDestinationByAreaTests: XCTestCase {
     func test_Should_Return_List_Of_Destination_When_Succeed() throws {
         // Given
         let expectedDestination = [
-            Destination(id: UUID(), area: Area(id: UUID(), name: "Jabodetabek"), name: "Ancol", description: "Lorem ipsum", photo: "ancol", address: "Jakarta Utara", coordinate: Coordinate(latitude: 1.000, longitude: 1.000), ticketPrice: "150000", webstite: nil, instagram: nil),
-            Destination(id: UUID(), area: Area(id: UUID(), name: "Jabodetabek"), name: "Mall Pondok Indah", description: "Lorem ipsum", photo: "pim", address: "Jakarta Selaran", coordinate: Coordinate(latitude: 2.000, longitude: 2.000), ticketPrice: nil, webstite: nil, instagram: nil)
+            Destination(id: UUID(), area: Area(id: UUID(), name: "Jabodetabek", province: "Jakarta", description: "desc", image: "image"), name: "Ancol", description: "Lorem ipsum", photo: "ancol", address: "Jakarta Utara", coordinate: Coordinate(latitude: 1.000, longitude: 1.000), ticketPrice: "150000", webstite: nil, instagram: nil),
+            Destination(id: UUID(), area: Area(id: UUID(), name: "Jabodetabek", province: "Jakarta", description: "desc", image: "image"), name: "Mall Pondok Indah", description: "Lorem ipsum", photo: "pim", address: "Jakarta Selaran", coordinate: Coordinate(latitude: 2.000, longitude: 2.000), ticketPrice: nil, webstite: nil, instagram: nil)
         ]
         
         stub(repository) { mock in
@@ -44,7 +44,7 @@ final class GetTripDestinationByAreaTests: XCTestCase {
         
         // When
         
-        let result = sut.execute(params: GetTripDestinationByAreaParams(area: Area(id: UUID(), name: "Jabodetabek")))
+        let result = sut.execute(params: GetTripDestinationByAreaParams(area: Area(id: UUID(), name: "Jabodetabek", province: "Jakarta", description: "desc", image: "image")))
             .sink(receiveCompletion: { completion in
                 switch completion {
                 case .finished :
@@ -72,7 +72,7 @@ final class GetTripDestinationByAreaTests: XCTestCase {
         }
         
         // When
-        let result = sut.execute(params: GetTripDestinationByAreaParams(area: Area(id: UUID(), name: "Jabodetabek")))
+        let result = sut.execute(params: GetTripDestinationByAreaParams(area: Area(id: UUID(), name: "Jabodetabek", province: "Jakarta", description: "desc", image: "image")))
             .sink(receiveCompletion: { completion in
                 switch completion {
                 case .finished :

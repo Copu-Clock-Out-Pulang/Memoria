@@ -15,15 +15,15 @@ protocol GetTripDestinationByArea: UseCaseProtocol {
 
 class GetTripDestinationByAreaImpl: GetTripDestinationByArea {
     private let repository: DestinationRepository
-    
+
     init(repository: DestinationRepository) {
         self.repository = repository
     }
-    
+
     func execute(params: GetTripDestinationByAreaParams) -> AnyPublisher<[Destination], Failure> {
         repository.fetchDestination(area: params.area)
     }
-    
+
 }
 
 struct GetTripDestinationByAreaParams: Equatable {

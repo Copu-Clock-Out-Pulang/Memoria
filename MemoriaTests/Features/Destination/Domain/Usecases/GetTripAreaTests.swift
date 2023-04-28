@@ -33,7 +33,7 @@ class GetTripAreaTests: XCTestCase {
 
     func test_Should_Return_Area_When_Succeed() throws {
         // Given
-        let expectedAreas = [Area(id: UUID(), name: "Area 1"), Area(id: UUID(), name: "Area 2")]
+        let expectedAreas = [Area(id: UUID(), name: "Area 1", province: "Jakarta", description: "desc", image: "image"), Area(id: UUID(), name: "Area 2", province: "Jakarta", description: "desc", image: "image")]
         stub(repository){ mock in
             when(mock.fetchArea()).thenReturn(Just(expectedAreas).setFailureType(to: Failure.self).eraseToAnyPublisher())
         }

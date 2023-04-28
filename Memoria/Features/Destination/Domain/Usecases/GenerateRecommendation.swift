@@ -14,15 +14,15 @@ protocol GenerateRecommendation: UseCaseProtocol {
 }
 
 class GenerateRecommendationImpl: GenerateRecommendation {
-    
+
     private let generator: DestinationImageGenerator
-    
+
     init(generator: DestinationImageGenerator) {
         self.generator = generator
     }
-    
+
     func execute(params: GenerateRecommendationParams) -> AnyPublisher<[Recommendation], Failure> {
-        
+
         let destinationPublishers = params.destinations.map { destination in
             let destinationPhoto = UIImage(named: destination.photo) ?? I.outputTest.image
             return generator.generateDestinationImage(from: params.familyPhoto, to: destinationPhoto)
@@ -34,9 +34,9 @@ class GenerateRecommendationImpl: GenerateRecommendation {
         }
         return Publishers.zipMany(destinationPublishers)
             .eraseToAnyPublisher()
-        
+
     }
-    
+
 }
 
 struct GenerateRecommendationParams: Equatable {

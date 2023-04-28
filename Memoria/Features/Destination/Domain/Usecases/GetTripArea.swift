@@ -15,14 +15,14 @@ protocol GetTripArea: UseCaseProtocol {
 
 class GetTripAreaImpl: GetTripArea {
     private let repository: DestinationRepository
-    
+
     init(repository: DestinationRepository) {
         self.repository = repository
     }
-    
+
     func execute(params: NoParams) -> AnyPublisher<[Area], Failure> {
         repository.fetchArea()
     }
-    
-    
+
+
 }
