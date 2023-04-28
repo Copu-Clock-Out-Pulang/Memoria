@@ -9,4 +9,10 @@ import Foundation
 
 enum Failure: Error {
     case imageGenerationFailure
+    
+    
+    // MARK: - ScrapPage Failures
+    case addScrapPageFailure
+    case editScrapPageFailure
+    case deleteScrapPageFailure
 }
