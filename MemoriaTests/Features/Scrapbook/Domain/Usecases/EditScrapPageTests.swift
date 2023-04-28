@@ -6,30 +6,83 @@
 //
 
 import XCTest
+import Combine
+import Cuckoo
+@testable import Memoria
 
 final class EditScrapPageTests: XCTestCase {
 
+    var sut: EditScrapPageImpl!
+    var repository: MockScrapPageRepository!
+    var cancellables: Set<AnyCancellable>!
+    
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        repository = MockScrapPageRepository()
+        cancellables = []
+        sut = EditScrapPageImpl(repository: repository)
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        repository = nil
+        cancellables = nil
+        sut = nil
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func testShouldReturnScrapPageWhenSucceed() throws {
+        let expectedScrapPage = ScrapPage(id: UUID(), name: "test", thumbnail: "asdf", content: "wasd", createdAt: Date.now, updatedAt: Date.now)
+        
+        stub(repository) { mock in
+            when(mock.editScrapPage(scrapPage: any()))
+                .thenReturn(Just(expectedScrapPage)
+                    .setFailureType(to: Failure.self)
+                    .eraseToAnyPublisher()
+                )
         }
+        
+        sut.execute(params: EditScrapPageParams(
+            scrapPage: ScrapPage(id: UUID(), name: "gue", thumbnail: "oui", content: "zxcv", createdAt: Date.now, updatedAt: Date.now),
+            name: "test",
+            thumbnail: "asdf",
+            content: "wasd"))
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .finished:
+                    break
+                case .failure(let failure):
+                    XCTFail("Expected success result, but got error \(failure)")
+                }
+            }, receiveValue: { scrapPage in
+                XCTAssertEqual(scrapPage, expectedScrapPage, "Result is not equal")
+            }).store(in: &cancellables)
+        verify(repository, times(1)).editScrapPage(scrapPage: any())
+    }
+    
+    func testShouldReturnFailureWhenFailed() throws {
+        let expectedFailure = Failure.editScrapPageFailure
+        
+        stub(repository) { mock in
+            when(mock.editScrapPage(scrapPage: any()))
+                .thenReturn(Fail(error: expectedFailure)
+                .eraseToAnyPublisher()
+            )
+        }
+        
+        sut.execute(params: EditScrapPageParams(
+            scrapPage: ScrapPage(id: UUID(), name: "gue", thumbnail: "oui", content: "zxcv", createdAt: Date.now, updatedAt: Date.now),
+            name: "test",
+            thumbnail: "asdf",
+            content: "wasd"))
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .finished:
+                    XCTFail("Expected fail result, but succeeded")
+                case .failure(let failure):
+                    XCTAssertEqual(failure, expectedFailure, "Unexpected failure occured")
+                }
+            }, receiveValue: { scrapPage in
+                XCTFail("Expected failure")
+            }).store(in: &cancellables)
+        verify(repository, times(1)).editScrapPage(scrapPage: any())
     }
 
 }
