@@ -8,9 +8,9 @@
 import CoreData
 
 class DestinationMigration {
-    
+
     let persistentContainer = PersistenceController()
-    
+
     func saveDestination() {
         do {
             try persistentContainer.container.viewContext.save()
@@ -18,7 +18,7 @@ class DestinationMigration {
             print("Error saving context: \(error.localizedDescription)")
         }
     }
-    
+
     func createDestination(from model: DestinationModel) -> DestinationCoreDataModel? {
         let destination = NSEntityDescription.insertNewObject(
             forEntityName: "DestinationCoreDataModel",
@@ -35,7 +35,7 @@ class DestinationMigration {
         saveDestination()
         return destination
     }
-    
+
     func getAllDestinations() -> [DestinationModel]? {
         let fetchRequest: NSFetchRequest<DestinationCoreDataModel> = DestinationCoreDataModel.fetchRequest()
         do {
@@ -47,7 +47,7 @@ class DestinationMigration {
             return nil
         }
     }
-    
+
     func updateDestination(_ destination: DestinationCoreDataModel, with model: DestinationModel) {
         destination.id = model.id
         destination.name = model.name
@@ -60,7 +60,7 @@ class DestinationMigration {
         destination.instagram = model.instagram
         saveDestination()
     }
-    
+
     func deleteDestination(_ destinationModel: DestinationModel) {
         let fetchRequest: NSFetchRequest<DestinationCoreDataModel> = DestinationCoreDataModel.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "id == %@", destinationModel.id as CVarArg)

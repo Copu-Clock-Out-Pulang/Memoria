@@ -10,7 +10,7 @@ import Foundation
 struct Area: Equatable, Identifiable {
     let id: UUID
     let name: String
-    
+
 }
 
 extension Area {

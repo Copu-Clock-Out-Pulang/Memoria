@@ -32,7 +32,7 @@ extension Destination {
         ticketPrice: String?? = nil,
         website: String?? = nil,
         instagram: String?? = nil
-    ) -> Destination{
+    ) -> Destination {
         Destination(
             id: (id ?? self.id)!,
             area: (area ?? self.area)!,

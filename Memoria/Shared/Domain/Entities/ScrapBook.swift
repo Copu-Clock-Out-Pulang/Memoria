@@ -17,7 +17,7 @@ struct ScrapBook: Equatable, Identifiable {
     let date: Date
     let createdAt: Date
     let updatedAt: Date
-    
+
 }
 
 extension ScrapBook {
