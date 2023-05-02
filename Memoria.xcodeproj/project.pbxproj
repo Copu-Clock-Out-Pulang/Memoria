@@ -75,7 +75,14 @@
 		9BB5046329F2235400C0D04C /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 9BB5046229F2235400C0D04C /* Swinject */; };
 		9BB5046629F2237D00C0D04C /* SwinjectAutoregistration in Frameworks */ = {isa = PBXBuildFile; productRef = 9BB5046529F2237D00C0D04C /* SwinjectAutoregistration */; };
 		9BB5046929F223E000C0D04C /* UseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB5046829F223E000C0D04C /* UseCase.swift */; };
+		9BBB2ECD2A009553008830F8 /* NSSet+CustomExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBB2ECC2A009553008830F8 /* NSSet+CustomExtensions.swift */; };
+		9BBB2ECF2A0096EA008830F8 /* DestinationRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBB2ECE2A0096EA008830F8 /* DestinationRepositoryImpl.swift */; };
 		9BBF6D8629F2439A00162C6A /* ImageSegmentorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBF6D4B29F2439A00162C6A /* ImageSegmentorTests.swift */; };
+		9BCD420829FCFC4D007A7868 /* AreaCoreDataModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCD420429FCFC4D007A7868 /* AreaCoreDataModel+CoreDataClass.swift */; };
+		9BCD420A29FCFC4D007A7868 /* DestinationCoreDataModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCD420629FCFC4D007A7868 /* DestinationCoreDataModel+CoreDataClass.swift */; };
+		9BCD421229FD05DE007A7868 /* AreaCoreDataModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCD421029FD05DE007A7868 /* AreaCoreDataModel+CoreDataProperties.swift */; };
+		9BCD421329FD05DE007A7868 /* DestinationCoreDataModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCD421129FD05DE007A7868 /* DestinationCoreDataModel+CoreDataProperties.swift */; };
+		9BCD421529FD0F86007A7868 /* DestinationLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCD421429FD0F86007A7868 /* DestinationLocalDataSource.swift */; };
 		9BDA3E5129FBD8B9002D7227 /* ScrapBookRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDA3E5029FBD8B9002D7227 /* ScrapBookRepository.swift */; };
 		9BDA3E5329FBD93D002D7227 /* CreateScrapBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDA3E5229FBD93D002D7227 /* CreateScrapBook.swift */; };
 		9BDA3E5529FBDA51002D7227 /* CreateScrapBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDA3E5429FBDA51002D7227 /* CreateScrapBook.swift */; };
@@ -102,7 +109,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		9111763229F690BC007852F7 /* Destinations.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Destinations.xcdatamodel; sourceTree = "<group>"; };
+		9111763229F690BC007852F7 /* Memoria.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Memoria.xcdatamodel; sourceTree = "<group>"; };
 		9111763629F69216007852F7 /* DestinationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationModel.swift; sourceTree = "<group>"; };
 		9111763A29F6950D007852F7 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		9111763E29F7794F007852F7 /* DestinationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationViewModel.swift; sourceTree = "<group>"; };
@@ -173,7 +180,14 @@
 		9BB5045A29F2225B00C0D04C /* Failure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Failure.swift; sourceTree = "<group>"; };
 		9BB5045F29F2230B00C0D04C /* UIImage+CustomExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+CustomExtensions.swift"; sourceTree = "<group>"; };
 		9BB5046829F223E000C0D04C /* UseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCase.swift; sourceTree = "<group>"; };
+		9BBB2ECC2A009553008830F8 /* NSSet+CustomExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSSet+CustomExtensions.swift"; sourceTree = "<group>"; };
+		9BBB2ECE2A0096EA008830F8 /* DestinationRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationRepositoryImpl.swift; sourceTree = "<group>"; };
 		9BBF6D4B29F2439A00162C6A /* ImageSegmentorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageSegmentorTests.swift; sourceTree = "<group>"; };
+		9BCD420429FCFC4D007A7868 /* AreaCoreDataModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AreaCoreDataModel+CoreDataClass.swift"; sourceTree = "<group>"; };
+		9BCD420629FCFC4D007A7868 /* DestinationCoreDataModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DestinationCoreDataModel+CoreDataClass.swift"; sourceTree = "<group>"; };
+		9BCD421029FD05DE007A7868 /* AreaCoreDataModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AreaCoreDataModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9BCD421129FD05DE007A7868 /* DestinationCoreDataModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DestinationCoreDataModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9BCD421429FD0F86007A7868 /* DestinationLocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationLocalDataSource.swift; sourceTree = "<group>"; };
 		9BDA3E5029FBD8B9002D7227 /* ScrapBookRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrapBookRepository.swift; sourceTree = "<group>"; };
 		9BDA3E5229FBD93D002D7227 /* CreateScrapBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateScrapBook.swift; sourceTree = "<group>"; };
 		9BDA3E5429FBDA51002D7227 /* CreateScrapBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateScrapBook.swift; sourceTree = "<group>"; };
@@ -324,6 +338,7 @@
 			children = (
 				9111763A29F6950D007852F7 /* PersistenceController.swift */,
 				9111764229F78203007852F7 /* DestinationMigration.swift */,
+				9BCD421429FD0F86007A7868 /* DestinationLocalDataSource.swift */,
 			);
 			path = Datasources;
 			sourceTree = "<group>";
@@ -331,6 +346,7 @@
 		9B1AF1A629F23D9800BEF767 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				9BBB2ECE2A0096EA008830F8 /* DestinationRepositoryImpl.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -338,6 +354,10 @@
 		9B1AF1A729F23D9800BEF767 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				9BCD421029FD05DE007A7868 /* AreaCoreDataModel+CoreDataProperties.swift */,
+				9BCD421129FD05DE007A7868 /* DestinationCoreDataModel+CoreDataProperties.swift */,
+				9BCD420429FCFC4D007A7868 /* AreaCoreDataModel+CoreDataClass.swift */,
+				9BCD420629FCFC4D007A7868 /* DestinationCoreDataModel+CoreDataClass.swift */,
 				9111763629F69216007852F7 /* DestinationModel.swift */,
 			);
 			path = Models;
@@ -870,6 +890,7 @@
 				9BB5045F29F2230B00C0D04C /* UIImage+CustomExtensions.swift */,
 				9B82DB7429F978FA00606EE2 /* CIImage+CustomExtension.swift */,
 				9B12C66E29FA8E46007B3B3F /* Publishers+CustomExtensions.swift */,
+				9BBB2ECC2A009553008830F8 /* NSSet+CustomExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1717,17 +1738,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B12C66329FA574E007B3B3F /* Area.swift in Sources */,
+				9BCD420829FCFC4D007A7868 /* AreaCoreDataModel+CoreDataClass.swift in Sources */,
 				9BB5045B29F2225B00C0D04C /* Failure.swift in Sources */,
 				9BDA3E5129FBD8B9002D7227 /* ScrapBookRepository.swift in Sources */,
 				9BDA3E5329FBD93D002D7227 /* CreateScrapBook.swift in Sources */,
 				9B1AF19029F23D1000BEF767 /* Math.swift in Sources */,
 				9B1C4DB429EF19E400F03AFF /* SplashViewController.swift in Sources */,
+				9BCD420A29FCFC4D007A7868 /* DestinationCoreDataModel+CoreDataClass.swift in Sources */,
 				9B12C66929FA5D44007B3B3F /* GetTripArea.swift in Sources */,
 				9B1C4DBD29EF1CEC00F03AFF /* InjectionContainer.swift in Sources */,
+				9BCD421529FD0F86007A7868 /* DestinationLocalDataSource.swift in Sources */,
 				9B82DB7529F978FA00606EE2 /* CIImage+CustomExtension.swift in Sources */,
 				9B12C66D29FA5EB6007B3B3F /* GenerateRecommendation.swift in Sources */,
 				9B983DE029F26A5600BCAD3A /* DestinationImageGenerator.swift in Sources */,
+				9BCD421229FD05DE007A7868 /* AreaCoreDataModel+CoreDataProperties.swift in Sources */,
 				9B12C65D29FA478F007B3B3F /* ScrapBook.swift in Sources */,
+				9BBB2ECF2A0096EA008830F8 /* DestinationRepositoryImpl.swift in Sources */,
 				9B1AF19829F23D1000BEF767 /* CoreML+Combine.swift in Sources */,
 				9B1C4D0229EEF03400F03AFF /* AppDelegate.swift in Sources */,
 				9B12C66529FA5C6B007B3B3F /* DestinationRepository.swift in Sources */,
@@ -1742,6 +1768,7 @@
 				9B1AF19729F23D1000BEF767 /* MLModel+Images.swift in Sources */,
 				9B12C65429FA4682007B3B3F /* Destination.swift in Sources */,
 				9B1C4D0429EEF03400F03AFF /* SceneDelegate.swift in Sources */,
+				9BBB2ECD2A009553008830F8 /* NSSet+CustomExtensions.swift in Sources */,
 				9111764329F78204007852F7 /* DestinationMigration.swift in Sources */,
 				9B1AF19629F23D1000BEF767 /* MLMultiArray+Helpers.swift in Sources */,
 				9B1AF19229F23D1000BEF767 /* Predictions.swift in Sources */,
@@ -1749,6 +1776,7 @@
 				9B1AF19C29F23D1000BEF767 /* CGImage+RawBytes.swift in Sources */,
 				9B1AF19D29F23D1000BEF767 /* MLMultiArray+Image.swift in Sources */,
 				9111763729F69216007852F7 /* DestinationModel.swift in Sources */,
+				9BCD421329FD05DE007A7868 /* DestinationCoreDataModel+CoreDataProperties.swift in Sources */,
 				9B1C4DB629EF1A1800F03AFF /* HomeViewController.swift in Sources */,
 				9111763F29F7794F007852F7 /* DestinationViewModel.swift in Sources */,
 				9B1AF19129F23D1000BEF767 /* UIImage+CVPixelBuffer.swift in Sources */,
@@ -1789,7 +1817,6 @@
 				9BF0036A29F6C2DE007CD42B /* DestinationImageGeneratorTest.swift in Sources */,
 				9B1C4D1929EEF03500F03AFF /* MemoriaTests.swift in Sources */,
 				9B5C5F6E29FADB870032BA64 /* GenerateRecommendationTests.swift in Sources */,
-				9BF0037329F6D137007CD42B /* GeneratedMocks.swift in Sources */,
 				9B5C5F6C29FAD04F0032BA64 /* GetTripDestinationByAreaTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2170,9 +2197,9 @@
 		9111763129F690BC007852F7 /* MemoriaCoreData.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				9111763229F690BC007852F7 /* Destinations.xcdatamodel */,
+				9111763229F690BC007852F7 /* Memoria.xcdatamodel */,
 			);
-			currentVersion = 9111763229F690BC007852F7 /* Destinations.xcdatamodel */;
+			currentVersion = 9111763229F690BC007852F7 /* Memoria.xcdatamodel */;
 			path = MemoriaCoreData.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

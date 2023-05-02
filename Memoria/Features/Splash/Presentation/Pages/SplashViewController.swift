@@ -16,6 +16,7 @@ class SplashViewController: UIViewController {
     let destination1 = DestinationModel(
         id: UUID(),
         name: "Eiffel Tower",
+        description: "Eiffel",
         photo: "eiffel_tower.jpg",
         address: "Champ de Mars, 5 Avenue Anatole France, 75007 Paris, France",
         latitude: 48.8584,
@@ -27,6 +28,7 @@ class SplashViewController: UIViewController {
     let destination2 = DestinationModel(
         id: UUID(),
         name: "Statue of Liberty",
+        description: "Patung Liberty",
         photo: "statue_of_liberty.jpg",
         address: "New York, NY 10004, United States",
         latitude: 40.6892,
@@ -38,6 +40,7 @@ class SplashViewController: UIViewController {
     let destination3 = DestinationModel(
         id: UUID(),
         name: "Great Wall of China",
+        description: "Tembok besar china",
         photo: "great_wall_of_china.jpg",
         address: "Huairou District, China, 101405",
         latitude: 40.4319,
