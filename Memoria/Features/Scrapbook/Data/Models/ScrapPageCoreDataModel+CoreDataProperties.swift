@@ -26,6 +26,60 @@ extension ScrapPageCoreDataModel {
 
 }
 
-extension ScrapPageCoreDataModel : Identifiable {
+extension ScrapPageCoreDataModel: Identifiable {
+
+}
+
+extension ScrapPageCoreDataModel {
+    func toDomain() -> ScrapPage {
+        return ScrapPage(
+            id: self.id!,
+            name: self.name!,
+            thumbnail: self.thumbnail!,
+            content: self.content!,
+            createdAt: self.createdAt!,
+            updatedAt: self.updatedAt!
+        )
+    }
+    static func fromDomain(form: CreateScrapPageForm) -> ScrapPageCoreDataModel {
+
+        var model = ScrapPageCoreDataModel()
+
+        model.id = UUID()
+        model.name = "new scrap page"
+        model.thumbnail = ""
+        model.content = ""
+        model.createdAt = Date.now
+        model.updatedAt = Date.now
+
+        return model
+
+    }
+
+    static func fromDomain(form: EditScrapPageForm) -> ScrapPageCoreDataModel {
+        var model = ScrapPageCoreDataModel()
+
+        model.name = form.name
+        model.thumbnail = form.thumbnail
+        model.content = form.content
+        model.updatedAt = Date.now
+
+        return model
+
+    }
+
+    static func fromDomain(scrapPage: ScrapPage) -> ScrapPageCoreDataModel {
+        var model = ScrapPageCoreDataModel()
+
+        model.id = scrapPage.id
+        model.name = scrapPage.name
+        model.content = scrapPage.content
+        model.createdAt = scrapPage.createdAt
+        model.updatedAt = scrapPage.updatedAt
+        model.thumbnail = scrapPage.thumbnail
+
+        return model
+    }
+
 
 }
