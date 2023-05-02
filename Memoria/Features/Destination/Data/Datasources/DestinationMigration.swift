@@ -19,7 +19,7 @@ class DestinationMigration {
         }
     }
 
-    func createDestination(from model: DestinationModel) -> DestinationCoreDataModel? {
+    func createDestination(from model: DestinationCoreDataModel) -> DestinationCoreDataModel? {
         let destination = NSEntityDescription.insertNewObject(
             forEntityName: "DestinationCoreDataModel",
             into: persistentContainer.container.viewContext) as? DestinationCoreDataModel
@@ -36,19 +36,23 @@ class DestinationMigration {
         return destination
     }
 
-    func getAllDestinations() -> [DestinationModel]? {
+    func getAllDestinations() -> [DestinationCoreDataModel]? {
         let fetchRequest: NSFetchRequest<DestinationCoreDataModel> = DestinationCoreDataModel.fetchRequest()
         do {
+            //            let destinations = try persistentContainer.container.viewContext.fetch(fetchRequest)
+            //            let destinationModels = destinations.compactMap { $0.toModel() }
+            //            return destinationModels
+
             let destinations = try persistentContainer.container.viewContext.fetch(fetchRequest)
-            let destinationModels = destinations.compactMap { $0.toModel() }
-            return destinationModels
+            return destinations
+
         } catch let error as NSError {
             print("Error fetching destinations: \(error.localizedDescription)")
             return nil
         }
     }
 
-    func updateDestination(_ destination: DestinationCoreDataModel, with model: DestinationModel) {
+    func updateDestination(_ destination: DestinationCoreDataModel, with model: DestinationCoreDataModel) {
         destination.id = model.id
         destination.name = model.name
         destination.photo = model.photo
@@ -61,9 +65,9 @@ class DestinationMigration {
         saveDestination()
     }
 
-    func deleteDestination(_ destinationModel: DestinationModel) {
+    func deleteDestination(_ destinationModel: DestinationCoreDataModel) {
         let fetchRequest: NSFetchRequest<DestinationCoreDataModel> = DestinationCoreDataModel.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "id == %@", destinationModel.id as CVarArg)
+        fetchRequest.predicate = NSPredicate(format: "id == %@", destinationModel.id! as CVarArg)
         do {
             let results = try persistentContainer.container.viewContext.fetch(fetchRequest)
             guard let destination = results.first else { return }
