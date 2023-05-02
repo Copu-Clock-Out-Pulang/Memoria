@@ -2,7 +2,7 @@
 //  DestinationCoreDataModel+CoreDataProperties.swift
 //  Memoria
 //
-//  Created by Winxen Ryandiharvin on 29/04/23.
+//  Created by Adryan Eka Vandra on 29/04/23.
 //
 //
 
@@ -25,9 +25,59 @@ extension DestinationCoreDataModel {
     @NSManaged public var photo: String?
     @NSManaged public var ticketPrice: String?
     @NSManaged public var website: String?
+    @NSManaged public var descriptions: String?
+    @NSManaged public var area: AreaCoreDataModel?
 
 }
 
-extension DestinationCoreDataModel : Identifiable {
+extension DestinationCoreDataModel: Identifiable {
 
+}
+
+
+extension DestinationCoreDataModel {
+    //    func toModel() -> DestinationCoreDataModel {
+    //        return DestinationCoreDataModel(
+    //            id: (self.id ?? UUID())!,
+    //            name: (self.name ?? "")!,
+    //            photo: (self.photo ?? ""),
+    //            address: (self.address ?? "")!,
+    //            latitude: self.latitude,
+    //            longitude: self.longitude,
+    //            ticketPrice: self.ticketPrice,
+    //            website: self.website,
+    //            instagram: self.instagram, description: self.descriptions)
+    //    }
+    //
+    func toDomain() -> Destination {
+        return Destination(
+            id: (self.id ?? UUID())!,
+            area: self.area!.toDomain(),
+            name: (self.name ?? "")!,
+            description: (self.descriptions ?? ""),
+            photo: (self.photo ?? ""),
+            address: (self.address ?? ""),
+            coordinate: Coordinate(latitude: self.latitude, longitude: self.longitude),
+            ticketPrice: self.ticketPrice,
+            webstite: self.website,
+            instagram: self.instagram)
+    }
+
+    static func fromDomain(destination: Destination) -> DestinationCoreDataModel {
+        // set nilai
+        var model = DestinationCoreDataModel()
+
+        model.id = destination.id
+        model.name = destination.name
+        model.descriptions = destination.description
+        model.photo = destination.photo
+        model.address = destination.address
+        model.latitude = destination.coordinate.latitude
+        model.longitude = destination.coordinate.longitude
+        model.ticketPrice = destination.ticketPrice
+        model.website = destination.webstite
+        model.instagram = destination.instagram
+
+        return model
+    }
 }
