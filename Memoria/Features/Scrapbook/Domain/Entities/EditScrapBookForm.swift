@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+struct EditScrapBookForm: Equatable {
+    let name: String
+    let scrapPage: [ScrapPage]
+    let quote: String
+    let startDate: Date?
+    let endDate: Date?
+}
