@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+struct EditScrapPageForm: Equatable {
+    let name: String
+    let thumbnail: String
+    let content: String
+}
