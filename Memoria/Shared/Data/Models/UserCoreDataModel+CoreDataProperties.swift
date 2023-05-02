@@ -22,6 +22,15 @@ extension UserCoreDataModel {
 
 }
 
-extension UserCoreDataModel : Identifiable {
+extension UserCoreDataModel: Identifiable {
 
+}
+
+extension UserCoreDataModel {
+    func toDomain() -> User {
+        return User(
+            id: self.id!,
+            name: self.name!
+        )
+    }
 }
