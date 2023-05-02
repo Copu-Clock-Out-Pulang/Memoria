@@ -1,5 +1,5 @@
 //
-//  AddScrapPage.swift
+//  CreateScrapPage.swift
 //  Memoria
 //
 //  Created by Winxen Ryandiharvin on 27/04/23.
@@ -8,13 +8,12 @@
 import Foundation
 import Combine
 
-protocol AddScrapPage: UseCaseProtocol {
+protocol CreateScrapPage: UseCaseProtocol {
     associatedtype ReturnType = ScrapPage
-    associatedtype Params = AddScrapPageParams
+    associatedtype Params = CreateScrapPageParams
 }
 
-
-class AddScrapPageImpl: AddScrapPage {
+class CreateScrapPageImpl: CreateScrapPage {
 
     let repository: ScrapPageRepository
 
@@ -22,25 +21,13 @@ class AddScrapPageImpl: AddScrapPage {
         self.repository = repository
     }
 
-    func execute(params: AddScrapPageParams) -> AnyPublisher<ScrapPage, Failure> {
-        let id = UUID()
-        let createdAt = Date()
-        let updatedAt = createdAt
-
-        let newScrapPage = ScrapPage(
-            id: id,
-            name: params.name,
-            thumbnail: params.thumbnail,
-            content: params.content,
-            createdAt: createdAt,
-            updatedAt: updatedAt
-        )
-        return repository.addScrapPage(scrapPage: newScrapPage)
+    func execute(params: CreateScrapPageParams) -> AnyPublisher<ScrapPage, Failure> {
+        let scrapPage = ScrapPage(id: UUID(), name: params.form.name, thumbnail: params.form.thumbnail, content: params.form.content, createdAt: Date.now, updatedAt: Date.now)
+        return repository.createScrapPage(form: params.form, page: scrapPage )
     }
+
 }
 
-struct AddScrapPageParams: Equatable {
-    let name: String
-    let thumbnail: String
-    let content: String
+struct CreateScrapPageParams: Equatable {
+    let form: CreateScrapPageForm
 }
