@@ -18,9 +18,13 @@ enum Failure: Error {
 
     // MARK: - ScrapBook Failures
     case createScrapBookFailure
-   
+    case getScrapBookFailure
+    case editScrapBookFailure
+    case deleteScrapBookFailure
+
     // MARK: - ScrapPage Failures
-    case addScrapPageFailure
+    case createScrapPageFailure
+    case getScrapPageFailure
     case editScrapPageFailure
     case deleteScrapPageFailure
 }

@@ -24,9 +24,7 @@ class CreateScrapBookImpl: CreateScrapBook {
         return repository.createScrapBook(form: params.form)
     }
 
-
 }
-
 
 struct CreateScrapBookParams: Equatable {
     let form: CreateScrapBookForm

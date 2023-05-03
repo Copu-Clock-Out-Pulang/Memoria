@@ -8,17 +8,33 @@
 
 /* Begin PBXBuildFile section */
 		9111763329F690BC007852F7 /* MemoriaCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9111763129F690BC007852F7 /* MemoriaCoreData.xcdatamodeld */; };
-		9111763729F69216007852F7 /* DestinationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9111763629F69216007852F7 /* DestinationModel.swift */; };
 		9111763B29F6950D007852F7 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9111763A29F6950D007852F7 /* PersistenceController.swift */; };
 		9111764329F78204007852F7 /* DestinationMigration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9111764229F78203007852F7 /* DestinationMigration.swift */; };
 		9111A42929FA8B0000DC3FF2 /* ScrapPageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9111A42829FA8B0000DC3FF2 /* ScrapPageRepository.swift */; };
-		9111A42B29FA8B9800DC3FF2 /* AddScrapPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9111A42A29FA8B9800DC3FF2 /* AddScrapPage.swift */; };
+		9111A42B29FA8B9800DC3FF2 /* CreateScrapPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9111A42A29FA8B9800DC3FF2 /* CreateScrapPage.swift */; };
 		9111A42D29FA8BA100DC3FF2 /* EditScrapPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9111A42C29FA8BA100DC3FF2 /* EditScrapPage.swift */; };
 		9111A42F29FA8BAD00DC3FF2 /* DeleteScrapPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9111A42E29FA8BAD00DC3FF2 /* DeleteScrapPage.swift */; };
 		9111A43129FBC93A00DC3FF2 /* AddScrapPageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9111A43029FBC93A00DC3FF2 /* AddScrapPageTests.swift */; };
 		9111A43529FBCEAD00DC3FF2 /* GeneratedMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9111A43429FBCEAD00DC3FF2 /* GeneratedMocks.swift */; };
 		9111A43729FBD3B300DC3FF2 /* DeleteScrapPageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9111A43629FBD3B300DC3FF2 /* DeleteScrapPageTests.swift */; };
 		9111A43929FBD3C100DC3FF2 /* EditScrapPageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9111A43829FBD3C100DC3FF2 /* EditScrapPageTests.swift */; };
+		9111A44529FCFB9200DC3FF2 /* ScrapBookLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9111A44429FCFB9200DC3FF2 /* ScrapBookLocalDataSource.swift */; };
+		9111A45229FCFE9000DC3FF2 /* ScrapPageCoreDataModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9111A44E29FCFE9000DC3FF2 /* ScrapPageCoreDataModel+CoreDataClass.swift */; };
+		9111A45329FCFE9000DC3FF2 /* ScrapPageCoreDataModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9111A44F29FCFE9000DC3FF2 /* ScrapPageCoreDataModel+CoreDataProperties.swift */; };
+		9111A45929FD079A00DC3FF2 /* ScrapPageLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9111A45829FD079A00DC3FF2 /* ScrapPageLocalDataSource.swift */; };
+		9111A45B29FD0F5700DC3FF2 /* ScrapBookRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9111A45A29FD0F5700DC3FF2 /* ScrapBookRepositoryImpl.swift */; };
+		9111A45D29FD0F7200DC3FF2 /* ScrapPageRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9111A45C29FD0F7200DC3FF2 /* ScrapPageRepositoryImpl.swift */; };
+		9111A46B29FD195D00DC3FF2 /* GetScrapBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9111A46A29FD195D00DC3FF2 /* GetScrapBook.swift */; };
+		9111A46D29FD197000DC3FF2 /* EditScrapBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9111A46C29FD197000DC3FF2 /* EditScrapBook.swift */; };
+		9111A46F29FD197700DC3FF2 /* DeleteScrapBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9111A46E29FD197700DC3FF2 /* DeleteScrapBook.swift */; };
+		9111A47129FD198100DC3FF2 /* GetScrapPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9111A47029FD198100DC3FF2 /* GetScrapPage.swift */; };
+		9111A47429FD1D3900DC3FF2 /* ScrapBookCoreDataModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9111A47229FD1D3900DC3FF2 /* ScrapBookCoreDataModel+CoreDataClass.swift */; };
+		9111A47529FD1D3900DC3FF2 /* ScrapBookCoreDataModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9111A47329FD1D3900DC3FF2 /* ScrapBookCoreDataModel+CoreDataProperties.swift */; };
+		9111A48529FD1E5D00DC3FF2 /* UserCoreDataModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9111A48329FD1E5D00DC3FF2 /* UserCoreDataModel+CoreDataClass.swift */; };
+		9111A48629FD1E5D00DC3FF2 /* UserCoreDataModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9111A48429FD1E5D00DC3FF2 /* UserCoreDataModel+CoreDataProperties.swift */; };
+		9111A48829FD23D000DC3FF2 /* EditScrapBookForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9111A48729FD23D000DC3FF2 /* EditScrapBookForm.swift */; };
+		9111A48A29FD274F00DC3FF2 /* CreateScrapPageForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9111A48929FD274F00DC3FF2 /* CreateScrapPageForm.swift */; };
+		9111A48C29FD275800DC3FF2 /* EditScrapPageForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9111A48B29FD275800DC3FF2 /* EditScrapPageForm.swift */; };
 		9B12C65429FA4682007B3B3F /* Destination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12C65329FA4682007B3B3F /* Destination.swift */; };
 		9B12C65629FA46E6007B3B3F /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12C65529FA46E6007B3B3F /* Coordinate.swift */; };
 		9B12C65B29FA475E007B3B3F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12C65A29FA475E007B3B3F /* User.swift */; };
@@ -133,17 +149,37 @@
 
 /* Begin PBXFileReference section */
 		9111763229F690BC007852F7 /* Memoria.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Memoria.xcdatamodel; sourceTree = "<group>"; };
-		9111763629F69216007852F7 /* DestinationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationModel.swift; sourceTree = "<group>"; };
 		9111763A29F6950D007852F7 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		9111764229F78203007852F7 /* DestinationMigration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationMigration.swift; sourceTree = "<group>"; };
 		9111A42829FA8B0000DC3FF2 /* ScrapPageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrapPageRepository.swift; sourceTree = "<group>"; };
-		9111A42A29FA8B9800DC3FF2 /* AddScrapPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddScrapPage.swift; sourceTree = "<group>"; };
+		9111A42A29FA8B9800DC3FF2 /* CreateScrapPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateScrapPage.swift; sourceTree = "<group>"; };
 		9111A42C29FA8BA100DC3FF2 /* EditScrapPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditScrapPage.swift; sourceTree = "<group>"; };
 		9111A42E29FA8BAD00DC3FF2 /* DeleteScrapPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteScrapPage.swift; sourceTree = "<group>"; };
 		9111A43029FBC93A00DC3FF2 /* AddScrapPageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddScrapPageTests.swift; sourceTree = "<group>"; };
 		9111A43429FBCEAD00DC3FF2 /* GeneratedMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedMocks.swift; sourceTree = "<group>"; };
 		9111A43629FBD3B300DC3FF2 /* DeleteScrapPageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteScrapPageTests.swift; sourceTree = "<group>"; };
 		9111A43829FBD3C100DC3FF2 /* EditScrapPageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditScrapPageTests.swift; sourceTree = "<group>"; };
+		9111A44429FCFB9200DC3FF2 /* ScrapBookLocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrapBookLocalDataSource.swift; sourceTree = "<group>"; };
+		9111A44E29FCFE9000DC3FF2 /* ScrapPageCoreDataModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScrapPageCoreDataModel+CoreDataClass.swift"; sourceTree = "<group>"; };
+		9111A44F29FCFE9000DC3FF2 /* ScrapPageCoreDataModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScrapPageCoreDataModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9111A45829FD079A00DC3FF2 /* ScrapPageLocalDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrapPageLocalDataSource.swift; sourceTree = "<group>"; };
+		9111A45A29FD0F5700DC3FF2 /* ScrapBookRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrapBookRepositoryImpl.swift; sourceTree = "<group>"; };
+		9111A45C29FD0F7200DC3FF2 /* ScrapPageRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrapPageRepositoryImpl.swift; sourceTree = "<group>"; };
+		9111A45E29FD175600DC3FF2 /* AreaCoreDataModel+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AreaCoreDataModel+CoreDataClass.swift"; sourceTree = "<group>"; };
+		9111A45F29FD175700DC3FF2 /* DestinationCoreDataModel+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DestinationCoreDataModel+CoreDataClass.swift"; sourceTree = "<group>"; };
+		9111A46029FD175700DC3FF2 /* DestinationCoreDataModel+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DestinationCoreDataModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9111A46129FD175700DC3FF2 /* AreaCoreDataModel+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AreaCoreDataModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9111A46A29FD195D00DC3FF2 /* GetScrapBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetScrapBook.swift; sourceTree = "<group>"; };
+		9111A46C29FD197000DC3FF2 /* EditScrapBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditScrapBook.swift; sourceTree = "<group>"; };
+		9111A46E29FD197700DC3FF2 /* DeleteScrapBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteScrapBook.swift; sourceTree = "<group>"; };
+		9111A47029FD198100DC3FF2 /* GetScrapPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetScrapPage.swift; sourceTree = "<group>"; };
+		9111A47229FD1D3900DC3FF2 /* ScrapBookCoreDataModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScrapBookCoreDataModel+CoreDataClass.swift"; sourceTree = "<group>"; };
+		9111A47329FD1D3900DC3FF2 /* ScrapBookCoreDataModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScrapBookCoreDataModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9111A48329FD1E5D00DC3FF2 /* UserCoreDataModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserCoreDataModel+CoreDataClass.swift"; sourceTree = "<group>"; };
+		9111A48429FD1E5D00DC3FF2 /* UserCoreDataModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserCoreDataModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9111A48729FD23D000DC3FF2 /* EditScrapBookForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditScrapBookForm.swift; sourceTree = "<group>"; };
+		9111A48929FD274F00DC3FF2 /* CreateScrapPageForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateScrapPageForm.swift; sourceTree = "<group>"; };
+		9111A48B29FD275800DC3FF2 /* EditScrapPageForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditScrapPageForm.swift; sourceTree = "<group>"; };
 		9B12C65329FA4682007B3B3F /* Destination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Destination.swift; sourceTree = "<group>"; };
 		9B12C65529FA46E6007B3B3F /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
 		9B12C65A29FA475E007B3B3F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -270,9 +306,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9111A48129FD1E0300DC3FF2 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				9111A48229FD1E0A00DC3FF2 /* Models */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		9111A48229FD1E0A00DC3FF2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9111A48329FD1E5D00DC3FF2 /* UserCoreDataModel+CoreDataClass.swift */,
+				9111A48429FD1E5D00DC3FF2 /* UserCoreDataModel+CoreDataProperties.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		9B12C65729FA4745007B3B3F /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				9111A48129FD1E0300DC3FF2 /* Data */,
 				9B12C65829FA474B007B3B3F /* Domain */,
 			);
 			path = Shared;
@@ -386,7 +440,6 @@
 		9B1AF1A529F23D9800BEF767 /* Datasources */ = {
 			isa = PBXGroup;
 			children = (
-				9111763A29F6950D007852F7 /* PersistenceController.swift */,
 				9111764229F78203007852F7 /* DestinationMigration.swift */,
 				9BCD421429FD0F86007A7868 /* DestinationLocalDataSource.swift */,
 			);
@@ -408,7 +461,6 @@
 				9BCD421129FD05DE007A7868 /* DestinationCoreDataModel+CoreDataProperties.swift */,
 				9BCD420429FCFC4D007A7868 /* AreaCoreDataModel+CoreDataClass.swift */,
 				9BCD420629FCFC4D007A7868 /* DestinationCoreDataModel+CoreDataClass.swift */,
-				9111763629F69216007852F7 /* DestinationModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -611,6 +663,8 @@
 		9B1AF1C029F23EDF00BEF767 /* Datasources */ = {
 			isa = PBXGroup;
 			children = (
+				9111A44429FCFB9200DC3FF2 /* ScrapBookLocalDataSource.swift */,
+				9111A45829FD079A00DC3FF2 /* ScrapPageLocalDataSource.swift */,
 			);
 			path = Datasources;
 			sourceTree = "<group>";
@@ -618,6 +672,8 @@
 		9B1AF1C129F23EDF00BEF767 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				9111A45A29FD0F5700DC3FF2 /* ScrapBookRepositoryImpl.swift */,
+				9111A45C29FD0F7200DC3FF2 /* ScrapPageRepositoryImpl.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -625,6 +681,10 @@
 		9B1AF1C229F23EDF00BEF767 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				9111A47229FD1D3900DC3FF2 /* ScrapBookCoreDataModel+CoreDataClass.swift */,
+				9111A47329FD1D3900DC3FF2 /* ScrapBookCoreDataModel+CoreDataProperties.swift */,
+				9111A44E29FCFE9000DC3FF2 /* ScrapPageCoreDataModel+CoreDataClass.swift */,
+				9111A44F29FCFE9000DC3FF2 /* ScrapPageCoreDataModel+CoreDataProperties.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -652,7 +712,11 @@
 			isa = PBXGroup;
 			children = (
 				9BDA3E5229FBD93D002D7227 /* CreateScrapBook.swift */,
-				9111A42A29FA8B9800DC3FF2 /* AddScrapPage.swift */,
+				9111A46C29FD197000DC3FF2 /* EditScrapBook.swift */,
+				9111A46A29FD195D00DC3FF2 /* GetScrapBook.swift */,
+				9111A46E29FD197700DC3FF2 /* DeleteScrapBook.swift */,
+				9111A42A29FA8B9800DC3FF2 /* CreateScrapPage.swift */,
+				9111A47029FD198100DC3FF2 /* GetScrapPage.swift */,
 				9111A42C29FA8BA100DC3FF2 /* EditScrapPage.swift */,
 				9111A42E29FA8BAD00DC3FF2 /* DeleteScrapPage.swift */,
 			);
@@ -663,6 +727,9 @@
 			isa = PBXGroup;
 			children = (
 				9B5C5F6F29FAE0920032BA64 /* CreateScrapBookForm.swift */,
+				9111A48729FD23D000DC3FF2 /* EditScrapBookForm.swift */,
+				9111A48929FD274F00DC3FF2 /* CreateScrapPageForm.swift */,
+				9111A48B29FD275800DC3FF2 /* EditScrapPageForm.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -804,6 +871,7 @@
 		9B1AF1D829F23F2200BEF767 /* Storages */ = {
 			isa = PBXGroup;
 			children = (
+				9111763A29F6950D007852F7 /* PersistenceController.swift */,
 			);
 			path = Storages;
 			sourceTree = "<group>";
@@ -823,6 +891,7 @@
 				9B1C4D1729EEF03500F03AFF /* MemoriaTests */,
 				9B1C4D2129EEF03500F03AFF /* MemoriaUITests */,
 				9B1C4CFF29EEF03400F03AFF /* Products */,
+				9B5FF86A2A02219F000B55A9 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1033,6 +1102,17 @@
 				9B1C4DB329EF19E400F03AFF /* SplashViewController.swift */,
 			);
 			path = Pages;
+			sourceTree = "<group>";
+		};
+		9B5FF86A2A02219F000B55A9 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				9111A46029FD175700DC3FF2 /* DestinationCoreDataModel+CoreDataProperties.swift */,
+				9111A45F29FD175700DC3FF2 /* DestinationCoreDataModel+CoreDataClass.swift */,
+				9111A45E29FD175600DC3FF2 /* AreaCoreDataModel+CoreDataClass.swift */,
+				9111A46129FD175700DC3FF2 /* AreaCoreDataModel+CoreDataProperties.swift */,
+			);
+			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 		9BB5045929F2223D00C0D04C /* Failure */ = {
@@ -1859,6 +1939,8 @@
 				9BCD420829FCFC4D007A7868 /* AreaCoreDataModel+CoreDataClass.swift in Sources */,
 				9BB5045B29F2225B00C0D04C /* Failure.swift in Sources */,
 				9BDA3E5129FBD8B9002D7227 /* ScrapBookRepository.swift in Sources */,
+				9111A45929FD079A00DC3FF2 /* ScrapPageLocalDataSource.swift in Sources */,
+				9111A45329FCFE9000DC3FF2 /* ScrapPageCoreDataModel+CoreDataProperties.swift in Sources */,
 				9BDA3E5329FBD93D002D7227 /* CreateScrapBook.swift in Sources */,
 				9B1AF19029F23D1000BEF767 /* Math.swift in Sources */,
 				9B1C4DB429EF19E400F03AFF /* SplashViewController.swift in Sources */,
@@ -1867,9 +1949,12 @@
 				9BCD420A29FCFC4D007A7868 /* DestinationCoreDataModel+CoreDataClass.swift in Sources */,
 				9B12C66929FA5D44007B3B3F /* GetTripArea.swift in Sources */,
 				9B1C4DBD29EF1CEC00F03AFF /* InjectionContainer.swift in Sources */,
+				9111A48829FD23D000DC3FF2 /* EditScrapBookForm.swift in Sources */,
+				9111A47429FD1D3900DC3FF2 /* ScrapBookCoreDataModel+CoreDataClass.swift in Sources */,
 				9BCD421529FD0F86007A7868 /* DestinationLocalDataSource.swift in Sources */,
 				9B82DB7529F978FA00606EE2 /* CIImage+CustomExtension.swift in Sources */,
 				9B12C66D29FA5EB6007B3B3F /* GenerateRecommendation.swift in Sources */,
+				9111A44529FCFB9200DC3FF2 /* ScrapBookLocalDataSource.swift in Sources */,
 				9B983DE029F26A5600BCAD3A /* DestinationImageGenerator.swift in Sources */,
 				9B92287F2A010BDF00B119AE /* UIView+CustomExtensions.swift in Sources */,
 				9BCD421229FD05DE007A7868 /* AreaCoreDataModel+CoreDataProperties.swift in Sources */,
@@ -1878,15 +1963,21 @@
 				9B1AF19829F23D1000BEF767 /* CoreML+Combine.swift in Sources */,
 				9B1C4D0229EEF03400F03AFF /* AppDelegate.swift in Sources */,
 				9B12C66529FA5C6B007B3B3F /* DestinationRepository.swift in Sources */,
+				9111A45229FCFE9000DC3FF2 /* ScrapPageCoreDataModel+CoreDataClass.swift in Sources */,
 				9B487FB129EFABE000F5208A /* XCAssets+Generated.swift in Sources */,
 				9B1AF19529F23D1000BEF767 /* UIImage+RawBytes.swift in Sources */,
 				9111A42F29FA8BAD00DC3FF2 /* DeleteScrapPage.swift in Sources */,
 				9BB5046929F223E000C0D04C /* UseCase.swift in Sources */,
+				9111A45D29FD0F7200DC3FF2 /* ScrapPageRepositoryImpl.swift in Sources */,
+				9111A48529FD1E5D00DC3FF2 /* UserCoreDataModel+CoreDataClass.swift in Sources */,
 				9111A42929FA8B0000DC3FF2 /* ScrapPageRepository.swift in Sources */,
+				9111A47529FD1D3900DC3FF2 /* ScrapBookCoreDataModel+CoreDataProperties.swift in Sources */,
+				9111A46F29FD197700DC3FF2 /* DeleteScrapBook.swift in Sources */,
 				9B487FB229EFABE000F5208A /* Strings+Generated.swift in Sources */,
 				9B1AF18F29F23D1000BEF767 /* Array+Extensions.swift in Sources */,
 				9B12C66B29FA5DF7007B3B3F /* GetTripDestinationByArea.swift in Sources */,
 				9B1AF19729F23D1000BEF767 /* MLModel+Images.swift in Sources */,
+				9111A48C29FD275800DC3FF2 /* EditScrapPageForm.swift in Sources */,
 				9B12C65429FA4682007B3B3F /* Destination.swift in Sources */,
 				9B1C4D0429EEF03400F03AFF /* SceneDelegate.swift in Sources */,
 				9BBB2ECD2A009553008830F8 /* NSSet+CustomExtensions.swift in Sources */,
@@ -1895,26 +1986,31 @@
 				9B1AF19229F23D1000BEF767 /* Predictions.swift in Sources */,
 				9B12C66F29FA8E46007B3B3F /* Publishers+CustomExtensions.swift in Sources */,
 				9B1AF19C29F23D1000BEF767 /* CGImage+RawBytes.swift in Sources */,
+				9111A47129FD198100DC3FF2 /* GetScrapPage.swift in Sources */,
 				9B1AF19D29F23D1000BEF767 /* MLMultiArray+Image.swift in Sources */,
-				9111763729F69216007852F7 /* DestinationModel.swift in Sources */,
 				9BCD421329FD05DE007A7868 /* DestinationCoreDataModel+CoreDataProperties.swift in Sources */,
 				9B1C4DB629EF1A1800F03AFF /* HomeViewController.swift in Sources */,
 				9B1AF19129F23D1000BEF767 /* UIImage+CVPixelBuffer.swift in Sources */,
 				9B1AF17B29F23C8100BEF767 /* ImageSegmentor.swift in Sources */,
 				9B5C5F7029FAE0920032BA64 /* CreateScrapBookForm.swift in Sources */,
+				9111A46B29FD195D00DC3FF2 /* GetScrapBook.swift in Sources */,
+				9111A45B29FD0F5700DC3FF2 /* ScrapBookRepositoryImpl.swift in Sources */,
 				9B1AF19E29F23D1000BEF767 /* CVPixelBuffer+Resize.swift in Sources */,
 				9B12C65B29FA475E007B3B3F /* User.swift in Sources */,
+				9111A48A29FD274F00DC3FF2 /* CreateScrapPageForm.swift in Sources */,
 				9B1AF19A29F23D1000BEF767 /* CGImage+CVPixelBuffer.swift in Sources */,
 				9111A42D29FA8BA100DC3FF2 /* EditScrapPage.swift in Sources */,
 				9B12C66129FA55E2007B3B3F /* Recommendation.swift in Sources */,
 				9BB5046029F2230B00C0D04C /* UIImage+CustomExtensions.swift in Sources */,
 				9B12C65F29FA488C007B3B3F /* ScrapPage.swift in Sources */,
-				9111A42B29FA8B9800DC3FF2 /* AddScrapPage.swift in Sources */,
+				9111A46D29FD197000DC3FF2 /* EditScrapBook.swift in Sources */,
+				9111A42B29FA8B9800DC3FF2 /* CreateScrapPage.swift in Sources */,
 				9BEF3E1529F2475B00F0D384 /* DeepLabV3.mlmodel in Sources */,
 				9B1AF19429F23D1000BEF767 /* CGImagePropertyOrientation.swift in Sources */,
 				9B1AF19F29F23D1000BEF767 /* CVPixelBuffer+Rotate.swift in Sources */,
 				9B1AF19329F23D1000BEF767 /* UIImage+Extensions.swift in Sources */,
 				9B1AF19B29F23D1000BEF767 /* NonMaxSuppression.swift in Sources */,
+				9111A48629FD1E5D00DC3FF2 /* UserCoreDataModel+CoreDataProperties.swift in Sources */,
 				9111763329F690BC007852F7 /* MemoriaCoreData.xcdatamodeld in Sources */,
 				9B12C65629FA46E6007B3B3F /* Coordinate.swift in Sources */,
 				9B1AF19929F23D1000BEF767 /* CVPixelBuffer+Create.swift in Sources */,
