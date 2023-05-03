@@ -7,3 +7,24 @@
 */
 
 "appName" = "Memoria";
+
+// Mark: - Destinations
+"dstCreateYourTrip" = "Create Your Trip";
+"dstTripInputHint" = "Input trip name";
+"dstNext" = "Next";
+"dstWhenDoYouWantToGo" = "When do you want to go?";
+"dstPickADate" = "Pick a date";
+"dstEncourageYourSelf" = "Encourage yourself with some quote";
+"dstQuoteHint" = "Input quotes";
+"dstWhereDoYouWantToGo" = "Where do you want to go?";
+"dstAddYourFamilyPhoto" = "Add your family photo!";
+"dstSelectFromGallery" = "Select from gallery";
+"dstRandom" = "Random";
+"dstTakePhoto" = "Take photo";
+"dstDone" = "Done!";
+"dstConfirmDialog"= "Confirm Dialog";
+"dstAreYouSure" = "Are you sure?";
+"dstYes" = "Yes";
+"dstNo" = "No";
+"dstChooseYourDestination" = "Choose your destination";
+"dstSave" = "Save";

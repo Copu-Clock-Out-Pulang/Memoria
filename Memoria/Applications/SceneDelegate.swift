@@ -19,7 +19,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         guard let windowScene = (scene as? UIWindowScene) else { return }
 
-        let mainViewController = UINavigationController(rootViewController: SplashViewController())
+        let vm = InjectionContainer.shared.container.resolve(DestinationViewModel.self)!
+        let mainViewController = UINavigationController(rootViewController: DestinationViewController(viewModel: vm))
         let window = UIWindow(windowScene: windowScene)
         window.rootViewController = mainViewController
         window.makeKeyAndVisible()

@@ -87,5 +87,21 @@ final class InjectionContainer {
             let usecase = GenerateRecommendationImpl(generator: generator)
             return usecase.eraseToAnyUseCase()
         }
+        
+        container.register(DestinationViewModel.self) { resolver in
+            let getTripArea = resolver.resolve(AnyUseCase<[Area], NoParams>.self, name: "GetTripArea")!
+            let generateRecommendation = resolver.resolve(
+                AnyUseCase<[Recommendation], GenerateRecommendationParams>.self,
+                name: "GenerateRecommendation")!
+            let getTripDestination = resolver.resolve(
+                AnyUseCase<[Destination], GetTripDestinationByAreaParams>.self,
+                name: "GetTripDestinationByArea")!
+            
+            return DestinationViewModel(
+                getTripArea: getTripArea,
+                getDestinations: getTripDestination,
+                generateRecommendations: generateRecommendation)
+            
+        }
     }
 }
