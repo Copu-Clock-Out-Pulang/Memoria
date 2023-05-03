@@ -31,4 +31,10 @@ struct AnyUseCase<T, P: Equatable>: UseCaseProtocol {
 
 
 }
+
+extension UseCaseProtocol {
+    func eraseToAnyUseCase() -> AnyUseCase<ReturnType, Params> {
+        return AnyUseCase<ReturnType, Params>(useCase: self)
+    }
+}
 struct NoParams: Equatable {}

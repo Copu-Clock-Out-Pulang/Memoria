@@ -42,7 +42,7 @@ extension AreaCoreDataModel {
 
 }
 
-extension AreaCoreDataModel: Identifiable {
+extension AreaCoreDataModel : Identifiable {
 
 }
 

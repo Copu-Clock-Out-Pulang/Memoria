@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22E261" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="AreaCoreDataModel" representedClassName="AreaCoreDataModel" syncable="YES">
+        <attribute name="descriptions" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="image" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="province" optional="YES" attributeType="String"/>
+        <relationship name="destinations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DestinationCoreDataModel" inverseName="area" inverseEntity="DestinationCoreDataModel"/>
+    </entity>
+    <entity name="DestinationCoreDataModel" representedClassName="DestinationCoreDataModel" syncable="YES">
+        <attribute name="address" attributeType="String"/>
+        <attribute name="descriptions" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="instagram" optional="YES" attributeType="String"/>
+        <attribute name="latitude" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="longitude" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="name" attributeType="String"/>
+        <attribute name="photo" attributeType="String"/>
+        <attribute name="ticketPrice" optional="YES" attributeType="String"/>
+        <attribute name="website" optional="YES" attributeType="String"/>
+        <relationship name="area" maxCount="1" deletionRule="Nullify" destinationEntity="AreaCoreDataModel" inverseName="destinations" inverseEntity="AreaCoreDataModel"/>
+    </entity>
+</model>
