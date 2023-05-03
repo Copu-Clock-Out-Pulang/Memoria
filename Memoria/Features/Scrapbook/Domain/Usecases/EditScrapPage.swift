@@ -22,19 +22,11 @@ class EditScrapPageImpl: EditScrapPage {
     }
 
     func execute(params: EditScrapPageParams) -> AnyPublisher<ScrapPage, Failure> {
-        let editedScrapPage = params.scrapPage.with(
-            name: params.name,
-            thumbnail: params.thumbnail,
-            content: params.content,
-            updatedAt: Date()
-        )
-        return repository.editScrapPage(scrapPage: editedScrapPage)
+        return repository.editScrapPage(scrapPage: params.scrapPage, form: params.form)
     }
 }
 
 struct EditScrapPageParams: Equatable {
     let scrapPage: ScrapPage
-    let name: String
-    let thumbnail: String
-    let content: String
+    let form: EditScrapPageForm
 }

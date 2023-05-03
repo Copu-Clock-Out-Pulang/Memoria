@@ -9,5 +9,11 @@ import Foundation
 import Combine
 
 protocol ScrapBookRepository {
-    func createScrapBook(form: CreateScrapBookForm) -> AnyPublisher<ScrapBook, Failure>
+    func createScrapBook(form: CreateScrapBookForm) -> AnyPublisher <ScrapBook, Failure>
+
+    func getScrapBooks() -> AnyPublisher <[ScrapBook], Failure>
+
+    func editScrapBook(scrapBook: ScrapBook, form: EditScrapBookForm) -> AnyPublisher <ScrapBook, Failure>
+
+    func deleteScrapBook(scrapBook: ScrapBook) -> AnyPublisher <(), Failure>
 }
