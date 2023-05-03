@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreData
+import CoreImage.CIFilterBuiltins
 import Swinject
 import SwinjectAutoregistration
 
@@ -52,6 +53,11 @@ final class InjectionContainer {
             let context = controller.container.viewContext
             return context
             
+        }
+        .inObjectScope(.container)
+        
+        container.register(CIContext.self) { _ in
+            return CIContext()
         }
         .inObjectScope(.container)
     }

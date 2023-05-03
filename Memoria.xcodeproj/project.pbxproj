@@ -89,6 +89,9 @@
 		9BEF3E1529F2475B00F0D384 /* DeepLabV3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 9B2C3EE829F0391900FF554C /* DeepLabV3.mlmodel */; };
 		9BF0036A29F6C2DE007CD42B /* DestinationImageGeneratorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF0036929F6C2DE007CD42B /* DestinationImageGeneratorTest.swift */; };
 		9BF0037029F6CC8C007CD42B /* Cuckoo in Frameworks */ = {isa = PBXBuildFile; productRef = 9BF0036F29F6CC8C007CD42B /* Cuckoo */; };
+		D6CE6F692A017BB700610641 /* ScrapbookEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CE6F682A017BB700610641 /* ScrapbookEditorViewController.swift */; };
+		D6CE6F6B2A017BF800610641 /* ScrapPageStackData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CE6F6A2A017BF800610641 /* ScrapPageStackData.swift */; };
+		D6CE6F6D2A017C1900610641 /* ImageDatas.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CE6F6C2A017C1900610641 /* ImageDatas.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -192,6 +195,9 @@
 		9BDA3E5229FBD93D002D7227 /* CreateScrapBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateScrapBook.swift; sourceTree = "<group>"; };
 		9BDA3E5429FBDA51002D7227 /* CreateScrapBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateScrapBook.swift; sourceTree = "<group>"; };
 		9BF0036929F6C2DE007CD42B /* DestinationImageGeneratorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationImageGeneratorTest.swift; sourceTree = "<group>"; };
+		D6CE6F682A017BB700610641 /* ScrapbookEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrapbookEditorViewController.swift; sourceTree = "<group>"; };
+		D6CE6F6A2A017BF800610641 /* ScrapPageStackData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrapPageStackData.swift; sourceTree = "<group>"; };
+		D6CE6F6C2A017C1900610641 /* ImageDatas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDatas.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -716,6 +722,8 @@
 		9B1AF1D329F23EE500BEF767 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				D6CE6F6A2A017BF800610641 /* ScrapPageStackData.swift */,
+				D6CE6F6C2A017C1900610641 /* ImageDatas.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -747,6 +755,7 @@
 		9B1AF1D729F23EE500BEF767 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				D6CE6F682A017BB700610641 /* ScrapbookEditorViewController.swift */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
@@ -1762,6 +1771,7 @@
 				9111A42F29FA8BAD00DC3FF2 /* DeleteScrapPage.swift in Sources */,
 				9BB5046929F223E000C0D04C /* UseCase.swift in Sources */,
 				9111A42929FA8B0000DC3FF2 /* ScrapPageRepository.swift in Sources */,
+				D6CE6F6B2A017BF800610641 /* ScrapPageStackData.swift in Sources */,
 				9B487FB229EFABE000F5208A /* Strings+Generated.swift in Sources */,
 				9B1AF18F29F23D1000BEF767 /* Array+Extensions.swift in Sources */,
 				9B12C66B29FA5DF7007B3B3F /* GetTripDestinationByArea.swift in Sources */,
@@ -1786,6 +1796,8 @@
 				9B12C65B29FA475E007B3B3F /* User.swift in Sources */,
 				9B1AF19A29F23D1000BEF767 /* CGImage+CVPixelBuffer.swift in Sources */,
 				9111A42D29FA8BA100DC3FF2 /* EditScrapPage.swift in Sources */,
+				D6CE6F6D2A017C1900610641 /* ImageDatas.swift in Sources */,
+				D6CE6F692A017BB700610641 /* ScrapbookEditorViewController.swift in Sources */,
 				9B12C66129FA55E2007B3B3F /* Recommendation.swift in Sources */,
 				9BB5046029F2230B00C0D04C /* UIImage+CustomExtensions.swift in Sources */,
 				9B12C65F29FA488C007B3B3F /* ScrapPage.swift in Sources */,
