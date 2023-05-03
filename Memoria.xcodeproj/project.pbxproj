@@ -25,10 +25,6 @@
 		9111A45929FD079A00DC3FF2 /* ScrapPageLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9111A45829FD079A00DC3FF2 /* ScrapPageLocalDataSource.swift */; };
 		9111A45B29FD0F5700DC3FF2 /* ScrapBookRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9111A45A29FD0F5700DC3FF2 /* ScrapBookRepositoryImpl.swift */; };
 		9111A45D29FD0F7200DC3FF2 /* ScrapPageRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9111A45C29FD0F7200DC3FF2 /* ScrapPageRepositoryImpl.swift */; };
-		9111A46229FD175700DC3FF2 /* AreaCoreDataModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9111A45E29FD175600DC3FF2 /* AreaCoreDataModel+CoreDataClass.swift */; };
-		9111A46329FD175700DC3FF2 /* DestinationCoreDataModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9111A45F29FD175700DC3FF2 /* DestinationCoreDataModel+CoreDataClass.swift */; };
-		9111A46429FD175700DC3FF2 /* DestinationCoreDataModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9111A46029FD175700DC3FF2 /* DestinationCoreDataModel+CoreDataProperties.swift */; };
-		9111A46529FD175700DC3FF2 /* AreaCoreDataModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9111A46129FD175700DC3FF2 /* AreaCoreDataModel+CoreDataProperties.swift */; };
 		9111A46B29FD195D00DC3FF2 /* GetScrapBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9111A46A29FD195D00DC3FF2 /* GetScrapBook.swift */; };
 		9111A46D29FD197000DC3FF2 /* EditScrapBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9111A46C29FD197000DC3FF2 /* EditScrapBook.swift */; };
 		9111A46F29FD197700DC3FF2 /* DeleteScrapBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9111A46E29FD197700DC3FF2 /* DeleteScrapBook.swift */; };
@@ -845,6 +841,7 @@
 				9B1C4D1729EEF03500F03AFF /* MemoriaTests */,
 				9B1C4D2129EEF03500F03AFF /* MemoriaUITests */,
 				9B1C4CFF29EEF03400F03AFF /* Products */,
+				9B5FF86A2A02219F000B55A9 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1053,6 +1050,17 @@
 				9B1C4DB329EF19E400F03AFF /* SplashViewController.swift */,
 			);
 			path = Pages;
+			sourceTree = "<group>";
+		};
+		9B5FF86A2A02219F000B55A9 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				9111A46029FD175700DC3FF2 /* DestinationCoreDataModel+CoreDataProperties.swift */,
+				9111A45F29FD175700DC3FF2 /* DestinationCoreDataModel+CoreDataClass.swift */,
+				9111A45E29FD175600DC3FF2 /* AreaCoreDataModel+CoreDataClass.swift */,
+				9111A46129FD175700DC3FF2 /* AreaCoreDataModel+CoreDataProperties.swift */,
+			);
+			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 		9BB5045929F2223D00C0D04C /* Failure */ = {
@@ -1856,11 +1864,9 @@
 				9B1AF19629F23D1000BEF767 /* MLMultiArray+Helpers.swift in Sources */,
 				9B1AF19229F23D1000BEF767 /* Predictions.swift in Sources */,
 				9B12C66F29FA8E46007B3B3F /* Publishers+CustomExtensions.swift in Sources */,
-				9111A46429FD175700DC3FF2 /* DestinationCoreDataModel+CoreDataProperties.swift in Sources */,
 				9B1AF19C29F23D1000BEF767 /* CGImage+RawBytes.swift in Sources */,
 				9111A47129FD198100DC3FF2 /* GetScrapPage.swift in Sources */,
 				9B1AF19D29F23D1000BEF767 /* MLMultiArray+Image.swift in Sources */,
-				9111763729F69216007852F7 /* DestinationModel.swift in Sources */,
 				9BCD421329FD05DE007A7868 /* DestinationCoreDataModel+CoreDataProperties.swift in Sources */,
 				9B1C4DB629EF1A1800F03AFF /* HomeViewController.swift in Sources */,
 				9111763F29F7794F007852F7 /* DestinationViewModel.swift in Sources */,
@@ -1885,13 +1891,10 @@
 				9B1AF19329F23D1000BEF767 /* UIImage+Extensions.swift in Sources */,
 				9B1AF19B29F23D1000BEF767 /* NonMaxSuppression.swift in Sources */,
 				9111A48629FD1E5D00DC3FF2 /* UserCoreDataModel+CoreDataProperties.swift in Sources */,
-				9111A46329FD175700DC3FF2 /* DestinationCoreDataModel+CoreDataClass.swift in Sources */,
 				9111763329F690BC007852F7 /* MemoriaCoreData.xcdatamodeld in Sources */,
 				9B12C65629FA46E6007B3B3F /* Coordinate.swift in Sources */,
-				9111A46229FD175700DC3FF2 /* AreaCoreDataModel+CoreDataClass.swift in Sources */,
 				9B1AF19929F23D1000BEF767 /* CVPixelBuffer+Create.swift in Sources */,
 				9111763B29F6950D007852F7 /* PersistenceController.swift in Sources */,
-				9111A46529FD175700DC3FF2 /* AreaCoreDataModel+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
