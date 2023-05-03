@@ -39,9 +39,6 @@ class TripNameFromView: UIView {
     lazy var loginButton: UIButton = {
         let button = UIButton(configuration: .filled())
         button.setTitle(S.dstNext, for: UIControl.State())
-        button.snp.makeConstraints {
-        
-        }
         return button
     }()
 

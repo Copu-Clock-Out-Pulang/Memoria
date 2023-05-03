@@ -22,24 +22,34 @@ class ScrapbookEditorViewController: UIViewController, PKCanvasViewDelegate {
     
     // Filter
     let ciContext = InjectionContainer.shared.container.resolve(CIContext.self)!
-//    let ciContext = CIContext()
     
     var scrapPageStack = ScrapPageStackData(id: UUID(), drawing: "", images: "")
     var imageStacks: [ImageDatas] = []
     
+    var background = UIImageView(image: UIImage(named: "ScrapPageEditorBackground"))
+    var temp = UIImageView(image: UIImage(systemName: "camera"))
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        view.backgroundColor = .systemBackground
+        
+        background.frame = view.frame
+        view.insertSubview(background, at: 0)
+        navigationController?.navigationBar.backgroundColor = I.background.color(compatibleWith: .current)
+        navigationController?.navigationBar.tintColor = I.primaryButton.color(compatibleWith: .current)
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Poppins-Bold", size: 22)!]
+        self.title = "Page Title"
+        
         checkPermission()
         makeToolBarItems()
         makeLeftNavigationItems()
         makeRightNavigationItems()
         makeCanvasView()
+        
         redrawTopCanvas(image: canvasView.drawing.image(from: canvasView.bounds, scale: 1))
     }
 
-    // Check Camera and Gallery Permission
+    // MARK: Check Camera and Gallery Permission
     func checkPermission() {
         if PHPhotoLibrary.authorizationStatus(for: .readWrite) != .authorized {
             PHPhotoLibrary.requestAuthorization(for: .readWrite) { _ in
@@ -53,62 +63,68 @@ class ScrapbookEditorViewController: UIViewController, PKCanvasViewDelegate {
         }
     }
     
-    // Making Canvas View
+    // MARK: Making Canvas View
     func makeCanvasView() {
         view.addSubview(canvasView)
-//        canvasView.backgroundColor = .clear
+        canvasView.backgroundColor = UIColor(red: 255 / 255, green: 196 / 255, blue: 121 / 255, alpha: 1)
         canvasView.translatesAutoresizingMaskIntoConstraints = false
-        canvasView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
-        canvasView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
-        canvasView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
-        canvasView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
+        canvasView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 36).isActive = true
+        canvasView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -36).isActive = true
+        canvasView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 31).isActive = true
+        canvasView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -31).isActive = true
+        canvasView.layer.cornerRadius = 30
         canvasView.delegate = self
         canvasView.drawing = drawing
     }
 
-    // Adding ToolBar
+    // MARK: Adding ToolBar
     func makeToolBarItems() {
-        self.navigationController?.isToolbarHidden = false
+        navigationController?.isToolbarHidden = false
+        navigationController?.toolbar.backgroundColor = I.background.color(compatibleWith: .current)
         toolbarItems = [
             UIBarButtonItem(systemItem: .flexibleSpace),
-            UIBarButtonItem(image: UIImage(systemName: "camera"), style: .plain, target: self, action: #selector(openInsertOption)),
+            UIBarButtonItem(image: UIImage(named: "IconPhoto"), style: .plain, target: self, action: #selector(openInsertOption)),
             UIBarButtonItem(systemItem: .flexibleSpace),
-            UIBarButtonItem(image: UIImage(systemName: "squareshape"), style: .plain, target: self, action: #selector(clearDrawingHandler)),
+            UIBarButtonItem(image: UIImage(named: "IconBackground"), style: .plain, target: self, action: #selector(testHandler)),
             UIBarButtonItem(systemItem: .flexibleSpace),
-            UIBarButtonItem(image: UIImage(systemName: "pencil.tip.crop.circle"), style: .plain, target: self, action: #selector(openToolPicker)),
+            UIBarButtonItem(image: UIImage(named: "IconSticker"), style: .plain, target: self, action: #selector(testHandler)),
+            UIBarButtonItem(systemItem: .flexibleSpace),
+            UIBarButtonItem(image: UIImage(named: "IconScribble"), style: .plain, target: self, action: #selector(openToolPicker)),
+            UIBarButtonItem(systemItem: .flexibleSpace),
+            UIBarButtonItem(image: UIImage(named: "IconShape"), style: .plain, target: self, action: #selector(testHandler)),
             UIBarButtonItem(systemItem: .flexibleSpace)
         ]
+        navigationController?.toolbar.tintColor = UIColor(red: 122 / 255, green: 81 / 255, blue: 40 / 255, alpha: 1)
     }
     
-    // Left Navigation Item
+    // MARK: Left Navigation Item
     func makeLeftNavigationItems() {
         navigationItem.setLeftBarButton(UIBarButtonItem(title: "Load", style: .plain, target: self, action: #selector(loadData)), animated: true)
-        navigationItem.leftBarButtonItems!.insert(UIBarButtonItem(title: "Clear", style: .plain, target: self, action: #selector(clearDrawingHandler)), at: 0)
+        navigationItem.leftBarButtonItems!.insert(UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(testHandler)), at: 0)
     }
     
-    // Right Navigation Item
+    // MARK: Right Navigation Item
     func makeRightNavigationItems() {
         navigationItem.setRightBarButton(UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.up"), style: .plain, target: self, action: #selector(shareImage)), animated: true)
         navigationItem.rightBarButtonItems!.insert(UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(saveProgress)), at: 0)
     }
     
-    // Drawing Left Navigation Item
+    // MARK: Drawing Left Navigation Item
     func makeDrawingLeftNavigationItem() {
-        navigationItem.setLeftBarButton(UIBarButtonItem(title: "Clear", style: .plain, target: self, action: #selector(clearDrawingHandler)), animated: true)
-        navigationItem.leftBarButtonItems!.insert(UIBarButtonItem(title: "Undo", style: .plain, target: self, action: #selector(undoHandler)), at: 0)
+        navigationItem.setLeftBarButton(UIBarButtonItem(image: UIImage(systemName: "arrow.uturn.forward.circle.fill"), style: .plain, target: self, action: #selector(redoHandler)), animated: true)
+        navigationItem.leftBarButtonItems!.insert(UIBarButtonItem(image: UIImage(systemName: "arrow.uturn.backward.circle.fill"), style: .plain, target: self, action: #selector(undoHandler)), at: 0)
     }
     
-    // Drawing Right Navigation Item
+    // MARK: Drawing Right Navigation Item
     func makeDrawingRightNavigationItem() {
-        navigationItem.setRightBarButton(UIBarButtonItem(title: "Redo", style: .plain, target: self, action: #selector(redoHandler)), animated: true)
-        navigationItem.rightBarButtonItems!.insert(UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(closeToolPicker)), at: 0)
+        navigationItem.setRightBarButton(UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(closeToolPicker)), animated: true)
     }
     
     @objc func testHandler() {
         print("Handler")
     }
     
-    // Export Image
+    // MARK: Export Image
     @objc func shareImage(_ sender: Any) {
         print("Share Image")
         
@@ -128,7 +144,7 @@ class ScrapbookEditorViewController: UIViewController, PKCanvasViewDelegate {
         }
     }
     
-    // Insert Image Action
+    // MARK: Insert Image Action
     @objc func openInsertOption(_ sender: Any) {
         let optionMenu = UIAlertController(title: "Insert Image From", message: nil, preferredStyle: .actionSheet)
         let cameraAction = UIAlertAction(title: "Camera", style: .default) {_ in
@@ -157,6 +173,65 @@ class ScrapbookEditorViewController: UIViewController, PKCanvasViewDelegate {
         self.present(optionMenu, animated: true)
     }
     
+    // MARK: Make Image View without saved data
+    func makeImageView(image: UIImage) {
+        // Nil Image Safe Guard
+        if image.pngData() == nil {
+            return
+        }
+        
+        let imageView = UIImageView(image: image)
+        imageView.transform = imageView.transform.scaledBy(x: 0.25, y: 0.25)
+        imageView.center = CGPoint(x: view.frame.width / 2, y: view.frame.height / 2)
+        imageView.tag = imageStacks.count + 1
+        imageView.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(self.panGestureHandler)))
+        imageView.addGestureRecognizer(UIPinchGestureRecognizer(target: self, action: #selector(self.pinchGestureHandler)))
+        imageView.addGestureRecognizer(UIRotationGestureRecognizer(target: self, action: #selector(self.rotateGestureHandler)))
+        imageView.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(self.longPressGestureHandler)))
+    
+        imageView.isUserInteractionEnabled = true
+        canvasView.addSubview(imageView)
+        imageStacks.append(ImageDatas(id: imageView.tag, image: (image.pngData()?.base64EncodedString()) ?? "", center: imageView.center, frame: imageView.frame, filter: "None"))
+        print("Image View Created")
+    }
+    
+    // MARK: Make Image View with saved data
+    func makeImageView(image: UIImage, tag: Int, center: CGPoint, frame: CGRect, filter: String) {
+        let imageView = UIImageView(image: image)
+        imageView.frame = frame
+        imageView.center = center
+//        imageView.transform = imageView.transform.rotated(by: rotation)
+        imageView.tag = tag
+        imageView.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(self.panGestureHandler)))
+        imageView.addGestureRecognizer(UIPinchGestureRecognizer(target: self, action: #selector(self.pinchGestureHandler)))
+        imageView.addGestureRecognizer(UIRotationGestureRecognizer(target: self, action: #selector(self.rotateGestureHandler)))
+        imageView.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(self.longPressGestureHandler)))
+        
+        if filter == "Sepia" {
+            imageView.image = UIImage(cgImage: sepiaFilter(cgImage: image.cgImage!))
+        } else if filter == "Blur" {
+            imageView.image = UIImage(cgImage: blurFilter(cgImage: image.cgImage!))
+        } else if filter == "Invert" {
+            imageView.image = UIImage(cgImage: invertFilter(cgImage: image.cgImage!))
+        }
+        
+        imageView.isUserInteractionEnabled = true
+        canvasView.addSubview(imageView)
+        imageStacks.append(ImageDatas(id: tag, image: (image.pngData()?.base64EncodedString()) ?? "", center: imageView.center, frame: imageView.frame, filter: filter))
+    }
+    
+    // MARK: Redraw Canvas on Top
+    func redrawTopCanvas(image: UIImage) {
+        let imageView = UIImageView(image: image)
+        imageView.center = canvasView.center
+        imageView.tag = 1
+        view.addSubview(imageView)
+    }
+}
+
+
+// MARK: ToolPicker
+extension ScrapbookEditorViewController {
     // Open ToolPicker
     @objc func openToolPicker(_ sender: Any) {
         canvasView.subviews.forEach { sub in
@@ -212,75 +287,22 @@ class ScrapbookEditorViewController: UIViewController, PKCanvasViewDelegate {
         undoManager?.redo()
     }
     
-    // Make Image View without saved data
-    func makeImageView(image: UIImage) {
-        // Nil Image Safe Guard
-        if image.pngData() == nil {
-            return
+    // Clear All Canvas Drawing
+    @objc func clearDrawingHandler(sender: Any) {
+        print("Test Handler")
+        canvasView.drawing = PKDrawing()
+        view.subviews.forEach {sub in
+            if sub.tag == 1 {
+                sub.removeFromSuperview()
+            }
         }
-        
-        let imageView = UIImageView(image: image)
-        imageView.transform = imageView.transform.scaledBy(x: 0.25, y: 0.25)
-        imageView.center = CGPoint(x: view.frame.width / 2, y: view.frame.height / 2)
-        imageView.tag = imageStacks.count + 1
-        imageView.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(self.panGestureHandler)))
-        imageView.addGestureRecognizer(UIPinchGestureRecognizer(target: self, action: #selector(self.pinchGestureHandler)))
-        imageView.addGestureRecognizer(UIRotationGestureRecognizer(target: self, action: #selector(self.rotateGestureHandler)))
-        imageView.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(self.longPressGestureHandler)))
-    
-        imageView.isUserInteractionEnabled = true
-        canvasView.addSubview(imageView)
-        imageStacks.append(ImageDatas(id: imageView.tag, image: (image.pngData()?.base64EncodedString()) ?? "", center: imageView.center, frame: imageView.frame, filter: "None"))
-        print("Image View Created")
+        redrawTopCanvas(image: canvasView.drawing.image(from: canvasView.bounds, scale: 1))
     }
-    
-    // Make Image View with saved data
-    func makeImageView(image: UIImage, tag: Int, center: CGPoint, frame: CGRect, filter: String) {
-        let imageView = UIImageView(image: image)
-        imageView.frame = frame
-        imageView.center = center
-        imageView.tag = tag
-        imageView.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(self.panGestureHandler)))
-        imageView.addGestureRecognizer(UIPinchGestureRecognizer(target: self, action: #selector(self.pinchGestureHandler)))
-        imageView.addGestureRecognizer(UIRotationGestureRecognizer(target: self, action: #selector(self.rotateGestureHandler)))
-        imageView.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(self.longPressGestureHandler)))
-        
-        if filter == "Sepia" {
-            imageView.image = UIImage(cgImage: sepiaFilter(cgImage: image.cgImage!))
-        } else if filter == "Blur" {
-            imageView.image = UIImage(cgImage: blurFilter(cgImage: image.cgImage!))
-        } else if filter == "Invert" {
-            imageView.image = UIImage(cgImage: invertFilter(cgImage: image.cgImage!))
-        }
-        
-        imageView.isUserInteractionEnabled = true
-        canvasView.addSubview(imageView)
-        imageStacks.append(ImageDatas(id: tag, image: (image.pngData()?.base64EncodedString()) ?? "", center: imageView.center, frame: imageView.frame, filter: filter))
-    }
-    
-    // Adding Filter to Image
-    func setFilter(image: UIImage, imageView: UIImageView, tag: Int, filter: String) {
-        if filter == "None" {
-            imageView.image = image
-        } else if filter == "Sepia" {
-            imageView.image = UIImage(cgImage: sepiaFilter(cgImage: image.cgImage!))
-        } else if filter == "Blur" {
-            imageView.image = UIImage(cgImage: blurFilter(cgImage: image.cgImage!))
-        } else if filter == "Invert" {
-            imageView.image = UIImage(cgImage: invertFilter(cgImage: image.cgImage!))
-        }
-        
-        imageStacks[tag - 1].filter = filter
-    }
-    
-    // Redraw Canvas on Top
-    func redrawTopCanvas(image: UIImage) {
-        let imageView = UIImageView(image: image)
-        imageView.center = canvasView.center
-        imageView.tag = 1
-        view.addSubview(imageView)
-    }
-    
+}
+
+
+// MARK: Save and Load
+extension ScrapbookEditorViewController {
     // Save Canvas Progress
     @objc func saveProgress(sender: Any) {
         print("Save Progress")
@@ -299,18 +321,6 @@ class ScrapbookEditorViewController: UIViewController, PKCanvasViewDelegate {
         }
         
 //        scrapPageStack.images.append(contentsOf: imageStacks)
-    }
-    
-    // Clear All Canvas Drawing
-    @objc func clearDrawingHandler(sender: Any) {
-        print("Test Handler")
-        canvasView.drawing = PKDrawing()
-        view.subviews.forEach {sub in
-            if sub.tag == 1 {
-                sub.removeFromSuperview()
-            }
-        }
-        redrawTopCanvas(image: canvasView.drawing.image(from: canvasView.bounds, scale: 1))
     }
     
     // Load Canvas Progress
@@ -339,7 +349,8 @@ class ScrapbookEditorViewController: UIViewController, PKCanvasViewDelegate {
     }
 }
 
-// Image Gallery
+
+// MARK: Image Gallery
 extension ScrapbookEditorViewController: PHPickerViewControllerDelegate {
     func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
         picker.dismiss(animated: true)
@@ -366,7 +377,7 @@ extension ScrapbookEditorViewController: PHPickerViewControllerDelegate {
 }
 
 
-// In-App Camera
+// MARK: In-App Camera
 extension ScrapbookEditorViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true)
@@ -384,7 +395,8 @@ extension ScrapbookEditorViewController: UIImagePickerControllerDelegate, UINavi
     }
 }
 
-// Gesture
+
+// MARK: Gesture
 extension ScrapbookEditorViewController {
     @objc func panGestureHandler(sender: UIPanGestureRecognizer) {
         print("Masuk Pan Gesture \(sender.view!.tag)")
@@ -417,6 +429,14 @@ extension ScrapbookEditorViewController {
         canvasView.bringSubviewToFront(image)
         image.transform = image.transform.rotated(by: sender.rotation)
         sender.rotation = 1 * .pi / 180
+        
+//        if sender.state == .ended {
+//            let rotation = atan2(Double(image.transform.b), Double(image.transform.a))
+//            let rotation = atan2(Double(image.transform.b), Double(image.transform.a)) - atan2(Double(temp.transform.b), Double(temp.transform.a))
+//            print(rotation)
+//            temp.transform = temp.transform.rotated(by: rotation)
+//            imageStacks[image.tag - 1].rotation = rotation
+//        }
     }
     
     @objc func longPressGestureHandler(sender: UILongPressGestureRecognizer) {
@@ -442,6 +462,7 @@ extension ScrapbookEditorViewController {
         self.present(optionMenu, animated: true)
     }
     
+    // MARK: Choose Filter
     func chooseFilter(view: UIView) {
         print("Set Image Filter")
         let image = UIImage(data: Data(base64Encoded: imageStacks[view.tag - 1].image)!)!
@@ -476,8 +497,24 @@ extension ScrapbookEditorViewController {
     }
 }
 
-// Image Filter
+
+// MARK: Image Filter
 extension ScrapbookEditorViewController {
+    // Adding Filter to Image
+    func setFilter(image: UIImage, imageView: UIImageView, tag: Int, filter: String) {
+        if filter == "None" {
+            imageView.image = image
+        } else if filter == "Sepia" {
+            imageView.image = UIImage(cgImage: sepiaFilter(cgImage: image.cgImage!))
+        } else if filter == "Blur" {
+            imageView.image = UIImage(cgImage: blurFilter(cgImage: image.cgImage!))
+        } else if filter == "Invert" {
+            imageView.image = UIImage(cgImage: invertFilter(cgImage: image.cgImage!))
+        }
+        
+        imageStacks[tag - 1].filter = filter
+    }
+    
     func sepiaFilter(cgImage: CGImage) -> CGImage {
         let ciImage = CIImage(cgImage: cgImage)
         let filter = CIFilter.sepiaTone()
