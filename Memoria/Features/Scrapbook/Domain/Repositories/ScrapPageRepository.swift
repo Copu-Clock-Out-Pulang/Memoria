@@ -10,13 +10,11 @@ import Combine
 
 protocol ScrapPageRepository {
 
-    func addScrapPage(scrapPage: ScrapPage) ->
-    AnyPublisher<ScrapPage, Failure>
+    func createScrapPage(form: CreateScrapPageForm, page: ScrapPage) -> AnyPublisher <ScrapPage, Failure>
 
-    func editScrapPage(scrapPage: ScrapPage) ->
-    AnyPublisher<ScrapPage, Failure>
+    func getScrapPages() -> AnyPublisher<[ScrapPage], Failure>
 
-    func deleteScrapPage(scrapPage: ScrapPage) ->
-    AnyPublisher<Void, Failure>
+    func editScrapPage(scrapPage: ScrapPage, form: EditScrapPageForm) -> AnyPublisher <ScrapPage, Failure>
 
+    func deleteScrapPage(scrapPage: ScrapPage) -> AnyPublisher<Void, Failure>
 }

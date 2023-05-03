@@ -24,7 +24,7 @@ struct AnyUseCase<T, P: Equatable>: UseCaseProtocol {
         proceed(params)
     }
 
-    let proceed: (P) -> AnyPublisher<T, Failure>
+    private let proceed: (P) -> AnyPublisher<T, Failure>
 
     typealias ReturnType = T
     typealias Params = P
