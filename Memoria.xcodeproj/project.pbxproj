@@ -131,6 +131,15 @@
 		D6CE6F692A017BB700610641 /* ScrapbookEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CE6F682A017BB700610641 /* ScrapbookEditorViewController.swift */; };
 		D6CE6F6B2A017BF800610641 /* ScrapPageStackData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CE6F6A2A017BF800610641 /* ScrapPageStackData.swift */; };
 		D6CE6F6D2A017C1900610641 /* ImageDatas.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CE6F6C2A017C1900610641 /* ImageDatas.swift */; };
+		D6CE6F6F2A035FA600610641 /* ScrapBookDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CE6F6E2A035FA600610641 /* ScrapBookDetailViewController.swift */; };
+		D6CE6F712A038DA000610641 /* ToolBarComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CE6F702A038DA000610641 /* ToolBarComponent.swift */; };
+		D6CE6F732A038F7900610641 /* ToolPickerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CE6F722A038F7900610641 /* ToolPickerComponent.swift */; };
+		D6CE6F752A03903400610641 /* NavigationBarComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CE6F742A03903400610641 /* NavigationBarComponent.swift */; };
+		D6CE6F782A0390FA00610641 /* ImageStackComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CE6F772A0390FA00610641 /* ImageStackComponent.swift */; };
+		D6CE6F7A2A03915A00610641 /* GestureHandlerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CE6F792A03915A00610641 /* GestureHandlerComponent.swift */; };
+		D6CE6F7C2A03918700610641 /* ImageFilterComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CE6F7B2A03918700610641 /* ImageFilterComponent.swift */; };
+		D6CE6F812A03B85700610641 /* ToolBarContentPreviewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CE6F802A03B85700610641 /* ToolBarContentPreviewComponent.swift */; };
+		D6CE6F832A03C3D800610641 /* RGBValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CE6F822A03C3D800610641 /* RGBValue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -281,6 +290,15 @@
 		D6CE6F682A017BB700610641 /* ScrapbookEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrapbookEditorViewController.swift; sourceTree = "<group>"; };
 		D6CE6F6A2A017BF800610641 /* ScrapPageStackData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrapPageStackData.swift; sourceTree = "<group>"; };
 		D6CE6F6C2A017C1900610641 /* ImageDatas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDatas.swift; sourceTree = "<group>"; };
+		D6CE6F6E2A035FA600610641 /* ScrapBookDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrapBookDetailViewController.swift; sourceTree = "<group>"; };
+		D6CE6F702A038DA000610641 /* ToolBarComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBarComponent.swift; sourceTree = "<group>"; };
+		D6CE6F722A038F7900610641 /* ToolPickerComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolPickerComponent.swift; sourceTree = "<group>"; };
+		D6CE6F742A03903400610641 /* NavigationBarComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarComponent.swift; sourceTree = "<group>"; };
+		D6CE6F772A0390FA00610641 /* ImageStackComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageStackComponent.swift; sourceTree = "<group>"; };
+		D6CE6F792A03915A00610641 /* GestureHandlerComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureHandlerComponent.swift; sourceTree = "<group>"; };
+		D6CE6F7B2A03918700610641 /* ImageFilterComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFilterComponent.swift; sourceTree = "<group>"; };
+		D6CE6F802A03B85700610641 /* ToolBarContentPreviewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBarContentPreviewComponent.swift; sourceTree = "<group>"; };
+		D6CE6F822A03C3D800610641 /* RGBValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RGBValue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -841,6 +859,7 @@
 			children = (
 				D6CE6F6A2A017BF800610641 /* ScrapPageStackData.swift */,
 				D6CE6F6C2A017C1900610641 /* ImageDatas.swift */,
+				D6CE6F822A03C3D800610641 /* RGBValue.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -865,6 +884,13 @@
 		9B1AF1D629F23EE500BEF767 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				D6CE6F702A038DA000610641 /* ToolBarComponent.swift */,
+				D6CE6F802A03B85700610641 /* ToolBarContentPreviewComponent.swift */,
+				D6CE6F722A038F7900610641 /* ToolPickerComponent.swift */,
+				D6CE6F742A03903400610641 /* NavigationBarComponent.swift */,
+				D6CE6F772A0390FA00610641 /* ImageStackComponent.swift */,
+				D6CE6F792A03915A00610641 /* GestureHandlerComponent.swift */,
+				D6CE6F7B2A03918700610641 /* ImageFilterComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -873,6 +899,7 @@
 			isa = PBXGroup;
 			children = (
 				D6CE6F682A017BB700610641 /* ScrapbookEditorViewController.swift */,
+				D6CE6F6E2A035FA600610641 /* ScrapBookDetailViewController.swift */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
@@ -1956,15 +1983,18 @@
 				9B9228792A0104EC00B119AE /* DestinationViewController.swift in Sources */,
 				9B9228772A00D62000B119AE /* DestinationViewModel.swift in Sources */,
 				9BCD420A29FCFC4D007A7868 /* DestinationCoreDataModel+CoreDataClass.swift in Sources */,
+				D6CE6F712A038DA000610641 /* ToolBarComponent.swift in Sources */,
 				9B12C66929FA5D44007B3B3F /* GetTripArea.swift in Sources */,
 				9B1C4DBD29EF1CEC00F03AFF /* InjectionContainer.swift in Sources */,
 				9111A48829FD23D000DC3FF2 /* EditScrapBookForm.swift in Sources */,
 				9111A47429FD1D3900DC3FF2 /* ScrapBookCoreDataModel+CoreDataClass.swift in Sources */,
 				9BCD421529FD0F86007A7868 /* DestinationLocalDataSource.swift in Sources */,
 				9B82DB7529F978FA00606EE2 /* CIImage+CustomExtension.swift in Sources */,
+				D6CE6F7A2A03915A00610641 /* GestureHandlerComponent.swift in Sources */,
 				9B12C66D29FA5EB6007B3B3F /* GenerateRecommendation.swift in Sources */,
 				9111A44529FCFB9200DC3FF2 /* ScrapBookLocalDataSource.swift in Sources */,
 				9B983DE029F26A5600BCAD3A /* DestinationImageGenerator.swift in Sources */,
+				D6CE6F752A03903400610641 /* NavigationBarComponent.swift in Sources */,
 				9B92287F2A010BDF00B119AE /* UIView+CustomExtensions.swift in Sources */,
 				9BCD421229FD05DE007A7868 /* AreaCoreDataModel+CoreDataProperties.swift in Sources */,
 				9B12C65D29FA478F007B3B3F /* ScrapBook.swift in Sources */,
@@ -1979,6 +2009,8 @@
 				9BB5046929F223E000C0D04C /* UseCase.swift in Sources */,
 				9111A45D29FD0F7200DC3FF2 /* ScrapPageRepositoryImpl.swift in Sources */,
 				9111A48529FD1E5D00DC3FF2 /* UserCoreDataModel+CoreDataClass.swift in Sources */,
+				D6CE6F812A03B85700610641 /* ToolBarContentPreviewComponent.swift in Sources */,
+				D6CE6F7C2A03918700610641 /* ImageFilterComponent.swift in Sources */,
 				9111A42929FA8B0000DC3FF2 /* ScrapPageRepository.swift in Sources */,
 				D6CE6F6B2A017BF800610641 /* ScrapPageStackData.swift in Sources */,
 				9111A47529FD1D3900DC3FF2 /* ScrapBookCoreDataModel+CoreDataProperties.swift in Sources */,
@@ -2010,18 +2042,22 @@
 				9111A48A29FD274F00DC3FF2 /* CreateScrapPageForm.swift in Sources */,
 				9B1AF19A29F23D1000BEF767 /* CGImage+CVPixelBuffer.swift in Sources */,
 				9111A42D29FA8BA100DC3FF2 /* EditScrapPage.swift in Sources */,
+				D6CE6F832A03C3D800610641 /* RGBValue.swift in Sources */,
 				D6CE6F6D2A017C1900610641 /* ImageDatas.swift in Sources */,
 				D6CE6F692A017BB700610641 /* ScrapbookEditorViewController.swift in Sources */,
 				9B12C66129FA55E2007B3B3F /* Recommendation.swift in Sources */,
+				D6CE6F6F2A035FA600610641 /* ScrapBookDetailViewController.swift in Sources */,
 				9BB5046029F2230B00C0D04C /* UIImage+CustomExtensions.swift in Sources */,
 				9B12C65F29FA488C007B3B3F /* ScrapPage.swift in Sources */,
 				9111A46D29FD197000DC3FF2 /* EditScrapBook.swift in Sources */,
 				9111A42B29FA8B9800DC3FF2 /* CreateScrapPage.swift in Sources */,
 				9BEF3E1529F2475B00F0D384 /* DeepLabV3.mlmodel in Sources */,
 				9B1AF19429F23D1000BEF767 /* CGImagePropertyOrientation.swift in Sources */,
+				D6CE6F732A038F7900610641 /* ToolPickerComponent.swift in Sources */,
 				9B1AF19F29F23D1000BEF767 /* CVPixelBuffer+Rotate.swift in Sources */,
 				9B1AF19329F23D1000BEF767 /* UIImage+Extensions.swift in Sources */,
 				9B1AF19B29F23D1000BEF767 /* NonMaxSuppression.swift in Sources */,
+				D6CE6F782A0390FA00610641 /* ImageStackComponent.swift in Sources */,
 				9111A48629FD1E5D00DC3FF2 /* UserCoreDataModel+CoreDataProperties.swift in Sources */,
 				9111763329F690BC007852F7 /* MemoriaCoreData.xcdatamodeld in Sources */,
 				9B12C65629FA46E6007B3B3F /* Coordinate.swift in Sources */,
@@ -2211,6 +2247,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Memoria/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -2241,6 +2279,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Memoria/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

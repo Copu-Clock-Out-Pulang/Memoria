@@ -14,4 +14,9 @@ struct ImageDatas: Codable {
 //    var rotation: Double
     var frame: CGRect
     var filter: String
+    var isShape: Bool
+    var colorR: CGFloat
+    var colorG: CGFloat
+    var colorB: CGFloat
+    var colorA: CGFloat
 }
