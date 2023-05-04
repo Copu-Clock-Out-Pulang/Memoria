@@ -66,7 +66,7 @@ class ScrapbookEditorViewController: UIViewController, PKCanvasViewDelegate {
     // MARK: Making Canvas View
     func makeCanvasView() {
         view.addSubview(canvasView)
-        canvasView.backgroundColor = UIColor(red: 255 / 255, green: 196 / 255, blue: 121 / 255, alpha: 1)
+        canvasView.backgroundColor = I.background.color(compatibleWith: .current)
         canvasView.translatesAutoresizingMaskIntoConstraints = false
         canvasView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 36).isActive = true
         canvasView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -36).isActive = true
@@ -94,7 +94,7 @@ class ScrapbookEditorViewController: UIViewController, PKCanvasViewDelegate {
             UIBarButtonItem(image: UIImage(named: "IconShape"), style: .plain, target: self, action: #selector(testHandler)),
             UIBarButtonItem(systemItem: .flexibleSpace)
         ]
-        navigationController?.toolbar.tintColor = UIColor(red: 122 / 255, green: 81 / 255, blue: 40 / 255, alpha: 1)
+        navigationController?.toolbar.tintColor = I.textPrimary.color(compatibleWith: .current)
     }
     
     // MARK: Left Navigation Item
