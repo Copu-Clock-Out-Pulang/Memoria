@@ -9,12 +9,21 @@ import SwiftUI
 
 struct ScrapBookDetailView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
-
-struct ScrapBookDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        ScrapBookDetailView()
+        GeometryReader {
+            _ in
+            ZStack {
+                ScrapBookDetailBackground()
+                VStack {
+                    Spacer()
+                    ScrapBookCard(
+                        tripName: "Trip Name",
+                        tripDate: "27 Jan - 3 Feb 2023",
+                        tripDescription:
+                            "Liburan terbaik bukanlah soal kemewahan, tetapi soal kebersamaan di tengah keluarga tercinta."
+                        //                        "Jalan-jalan ke kota baru"
+                    )
+                }
+            }
+        }
     }
 }
