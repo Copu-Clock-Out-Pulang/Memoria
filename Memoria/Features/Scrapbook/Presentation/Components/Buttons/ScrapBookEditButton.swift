@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ScrapBookEditButton: View {
+
     var body: some View {
         Button(action: {
             // insert editScrapBookfunction from view model
