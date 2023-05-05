@@ -13,6 +13,7 @@ disabled_rules:
   - todo
   - unused_capture_list
   - blanket_disable_command
+  - line_length
 
 analyzer_rules:
   - unused_import
@@ -83,10 +84,10 @@ identifier_name:
     - z
     - to
 
-line_length:
-  ignores_urls: true
-  ignores_function_declarations: true
-  ignores_comments: true
+#line_length:
+#  ignores_urls: true
+#  ignores_function_declarations: true
+#  ignores_comments: true
 
 multiline_arguments:
   first_argument_location: next_line
