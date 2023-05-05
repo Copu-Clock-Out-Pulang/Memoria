@@ -10,8 +10,10 @@ import SwiftUI
 struct ScrapBookCarouselCard: View {
     private let scrapPageCardImage: Image = I.scrapPageCard.swiftUIImage
     private let scrapPageFilterImage: Image = I.scrapPageFilter.swiftUIImage
+
     var scrapPageName: String
     var scrapPageThumbnail: String
+    var scrapPageContent: String
 
     var body: some View {
         GeometryReader {
@@ -21,21 +23,21 @@ struct ScrapBookCarouselCard: View {
                 scrapPageCardImage
                     .resizable()
                     .scaledToFit()
-                
+
                 // ScrapPageThumbnail
-//                Image(scrapPageThumbnail)
-                I.scrapPageThumbnailDummy.swiftUIImage
-                            .resizable()
-                            .scaledToFit()
+                Image(uiImage: (UIImage(data: Data(base64Encoded: scrapPageThumbnail)!) ?? UIImage(named: "ScrapPageThumbnailDummy"))!)
+                    .resizable()
+                    .scaledToFit()
                     .mask(
                         RoundedRectangle(
                             cornerRadius: 16
                         )
-                            .frame(
-                                width: geometry.size.width * 0.8,
-                                height: geometry.size.height * 0.8
-                            )
-                )
+                        .frame(
+                            width: geometry.size.width * 0.8,
+                            height: geometry.size.height * 0.8
+                        )
+                    )
+
                 // ScrapPageFilter
                 scrapPageFilterImage
                     .resizable()
