@@ -34,7 +34,7 @@ class TripNameFromView: UIView {
         let field = UITextField()
         field.placeholder = S.dstTripInputHint
         return field
-        
+
     }()
     lazy var loginButton: UIButton = {
         let button = UIButton(configuration: .filled())
@@ -44,16 +44,16 @@ class TripNameFromView: UIView {
 
     init() {
         super.init(frame: .infinite)
-        
+
         self.backgroundColor = UIColor(patternImage: I.backgroundImage1.image)
-        
+
         addSubViews(view: [pageTitle, contentStack])
         pageTitle.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.centerY.equalToSuperview().offset(-250)
             make.left.equalToSuperview().offset(20)
             make.right.equalToSuperview().offset(-20)
-            
+
         }
         contentStack.snp.makeConstraints { make in
             make.centerX.left.right.equalTo(pageTitle)
@@ -61,10 +61,10 @@ class TripNameFromView: UIView {
             make.height.equalTo(280)
         }
     }
-      
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
 
 }
