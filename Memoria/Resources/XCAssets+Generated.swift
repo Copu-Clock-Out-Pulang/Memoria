@@ -25,9 +25,20 @@ internal typealias AssetImageTypeAlias = ImageAsset.Image
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
 internal enum I {
   internal static let accentColor = ColorAsset(name: "AccentColor")
+  internal static let addScrapPageButtonIcon = ImageAsset(name: "AddScrapPageButtonIcon")
   internal static let background = ColorAsset(name: "Background")
   internal static let backgroundDecal1 = ImageAsset(name: "BackgroundDecal1")
   internal static let backgroundImage1 = ImageAsset(name: "BackgroundImage1")
+  internal static let backgroundScrapBookDetail = ImageAsset(name: "BackgroundScrapBookDetail")
+  internal static let deleteButtonIcon = ImageAsset(name: "DeleteButtonIcon")
+  internal static let editButtonIcon = ImageAsset(name: "EditButtonIcon")
+  internal static let editScrapPageButtonIcon = ImageAsset(name: "EditScrapPageButtonIcon")
+  internal static let scrapBookDetailBackgroundDecal = ImageAsset(name: "ScrapBookDetailBackgroundDecal")
+  internal static let scrapPageCard = ImageAsset(name: "ScrapPageCard")
+  internal static let scrapPageFilter = ImageAsset(name: "ScrapPageFilter")
+  internal static let scrapPageThumbnailDummy = ImageAsset(name: "ScrapPageThumbnailDummy")
+  internal static let shareButtonIcon = ImageAsset(name: "ShareButtonIcon")
+  internal static let textPrimary = ColorAsset(name: "TextPrimary")
   internal enum CanvasColor {
     internal static let _0 = ColorAsset(name: "CanvasColor/0")
     internal static let _1 = ColorAsset(name: "CanvasColor/1")
@@ -73,7 +84,8 @@ internal enum I {
     internal static let shape = ImageAsset(name: "ToolBarIcon/Shape")
     internal static let sticker = ImageAsset(name: "ToolBarIcon/Sticker")
   }
-  internal static let imageTest = ImageAsset(name: "image_test")
+
+internal static let imageTest = ImageAsset(name: "image_test")
   internal static let mask = ImageAsset(name: "mask")
   internal static let outputTest = ImageAsset(name: "output_test")
 }

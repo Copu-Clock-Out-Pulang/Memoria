@@ -35,6 +35,18 @@
 		9111A48829FD23D000DC3FF2 /* EditScrapBookForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9111A48729FD23D000DC3FF2 /* EditScrapBookForm.swift */; };
 		9111A48A29FD274F00DC3FF2 /* CreateScrapPageForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9111A48929FD274F00DC3FF2 /* CreateScrapPageForm.swift */; };
 		9111A48C29FD275800DC3FF2 /* EditScrapPageForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9111A48B29FD275800DC3FF2 /* EditScrapPageForm.swift */; };
+		915F0C0C2A0246A40040AEAB /* ScrapBookDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915F0C0B2A0246A40040AEAB /* ScrapBookDetailViewController.swift */; };
+		915F0C0E2A0248D20040AEAB /* ScrapBookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915F0C0D2A0248D20040AEAB /* ScrapBookViewModel.swift */; };
+		915F0C122A0257690040AEAB /* ScrapBookDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915F0C112A0257690040AEAB /* ScrapBookDetailView.swift */; };
+		915F0C142A0258580040AEAB /* ScrapBookCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915F0C132A0258580040AEAB /* ScrapBookCard.swift */; };
+		915F0C162A026D3A0040AEAB /* ScrapBookDetailBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915F0C152A026D390040AEAB /* ScrapBookDetailBackground.swift */; };
+		915F0C1A2A03ABB60040AEAB /* ScrapBookEditButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915F0C192A03ABB60040AEAB /* ScrapBookEditButton.swift */; };
+		915F0C202A03B89F0040AEAB /* ScrapPageShareButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915F0C1F2A03B89F0040AEAB /* ScrapPageShareButton.swift */; };
+		915F0C222A03B8AE0040AEAB /* ScrapBookDeleteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915F0C212A03B8AE0040AEAB /* ScrapBookDeleteButton.swift */; };
+		915F0C242A03B8F80040AEAB /* ScrapPageEditButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915F0C232A03B8F80040AEAB /* ScrapPageEditButton.swift */; };
+		915F0C262A03C23A0040AEAB /* ScrapBookCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915F0C252A03C23A0040AEAB /* ScrapBookCarousel.swift */; };
+		915F0C2C2A03C38D0040AEAB /* ScrapBookCarouselCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915F0C2B2A03C38D0040AEAB /* ScrapBookCarouselCard.swift */; };
+		915F0C2E2A042AF50040AEAB /* ScrapPageCreateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915F0C2D2A042AF50040AEAB /* ScrapPageCreateButton.swift */; };
 		9B12C65429FA4682007B3B3F /* Destination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12C65329FA4682007B3B3F /* Destination.swift */; };
 		9B12C65629FA46E6007B3B3F /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12C65529FA46E6007B3B3F /* Coordinate.swift */; };
 		9B12C65B29FA475E007B3B3F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12C65A29FA475E007B3B3F /* User.swift */; };
@@ -192,6 +204,18 @@
 		9111A48729FD23D000DC3FF2 /* EditScrapBookForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditScrapBookForm.swift; sourceTree = "<group>"; };
 		9111A48929FD274F00DC3FF2 /* CreateScrapPageForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateScrapPageForm.swift; sourceTree = "<group>"; };
 		9111A48B29FD275800DC3FF2 /* EditScrapPageForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditScrapPageForm.swift; sourceTree = "<group>"; };
+		915F0C0B2A0246A40040AEAB /* ScrapBookDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrapBookDetailViewController.swift; sourceTree = "<group>"; };
+		915F0C0D2A0248D20040AEAB /* ScrapBookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrapBookViewModel.swift; sourceTree = "<group>"; };
+		915F0C112A0257690040AEAB /* ScrapBookDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrapBookDetailView.swift; sourceTree = "<group>"; };
+		915F0C132A0258580040AEAB /* ScrapBookCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrapBookCard.swift; sourceTree = "<group>"; };
+		915F0C152A026D390040AEAB /* ScrapBookDetailBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrapBookDetailBackground.swift; sourceTree = "<group>"; };
+		915F0C192A03ABB60040AEAB /* ScrapBookEditButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrapBookEditButton.swift; sourceTree = "<group>"; };
+		915F0C1F2A03B89F0040AEAB /* ScrapPageShareButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrapPageShareButton.swift; sourceTree = "<group>"; };
+		915F0C212A03B8AE0040AEAB /* ScrapBookDeleteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrapBookDeleteButton.swift; sourceTree = "<group>"; };
+		915F0C232A03B8F80040AEAB /* ScrapPageEditButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrapPageEditButton.swift; sourceTree = "<group>"; };
+		915F0C252A03C23A0040AEAB /* ScrapBookCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrapBookCarousel.swift; sourceTree = "<group>"; };
+		915F0C2B2A03C38D0040AEAB /* ScrapBookCarouselCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrapBookCarouselCard.swift; sourceTree = "<group>"; };
+		915F0C2D2A042AF50040AEAB /* ScrapPageCreateButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrapPageCreateButton.swift; sourceTree = "<group>"; };
 		9B12C65329FA4682007B3B3F /* Destination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Destination.swift; sourceTree = "<group>"; };
 		9B12C65529FA46E6007B3B3F /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
 		9B12C65A29FA475E007B3B3F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -345,6 +369,35 @@
 				9111A48429FD1E5D00DC3FF2 /* UserCoreDataModel+CoreDataProperties.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		915F0C272A03C2C30040AEAB /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				915F0C192A03ABB60040AEAB /* ScrapBookEditButton.swift */,
+				915F0C1F2A03B89F0040AEAB /* ScrapPageShareButton.swift */,
+				915F0C212A03B8AE0040AEAB /* ScrapBookDeleteButton.swift */,
+				915F0C232A03B8F80040AEAB /* ScrapPageEditButton.swift */,
+				915F0C2D2A042AF50040AEAB /* ScrapPageCreateButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		915F0C282A03C2E30040AEAB /* Background */ = {
+			isa = PBXGroup;
+			children = (
+				915F0C152A026D390040AEAB /* ScrapBookDetailBackground.swift */,
+			);
+			path = Background;
+			sourceTree = "<group>";
+		};
+		915F0C292A03C30A0040AEAB /* Carousel */ = {
+			isa = PBXGroup;
+			children = (
+				915F0C252A03C23A0040AEAB /* ScrapBookCarousel.swift */,
+				915F0C2B2A03C38D0040AEAB /* ScrapBookCarouselCard.swift */,
+			);
+			path = Carousel;
 			sourceTree = "<group>";
 		};
 		9B12C65729FA4745007B3B3F /* Shared */ = {
@@ -771,6 +824,7 @@
 		9B1AF1C829F23EDF00BEF767 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				915F0C0D2A0248D20040AEAB /* ScrapBookViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -778,6 +832,10 @@
 		9B1AF1C929F23EDF00BEF767 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				915F0C292A03C30A0040AEAB /* Carousel */,
+				915F0C282A03C2E30040AEAB /* Background */,
+				915F0C272A03C2C30040AEAB /* Buttons */,
+				915F0C132A0258580040AEAB /* ScrapBookCard.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -785,6 +843,8 @@
 		9B1AF1CA29F23EDF00BEF767 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				915F0C0B2A0246A40040AEAB /* ScrapBookDetailViewController.swift */,
+				915F0C112A0257690040AEAB /* ScrapBookDetailView.swift */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
@@ -1978,6 +2038,7 @@
 				9111A45929FD079A00DC3FF2 /* ScrapPageLocalDataSource.swift in Sources */,
 				9111A45329FCFE9000DC3FF2 /* ScrapPageCoreDataModel+CoreDataProperties.swift in Sources */,
 				9BDA3E5329FBD93D002D7227 /* CreateScrapBook.swift in Sources */,
+				915F0C122A0257690040AEAB /* ScrapBookDetailView.swift in Sources */,
 				9B1AF19029F23D1000BEF767 /* Math.swift in Sources */,
 				9B1C4DB429EF19E400F03AFF /* SplashViewController.swift in Sources */,
 				9B9228792A0104EC00B119AE /* DestinationViewController.swift in Sources */,
@@ -2015,8 +2076,10 @@
 				D6CE6F6B2A017BF800610641 /* ScrapPageStackData.swift in Sources */,
 				9111A47529FD1D3900DC3FF2 /* ScrapBookCoreDataModel+CoreDataProperties.swift in Sources */,
 				9111A46F29FD197700DC3FF2 /* DeleteScrapBook.swift in Sources */,
+				915F0C2E2A042AF50040AEAB /* ScrapPageCreateButton.swift in Sources */,
 				9B487FB229EFABE000F5208A /* Strings+Generated.swift in Sources */,
 				9B1AF18F29F23D1000BEF767 /* Array+Extensions.swift in Sources */,
+				915F0C1A2A03ABB60040AEAB /* ScrapBookEditButton.swift in Sources */,
 				9B12C66B29FA5DF7007B3B3F /* GetTripDestinationByArea.swift in Sources */,
 				9B1AF19729F23D1000BEF767 /* MLModel+Images.swift in Sources */,
 				9111A48C29FD275800DC3FF2 /* EditScrapPageForm.swift in Sources */,
@@ -2024,6 +2087,8 @@
 				9B1C4D0429EEF03400F03AFF /* SceneDelegate.swift in Sources */,
 				9BBB2ECD2A009553008830F8 /* NSSet+CustomExtensions.swift in Sources */,
 				9111764329F78204007852F7 /* DestinationMigration.swift in Sources */,
+				915F0C0C2A0246A40040AEAB /* ScrapBookDetailViewController.swift in Sources */,
+				915F0C142A0258580040AEAB /* ScrapBookCard.swift in Sources */,
 				9B1AF19629F23D1000BEF767 /* MLMultiArray+Helpers.swift in Sources */,
 				9B1AF19229F23D1000BEF767 /* Predictions.swift in Sources */,
 				9B12C66F29FA8E46007B3B3F /* Publishers+CustomExtensions.swift in Sources */,
@@ -2046,11 +2111,16 @@
 				D6CE6F6D2A017C1900610641 /* ImageDatas.swift in Sources */,
 				D6CE6F692A017BB700610641 /* ScrapbookEditorViewController.swift in Sources */,
 				9B12C66129FA55E2007B3B3F /* Recommendation.swift in Sources */,
+				915F0C162A026D3A0040AEAB /* ScrapBookDetailBackground.swift in Sources */,
+				915F0C202A03B89F0040AEAB /* ScrapPageShareButton.swift in Sources */,
 				D6CE6F6F2A035FA600610641 /* ScrapBookDetailViewController.swift in Sources */,
 				9BB5046029F2230B00C0D04C /* UIImage+CustomExtensions.swift in Sources */,
+				915F0C0E2A0248D20040AEAB /* ScrapBookViewModel.swift in Sources */,
+				915F0C222A03B8AE0040AEAB /* ScrapBookDeleteButton.swift in Sources */,
 				9B12C65F29FA488C007B3B3F /* ScrapPage.swift in Sources */,
 				9111A46D29FD197000DC3FF2 /* EditScrapBook.swift in Sources */,
 				9111A42B29FA8B9800DC3FF2 /* CreateScrapPage.swift in Sources */,
+				915F0C242A03B8F80040AEAB /* ScrapPageEditButton.swift in Sources */,
 				9BEF3E1529F2475B00F0D384 /* DeepLabV3.mlmodel in Sources */,
 				9B1AF19429F23D1000BEF767 /* CGImagePropertyOrientation.swift in Sources */,
 				D6CE6F732A038F7900610641 /* ToolPickerComponent.swift in Sources */,
@@ -2059,7 +2129,9 @@
 				9B1AF19B29F23D1000BEF767 /* NonMaxSuppression.swift in Sources */,
 				D6CE6F782A0390FA00610641 /* ImageStackComponent.swift in Sources */,
 				9111A48629FD1E5D00DC3FF2 /* UserCoreDataModel+CoreDataProperties.swift in Sources */,
+				915F0C2C2A03C38D0040AEAB /* ScrapBookCarouselCard.swift in Sources */,
 				9111763329F690BC007852F7 /* MemoriaCoreData.xcdatamodeld in Sources */,
+				915F0C262A03C23A0040AEAB /* ScrapBookCarousel.swift in Sources */,
 				9B12C65629FA46E6007B3B3F /* Coordinate.swift in Sources */,
 				9B1AF19929F23D1000BEF767 /* CVPixelBuffer+Create.swift in Sources */,
 				9111763B29F6950D007852F7 /* PersistenceController.swift in Sources */,
