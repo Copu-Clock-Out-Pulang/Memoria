@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-struct Recommendation: Equatable, Identifiable {
+struct Recommendation: Equatable, Identifiable, Hashable {
     let id: UUID
     let destination: Destination
     let generatedPhoto: UIImage

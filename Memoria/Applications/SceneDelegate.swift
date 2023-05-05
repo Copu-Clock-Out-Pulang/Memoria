@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         guard let windowScene = (scene as? UIWindowScene) else { return }
 
-        let mainViewController = UINavigationController(rootViewController: SplashViewController())
+        let mainViewController = UINavigationController(rootViewController: ScrapBookDetailViewController())
         let window = UIWindow(windowScene: windowScene)
         window.rootViewController = mainViewController
         window.makeKeyAndVisible()

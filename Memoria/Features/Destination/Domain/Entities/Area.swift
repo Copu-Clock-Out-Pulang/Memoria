@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Area: Equatable, Identifiable {
+struct Area: Equatable, Identifiable, Hashable {
     let id: UUID
     let name: String
     let province: String
