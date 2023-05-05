@@ -24,7 +24,7 @@ class ScrapbookEditorViewController: UIViewController, PKCanvasViewDelegate {
     let ciContext = InjectionContainer.shared.container.resolve(CIContext.self)!
     
     // Data
-    var scrapPageStack = ScrapPageStackData(id: UUID(), drawing: "", images: "")
+    var scrapPageStack = ScrapPageStackData(id: UUID(), drawing: "", images: "", canvasColor: RGBValue(colorR: 1, colorG: 0.957, colorB: 0.918, colorA: 1))
     var imageStacks: [ImageDatas] = []
     var pageTitle = "Page Title"
     
@@ -149,6 +149,16 @@ extension ScrapbookEditorViewController {
         
         scrapPageStack.drawing = canvasView.drawing.dataRepresentation().base64EncodedString()
         
+        var saveValueR: CGFloat = 0
+        var saveValueG: CGFloat = 0
+        var saveValueB: CGFloat = 0
+        var saveValueA: CGFloat = 0
+        canvasView.backgroundColor?.getRed(&saveValueR, green: &saveValueG, blue: &saveValueB, alpha: &saveValueA)
+        scrapPageStack.canvasColor.colorR = saveValueR
+        scrapPageStack.canvasColor.colorG = saveValueG
+        scrapPageStack.canvasColor.colorB = saveValueB
+        scrapPageStack.canvasColor.colorA = saveValueA
+        
         do {
             let encoded = try JSONEncoder().encode(imageStacks)
             scrapPageStack.images = encoded.base64EncodedString()
@@ -168,10 +178,15 @@ extension ScrapbookEditorViewController {
             print("Error While Loading Drawing", error)
         }
         
+        canvasView.backgroundColor = UIColor(
+            red: scrapPageStack.canvasColor.colorR, green: scrapPageStack.canvasColor.colorG,
+            blue: scrapPageStack.canvasColor.colorB, alpha: scrapPageStack.canvasColor.colorA
+        )
+        
         var decodedStacks: [ImageDatas]
         do {
             decodedStacks = try JSONDecoder().decode([ImageDatas].self, from: Data(base64Encoded: scrapPageStack.images) ?? Data())
-            print(decodedStacks)
+//            print(decodedStacks)
             decodedStacks.forEach { data in
                 let image = UIImage(data: Data(base64Encoded: data.image)!)
                 let color = RGBValue(colorR: data.colorR, colorG: data.colorG, colorB: data.colorB, colorA: data.colorA)

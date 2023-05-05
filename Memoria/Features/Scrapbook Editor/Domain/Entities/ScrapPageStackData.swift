@@ -11,4 +11,5 @@ struct ScrapPageStackData {
     var id: UUID
     var drawing: String
     var images: String
+    var canvasColor: RGBValue
 }
