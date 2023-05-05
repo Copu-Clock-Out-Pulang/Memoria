@@ -13,14 +13,13 @@ protocol ScrapPageLocalDataSource {
 
     // ini smua coredata model atau ScrapPage biasa?
 
-    func createScrapPage(scrapBook: ScrapBookCoreDataModel, page: ScrapPageCoreDataModel) -> AnyPublisher<ScrapPageCoreDataModel, Failure>
+    func createScrapPage(form: CreateScrapPageForm) -> AnyPublisher<ScrapPageCoreDataModel, Failure>
 
     func getScrapPages() -> AnyPublisher<[ScrapPageCoreDataModel], Failure>
 
-    func editScrapPage(scrapPage: ScrapPageCoreDataModel) -> AnyPublisher<ScrapPageCoreDataModel, Failure>
+    func editScrapPage(scrapPage: ScrapPage, form: EditScrapPageForm) -> AnyPublisher<ScrapPageCoreDataModel, Failure>
 
-    // yg delete itu scrappage atau scrappagedatamodel?
-    func deleteScrapPage(scrapPage: ScrapPageCoreDataModel) -> AnyPublisher<Void, Failure>
+    func deleteScrapPage(scrapPage: ScrapPage) -> AnyPublisher<Void, Failure>
 }
 
 class ScrapPageLocalDataSourceImpl: ScrapPageLocalDataSource {
@@ -41,24 +40,29 @@ class ScrapPageLocalDataSourceImpl: ScrapPageLocalDataSource {
         }
     }
 
-    func createScrapPage(scrapBook: ScrapBookCoreDataModel, page: ScrapPageCoreDataModel) -> AnyPublisher<ScrapPageCoreDataModel, Failure> {
+    func createScrapPage(form: CreateScrapPageForm) -> AnyPublisher<ScrapPageCoreDataModel, Failure> {
 
-        scrapBook.addToScrapPages(page)
+        let scrapBook = ScrapPageCoreDataModel.fromDomain(form: form, context: context)
+        //        scrapBook.addToScrapPages(scrap)
         do {
             try context.save()
-            return Just(page).setFailureType(to: Failure.self).eraseToAnyPublisher()
+            return Just(scrapBook).setFailureType(to: Failure.self).eraseToAnyPublisher()
         } catch _ {
             return Fail(error: Failure.createScrapPageFailure).eraseToAnyPublisher()
         }
     }
 
-    func editScrapPage(scrapPage: ScrapPageCoreDataModel) -> AnyPublisher<ScrapPageCoreDataModel, Failure> {
+    func editScrapPage(scrapPage: ScrapPage, form: EditScrapPageForm) -> AnyPublisher<ScrapPageCoreDataModel, Failure> {
+        let request = ScrapPageCoreDataModel.fetchRequest()
+        request.predicate = NSPredicate(format: "id == %@", scrapPage.id as CVarArg)
+        request.fetchLimit = 1
         do {
-            let fetchedPage = try context.existingObject(with: scrapPage.objectID) as! ScrapPageCoreDataModel
-
-            fetchedPage.name = scrapPage.name
-            fetchedPage.thumbnail = scrapPage.thumbnail
-            fetchedPage.content = scrapPage.content
+            guard let fetchedPage = try context.fetch(request).first else {
+                return Fail(error: Failure.editScrapPageFailure).eraseToAnyPublisher()
+            }
+            fetchedPage.name = form.name
+            fetchedPage.thumbnail = form.thumbnail
+            fetchedPage.content = form.content
             fetchedPage.updatedAt = Date.now
 
             try context.save()
@@ -68,9 +72,9 @@ class ScrapPageLocalDataSourceImpl: ScrapPageLocalDataSource {
         }
     }
 
-    func deleteScrapPage(scrapPage: ScrapPageCoreDataModel) -> AnyPublisher<Void, Failure> {
+    func deleteScrapPage(scrapPage: ScrapPage) -> AnyPublisher<Void, Failure> {
         let fetchRequest = ScrapPageCoreDataModel.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "%K == %@", "id", scrapPage.id! as any CVarArg)
+        fetchRequest.predicate = NSPredicate(format: "%K == %@", "id", scrapPage.id as any CVarArg)
         fetchRequest.fetchLimit = 1
         do {
             guard let scrapPage = try context.fetch(fetchRequest).first else {
