@@ -8,13 +8,44 @@
 import SwiftUI
 
 struct ScrapBookCarouselCard: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
+    private let scrapPageCardImage: Image = I.scrapPageCard.swiftUIImage
+    private let scrapPageFilterImage: Image = I.scrapPageFilter.swiftUIImage
+    var scrapPageName: String
+    var scrapPageThumbnail: String
 
-struct ScrapBookCarouselCard_Previews: PreviewProvider {
-    static var previews: some View {
-        ScrapBookCarouselCard()
+    var body: some View {
+        GeometryReader {
+            geometry in
+            ZStack {
+                // ScrapPageCard
+                scrapPageCardImage
+                    .resizable()
+                    .scaledToFit()
+                
+                // ScrapPageThumbnail
+//                Image(scrapPageThumbnail)
+                I.scrapPageThumbnailDummy.swiftUIImage
+                            .resizable()
+                            .scaledToFit()
+                    .mask(
+                        RoundedRectangle(
+                            cornerRadius: 16
+                        )
+                            .frame(
+                                width: geometry.size.width * 0.8,
+                                height: geometry.size.height * 0.8
+                            )
+                )
+                // ScrapPageFilter
+                scrapPageFilterImage
+                    .resizable()
+                    .scaledToFit()
+                // ScrapPageName
+                Text(scrapPageName)
+                    .font(.custom("LilitaOne", fixedSize: 24))
+                    .padding(.trailing, geometry.size.width * 0.35)
+                    .padding(.top, geometry.size.height * 0.6).foregroundColor(.white)
+            }
+        }
     }
 }
