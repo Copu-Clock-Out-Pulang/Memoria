@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+struct Content: Codable {
+    var drawing: String
+    var images: [ImageDatas]
+    var canvasColor: RGBValue
+}
