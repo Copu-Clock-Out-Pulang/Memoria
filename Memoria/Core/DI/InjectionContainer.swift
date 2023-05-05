@@ -37,21 +37,21 @@ final class InjectionContainer {
 
         return container
     }
-    
+
     private func registerSharedContainer(_ container: Container) {
         container.register(PersistenceController.self) { _ in
             let controller = PersistenceController.shared
             return controller
-            
+
         }
         .inObjectScope(.container)
-        
-        
+
+
         container.register(NSManagedObjectContext.self) { resolver in
             let controller = resolver.resolve(PersistenceController.self)!
             let context = controller.container.viewContext
             return context
-            
+
         }
         .inObjectScope(.container)
     }
@@ -59,13 +59,13 @@ final class InjectionContainer {
     private func registerDestinationContainer(_ container: Container) {
         container.autoregister(DestinationLocalDataSource.self, initializer: DestinationLocalDataSourceImpl.init)
         container.autoregister(DestinationRepository.self, initializer: DestinationRepositoryImpl.init)
-        
+
         container.autoregister(ImageSegmentor.self, initializer: ImageSegmentorImpl.init)
-        
+
         container.register(DestinationImageGenerator.self) { resolver in
             let segmentor = resolver.resolve(ImageSegmentor.self)!
             return DestinationImageGeneratorImpl(imageSegmentor: segmentor)
-            
+
         }
         container.register(AnyUseCase<[Area], NoParams>.self, name: "GetTripArea") { resolver in
             let repo = resolver.resolve(DestinationRepository.self)!
@@ -79,7 +79,7 @@ final class InjectionContainer {
             let usecase = GetTripDestinationByAreaImpl(repository: repo)
             return usecase.eraseToAnyUseCase()
         }
-        
+
         container.register(
             AnyUseCase<[Recommendation], GenerateRecommendationParams>.self,
             name: "GenerateRecommendation") { resolver in
@@ -87,7 +87,7 @@ final class InjectionContainer {
             let usecase = GenerateRecommendationImpl(generator: generator)
             return usecase.eraseToAnyUseCase()
         }
-        
+
         container.register(DestinationViewModel.self) { resolver in
             let getTripArea = resolver.resolve(AnyUseCase<[Area], NoParams>.self, name: "GetTripArea")!
             let generateRecommendation = resolver.resolve(
@@ -96,12 +96,12 @@ final class InjectionContainer {
             let getTripDestination = resolver.resolve(
                 AnyUseCase<[Destination], GetTripDestinationByAreaParams>.self,
                 name: "GetTripDestinationByArea")!
-            
+
             return DestinationViewModel(
                 getTripArea: getTripArea,
                 getDestinations: getTripDestination,
                 generateRecommendations: generateRecommendation)
-            
+
         }
     }
 }

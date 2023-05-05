@@ -9,13 +9,13 @@ import Foundation
 import Combine
 
 class DestinationRepositoryImpl: DestinationRepository {
-    
+
     let localDataSource: DestinationLocalDataSource
-    
+
     init(localDataSource: DestinationLocalDataSource) {
         self.localDataSource = localDataSource
     }
-    
+
     func fetchArea() -> AnyPublisher<[Area], Failure> {
         return localDataSource.fetchArea()
             .map {
@@ -23,9 +23,9 @@ class DestinationRepositoryImpl: DestinationRepository {
                     $0.toDomain()
                 }
             }
-        .eraseToAnyPublisher()
+            .eraseToAnyPublisher()
     }
-    
+
     func fetchDestination(area: Area) -> AnyPublisher<[Destination], Failure> {
         return localDataSource.fetchDestinationByArea(id: area.id)
             .map {
@@ -35,6 +35,6 @@ class DestinationRepositoryImpl: DestinationRepository {
             }
             .eraseToAnyPublisher()
     }
-    
-    
+
+
 }
