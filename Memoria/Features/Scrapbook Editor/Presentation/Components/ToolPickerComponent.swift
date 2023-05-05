@@ -25,18 +25,18 @@ extension ScrapbookEditorViewController {
                 sub.removeFromSuperview()
             }
         }
-        
+
         canvasView.drawingPolicy = .anyInput
         toolPicker.setVisible(true, forFirstResponder: canvasView)
         toolPicker.addObserver(canvasView)
         canvasView.becomeFirstResponder()
-        
+
         navigationItem.rightBarButtonItems!.removeAll()
         navigationItem.leftBarButtonItems!.removeAll()
         makeDrawingLeftNavigationItem()
         makeDrawingRightNavigationItem()
     }
-    
+
     // MARK: Close ToolPicker
     @objc func closeToolPicker() {
         canvasView.subviews.forEach { sub in
@@ -46,25 +46,25 @@ extension ScrapbookEditorViewController {
         canvasView.drawingPolicy = .pencilOnly
         toolPicker.setVisible(false, forFirstResponder: canvasView)
         toolPicker.removeObserver(canvasView)
-        
+
         redrawTopCanvas(image: canvasView.drawing.image(from: canvasView.bounds, scale: 1))
-        
+
         navigationItem.leftBarButtonItems!.removeAll()
         navigationItem.rightBarButtonItems!.removeAll()
         makeLeftNavigationItems()
         makeRightNavigationItems()
     }
-    
+
     // MARK: Undo Handler
     @objc func undoHandler() {
         undoManager?.undo()
     }
-    
+
     // MARK: Redo Handler
     @objc func redoHandler() {
         undoManager?.redo()
     }
-    
+
     // MARK: Clear All Canvas Drawing
     @objc func clearDrawingHandler(sender: Any) {
         print("Test Handler")

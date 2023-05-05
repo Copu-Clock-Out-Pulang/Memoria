@@ -28,13 +28,13 @@ extension ScrapbookEditorViewController {
         ]
         navigationController?.toolbar.tintColor = I.textPrimary.color(compatibleWith: .current)
     }
-    
+
     // MARK: Make BarButton
     func makeNavbarButton(image: UIImage, action: Selector) -> UIBarButtonItem {
         let barButton = UIBarButtonItem(image: image, style: .plain, target: self, action: action)
         return barButton
     }
-    
+
     // MARK: Insert Image Action
     @objc func openInsertOption(_ sender: Any) {
         toolContentView?.removeFromSuperview()
@@ -58,13 +58,13 @@ extension ScrapbookEditorViewController {
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) {_ in
             print("Cancel")
         }
-        
+
         optionMenu.addAction(cameraAction)
         optionMenu.addAction(galleryAction)
         optionMenu.addAction(cancelAction)
         self.present(optionMenu, animated: true)
     }
-    
+
     @objc func changeCanvasBackground(_ sender: Any) {
         toolContentView?.removeFromSuperview()
         if selectedTool == "Background" {
@@ -75,7 +75,7 @@ extension ScrapbookEditorViewController {
             makeToolBarContent()
         }
     }
-    
+
     @objc func chooseSticker(_ sender: Any) {
         toolContentView?.removeFromSuperview()
         if selectedTool == "Sticker" {
@@ -86,7 +86,7 @@ extension ScrapbookEditorViewController {
             makeToolBarContent()
         }
     }
-    
+
     @objc func chooseShape(_ sender: Any) {
         toolContentView?.removeFromSuperview()
         if selectedTool == "Shape" {
@@ -105,7 +105,7 @@ extension ScrapbookEditorViewController: PHPickerViewControllerDelegate {
     func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
         picker.dismiss(animated: true)
         let group = DispatchGroup()
-        
+
         results.forEach { result in
             group.enter()
             result.itemProvider.loadObject(ofClass: UIImage.self) {reading, error in
@@ -119,7 +119,7 @@ extension ScrapbookEditorViewController: PHPickerViewControllerDelegate {
                 self.inputImage = image
             }
         }
-        
+
         group.notify(queue: .main) {
             self.makeImageView(image: self.inputImage, isShape: false)
         }
@@ -132,14 +132,14 @@ extension ScrapbookEditorViewController: UIImagePickerControllerDelegate, UINavi
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true)
     }
-    
+
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         picker.dismiss(animated: true)
-        
+
         guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
             return
         }
-        
+
         self.makeImageView(image: image, isShape: false)
         self.inputImage = image
     }

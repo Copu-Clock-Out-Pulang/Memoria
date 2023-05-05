@@ -13,29 +13,29 @@ extension ScrapbookEditorViewController: UICollectionViewDataSource, UICollectio
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: 40, height: 40)
         layout.scrollDirection = .horizontal
-        
+
         toolContentView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         toolContentView?.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "MyCell")
         toolContentView?.backgroundColor = UIColor(red: 49 / 255, green: 49 / 255, blue: 49 / 255, alpha: 0.7)
         view.addSubview(toolContentView ?? UICollectionView())
-        
+
         toolContentView?.translatesAutoresizingMaskIntoConstraints = false
         toolContentView?.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         toolContentView?.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         toolContentView?.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         toolContentView?.heightAnchor.constraint(equalToConstant: 60).isActive = true
-        
+
         toolContentView?.dataSource = self
         toolContentView?.delegate = self
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return toolContentCount
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let myCell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyCell", for: indexPath)
-        
+
         if selectedTool == "Background" {
             myCell.backgroundColor = canvasColors[indexPath.row]
             myCell.layer.cornerRadius = 8
@@ -48,13 +48,13 @@ extension ScrapbookEditorViewController: UICollectionViewDataSource, UICollectio
             imageView.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
             myCell.addSubview(imageView)
         }
-        
+
         return myCell
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("User tapped on \(selectedTool) \(indexPath.row)")
-        
+
         if selectedTool == "Background"{
             canvasView.backgroundColor = canvasColors[indexPath.row]
         } else if selectedTool == "Sticker" {

@@ -14,15 +14,15 @@ extension ScrapbookEditorViewController {
         if image.pngData() == nil {
             return
         }
-        
+
         var colorR: CGFloat = 0
         var colorG: CGFloat = 0
         var colorB: CGFloat = 0
         var colorA: CGFloat = 0
         color.getRed(&colorR, green: &colorG, blue: &colorB, alpha: &colorA)
-        
-//        print(colorR, colorG, colorB, colorA)
-        
+
+        //        print(colorR, colorG, colorB, colorA)
+
         let imageView = UIImageView(image: image)
         imageView.tintColor = color
         imageView.transform = imageView.transform.scaledBy(x: scale, y: scale)
@@ -32,7 +32,7 @@ extension ScrapbookEditorViewController {
         imageView.addGestureRecognizer(UIPinchGestureRecognizer(target: self, action: #selector(self.pinchGestureHandler)))
         imageView.addGestureRecognizer(UIRotationGestureRecognizer(target: self, action: #selector(self.rotateGestureHandler)))
         imageView.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(self.longPressGestureHandler)))
-    
+
         imageView.isUserInteractionEnabled = true
         canvasView.addSubview(imageView)
         imageStacks.append(ImageDatas(
@@ -41,28 +41,28 @@ extension ScrapbookEditorViewController {
         ))
         print("Image View Created")
     }
-    
+
     // MARK: Make Image View With Saved Data
     func makeImageView(image: UIImage, tag: Int, center: CGPoint, frame: CGRect, filter: String, isShape: Bool, color: RGBValue) {
-        
+
         var newImage: UIImage
         if isShape {
             newImage = image.withRenderingMode(.alwaysTemplate)
         } else {
             newImage = image
         }
-        
+
         let imageView = UIImageView(image: newImage)
         imageView.frame = frame
         imageView.center = center
-//        imageView.transform = imageView.transform.rotated(by: rotation)
+        //        imageView.transform = imageView.transform.rotated(by: rotation)
         imageView.tintColor = UIColor(red: color.colorR, green: color.colorG, blue: color.colorB, alpha: color.colorA)
         imageView.tag = tag
         imageView.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(self.panGestureHandler)))
         imageView.addGestureRecognizer(UIPinchGestureRecognizer(target: self, action: #selector(self.pinchGestureHandler)))
         imageView.addGestureRecognizer(UIRotationGestureRecognizer(target: self, action: #selector(self.rotateGestureHandler)))
         imageView.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(self.longPressGestureHandler)))
-        
+
         if filter == "Sepia" {
             imageView.image = UIImage(cgImage: sepiaFilter(cgImage: image.cgImage!))
         } else if filter == "Blur" {
@@ -70,7 +70,7 @@ extension ScrapbookEditorViewController {
         } else if filter == "Invert" {
             imageView.image = UIImage(cgImage: invertFilter(cgImage: image.cgImage!))
         }
-        
+
         imageView.isUserInteractionEnabled = true
         canvasView.addSubview(imageView)
         imageStacks.append(ImageDatas(
@@ -78,7 +78,7 @@ extension ScrapbookEditorViewController {
             filter: filter, isShape: isShape, colorR: color.colorR, colorG: color.colorG, colorB: color.colorB, colorA: color.colorA
         ))
     }
-    
+
     // MARK: Redraw Canvas on Top
     func redrawTopCanvas(image: UIImage) {
         let imageView = UIImageView(image: image)
