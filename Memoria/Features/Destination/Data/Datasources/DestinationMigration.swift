@@ -9,11 +9,14 @@ import CoreData
 
 class DestinationMigration {
 
-    let persistentContainer = PersistenceController()
+    let context: NSManagedObjectContext
+    init(context: NSManagedObjectContext) {
+        self.context = context
+    }
 
     func saveDestination() {
         do {
-            try persistentContainer.container.viewContext.save()
+            try context.save()
         } catch let error as NSError {
             print("Error saving context: \(error.localizedDescription)")
         }
@@ -22,7 +25,7 @@ class DestinationMigration {
     func createDestination(from model: DestinationCoreDataModel) -> DestinationCoreDataModel? {
         let destination = NSEntityDescription.insertNewObject(
             forEntityName: "DestinationCoreDataModel",
-            into: persistentContainer.container.viewContext) as? DestinationCoreDataModel
+            into: context) as? DestinationCoreDataModel
         destination?.id = model.id
         destination?.name = model.name
         destination?.photo = model.photo
@@ -39,11 +42,11 @@ class DestinationMigration {
     func getAllDestinations() -> [DestinationCoreDataModel]? {
         let fetchRequest: NSFetchRequest<DestinationCoreDataModel> = DestinationCoreDataModel.fetchRequest()
         do {
-            //            let destinations = try persistentContainer.container.viewContext.fetch(fetchRequest)
+            //            let destinations = try context.fetch(fetchRequest)
             //            let destinationModels = destinations.compactMap { $0.toModel() }
             //            return destinationModels
 
-            let destinations = try persistentContainer.container.viewContext.fetch(fetchRequest)
+            let destinations = try context.fetch(fetchRequest)
             return destinations
 
         } catch let error as NSError {
@@ -69,9 +72,9 @@ class DestinationMigration {
         let fetchRequest: NSFetchRequest<DestinationCoreDataModel> = DestinationCoreDataModel.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "id == %@", destinationModel.id! as CVarArg)
         do {
-            let results = try persistentContainer.container.viewContext.fetch(fetchRequest)
+            let results = try context.fetch(fetchRequest)
             guard let destination = results.first else { return }
-            persistentContainer.container.viewContext.delete(destination)
+            context.delete(destination)
             saveDestination()
         } catch let error as NSError {
             print("Error deleting destination: \(error.localizedDescription)")

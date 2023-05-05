@@ -58,6 +58,10 @@ class DestinationViewModel {
         self.familyPhoto = familyPhoto
     }
     
+    func selectArea(area: Area) {
+        self.selectedArea = area
+    }
+    
     func fetchDestinations() {
         guard let selected = self.selectedArea,
         let family = self.familyPhoto else {

@@ -1,16 +1,17 @@
 //
-//  DestinationViewController.swift
+//  TripAreaViewController.swift
 //  Memoria
 //
-//  Created by Adryan Eka Vandra on 02/05/23.
+//  Created by Adryan Eka Vandra on 05/05/23.
 //
 
 import UIKit
 import SwiftUI
 
-class DestinationViewController: UIViewController {
+class TripAreaViewController: UIViewController {
 
     private let viewModel: DestinationViewModel
+    
     
     init(viewModel: DestinationViewModel) {
         self.viewModel = viewModel
@@ -21,14 +22,14 @@ class DestinationViewController: UIViewController {
             fatalError("init(coder:) has not been implemented")
         }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-//        let attributes = [NSAttributedString.Key.font: UIFont(name: "Poppins Regular", size: 17)!]
-//        UINavigationBar.appearance().titleTextAttributes = attributes
+
         self.title = S.appName
 
-        let hostingController = UIHostingController(
-            rootView: TripNameFormUI(viewModel: viewModel, viewController: self))
+
+        let hostingController = UIHostingController(rootView: TripAreaForm(viewModel: viewModel, viewController: self))
         addChild(hostingController)
         view.addSubview(hostingController.view)
         hostingController.view.translatesAutoresizingMaskIntoConstraints = false
@@ -36,14 +37,14 @@ class DestinationViewController: UIViewController {
             make.leading.trailing.top.bottom.equalTo(view)
         }
         hostingController.didMove(toParent: self)
+    }
     
+    func navigateToSelectArea() {
         
     }
     
-    func navigateToDate() {
-        let nextNavigation = TripDateViewController(viewModel: viewModel)
-        navigationController?.pushViewController(nextNavigation, animated: true)
-
+    func navigateToUploadPhoto() {
+        
     }
     
 

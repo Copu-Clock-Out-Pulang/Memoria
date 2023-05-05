@@ -25,6 +25,8 @@ internal enum S {
   internal static let dstConfirmDialog = S.tr("Localizable", "dstConfirmDialog", fallback: "Confirm Dialog")
   /// Create Your Trip
   internal static let dstCreateYourTrip = S.tr("Localizable", "dstCreateYourTrip", fallback: "Create Your Trip")
+  /// e.g. 20 Jan - 6 Feb 2023
+  internal static let dstDateExample = S.tr("Localizable", "dstDateExample", fallback: "e.g. 20 Jan - 6 Feb 2023")
   /// Done!
   internal static let dstDone = S.tr("Localizable", "dstDone", fallback: "Done!")
   /// Encourage yourself with some quote

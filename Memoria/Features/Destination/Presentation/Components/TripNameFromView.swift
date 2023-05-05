@@ -23,32 +23,38 @@ class TripNameFromView: UIView {
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .vertical
         stack.spacing = 20.0
-        stack.distribution = .equalSpacing
-        [tripNameField, loginButton]
+        stack.distribution = .fill
+        stack.backgroundColor = .white
+        [tripNameField, UIView.spacer(),  loginButton]
             .forEach {
                 stack.addArrangedSubview($0)
             }
         return stack
     }()
     lazy var tripNameField: UITextField = {
-        let field = UITextField()
+        let field = UITextField(frame: CGRect(x: 0, y: 20, width: 100, height: 20))
         field.placeholder = S.dstTripInputHint
+        field.layer.cornerRadius = 20
+        field.layer.borderWidth = 2
+        field.addPadding(padding: .equalSpacing(20))
+        field.clipsToBounds = true
         return field
         
     }()
     lazy var loginButton: UIButton = {
         let button = UIButton(configuration: .filled())
         button.setTitle(S.dstNext, for: UIControl.State())
-        button.snp.makeConstraints {
-        
-        }
+        button.layer.cornerRadius = 20
+        button.clipsToBounds = true
+        button.tintColor = I.primaryButton.color(compatibleWith: .current)
+        button.titleLabel?.font = UIFont(name: "Poppins-Bold", size: 20)
         return button
     }()
 
     init() {
         super.init(frame: .infinite)
         
-        self.backgroundColor = UIColor(patternImage: I.backgroundImage1.image)
+        self.backgroundColor = UIColor(patternImage: I.tripBackground1.image)
         
         addSubViews(view: [pageTitle, contentStack])
         pageTitle.snp.makeConstraints { make in
@@ -59,9 +65,25 @@ class TripNameFromView: UIView {
             
         }
         contentStack.snp.makeConstraints { make in
-            make.centerX.left.right.equalTo(pageTitle)
-            make.top.equalTo(pageTitle.snp.bottom).offset(30)
+            make.centerX.equalToSuperview()
+            make.centerY.equalToSuperview()
+            make.leadingMargin.equalTo(20)
+            make.trailingMargin.equalTo(20)
+            make.top.equalTo(pageTitle.snp.bottom).offset(64)
             make.height.equalTo(280)
+        }
+        
+        tripNameField.snp.makeConstraints { make in
+            make.left.equalToSuperview().offset(20)
+            make.right.equalToSuperview().offset(-20)
+            make.height.equalTo(50)
+
+        }
+        loginButton.snp.makeConstraints { make in
+            make.left.equalToSuperview().offset(20)
+
+            make.right.equalToSuperview().offset(-20)
+            make.height.equalTo(50)
         }
     }
       
