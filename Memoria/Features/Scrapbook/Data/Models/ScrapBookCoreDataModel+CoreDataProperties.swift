@@ -25,7 +25,6 @@ extension ScrapBookCoreDataModel {
     @NSManaged public var updatedAt: Date?
     @NSManaged public var scrapPages: NSSet?
     @NSManaged public var destinations: NSSet?
-    @NSManaged public var user: UserCoreDataModel?
 
 }
 
@@ -71,7 +70,6 @@ extension ScrapBookCoreDataModel {
     func toDomain() -> ScrapBook {
         return ScrapBook(
             id: self.id!,
-            user: self.user!.toDomain(),
             destinations: (self.destinations!.allObjects as! [DestinationCoreDataModel]).map { $0.toDomain() },
             scrapPages: (self.scrapPages!.allObjects as! [ScrapPageCoreDataModel]).map { $0.toDomain() },
             quote: self.quote!,
@@ -83,19 +81,20 @@ extension ScrapBookCoreDataModel {
         )
     }
 
-    static func fromDomain(form: CreateScrapBookForm) -> ScrapBookCoreDataModel {
-        let user = UserCoreDataModel()
-        user.id = UUID()
-        user.name = "test"
-        var model = ScrapBookCoreDataModel()
+    static func fromDomain(form: CreateScrapBookForm, context: NSManagedObjectContext) -> ScrapBookCoreDataModel {
+        var model = NSEntityDescription.insertNewObject(forEntityName: "ScrapBookCoreDataModel", into: context) as! ScrapBookCoreDataModel
+        //        let user = UserCoreDataModel()
+        //        user.id = UUID()
+        //        user.name = "test"
+        //        var model = ScrapBookCoreDataModel()
         model.id = UUID()
-        model.user = user
+        //        model.user = user
         model.name = form.name
         model.destinations = NSSet(array: form.selectedRecommendations.map {
             DestinationCoreDataModel.fromDomain(destination: $0.destination)
         })
         model.scrapPages = NSSet(array: form.scrapPages.map {
-            ScrapPageCoreDataModel.fromDomain(scrapPage: $0)
+            ScrapPageCoreDataModel.fromDomain(scrapPage: $0, context: context)
         })
         model.quote = form.quote
         model.startDate = form.startDate
@@ -106,13 +105,13 @@ extension ScrapBookCoreDataModel {
         return model
     }
 
-    static func fromDomain(editForm: EditScrapBookForm, scrapBook: ScrapBook) -> ScrapBookCoreDataModel {
+    static func fromDomain(editForm: EditScrapBookForm, scrapBook: ScrapBook, context: NSManagedObjectContext) -> ScrapBookCoreDataModel {
         var model = ScrapBookCoreDataModel()
 
         model.id = scrapBook.id
         model.name = editForm.name
         model.scrapPages = NSSet(array: scrapBook.scrapPages.map {
-            ScrapPageCoreDataModel.fromDomain(scrapPage: $0)
+            ScrapPageCoreDataModel.fromDomain(scrapPage: $0, context: context)
         })
         model.quote = editForm.quote
         model.startDate = editForm.startDate
@@ -121,20 +120,17 @@ extension ScrapBookCoreDataModel {
 
         return model
     }
-    static func fromDomain(scrapBook: ScrapBook) -> ScrapBookCoreDataModel {
+    static func fromDomain(scrapBook: ScrapBook, context: NSManagedObjectContext) -> ScrapBookCoreDataModel {
         var model = ScrapBookCoreDataModel()
-        var user = UserCoreDataModel()
-        user.id = scrapBook.user.id
-        user.name = scrapBook.user.name
+
         model.id = scrapBook.id
-        model.user = user
         model.name = scrapBook.name
         model.quote = scrapBook.quote
         model.destinations = NSSet(array: scrapBook.destinations.map {
             DestinationCoreDataModel.fromDomain(destination: $0)
         })
         model.scrapPages = NSSet(array: scrapBook.scrapPages.map {
-            ScrapPageCoreDataModel.fromDomain(scrapPage: $0)
+            ScrapPageCoreDataModel.fromDomain(scrapPage: $0, context: context)
         })
         model.startDate = scrapBook.startDate
         model.endDate = scrapBook.endDate
