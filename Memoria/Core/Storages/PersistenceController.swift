@@ -25,5 +25,10 @@ struct PersistenceController {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         }
-        )}
+        )
+
+        print(container.persistentStoreCoordinator.persistentStores.first?.url)
+
+
+    }
 }

@@ -31,7 +31,6 @@
         <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <relationship name="destinations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DestinationCoreDataModel"/>
         <relationship name="scrapPages" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ScrapPageCoreDataModel" inverseName="scrapBook" inverseEntity="ScrapPageCoreDataModel"/>
-        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserCoreDataModel" inverseName="scrapBooks" inverseEntity="UserCoreDataModel"/>
     </entity>
     <entity name="ScrapPageCoreDataModel" representedClassName="ScrapPageCoreDataModel" syncable="YES">
         <attribute name="content" optional="YES" attributeType="String"/>
@@ -41,10 +40,5 @@
         <attribute name="thumbnail" optional="YES" attributeType="String"/>
         <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <relationship name="scrapBook" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ScrapBookCoreDataModel" inverseName="scrapPages" inverseEntity="ScrapBookCoreDataModel"/>
-    </entity>
-    <entity name="UserCoreDataModel" representedClassName="UserCoreDataModel" syncable="YES">
-        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
-        <attribute name="name" attributeType="String"/>
-        <relationship name="scrapBooks" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ScrapBookCoreDataModel" inverseName="user" inverseEntity="ScrapBookCoreDataModel"/>
     </entity>
 </model>
