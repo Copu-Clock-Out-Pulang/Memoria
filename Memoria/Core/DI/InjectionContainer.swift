@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreData
+import CoreImage.CIFilterBuiltins
 import Swinject
 import SwinjectAutoregistration
 
@@ -54,6 +55,11 @@ final class InjectionContainer {
 
         }
         .inObjectScope(.container)
+        
+        container.register(CIContext.self) { _ in
+            return CIContext()
+        }
+        .inObjectScope(.container)
     }
 
     private func registerDestinationContainer(_ container: Container) {
@@ -87,7 +93,6 @@ final class InjectionContainer {
             let usecase = GenerateRecommendationImpl(generator: generator)
             return usecase.eraseToAnyUseCase()
         }
-
         container.register(DestinationViewModel.self) { resolver in
             let getTripArea = resolver.resolve(AnyUseCase<[Area], NoParams>.self, name: "GetTripArea")!
             let generateRecommendation = resolver.resolve(
@@ -96,12 +101,10 @@ final class InjectionContainer {
             let getTripDestination = resolver.resolve(
                 AnyUseCase<[Destination], GetTripDestinationByAreaParams>.self,
                 name: "GetTripDestinationByArea")!
-
             return DestinationViewModel(
                 getTripArea: getTripArea,
                 getDestinations: getTripDestination,
                 generateRecommendations: generateRecommendation)
-
         }
     }
 }

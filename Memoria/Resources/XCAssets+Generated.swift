@@ -39,7 +39,53 @@ internal enum I {
   internal static let scrapPageThumbnailDummy = ImageAsset(name: "ScrapPageThumbnailDummy")
   internal static let shareButtonIcon = ImageAsset(name: "ShareButtonIcon")
   internal static let textPrimary = ColorAsset(name: "TextPrimary")
-  internal static let imageTest = ImageAsset(name: "image_test")
+  internal enum CanvasColor {
+    internal static let _0 = ColorAsset(name: "CanvasColor/0")
+    internal static let _1 = ColorAsset(name: "CanvasColor/1")
+    internal static let _2 = ColorAsset(name: "CanvasColor/2")
+    internal static let _3 = ColorAsset(name: "CanvasColor/3")
+    internal static let _4 = ColorAsset(name: "CanvasColor/4")
+    internal static let _5 = ColorAsset(name: "CanvasColor/5")
+    internal static let _6 = ColorAsset(name: "CanvasColor/6")
+    internal static let _7 = ColorAsset(name: "CanvasColor/7")
+  }
+  internal static let primaryButton = ColorAsset(name: "PrimaryButton")
+  internal static let scrapPageEditorBackground = ImageAsset(name: "ScrapPageEditorBackground")
+  internal enum Shape {
+    internal static let _0 = ImageAsset(name: "Shape/0")
+    internal static let _1 = ImageAsset(name: "Shape/1")
+    internal static let _2 = ImageAsset(name: "Shape/2")
+    internal static let _3 = ImageAsset(name: "Shape/3")
+    internal static let _4 = ImageAsset(name: "Shape/4")
+    internal static let _5 = ImageAsset(name: "Shape/5")
+  }
+  internal enum Sticker {
+    internal static let _0 = ImageAsset(name: "Sticker/0")
+    internal static let _1 = ImageAsset(name: "Sticker/1")
+    internal static let _10 = ImageAsset(name: "Sticker/10")
+    internal static let _11 = ImageAsset(name: "Sticker/11")
+    internal static let _12 = ImageAsset(name: "Sticker/12")
+    internal static let _13 = ImageAsset(name: "Sticker/13")
+    internal static let _14 = ImageAsset(name: "Sticker/14")
+    internal static let _2 = ImageAsset(name: "Sticker/2")
+    internal static let _3 = ImageAsset(name: "Sticker/3")
+    internal static let _4 = ImageAsset(name: "Sticker/4")
+    internal static let _5 = ImageAsset(name: "Sticker/5")
+    internal static let _6 = ImageAsset(name: "Sticker/6")
+    internal static let _7 = ImageAsset(name: "Sticker/7")
+    internal static let _8 = ImageAsset(name: "Sticker/8")
+    internal static let _9 = ImageAsset(name: "Sticker/9")
+  }
+  internal static let textPrimary = ColorAsset(name: "TextPrimary")
+  internal enum ToolBarIcon {
+    internal static let background = ImageAsset(name: "ToolBarIcon/Background")
+    internal static let photo = ImageAsset(name: "ToolBarIcon/Photo")
+    internal static let scribble = ImageAsset(name: "ToolBarIcon/Scribble")
+    internal static let shape = ImageAsset(name: "ToolBarIcon/Shape")
+    internal static let sticker = ImageAsset(name: "ToolBarIcon/Sticker")
+  }
+
+internal static let imageTest = ImageAsset(name: "image_test")
   internal static let mask = ImageAsset(name: "mask")
   internal static let outputTest = ImageAsset(name: "output_test")
 }
