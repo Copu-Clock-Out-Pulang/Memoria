@@ -10,9 +10,9 @@ import SwiftUI
 struct TripNameFormUI: View {
     @State var name: String = ""
     let viewModel: DestinationViewModel
-    let viewController: DestinationViewController
+    let viewController: TripNameViewController
     var body: some View {
-        
+
         ZStack {
             I.tripBackground1.swiftUIImage
 
@@ -22,20 +22,20 @@ struct TripNameFormUI: View {
                     .font(Font.custom("LilitaOne", size: 40))
                     .foregroundColor(I.textPrimary.swiftUIColor)
                 TextField(S.dstTripInputHint, text: $name)
-                
+
                     .frame(height: 30)
                     .padding()
                     .font(Font.custom("Poppins", size: 16))
                     .background(.white)
                     .cornerRadius(30)
                     .shadow(radius: 2, y: 3)
-                    
 
-                .onChange(of: name) {
-                    viewModel.changeTripName(name: $0)
-                }
-               Spacer()
-                
+
+                    .onChange(of: name) {
+                        viewModel.changeTripName(name: $0)
+                    }
+                Spacer()
+
                 Button {
                     viewController.navigateToDate()
                 } label: {
@@ -46,26 +46,26 @@ struct TripNameFormUI: View {
                 }
                 .disabled(name.isEmpty)
                 .background(name.isEmpty ?
-                            I.disabledButton.swiftUIColor :
-                            I.primaryButton.swiftUIColor)
+                                I.disabledButton.swiftUIColor :
+                                I.primaryButton.swiftUIColor)
                 .foregroundColor(.white)
-                
+
                 .clipShape(Capsule())
                 .shadow(radius: 2, y: 3)
             }
             .padding(.all, 40)
-            
+
         }
         .ignoresSafeArea()
 
-        
+
     }
 }
 
 struct TripNameFormUI_Previews: PreviewProvider {
     static var previews: some View {
         let viewmodel = InjectionContainer.shared.container.resolve(DestinationViewModel.self)!
-        let viewController = DestinationViewController(viewModel: viewmodel)
+        let viewController = TripNameViewController(viewModel: viewmodel)
         TripNameFormUI(viewModel: viewmodel, viewController: viewController)
     }
 }

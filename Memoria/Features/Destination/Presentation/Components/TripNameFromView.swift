@@ -25,7 +25,7 @@ class TripNameFromView: UIView {
         stack.spacing = 20.0
         stack.distribution = .fill
         stack.backgroundColor = .white
-        [tripNameField, UIView.spacer(),  loginButton]
+        [tripNameField, UIView.spacer(), loginButton]
             .forEach {
                 stack.addArrangedSubview($0)
             }
@@ -39,7 +39,7 @@ class TripNameFromView: UIView {
         field.addPadding(padding: .equalSpacing(20))
         field.clipsToBounds = true
         return field
-        
+
     }()
     lazy var loginButton: UIButton = {
         let button = UIButton(configuration: .filled())
@@ -53,16 +53,16 @@ class TripNameFromView: UIView {
 
     init() {
         super.init(frame: .infinite)
-        
+
         self.backgroundColor = UIColor(patternImage: I.tripBackground1.image)
-        
+
         addSubViews(view: [pageTitle, contentStack])
         pageTitle.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.centerY.equalToSuperview().offset(-250)
             make.left.equalToSuperview().offset(20)
             make.right.equalToSuperview().offset(-20)
-            
+
         }
         contentStack.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
@@ -72,7 +72,7 @@ class TripNameFromView: UIView {
             make.top.equalTo(pageTitle.snp.bottom).offset(64)
             make.height.equalTo(280)
         }
-        
+
         tripNameField.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(20)
             make.right.equalToSuperview().offset(-20)
@@ -86,10 +86,10 @@ class TripNameFromView: UIView {
             make.height.equalTo(50)
         }
     }
-      
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
 
 }

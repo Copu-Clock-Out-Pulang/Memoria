@@ -13,7 +13,7 @@ protocol UserDefaultController {
     func setIsNotFirstLaunch()
 }
 class UserDefaultsControllerImpl: UserDefaultController {
-   
+
     let userDefault: UserDefaults
     init(userDefault: UserDefaults) {
         self.userDefault = userDefault
@@ -21,9 +21,9 @@ class UserDefaultsControllerImpl: UserDefaultController {
     func fetchIsNotFirstLaunch() -> Bool {
         return userDefault.bool(forKey: "isNotFirst")
     }
-    
+
     func setIsNotFirstLaunch() {
         userDefault.setValue(true, forKey: "isNotFirst")
     }
-    
+
 }

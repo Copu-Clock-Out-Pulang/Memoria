@@ -14,14 +14,14 @@ protocol MigrateArea: UseCaseProtocol {
 }
 
 class MigrateAreaImpl: MigrateArea {
-    
+
     private let repository: SplashRepository
-    init(repository: SplashRepository){
+    init(repository: SplashRepository) {
         self.repository = repository
     }
-    
+
     func execute(params: NoParams) -> AnyPublisher<(), Failure> {
         return repository.migrateArea()
     }
-    
+
 }

@@ -9,21 +9,21 @@ import Foundation
 import Combine
 
 class SplashRepositoryImpl: SplashRepository {
-    
+
     let areaMigration: AreaMigration
-    
-    init(areaMigration: AreaMigration){
+
+    init(areaMigration: AreaMigration) {
         self.areaMigration = areaMigration
     }
-    
-    
+
+
     func migrateArea() -> AnyPublisher<Void, Failure> {
         return areaMigration.addArea()
     }
-    
-//    func migrateDestination() -> AnyPublisher<Void, Failure> {
-//        <#code#>
-//    }
-    
-    
+
+    //    func migrateDestination() -> AnyPublisher<Void, Failure> {
+    //        <#code#>
+    //    }
+
+
 }

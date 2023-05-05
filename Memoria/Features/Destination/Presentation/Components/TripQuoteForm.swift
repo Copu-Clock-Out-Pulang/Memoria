@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct TripQuoteForm: View {
+
     @State var quote: String = ""
     let viewModel: DestinationViewModel
+    let controller: TripQuoteViewController
     var body: some View {
         ZStack {
-            I.tripBackground3.swiftUIImage
+            I.tripBackground3.swiftUIImage.resizable().scaledToFill()
 
             VStack(spacing: 20) {
                 Text(S.dstEncourageYourSelf)
@@ -33,8 +35,8 @@ struct TripQuoteForm: View {
                         .cornerRadius(30)
                         .shadow(radius: 2, y: 3)
                         .onChange(of: quote) {
-                        viewModel.changeQuote(quote: $0)
-                            
+                            viewModel.changeQuote(quote: $0)
+
                         }
                     HStack {
                         Text("(\(quote.count)/40)")
@@ -43,7 +45,7 @@ struct TripQuoteForm: View {
                         Spacer()
                     }.padding(.bottom, 96)
                     Button {
-                        
+                        controller.navigateToTripArea()
                     } label: {
                         Text(S.dstNext)
                             .font(Font.custom("Poppins-Bold", size: 20))
@@ -52,27 +54,28 @@ struct TripQuoteForm: View {
                     }
                     .disabled(quote.isEmpty)
                     .background(quote.isEmpty ?
-                                I.disabledButton.swiftUIColor :
-                                I.primaryButton.swiftUIColor)
+                                    I.disabledButton.swiftUIColor :
+                                    I.primaryButton.swiftUIColor)
                     .foregroundColor(.white)
-                    
+
                     .clipShape(Capsule())
                     .shadow(radius: 2, y: 3)
                 }
                 .padding(.all, 20)
             }
             .padding(.all, 20)
-            
+
         }
         .ignoresSafeArea()
-        
     }
 }
 
+
 struct TripQuoteForm_Previews: PreviewProvider {
-    
+
     static var previews: some View {
         let viewModel = InjectionContainer.shared.container.resolve(DestinationViewModel.self)!
-        TripQuoteForm(viewModel: viewModel)
+        let controller = TripQuoteViewController(viewModel: viewModel)
+        TripQuoteForm(viewModel: viewModel, controller: controller)
     }
 }

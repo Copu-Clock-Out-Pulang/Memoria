@@ -9,24 +9,24 @@ import Foundation
 import Combine
 
 class SplashViewModel: ObservableObject {
-    
+
     // MARK: - Attributes
     @Published private(set) var status: SplashViewState = .initial
-    @Published private(set) var isNotFirstLaunch: Bool = false
-    
+    @Published private(set) var isNotFirstLaunch = false
+
     // MARK: - Cancellables
     private var cancellables = Set<AnyCancellable>()
-    
+
     // MARK: - Usecases
     private let migrateArea: AnyUseCase<Void, NoParams>
     private let userDefaultController: UserDefaultController
-    
+
     init(migrateArea: AnyUseCase<Void, NoParams>, userDefaultController: UserDefaultController) {
         self.migrateArea = migrateArea
         self.userDefaultController = userDefaultController
         self.getIsNotFirstLaunch()
     }
-    
+
     func startAreaMigration() {
         if !isNotFirstLaunch {
             status = .areaMigration
@@ -38,11 +38,11 @@ class SplashViewModel: ObservableObject {
 
                     case .failure(let fail):
                         self?.status = .areaMigrationFailed(failure: fail)
-                    
+
                     }
                 }, receiveValue: {
                     self.status = .areaMigrationSuccess
-                    
+
                 })
                 .store(in: &cancellables)
             self.status = .initial
@@ -50,13 +50,13 @@ class SplashViewModel: ObservableObject {
 
         }
         self.status = .navigateToNextSpage
-        
+
     }
-    
+
     func getIsNotFirstLaunch() {
         isNotFirstLaunch = userDefaultController.fetchIsNotFirstLaunch()
     }
-    
+
     func setNotFirstLaunch() {
         isNotFirstLaunch = true
         userDefaultController.setIsNotFirstLaunch()

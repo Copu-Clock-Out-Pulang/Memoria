@@ -21,7 +21,7 @@ struct TripSelectAreaForm: View {
                 I.outputTest.swiftUIImage.resizable()
                     .frame(height: geo.size.height * 0.6)
                 VStack(spacing: 20) {
-                   
+
                     HStack {
                         Image(systemName: "chevron.left")
                             .resizable()
@@ -29,13 +29,13 @@ struct TripSelectAreaForm: View {
                             .frame(width: 18, height: 26)
                             .foregroundColor(I.textPrimary.swiftUIColor)
                             .onTapGesture {
-                                if showedIndex > maxIndex {
-                                    showedIndex = 0
+
+                                if showedIndex == 0 {
+                                    showedIndex = maxIndex
+                                } else {
+                                    showedIndex -= 1
                                 }
-                                else {
-                                    showedIndex += 1
-                                }
-                                
+
                             }
                         Spacer()
                         Text(isAreaEmpty ? "Jakarta" : area[showedIndex].name)
@@ -43,22 +43,21 @@ struct TripSelectAreaForm: View {
                             .foregroundColor(I.textPrimary.swiftUIColor)
                         Spacer()
                         Image(systemName: "chevron.right")
-                            
+
                             .resizable()
                             .scaledToFit()
-                        
+
                             .frame(width: 18, height: 26)
                             .foregroundColor(I.textPrimary.swiftUIColor)
                             .onTapGesture {
-                                if showedIndex == maxIndex {
-                                    showedIndex = maxIndex
-                                }
-                                else {
-                                    showedIndex -= 1
+                                if showedIndex >= maxIndex {
+                                    showedIndex = 0
+                                } else {
+                                    showedIndex += 1
                                 }
                             }
                     }
-                    
+
                     .padding(.top, 40)
                     .padding(.horizontal, 40)
                     Text(isAreaEmpty ? "DKI Jakarta" : area[showedIndex].province)
@@ -66,7 +65,7 @@ struct TripSelectAreaForm: View {
                         .font(Font.custom("Poppins-SemiBold", size: 20))
                         .foregroundColor(I.textSecondary.swiftUIColor)
 
-                    
+
                     Text(isAreaEmpty ? "The capital of republic of Indonesia" : area[showedIndex].description)
                         .multilineTextAlignment(.center)
                         .lineLimit(nil)
@@ -76,13 +75,13 @@ struct TripSelectAreaForm: View {
                         .foregroundColor(I.textSecondary.swiftUIColor)
 
                     Spacer()
-                    
+
                     Button {
-                        if(!area.isEmpty) {
+                        if !area.isEmpty {
                             viewModel.selectArea(area: area[showedIndex])
-                            //TODO: Add Dismiss view
+                            viewController.navigationController?.popViewController(animated: true)
                         }
-                        
+
                     } label: {
                         Text("Select".uppercased())
                             .font(Font.custom("Poppins-Bold", size: 20))
@@ -90,10 +89,10 @@ struct TripSelectAreaForm: View {
                     }
                     .background(I.primaryButton.swiftUIColor)
                     .foregroundColor(.white)
-                    
+
                     .clipShape(Capsule())
                     .shadow(radius: 2, y: 3)
-                    .padding(.horizontal, 16)
+                    .padding(.horizontal, 40)
                     .padding(.bottom, 40)
                 }
                 .background(I.background.swiftUIColor)

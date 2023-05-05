@@ -54,24 +54,24 @@ class SplashViewController: UIViewController {
     //    )
 
 
-//    let migration = DestinationMigration()
-    
+    //    let migration = DestinationMigration()
+
     let viewModel: SplashViewModel
-    
+
     init(viewModel: SplashViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
 
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         let hostingController = UIHostingController(rootView: SplashViewUI(viewModel: viewModel, controller: self))
         addChild(hostingController)
         view.addSubview(hostingController.view)
@@ -80,7 +80,7 @@ class SplashViewController: UIViewController {
             make.leading.trailing.top.bottom.equalTo(view)
         }
         hostingController.didMove(toParent: self)
-        
+
         viewModel.startAreaMigration()
 
         //        //     Create the first destination
@@ -100,26 +100,26 @@ class SplashViewController: UIViewController {
         //        }
 
     }
-    
+
     func navigateToNextPage() {
         let isFirst = false
-        
+
         if isFirst {
             self.navigateToOnboarding()
-            
+
         } else {
             self.navigateToHomeScreen()
         }
     }
-    
+
     private func navigateToOnboarding() {
-        
+
     }
-    
+
     private func navigateToHomeScreen() {
         // TODO: Change to real HomeScreen
         let destinationViewModel = InjectionContainer.shared.container.resolve(DestinationViewModel.self)!
-        let homeScreen = DestinationViewController(viewModel: destinationViewModel)
+        let homeScreen = TripNameViewController(viewModel: destinationViewModel)
         navigationController?.setViewControllers([homeScreen], animated: true)
     }
 }

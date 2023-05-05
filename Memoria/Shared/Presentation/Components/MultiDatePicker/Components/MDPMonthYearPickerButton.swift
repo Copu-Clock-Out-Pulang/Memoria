@@ -17,11 +17,11 @@ import SwiftUI
  */
 struct MDPMonthYearPickerButton: View {
     @EnvironmentObject var monthDataModel: MDPModel
-    
+
     @Binding var isPresented: Bool
-    
+
     var body: some View {
-        Button( action: {withAnimation { isPresented.toggle()} } ) {
+        Button( action: { withAnimation { isPresented.toggle() } }) {
             HStack {
                 Text(monthDataModel.title)
                     .font(.subheadline)

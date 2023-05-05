@@ -12,17 +12,17 @@ class TripDateViewController: UIViewController {
 
     private let viewModel: DestinationViewModel
 
-    
+
     init(viewModel: DestinationViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
-    
+
     required init?(coder: NSCoder) {
-            fatalError("init(coder:) has not been implemented")
-        }
-    
-    
+        fatalError("init(coder:) has not been implemented")
+    }
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = S.appName
@@ -36,21 +36,21 @@ class TripDateViewController: UIViewController {
         }
         hostingController.didMove(toParent: self)
     }
-    
-    
+
+
     func navigateToQuoteView() {
         let nextNavigation = TripQuoteViewController(viewModel: viewModel)
         navigationController?.pushViewController(nextNavigation, animated: true)
     }
 
     /*
-    // MARK: - Navigation
+     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
 
 }

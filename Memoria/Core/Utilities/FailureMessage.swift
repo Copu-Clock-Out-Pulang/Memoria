@@ -7,6 +7,6 @@
 
 import Foundation
 
-//func parseFailure(failure: Failure) -> String {
-//    
-//}
+// func parseFailure(failure: Failure) -> String {
+//
+// }

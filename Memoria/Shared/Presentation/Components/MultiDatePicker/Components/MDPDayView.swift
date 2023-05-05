@@ -15,17 +15,17 @@ struct MDPDayView: View {
     @EnvironmentObject var monthDataModel: MDPModel
     let cellSize: CGFloat = 30
     var dayOfMonth: MDPDayOfMonth
-    
+
     // outline "today"
     private var strokeColor: Color {
         dayOfMonth.isToday ? Color.accentColor : Color.clear
     }
-    
+
     // filled if selected
     private var fillColor: Color {
         monthDataModel.isSelected(dayOfMonth) ? Color.blue.opacity(0.55) : Color.clear
     }
-    
+
     // reverse color for selections or gray if not selectable
     private var textColor: Color {
         if dayOfMonth.isSelectable {
@@ -34,15 +34,15 @@ struct MDPDayView: View {
             return Color.gray
         }
     }
-    
+
     private func handleSelection() {
         if dayOfMonth.isSelectable {
             monthDataModel.selectDay(dayOfMonth)
         }
     }
-    
+
     var body: some View {
-        Button( action: {handleSelection()} ) {
+        Button( action: { handleSelection() }) {
             Text("\(dayOfMonth.day)")
                 .font(.headline)
                 .fontWeight(.medium)
