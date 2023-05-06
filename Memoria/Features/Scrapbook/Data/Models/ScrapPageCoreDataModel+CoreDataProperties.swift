@@ -46,9 +46,9 @@ extension ScrapPageCoreDataModel {
         var model = NSEntityDescription.insertNewObject(forEntityName: "ScrapPageCoreDataModel", into: context) as! ScrapPageCoreDataModel
 
         model.id = UUID()
-        model.name = "new scrap page"
-        model.thumbnail = ""
-        model.content = ""
+        model.name = form.name
+        model.thumbnail = form.thumbnail
+        model.content = form.content
         model.createdAt = Date.now
         model.updatedAt = Date.now
 
