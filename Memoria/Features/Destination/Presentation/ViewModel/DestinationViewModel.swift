@@ -30,7 +30,6 @@ class DestinationViewModel: ObservableObject {
     private let getTripArea: AnyUseCase<[Area], NoParams>
     private let getDestinations: AnyUseCase<[Destination], GetTripDestinationByAreaParams>
     private let generateRecommendations: AnyUseCase<[Recommendation], GenerateRecommendationParams>
-
     // MARK: - Initializers
     init(getTripArea: AnyUseCase<[Area], NoParams>, getDestinations: AnyUseCase<[Destination], GetTripDestinationByAreaParams>, generateRecommendations: AnyUseCase<[Recommendation], GenerateRecommendationParams>) {
         self.getTripArea = getTripArea
@@ -119,32 +118,32 @@ class DestinationViewModel: ObservableObject {
 
     func createScrapbook() {
         // TODO: sesuaikan dengan usecase winxen
-        //        let scrapPage = selectedRecommendation.filter {
-        //            $0.value == true
-        //        }
-        //            .keys.map {
-        //                ScrapPage(id: UUID(), name: $0.destination.name, thumbnail: .dest, content: <#T##String#>, createdAt: <#T##Date#>, updatedAt: <#T##Date#>)
-        //            }
-        //
-        //        let scrapbook = ScrapBook(
-        //            id: UUID(),
-        //            user: User(id: UUID(), name: "User"),
-        //            destinations: selectedRecommendation.keys.map {$0.destination},
-        //            scrapPages: [],
-        //            quote: <#T##String#>,
-        //            name: <#T##String#>,
-        //            startDate: <#T##Date?#>,
-        //            endDate: <#T##Date?#>,
-        //            createdAt: <#T##Date#>,
-        //            updatedAt: <#T##Date#>)
+//        let scrapPage = selectedRecommendation.filter {
+//            $0.value == true
+//        }
+//            .keys.map {
+//                ScrapPage(id: UUID(), name: $0.destination.name, thumbnail: .dest, content: <#T##String#>, createdAt: <#T##Date#>, updatedAt: <#T##Date#>)
+//            }
+//
+//        let scrapbook = ScrapBook(
+//            id: UUID(),
+//            user: User(id: UUID(), name: "User"),
+//            destinations: selectedRecommendation.keys.map {$0.destination},
+//            scrapPages: [],
+//            quote: <#T##String#>,
+//            name: <#T##String#>,
+//            startDate: <#T##Date?#>,
+//            endDate: <#T##Date?#>,
+//            createdAt: <#T##Date#>,
+//            updatedAt: <#T##Date#>)
     }
 }
 
 extension DestinationViewModel {
 
-    //    func validateTripName(name: String) -> Bool {
-    //
-    //    }
+//    func validateTripName(name: String) -> Bool {
+//
+//    }
 }
 
 enum DestinationStatus {
