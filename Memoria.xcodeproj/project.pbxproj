@@ -128,6 +128,9 @@
 		9B5FF8842A027638000B55A9 /* MDPDayOfMonth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5FF87C2A027638000B55A9 /* MDPDayOfMonth.swift */; };
 		9B5FF8872A02785E000B55A9 /* CustomDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5FF8862A02785E000B55A9 /* CustomDialog.swift */; };
 		9B82DB7529F978FA00606EE2 /* CIImage+CustomExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B82DB7429F978FA00606EE2 /* CIImage+CustomExtension.swift */; };
+		9B853B2B2A0620CD0082F13F /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B853B2A2A0620CD0082F13F /* ImagePicker.swift */; };
+		9B853B2D2A0663850082F13F /* CameraCaptureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B853B2C2A0663850082F13F /* CameraCaptureView.swift */; };
+		9B853B302A0667E60082F13F /* KeyboardAwareModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B853B2F2A0667E60082F13F /* KeyboardAwareModifier.swift */; };
 		9B9228772A00D62000B119AE /* DestinationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9228762A00D62000B119AE /* DestinationViewModel.swift */; };
 		9B9228792A0104EC00B119AE /* TripNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9228782A0104EC00B119AE /* TripNameViewController.swift */; };
 		9B92287D2A010B0800B119AE /* TripNameFromView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B92287C2A010B0800B119AE /* TripNameFromView.swift */; };
@@ -328,6 +331,9 @@
 		9B5FF87C2A027638000B55A9 /* MDPDayOfMonth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDPDayOfMonth.swift; sourceTree = "<group>"; };
 		9B5FF8862A02785E000B55A9 /* CustomDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDialog.swift; sourceTree = "<group>"; };
 		9B82DB7429F978FA00606EE2 /* CIImage+CustomExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CIImage+CustomExtension.swift"; sourceTree = "<group>"; };
+		9B853B2A2A0620CD0082F13F /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		9B853B2C2A0663850082F13F /* CameraCaptureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraCaptureView.swift; sourceTree = "<group>"; };
+		9B853B2F2A0667E60082F13F /* KeyboardAwareModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardAwareModifier.swift; sourceTree = "<group>"; };
 		9B9228762A00D62000B119AE /* DestinationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationViewModel.swift; sourceTree = "<group>"; };
 		9B9228782A0104EC00B119AE /* TripNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripNameViewController.swift; sourceTree = "<group>"; };
 		9B92287C2A010B0800B119AE /* TripNameFromView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripNameFromView.swift; sourceTree = "<group>"; };
@@ -558,6 +564,8 @@
 				9B2A46ED2A03938F00FD7996 /* TripSelectAreaForm.swift */,
 				9B5261762A057D98006A2598 /* TripFamilyPhotoViewUI.swift */,
 				9B5261782A058017006A2598 /* PhoneFrame.swift */,
+				9B853B2A2A0620CD0082F13F /* ImagePicker.swift */,
+				9B853B2C2A0663850082F13F /* CameraCaptureView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -1138,6 +1146,7 @@
 		9B1C4D3329EF059300F03AFF /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				9B853B2E2A0667D00082F13F /* Presentation */,
 				9B1AF1D929F2401300BEF767 /* Utilities */,
 				9B1AF1D829F23F2200BEF767 /* Storages */,
 				9B1C4D7529EF0D2E00F03AFF /* Extensions */,
@@ -1325,6 +1334,14 @@
 				9B5FF8862A02785E000B55A9 /* CustomDialog.swift */,
 			);
 			path = CustomDialog;
+			sourceTree = "<group>";
+		};
+		9B853B2E2A0667D00082F13F /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				9B853B2F2A0667E60082F13F /* KeyboardAwareModifier.swift */,
+			);
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 		9BB5045929F2223D00C0D04C /* Failure */ = {
@@ -2160,9 +2177,11 @@
 				9111A45329FCFE9000DC3FF2 /* ScrapPageCoreDataModel+CoreDataProperties.swift in Sources */,
 				9BDA3E5329FBD93D002D7227 /* CreateScrapBook.swift in Sources */,
 				915F0C122A0257690040AEAB /* ScrapBookDetailView.swift in Sources */,
+				9B853B2B2A0620CD0082F13F /* ImagePicker.swift in Sources */,
 				9B1AF19029F23D1000BEF767 /* Math.swift in Sources */,
 				9B1C4DB429EF19E400F03AFF /* SplashViewController.swift in Sources */,
 				9B5FF86C2A023C86000B55A9 /* UITextField+CustomExtensions.swift in Sources */,
+				9B853B302A0667E60082F13F /* KeyboardAwareModifier.swift in Sources */,
 				9B9228792A0104EC00B119AE /* TripNameViewController.swift in Sources */,
 				9B9228772A00D62000B119AE /* DestinationViewModel.swift in Sources */,
 				9BCD420A29FCFC4D007A7868 /* DestinationCoreDataModel+CoreDataClass.swift in Sources */,
@@ -2204,6 +2223,7 @@
 				9111A42929FA8B0000DC3FF2 /* ScrapPageRepository.swift in Sources */,
 				9B5FF86E2A024542000B55A9 /* TripNameFormUI.swift in Sources */,
 				9B34AB1B2A04F3E200D53921 /* SplashViewUI.swift in Sources */,
+				9B853B2D2A0663850082F13F /* CameraCaptureView.swift in Sources */,
 				9B5FF8812A027638000B55A9 /* MDPContentView.swift in Sources */,
 				D6CE6F6B2A017BF800610641 /* ScrapPageStackData.swift in Sources */,
 				9111A47529FD1D3900DC3FF2 /* ScrapBookCoreDataModel+CoreDataProperties.swift in Sources */,
@@ -2467,8 +2487,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Memoria/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
-				INFOPLIST_KEY_NSCameraUsageDescription = "";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Memoria uses camera to capture family moment";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Memoria Uses library to select family photo";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -2499,8 +2519,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Memoria/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
-				INFOPLIST_KEY_NSCameraUsageDescription = "";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Memoria uses camera to capture family moment";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Memoria Uses library to select family photo";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

@@ -66,6 +66,7 @@ struct TripQuoteForm: View {
             .padding(.all, 20)
 
         }
+        .keyboardAware()
         .ignoresSafeArea()
     }
 }

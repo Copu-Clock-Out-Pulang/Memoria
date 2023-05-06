@@ -27,6 +27,8 @@ class TripSelectAreaViewController: UIViewController {
         super.viewDidLoad()
 
         self.title = S.appName
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        self.navigationController?.navigationBar.barTintColor = I.background.color
 
 
         let hostingController = UIHostingController(rootView: TripSelectAreaForm(

@@ -10,6 +10,10 @@ import PhotosUI
 
 struct TripFamilyPhotoViewUI: View {
     @State var familyPhoto: PhotosPickerItem?
+    @State private var selectedImage: UIImage?
+    @State private var showImagePicker = false
+    @State private var showCameraCaptureView = false
+    @State private var capturedImage: UIImage?
     
     @ObservedObject var viewModel: DestinationViewModel
     let controller: TripFamilyPhotoViewController
@@ -30,18 +34,23 @@ struct TripFamilyPhotoViewUI: View {
                         .scaledToFit()
                         .rotationEffect(Angle(degrees: -11))
                 } else {
-                    let image = Image(uiImage: viewModel.familyPhoto!)
+                    
+                   
 
                     if viewModel.familyPhoto!.size.height > viewModel.familyPhoto!.size.width {
+                        let current = viewModel.familyPhoto!
+                        let x = current.rotated(by: -270)
+                        let image = Image(uiImage: x)
                         PhoneFrame(image: image).rotationEffect(Angle(degrees: -140))
                     } else {
+                        let image = Image(uiImage: viewModel.familyPhoto!)
                         PhoneFrame(image: image).rotationEffect(Angle(degrees: -11))
                     }
 
 
                 }
                 Button {
-
+                    showImagePicker.toggle()
                 }
                 label: {
                     HStack {
@@ -60,7 +69,7 @@ struct TripFamilyPhotoViewUI: View {
 
 
                 Button {
-
+                    showCameraCaptureView.toggle()
                 }
                 label: {
                     Text(S.dstTakePhoto)
@@ -103,6 +112,36 @@ struct TripFamilyPhotoViewUI: View {
 
         }
         .ignoresSafeArea()
+        .sheet(isPresented: $showImagePicker) {
+            ImagePicker(selectedImage: Binding<UIImage?>(
+                get: {
+                    self.selectedImage
+                },
+                set: {
+                    self.selectedImage = $0
+                    guard let image = $0 else {
+                        return
+                    }
+                    viewModel.changeFamilyPhoto(familyPhoto: image)
+                }
+            ))
+        }
+        .sheet(isPresented: $showCameraCaptureView) {
+            CameraCaptureView(capturedImage: Binding<UIImage?>(
+                get: {
+                    self.capturedImage
+                },
+                set: {
+                    self.capturedImage = $0
+                    guard let image = $0 else {
+                        return
+                    }
+                    viewModel.changeFamilyPhoto(familyPhoto: image)
+                }
+            
+            ))
+        }
+        
     }
 }
 

@@ -89,6 +89,7 @@ struct TripAreaForm: View {
                     Spacer()
                     Button {
 
+                        viewController.navigateToUploadPhoto()
                     } label: {
                         Text(S.dstNext)
                             .font(Font.custom("Poppins-Bold", size: 20))

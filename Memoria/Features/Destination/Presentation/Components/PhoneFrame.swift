@@ -23,7 +23,7 @@ struct PhoneFrame: View {
                         maxHeight: 124
                     )
                     .padding(.leading, 20)
-                    .padding(.bottom, 4)
+                    .padding(.bottom, 6)
             }
             .padding()
         }

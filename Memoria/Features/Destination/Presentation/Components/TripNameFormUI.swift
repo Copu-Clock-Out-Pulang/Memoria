@@ -57,6 +57,7 @@ struct TripNameFormUI: View {
 
         }
         .ignoresSafeArea()
+        .keyboardAware()
 
 
     }

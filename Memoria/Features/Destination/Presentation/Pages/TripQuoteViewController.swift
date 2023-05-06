@@ -26,6 +26,8 @@ class TripQuoteViewController: UIViewController {
         super.viewDidLoad()
 
         self.title = S.appName
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+
 
 
         let hostingController = UIHostingController(rootView: TripQuoteForm(viewModel: viewModel, controller: self))

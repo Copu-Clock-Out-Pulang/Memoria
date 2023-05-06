@@ -23,6 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let mainViewController = UINavigationController(rootViewController: SplashViewController(viewModel: viewModel))
         let window = UIWindow(windowScene: windowScene)
         window.rootViewController = mainViewController
+        window.rootViewController?.overrideUserInterfaceStyle = .light
         window.makeKeyAndVisible()
         self.window = window
     }

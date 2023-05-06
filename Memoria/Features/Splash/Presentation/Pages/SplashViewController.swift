@@ -121,5 +121,6 @@ class SplashViewController: UIViewController {
         let destinationViewModel = InjectionContainer.shared.container.resolve(DestinationViewModel.self)!
         let homeScreen = TripNameViewController(viewModel: destinationViewModel)
         navigationController?.setViewControllers([homeScreen], animated: true)
+
     }
 }

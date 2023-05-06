@@ -27,6 +27,8 @@ class TripAreaViewController: UIViewController {
         super.viewDidLoad()
 
         self.title = S.appName
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+
 
 
         let hostingController = UIHostingController(rootView: TripAreaForm(viewModel: viewModel, viewController: self))
@@ -47,7 +49,8 @@ class TripAreaViewController: UIViewController {
     }
 
     func navigateToUploadPhoto() {
-
+        let familyPhoto = TripFamilyPhotoViewController(viewModel: viewModel)
+        navigationController?.pushViewController(familyPhoto, animated: true)
     }
 
 

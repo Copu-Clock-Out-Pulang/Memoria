@@ -26,6 +26,8 @@ class TripNameViewController: UIViewController {
         //        let attributes = [NSAttributedString.Key.font: UIFont(name: "Poppins Regular", size: 17)!]
         //        UINavigationBar.appearance().titleTextAttributes = attributes
         self.title = S.appName
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+
 
         let hostingController = UIHostingController(
             rootView: TripNameFormUI(viewModel: viewModel, viewController: self))

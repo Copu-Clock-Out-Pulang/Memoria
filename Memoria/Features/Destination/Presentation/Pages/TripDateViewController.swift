@@ -26,6 +26,9 @@ class TripDateViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = S.appName
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+
+
 
         let hostingController = UIHostingController(rootView: TripDateFormUI(viewModel: viewModel, viewController: self))
         addChild(hostingController)
