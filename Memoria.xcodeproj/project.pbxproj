@@ -145,7 +145,6 @@
 		D6CE6F692A017BB700610641 /* ScrapbookEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CE6F682A017BB700610641 /* ScrapbookEditorViewController.swift */; };
 		D6CE6F6B2A017BF800610641 /* ScrapPageStackData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CE6F6A2A017BF800610641 /* ScrapPageStackData.swift */; };
 		D6CE6F6D2A017C1900610641 /* ImageDatas.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CE6F6C2A017C1900610641 /* ImageDatas.swift */; };
-		D6CE6F6F2A035FA600610641 /* ScrapbookDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CE6F6E2A035FA600610641 /* ScrapbookDetailViewController.swift */; };
 		D6CE6F712A038DA000610641 /* ToolBarComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CE6F702A038DA000610641 /* ToolBarComponent.swift */; };
 		D6CE6F732A038F7900610641 /* ToolPickerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CE6F722A038F7900610641 /* ToolPickerComponent.swift */; };
 		D6CE6F752A03903400610641 /* NavigationBarComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CE6F742A03903400610641 /* NavigationBarComponent.swift */; };
@@ -154,6 +153,8 @@
 		D6CE6F7C2A03918700610641 /* ImageFilterComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CE6F7B2A03918700610641 /* ImageFilterComponent.swift */; };
 		D6CE6F812A03B85700610641 /* ToolBarContentPreviewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CE6F802A03B85700610641 /* ToolBarContentPreviewComponent.swift */; };
 		D6CE6F832A03C3D800610641 /* RGBValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CE6F822A03C3D800610641 /* RGBValue.swift */; };
+		D6F6FE222A069D8F0092D2D4 /* ScrapBookEditorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F6FE212A069D8F0092D2D4 /* ScrapBookEditorViewModel.swift */; };
+		D6F6FE242A06A2660092D2D4 /* TempDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F6FE232A06A2660092D2D4 /* TempDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -318,7 +319,6 @@
 		D6CE6F682A017BB700610641 /* ScrapbookEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrapbookEditorViewController.swift; sourceTree = "<group>"; };
 		D6CE6F6A2A017BF800610641 /* ScrapPageStackData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrapPageStackData.swift; sourceTree = "<group>"; };
 		D6CE6F6C2A017C1900610641 /* ImageDatas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDatas.swift; sourceTree = "<group>"; };
-		D6CE6F6E2A035FA600610641 /* ScrapbookDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrapbookDetailViewController.swift; sourceTree = "<group>"; };
 		D6CE6F702A038DA000610641 /* ToolBarComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBarComponent.swift; sourceTree = "<group>"; };
 		D6CE6F722A038F7900610641 /* ToolPickerComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolPickerComponent.swift; sourceTree = "<group>"; };
 		D6CE6F742A03903400610641 /* NavigationBarComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarComponent.swift; sourceTree = "<group>"; };
@@ -327,6 +327,8 @@
 		D6CE6F7B2A03918700610641 /* ImageFilterComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFilterComponent.swift; sourceTree = "<group>"; };
 		D6CE6F802A03B85700610641 /* ToolBarContentPreviewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBarContentPreviewComponent.swift; sourceTree = "<group>"; };
 		D6CE6F822A03C3D800610641 /* RGBValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RGBValue.swift; sourceTree = "<group>"; };
+		D6F6FE212A069D8F0092D2D4 /* ScrapBookEditorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrapBookEditorViewModel.swift; sourceTree = "<group>"; };
+		D6F6FE232A06A2660092D2D4 /* TempDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -923,9 +925,9 @@
 			isa = PBXGroup;
 			children = (
 				D6CE6F6A2A017BF800610641 /* ScrapPageStackData.swift */,
+				915F0C2F2A04FEAA0040AEAB /* Content.swift */,
 				D6CE6F6C2A017C1900610641 /* ImageDatas.swift */,
 				D6CE6F822A03C3D800610641 /* RGBValue.swift */,
-				915F0C2F2A04FEAA0040AEAB /* Content.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -943,6 +945,7 @@
 		9B1AF1D529F23EE500BEF767 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				D6F6FE212A069D8F0092D2D4 /* ScrapBookEditorViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -965,7 +968,7 @@
 			isa = PBXGroup;
 			children = (
 				D6CE6F682A017BB700610641 /* ScrapbookEditorViewController.swift */,
-				D6CE6F6E2A035FA600610641 /* ScrapbookDetailViewController.swift */,
+				D6F6FE232A06A2660092D2D4 /* TempDetailViewController.swift */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
@@ -2099,6 +2102,7 @@
 				9B1AF19629F23D1000BEF767 /* MLMultiArray+Helpers.swift in Sources */,
 				9B1AF19229F23D1000BEF767 /* Predictions.swift in Sources */,
 				9B12C66F29FA8E46007B3B3F /* Publishers+CustomExtensions.swift in Sources */,
+				D6F6FE222A069D8F0092D2D4 /* ScrapBookEditorViewModel.swift in Sources */,
 				9B1AF19C29F23D1000BEF767 /* CGImage+RawBytes.swift in Sources */,
 				9111A47129FD198100DC3FF2 /* GetScrapPage.swift in Sources */,
 				9B1AF19D29F23D1000BEF767 /* MLMultiArray+Image.swift in Sources */,
@@ -2121,8 +2125,8 @@
 				9B12C66129FA55E2007B3B3F /* Recommendation.swift in Sources */,
 				915F0C162A026D3A0040AEAB /* ScrapBookDetailBackground.swift in Sources */,
 				915F0C202A03B89F0040AEAB /* ScrapPageShareButton.swift in Sources */,
-				D6CE6F6F2A035FA600610641 /* ScrapbookDetailViewController.swift in Sources */,
 				9BB5046029F2230B00C0D04C /* UIImage+CustomExtensions.swift in Sources */,
+				D6F6FE242A06A2660092D2D4 /* TempDetailViewController.swift in Sources */,
 				915F0C0E2A0248D20040AEAB /* ScrapPageViewModel.swift in Sources */,
 				915F0C222A03B8AE0040AEAB /* ScrapBookDeleteButton.swift in Sources */,
 				9B12C65F29FA488C007B3B3F /* ScrapPage.swift in Sources */,
