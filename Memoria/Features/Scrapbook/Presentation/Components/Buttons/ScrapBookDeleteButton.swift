@@ -9,14 +9,25 @@ import SwiftUI
 
 struct ScrapPageDeleteButton: View {
     @EnvironmentObject var controller: ScrapBookDetailViewController
+    @State private var showingAlert = false
+    
     var body: some View {
         Button(action: {
-
-            controller.viewDidLoad()
-            print("scrap book delete button pressed")
+            showingAlert = true
+        }) {
+            I.deleteButtonIcon.swiftUIImage
+                .renderingMode(.original)
         }
-        ) {
-            I.deleteButtonIcon.swiftUIImage.renderingMode(Image.TemplateRenderingMode?.init(Image.TemplateRenderingMode.original))
+        .alert(isPresented: $showingAlert) {
+            Alert(
+                title: Text("Delete Scrap Page"),
+                message: Text("Are you sure you want to delete this scrap page?"),
+                primaryButton: .destructive(Text("Delete")) {
+                    controller.deleteScrapPage(scrapPage: controller.getSelectedPage())
+                    controller.viewDidLoad()
+                },
+                secondaryButton: .cancel()
+            )
         }
     }
 }
