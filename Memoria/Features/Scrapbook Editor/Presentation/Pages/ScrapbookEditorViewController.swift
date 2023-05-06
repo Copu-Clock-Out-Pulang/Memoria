@@ -156,7 +156,6 @@ class ScrapbookEditorViewController: UIViewController, PKCanvasViewDelegate {
     }
 }
 
-
 // MARK: Save and Load
 extension ScrapbookEditorViewController {
     // Save Canvas Progress

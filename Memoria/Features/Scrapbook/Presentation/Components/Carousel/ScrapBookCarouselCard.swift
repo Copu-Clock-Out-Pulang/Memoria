@@ -25,7 +25,7 @@ struct ScrapBookCarouselCard: View {
                     .scaledToFit()
 
                 // ScrapPageThumbnail
-                Image(uiImage: (UIImage(data: Data(base64Encoded: scrapPageThumbnail)!) ?? UIImage(named: "ScrapPageThumbnailDummy"))!)
+                Image(uiImage: (UIImage(data: Data(base64Encoded: scrapPageThumbnail)!) ?? UIImage(named: "ScrapPageThumbnailNew"))!)
                     .resizable()
                     .scaledToFit()
                     .mask(
