@@ -18,10 +18,12 @@ class ScrapBookDetailViewController: UIViewController, ObservableObject {
     private let scrapBookViewModel = InjectionContainer.shared.container.resolve(ScrapBookViewModel.self)!
     private let scrapBookEditorViewModel = ScrapBookEditorViewModel()
     
-    func addScrapPage() {
+    @Published var scrapBook: ScrapBook?
+    
+    func addScrapPage() -> ScrapPage{
         scrapPageViewModel.addScrapPage(form: CreateScrapPageForm(
             id: UUID(),
-            name: "New Scrap Book",
+            name: "New Scrap Page",
             thumbnail: "",
             content: scrapBookEditorViewModel.makeEmptyContent(),
             createdAt: Date.now,
@@ -29,20 +31,46 @@ class ScrapBookDetailViewController: UIViewController, ObservableObject {
             scrapBook: scrapBookViewModel.scrapBook!
         )
         )
+        return (scrapBookViewModel.scrapBook?.scrapPages.first)!
     }
     
-    func selectScrapPage(scrapPage: ScrapPage){
+    func deleteScrapPage(scrapPage: ScrapPage) {
+        scrapPageViewModel.deleteScrapPage(scrapPage: scrapPage)
+    }
+    
+    func selectScrapPage(scrapPage: ScrapPage) {
         scrapBookViewModel.setSelectedScrapPage(scrapPage: scrapPage)
     }
     
     func getSelectedPage() -> ScrapPage {
-        return scrapBookViewModel.selectedScrapPage!
+        return scrapBookViewModel.selectedScrapPage ?? addScrapPage()
+    }
+    
+    func getScrapBookInfo() -> ScrapBookInfo {
+        return ScrapBookInfo(name: scrapBookViewModel.scrapBook!.name, tripDate: formatDateRange(start: scrapBookViewModel.scrapBook!.startDate!, end: scrapBookViewModel.scrapBook!.endDate!), tripDescription: scrapBookViewModel.scrapBook!.quote)
+    }
+    
+    func getScrapBook() -> ScrapBook {
+        return scrapBookViewModel.scrapBook!
+    }
+    
+    func shareSelectedPage() -> UIImage {
+        let scrapPage = getSelectedPage()
+        let image = UIImage(data: Data(base64Encoded: scrapPage.thumbnail)!) ?? UIImage(named: "ScrapPageThumbnailNew")
+        return image!
+    }
+    
+    func updateScrapBook(scrapBook: ScrapBook, tripName: String, tripDescription: String, startDate: Date?, endDate: Date?) {
+        scrapBookViewModel.updateScrapBook(scrapBook: scrapBook, form: EditScrapBookForm(name: tripName, scrapPage: scrapBook.scrapPages ,quote: tripDescription, startDate: startDate, endDate: endDate)
+        )
     }
     
     func formatDateRange(start: Date, end: Date) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "d MMM"
-
+        if(start == nil && end == nil){
+            return "27 Jan - 3 Feb 2023"
+        }
         let startDateString = dateFormatter.string(from: start)
         let endDateString = dateFormatter.string(from: end)
 
@@ -63,33 +91,33 @@ class ScrapBookDetailViewController: UIViewController, ObservableObject {
         }
     }
 
-
     func navigateToScrapPageEditor(scrapPage: ScrapPage) {
-        navigationController?.pushViewController(ScrapbookEditorViewController(
-                                                    scrapPageName: scrapPage.name,
-                                                    scrapPageContent: scrapPage.content,
-                                                    scrapPageThumbnail: scrapPage.thumbnail,
-                                                    viewModel: scrapPageViewModel),
-                                                 animated: true)
+        navigationController?.pushViewController(
+            ScrapbookEditorViewController(
+                scrapPageName: scrapPage.name,
+                scrapPageContent: scrapPage.content,
+                scrapPageThumbnail: scrapPage.thumbnail,
+                viewModel: scrapPageViewModel),
+            animated: true)
     }
-
-    @Published var scrapBook: ScrapBook?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // delete this function in final code
-        scrapBookViewModel.addScrapBook(
-            form: CreateScrapBookForm(
-                name: "Green Office Park",
-                quote: "Jalan Jalan ke Kota Hijau",
-                scrapPages: [],
-                selectedRecommendations: [],
-                startDate: Date.now,
-                endDate: Date.now))
+        if (scrapBook == nil) {
+            scrapBookViewModel.addScrapBook(
+                form: CreateScrapBookForm(
+                    name: "Green Office Park",
+                    quote: "Jalan Jalan ke Kota Hijau",
+                    scrapPages: [],
+                    selectedRecommendations: [],
+                    startDate: Date.now,
+                    endDate: Date.now))
+        }
         scrapBookViewModel.loadScrapBooks()
         scrapPageViewModel.loadScrapPages()
-
+        
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Poppins-Bold", size: 22)!]
 
         self.title = scrapBookTitle
@@ -106,4 +134,14 @@ class ScrapBookDetailViewController: UIViewController, ObservableObject {
         }
         hostingController.didMove(toParent: self)
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        navigationController?.toolbar.backgroundColor = .clear
+    }
+}
+
+struct ScrapBookInfo {
+    var name: String
+    var tripDate: String
+    var tripDescription: String
 }
