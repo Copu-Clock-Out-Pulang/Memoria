@@ -11,11 +11,13 @@ import SwiftUI
 struct ScrapBookCard: View {
     @EnvironmentObject var scrapBookViewModel: ScrapBookViewModel
     @EnvironmentObject var scrapPageViewModel: ScrapPageViewModel
-
+    @EnvironmentObject var controller: ScrapBookDetailViewController
+    
     @State var tripName: String // 25 characters
     @State var tripDate: String // E.g. case: 27 Jan - 3 Feb 2023
     @State var tripDescription: String // 100 characters
     @State var selectedScrapPage = ScrapPage(id: UUID(), name: "", thumbnail: "", content: "", createdAt: Date(), updatedAt: Date())
+    @State var showSheet = false
     
     let scrapPages: [ScrapPage]
     //    let onButtonClick: () -> Void
@@ -63,7 +65,7 @@ struct ScrapBookCard: View {
                                 .fixedSize(horizontal: false, vertical: true)
                                 .padding(.leading, geometry.size.width * 0.05)
                             Spacer()
-                            ScrapBookEditButton()
+                            ScrapBookEditButton(name: tripName, startDate: (controller.getScrapBook().startDate) ?? Date(), endDate: (controller.getScrapBook().endDate) ?? Date(), quote: tripDescription, showSheet: showSheet)
                                 .padding(.trailing, geometry.size.width * 0.15)
                         }
                         VStack(alignment: .leading, spacing: -0.41) {
@@ -85,7 +87,7 @@ struct ScrapBookCard: View {
                     }
                     // scrapbook carousel
                 }
-                ScrapBookCarousel(selectedCard: 0, scrapPages: scrapBookViewModel.scrapBook?.scrapPages ?? [])
+                ScrapBookCarousel(selectedCard: 1, scrapPages: scrapBookViewModel.scrapBook?.scrapPages ?? [])
                     .offset(x: 0, y: geometry.size.height * 0.3)
                 HStack(alignment: .center) {
                     ScrapPageEditButton()
