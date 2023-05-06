@@ -41,11 +41,11 @@ class ScrapBookLocalDataSourceImpl: ScrapBookLocalDataSource {
     }
 
     func editScrapBook(scrapBook: ScrapBook, form: EditScrapBookForm) -> AnyPublisher<ScrapBookCoreDataModel, Failure> {
-        let request = ScrapBookCoreDataModel.fetchRequest()
-        request.predicate = NSPredicate(format: "id == %@", scrapBook.id as CVarArg)
-        request.fetchLimit = 1
+        let fetchRequest = ScrapBookCoreDataModel.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "id == %@", scrapBook.id as CVarArg)
+        fetchRequest.fetchLimit = 1
         do {
-            guard let fetchedScrapBook = try context.fetch(request).first else {
+            guard let fetchedScrapBook = try context.fetch(fetchRequest).first else {
                 return Fail(error: Failure.editScrapBookFailure).eraseToAnyPublisher()
             }
             fetchedScrapBook.name = form.name
@@ -62,11 +62,11 @@ class ScrapBookLocalDataSourceImpl: ScrapBookLocalDataSource {
     }
 
     func deleteScrapBook(scrapBook: ScrapBook) -> AnyPublisher<Void, Failure> {
-        let request = ScrapBookCoreDataModel.fetchRequest()
-        request.predicate = NSPredicate(format: "id == %@", scrapBook.id as CVarArg)
-        request.fetchLimit = 1
+        let fetchRequest = ScrapBookCoreDataModel.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "id == %@", scrapBook.id as CVarArg)
+        fetchRequest.fetchLimit = 1
         do {
-            guard let fetchedScrapBook = try context.fetch(request).first else {
+            guard let fetchedScrapBook = try context.fetch(fetchRequest).first else {
                 return Fail(error: Failure.editScrapBookFailure).eraseToAnyPublisher()
             }
             context.delete(fetchedScrapBook)

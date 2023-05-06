@@ -41,23 +41,28 @@ class ScrapPageLocalDataSourceImpl: ScrapPageLocalDataSource {
     }
 
     func createScrapPage(form: CreateScrapPageForm) -> AnyPublisher<ScrapPageCoreDataModel, Failure> {
-
-        let scrapBook = ScrapPageCoreDataModel.fromDomain(form: form, context: context)
-        //        scrapBook.addToScrapPages(scrap)
+        let fetchRequest = ScrapBookCoreDataModel.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "id == %@", form.scrapBook.id as CVarArg)
+        fetchRequest.fetchLimit = 1
+        let scrapPage = ScrapPageCoreDataModel.fromDomain(form: form, context: context)
         do {
+            guard let fetchedBook = try context.fetch(fetchRequest).first else {
+                return Fail(error: Failure.createScrapPageFailure).eraseToAnyPublisher()
+            }
+            fetchedBook.addToScrapPages(scrapPage)
             try context.save()
-            return Just(scrapBook).setFailureType(to: Failure.self).eraseToAnyPublisher()
+            return Just(scrapPage).setFailureType(to: Failure.self).eraseToAnyPublisher()
         } catch _ {
             return Fail(error: Failure.createScrapPageFailure).eraseToAnyPublisher()
         }
     }
 
     func editScrapPage(scrapPage: ScrapPage, form: EditScrapPageForm) -> AnyPublisher<ScrapPageCoreDataModel, Failure> {
-        let request = ScrapPageCoreDataModel.fetchRequest()
-        request.predicate = NSPredicate(format: "id == %@", scrapPage.id as CVarArg)
-        request.fetchLimit = 1
+        let fetchRequest = ScrapPageCoreDataModel.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "id == %@", scrapPage.id as CVarArg)
+        fetchRequest.fetchLimit = 1
         do {
-            guard let fetchedPage = try context.fetch(request).first else {
+            guard let fetchedPage = try context.fetch(fetchRequest).first else {
                 return Fail(error: Failure.editScrapPageFailure).eraseToAnyPublisher()
             }
             fetchedPage.name = form.name

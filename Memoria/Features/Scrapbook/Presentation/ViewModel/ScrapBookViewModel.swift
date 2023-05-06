@@ -12,6 +12,7 @@ class ScrapBookViewModel: ObservableObject {
 
     // MARK: - Attributes
     @Published private(set) var scrapBook: ScrapBook?
+    @Published private(set) var selectedScrapPage: ScrapPage?
     @Published private(set) var status: ScrapBookStatus = .initial
 
     // MARK: - Usecases
@@ -30,6 +31,10 @@ class ScrapBookViewModel: ObservableObject {
         self.deleteScrapBook = deleteScrapBook
     }
 
+    func setSelectedScrapPage(scrapPage: ScrapPage){
+        self.selectedScrapPage = scrapPage
+    }
+    
     func loadScrapBooks() {
         status = .loading
         getScrapBooks.execute(params: NoParams())

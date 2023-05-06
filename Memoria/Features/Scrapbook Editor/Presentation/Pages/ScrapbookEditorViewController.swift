@@ -14,54 +14,54 @@ class ScrapbookEditorViewController: UIViewController, PKCanvasViewDelegate {
 
     private let viewModel: ScrapPageViewModel
     let editorViewModel = ScrapBookEditorViewModel()
-    
+
     var scrapPageName: String?
     var scrapPageContent: String?
     var scrapPageThumbnail: String?
-    
+
     // Canvas
-//    let canvasView = PKCanvasView()
-//    let toolPicker = PKToolPicker()
-//    var drawing = PKDrawing()
+    //    let canvasView = PKCanvasView()
+    //    let toolPicker = PKToolPicker()
+    //    var drawing = PKDrawing()
 
     // Import Image
-//    var inputImage = UIImage()
-    
+    //    var inputImage = UIImage()
+
     // Context
-//    let ciContext = InjectionContainer.shared.container.resolve(CIContext.self)!
-    
+    //    let ciContext = InjectionContainer.shared.container.resolve(CIContext.self)!
+
     // Data
-//    var scrapPageStack = ScrapPageStackData(id: UUID(), drawing: "", images: "", canvasColor: RGBValue(colorR: 1, colorG: 0.957, colorB: 0.918, colorA: 1), thumbnail: "")
-//    var scrapPageStack = ScrapPageStackData(id: UUID(), content: "", thumbnail: "")
-//    var imageStacks: [ImageDatas] = []
-    
-//    var pageTitle = "Page Title"
-    
+    //    var scrapPageStack = ScrapPageStackData(id: UUID(), drawing: "", images: "", canvasColor: RGBValue(colorR: 1, colorG: 0.957, colorB: 0.918, colorA: 1), thumbnail: "")
+    //    var scrapPageStack = ScrapPageStackData(id: UUID(), content: "", thumbnail: "")
+    //    var imageStacks: [ImageDatas] = []
+
+    //    var pageTitle = "Page Title"
+
     // UI
-//    let background = UIImageView(image: UIImage(named: "ScrapPageEditorBackground"))
-//    var toolContentView: UICollectionView?
-    
+    //    let background = UIImageView(image: UIImage(named: "ScrapPageEditorBackground"))
+    //    var toolContentView: UICollectionView?
+
     // ToolBar Data
-//    var selectedTool = ""
-//    var toolContentCount = 0
-    
+    //    var selectedTool = ""
+    //    var toolContentCount = 0
+
     // Import Shape
-//    var selectedColor: UIColor = .clear
-//    var selectedShape: Int = 0
-    
+    //    var selectedColor: UIColor = .clear
+    //    var selectedShape: Int = 0
+
     // Import Canvas Background
-//    let canvasColors = [
-//        UIColor(named: "CanvasColor/0"),
-//        UIColor(named: "CanvasColor/1"),
-//        UIColor(named: "CanvasColor/2"),
-//        UIColor(named: "CanvasColor/3"),
-//        UIColor(named: "CanvasColor/4"),
-//        UIColor(named: "CanvasColor/5"),
-//        UIColor(named: "CanvasColor/6"),
-//        UIColor(named: "CanvasColor/7")
-//    ]
-    
-//    var tempImage = UIImage(named: "ToolBarIcon/Photo")
+    //    let canvasColors = [
+    //        UIColor(named: "CanvasColor/0"),
+    //        UIColor(named: "CanvasColor/1"),
+    //        UIColor(named: "CanvasColor/2"),
+    //        UIColor(named: "CanvasColor/3"),
+    //        UIColor(named: "CanvasColor/4"),
+    //        UIColor(named: "CanvasColor/5"),
+    //        UIColor(named: "CanvasColor/6"),
+    //        UIColor(named: "CanvasColor/7")
+    //    ]
+
+    //    var tempImage = UIImage(named: "ToolBarIcon/Photo")
 
     init(scrapPageName: String, scrapPageContent: String, scrapPageThumbnail: String, viewModel: ScrapPageViewModel) {
         self.scrapPageName = scrapPageName
@@ -81,27 +81,27 @@ class ScrapbookEditorViewController: UIViewController, PKCanvasViewDelegate {
         print("ScrapPage Title", scrapPageName!)
         print("ScrapPage Content", scrapPageContent!)
         print("ScrapPage Thumbnail", scrapPageThumbnail!)
-        
+
         editorViewModel.background.frame = view.frame
         view.insertSubview(editorViewModel.background, at: 0)
-        
+
         makeNavigationBar()
         checkPermission()
         makeToolBarItems()
         makeCanvasView()
-        
-//        let tempView = UIImageView(image: tempImage)
-//        tempView.frame = viewModel.canvasView.frame
-//        tempView.center = view.center
-//        tempView.tintColor = .cyan
-//        viewModel.canvasView.addSubview(tempView)
-        
-//        redrawTopCanvas(image: viewModel.canvasView.drawing.image(from: viewModel.canvasView.bounds, scale: 1))
-        
+
+        //        let tempView = UIImageView(image: tempImage)
+        //        tempView.frame = viewModel.canvasView.frame
+        //        tempView.center = view.center
+        //        tempView.tintColor = .cyan
+        //        viewModel.canvasView.addSubview(tempView)
+
+        //        redrawTopCanvas(image: viewModel.canvasView.drawing.image(from: viewModel.canvasView.bounds, scale: 1))
+
         newLoadData()
     }
 
-    
+
     // MARK: Check Camera and Gallery Permission
     func checkPermission() {
         if PHPhotoLibrary.authorizationStatus(for: .readWrite) != .authorized {
@@ -115,8 +115,8 @@ class ScrapbookEditorViewController: UIViewController, PKCanvasViewDelegate {
             }
         }
     }
-    
-    
+
+
     // MARK: Making Canvas View
     func makeCanvasView() {
         view.addSubview(editorViewModel.canvasView)
@@ -128,17 +128,17 @@ class ScrapbookEditorViewController: UIViewController, PKCanvasViewDelegate {
         editorViewModel.canvasView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -31).isActive = true
         editorViewModel.canvasView.layer.cornerRadius = 30
         editorViewModel.canvasView.delegate = self
-//        editorViewModel.canvasView.drawing = viewModel.drawing
+        //        editorViewModel.canvasView.drawing = viewModel.drawing
     }
-    
+
     @objc func testHandler() {
         print("Handler")
     }
-    
+
     // MARK: Export Image
     @objc func shareImage(_ sender: Any) {
         print("Share Image")
-        
+
         UIGraphicsBeginImageContextWithOptions(editorViewModel.canvasView.bounds.size, false, UIScreen.main.scale)
         view.drawHierarchy(in: editorViewModel.canvasView.bounds, afterScreenUpdates: true)
 
@@ -234,7 +234,7 @@ extension ScrapbookEditorViewController {
 
         redrawTopCanvas(image: editorViewModel.canvasView.drawing.image(from: editorViewModel.canvasView.bounds, scale: 1))
     }
-    
+
     // Load Canvas Progress
     func newLoadData() {
         editorViewModel.imageStacks.removeAll()

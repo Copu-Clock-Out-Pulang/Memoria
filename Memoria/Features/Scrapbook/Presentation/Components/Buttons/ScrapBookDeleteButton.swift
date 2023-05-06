@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct ScrapPageDeleteButton: View {
+    @EnvironmentObject var controller: ScrapBookDetailViewController
     var body: some View {
         Button(action: {
-            // insert editScrapBookfunction from view model
+
+            controller.viewDidLoad()
             print("scrap book delete button pressed")
         }
         ) {

@@ -12,7 +12,7 @@ extension ScrapbookEditorViewController {
     func chooseFilter(view: UIView) {
         print("Set Image Filter")
         let image = UIImage(data: Data(base64Encoded: editorViewModel.imageStacks[view.tag - 1].image)!)!
-        
+
         let optionMenu = UIAlertController(title: nil, message: "Set Filter", preferredStyle: .alert)
         let normalAction = UIAlertAction(title: "None", style: .default) {_ in
             print("None")
@@ -41,7 +41,7 @@ extension ScrapbookEditorViewController {
         optionMenu.addAction(cancelAction)
         self.present(optionMenu, animated: true)
     }
-    
+
     // MARK: Adding Filter to Image
     func setFilter(image: UIImage, imageView: UIImageView, tag: Int, filter: String) {
         if filter == "None" {
@@ -53,37 +53,37 @@ extension ScrapbookEditorViewController {
         } else if filter == "Invert" {
             imageView.image = UIImage(cgImage: invertFilter(cgImage: image.cgImage!))
         }
-        
+
         editorViewModel.imageStacks[tag - 1].filter = filter
     }
-    
+
     func sepiaFilter(cgImage: CGImage) -> CGImage {
         let ciImage = CIImage(cgImage: cgImage)
         let filter = CIFilter.sepiaTone()
         filter.setValue(ciImage, forKey: kCIInputImageKey)
-        
+
         let output = filter.outputImage
-        
+
         return editorViewModel.ciContext.createCGImage(output!, from: output!.extent)!
     }
-    
+
     func blurFilter(cgImage: CGImage) -> CGImage {
         let ciImage = CIImage(cgImage: cgImage)
         let filter = CIFilter.motionBlur()
         filter.setValue(ciImage, forKey: kCIInputImageKey)
-        
+
         let output = filter.outputImage
-        
+
         return editorViewModel.ciContext.createCGImage(output!, from: output!.extent)!
     }
-    
+
     func invertFilter(cgImage: CGImage) -> CGImage {
         let ciImage = CIImage(cgImage: cgImage)
         let filter = CIFilter.colorInvert()
         filter.setValue(ciImage, forKey: kCIInputImageKey)
-        
+
         let output = filter.outputImage
-        
+
         return editorViewModel.ciContext.createCGImage(output!, from: output!.extent)!
     }
 }
