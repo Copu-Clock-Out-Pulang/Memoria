@@ -206,7 +206,7 @@ extension ScrapbookEditorViewController {
         var loadedContent: Content?
 
         do {
-            //            loadedContent = try JSONDecoder().decode(Content.self, from: Data(base64Encoded: scrapPageStack.content)!)
+
             loadedContent = try JSONDecoder().decode(Content.self, from: Data(base64Encoded: scrapPageContent!)!)
         } catch {
             print("----", error)

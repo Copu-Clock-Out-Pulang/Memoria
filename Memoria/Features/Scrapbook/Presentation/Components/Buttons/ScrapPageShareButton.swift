@@ -11,7 +11,7 @@ struct ScrapPageShareButton: View {
     @EnvironmentObject var controller: ScrapBookDetailViewController
     
     var body: some View {
-//        var image = Image(uiImage: controller.shareSelectedPage())
+        var image = Image(uiImage: controller.shareSelectedPage())
         
         Button(action: {
 //            ShareLink(item: image, preview: SharePreview("", image))

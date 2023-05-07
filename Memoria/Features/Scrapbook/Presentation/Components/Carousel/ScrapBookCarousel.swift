@@ -38,11 +38,10 @@ struct ScrapBookCarousel: View {
                                     withAnimation {
                                         self.selectedCard = index
                                         if(index != 0) {
-//                                            controller.selectScrapPage(scrapPage: scrapPages[index - 1])
+
                                             controller.index = index - 1
                                         }
                                             else {
-//                                                controller.selectScrapPage(scrapPage: scrapPages[0])
                                                 controller.index = 0
                                             }
                                         print(scrapPages[index - 1])
