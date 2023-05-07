@@ -94,17 +94,16 @@ struct TripDestinationUI: View {
                 
             }
             .ignoresSafeArea()
-            .sheet(isPresented: $show){
+            .sheet(isPresented: $show) {
                 if pressedIndex > -1 {
                     DestinationDetail(destination: viewModel.recommendations[pressedIndex].destination)
                 }
                
             }
-            .onReceive(viewModel.$createdScrapBook) {
+            .onReceive(viewModel.$createdScrapBook) { _ in
                 if viewModel.createdScrapBook != nil {
                     viewController.navigateToScrapBookDetail()
                 }
-                return EmptyView()
             }
     }
 }

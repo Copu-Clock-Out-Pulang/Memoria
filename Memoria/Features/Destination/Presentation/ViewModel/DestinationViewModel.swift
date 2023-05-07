@@ -128,7 +128,8 @@ class DestinationViewModel: ObservableObject {
         let scrapPages = selected
             .map {
                 ScrapPage(id: UUID(), name: $0.destination.name, thumbnail: $0.generatedPhoto.pngData()?.base64EncodedString() ?? "", content: ScrapPageContent.initialContent(image: $0.generatedPhoto), createdAt: Date.now, updatedAt: Date.now)
-        }
+                
+            }
         
         createScrapBook.execute(params: CreateScrapBookParams(form: CreateScrapBookForm(name: self.tripName ?? "", quote: self.quote ?? "", scrapPages: scrapPages, selectedRecommendations: Array(selected), startDate: Date.now, endDate: Date.now)))
             .sink(receiveCompletion: {[weak self] completion in
