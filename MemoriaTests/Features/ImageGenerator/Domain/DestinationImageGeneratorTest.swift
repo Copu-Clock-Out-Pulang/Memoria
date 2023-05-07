@@ -30,7 +30,7 @@ final class DestinationImageGeneratorTest: XCTestCase {
     }
 
     func testGenerateDestinationImage() {
-        let image = I.yey.image
+        let image = I.imageTest.image
         let mask = I.mask.image
         let background = I.outputTest.image
         

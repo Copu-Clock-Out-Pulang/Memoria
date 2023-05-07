@@ -15,6 +15,8 @@ enum Failure: Error {
     case generateRecommendationFailure
     case fetchAreaFailure
     case fetchDestinationFailure
+    case areaMigrationFailure
+    case destinationMigrationFailure
 
     // MARK: - ScrapBook Failures
     case createScrapBookFailure

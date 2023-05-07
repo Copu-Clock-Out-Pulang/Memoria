@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import Combine
 
-class DestinationViewModel {
+class DestinationViewModel: ObservableObject {
 
     // MARK: - Attributes
     @Published private(set) var tripName: String?
@@ -30,7 +30,6 @@ class DestinationViewModel {
     private let getTripArea: AnyUseCase<[Area], NoParams>
     private let getDestinations: AnyUseCase<[Destination], GetTripDestinationByAreaParams>
     private let generateRecommendations: AnyUseCase<[Recommendation], GenerateRecommendationParams>
-
     // MARK: - Initializers
     init(getTripArea: AnyUseCase<[Area], NoParams>, getDestinations: AnyUseCase<[Destination], GetTripDestinationByAreaParams>, generateRecommendations: AnyUseCase<[Recommendation], GenerateRecommendationParams>) {
         self.getTripArea = getTripArea
@@ -58,6 +57,10 @@ class DestinationViewModel {
         self.familyPhoto = familyPhoto
     }
 
+    func selectArea(area: Area) {
+        self.selectedArea = area
+    }
+
     func fetchDestinations() {
         guard let selected = self.selectedArea,
               let family = self.familyPhoto else {
@@ -77,12 +80,12 @@ class DestinationViewModel {
                 case .failure(let failure):
                     self?.status = .failure(failure: failure)
                 }
-            }, receiveValue: {recommendations in
-                self.recommendations = recommendations
-                recommendations.forEach { recommendation in
+            }, receiveValue: {recs in
+                self.recommendations = recs
+                recs.forEach { recommendation in
                     self.selectedRecommendation[recommendation] = false
-
                 }
+                print(recs)
             })
             .store(in: &cancellables)
 
@@ -115,32 +118,32 @@ class DestinationViewModel {
 
     func createScrapbook() {
         // TODO: sesuaikan dengan usecase winxen
-        //        let scrapPage = selectedRecommendation.filter {
-        //            $0.value == true
-        //        }
-        //            .keys.map {
-        //                ScrapPage(id: UUID(), name: $0.destination.name, thumbnail: .dest, content: <#T##String#>, createdAt: <#T##Date#>, updatedAt: <#T##Date#>)
-        //            }
-        //
-        //        let scrapbook = ScrapBook(
-        //            id: UUID(),
-        //            user: User(id: UUID(), name: "User"),
-        //            destinations: selectedRecommendation.keys.map {$0.destination},
-        //            scrapPages: [],
-        //            quote: <#T##String#>,
-        //            name: <#T##String#>,
-        //            startDate: <#T##Date?#>,
-        //            endDate: <#T##Date?#>,
-        //            createdAt: <#T##Date#>,
-        //            updatedAt: <#T##Date#>)
+//        let scrapPage = selectedRecommendation.filter {
+//            $0.value == true
+//        }
+//            .keys.map {
+//                ScrapPage(id: UUID(), name: $0.destination.name, thumbnail: .dest, content: <#T##String#>, createdAt: <#T##Date#>, updatedAt: <#T##Date#>)
+//            }
+//
+//        let scrapbook = ScrapBook(
+//            id: UUID(),
+//            user: User(id: UUID(), name: "User"),
+//            destinations: selectedRecommendation.keys.map {$0.destination},
+//            scrapPages: [],
+//            quote: <#T##String#>,
+//            name: <#T##String#>,
+//            startDate: <#T##Date?#>,
+//            endDate: <#T##Date?#>,
+//            createdAt: <#T##Date#>,
+//            updatedAt: <#T##Date#>)
     }
 }
 
 extension DestinationViewModel {
 
-    //    func validateTripName(name: String) -> Bool {
-    //
-    //    }
+//    func validateTripName(name: String) -> Bool {
+//
+//    }
 }
 
 enum DestinationStatus {

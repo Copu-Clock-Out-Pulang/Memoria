@@ -32,7 +32,8 @@ class GenerateRecommendationImpl: GenerateRecommendation {
                 }
                 .eraseToAnyPublisher()
         }
-        return Publishers.zipMany(destinationPublishers)
+        return Publishers.MergeMany(destinationPublishers)
+            .collect()
             .eraseToAnyPublisher()
 
     }

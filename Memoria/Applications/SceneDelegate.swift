@@ -19,10 +19,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         guard let windowScene = (scene as? UIWindowScene) else { return }
 
-        let vm = InjectionContainer.shared.container.resolve(DestinationViewModel.self)!
-        let mainViewController = UINavigationController(rootViewController: ScrapBookDetailViewController())
+        let viewModel = InjectionContainer.shared.container.resolve(SplashViewModel.self)!
+        let mainViewController = UINavigationController(rootViewController: SplashViewController(viewModel: viewModel))
         let window = UIWindow(windowScene: windowScene)
         window.rootViewController = mainViewController
+        window.rootViewController?.overrideUserInterfaceStyle = .light
         window.makeKeyAndVisible()
         self.window = window
     }
