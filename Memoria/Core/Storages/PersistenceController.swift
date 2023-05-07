@@ -24,11 +24,9 @@ struct PersistenceController {
             if let error = error as NSError? {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
-        }
-        )
-
-        print(container.persistentStoreCoordinator.persistentStores.first?.url)
-
+        })
+        print(container.persistentStoreDescriptions.first?.url ?? "No Persitent Database")
 
     }
+
 }

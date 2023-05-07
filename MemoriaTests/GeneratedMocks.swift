@@ -1,4 +1,4 @@
-// MARK: - Mocks generated from file: Memoria/Features/Destination/Domain/Repositories/DestinationRepository.swift at 2023-04-29 05:59:25 +0000
+// MARK: - Mocks generated from file: Memoria/Features/Destination/Domain/Repositories/DestinationRepository.swift at 2023-05-06 17:44:58 +0000
 
 //
 //  File.swift
@@ -184,7 +184,7 @@ import Foundation
 
 
 
-// MARK: - Mocks generated from file: Memoria/Features/ImageGenerator/Domain/DestinationImageGenerator.swift at 2023-04-29 05:59:25 +0000
+// MARK: - Mocks generated from file: Memoria/Features/ImageGenerator/Domain/DestinationImageGenerator.swift at 2023-05-06 17:44:58 +0000
 
 //
 //  DestinationImageGenerator.swift
@@ -440,7 +440,7 @@ import UIKit
 
 
 
-// MARK: - Mocks generated from file: Memoria/Features/ImageGenerator/Domain/ImageSegmentor.swift at 2023-04-29 05:59:25 +0000
+// MARK: - Mocks generated from file: Memoria/Features/ImageGenerator/Domain/ImageSegmentor.swift at 2023-05-06 17:44:58 +0000
 
 //
 //  ImageSegmentor.swift
@@ -697,7 +697,7 @@ import Vision
 
 
 
-// MARK: - Mocks generated from file: Memoria/Features/Scrapbook/Domain/Repositories/ScrapBookRepository.swift at 2023-04-29 05:59:25 +0000
+// MARK: - Mocks generated from file: Memoria/Features/Scrapbook/Domain/Repositories/ScrapBookRepository.swift at 2023-05-06 17:44:58 +0000
 
 //
 //  ScrapBookRepository.swift
@@ -743,11 +743,11 @@ import Foundation
     
     
     
-     func createScrapBook(form: CreateScrapBookForm) -> AnyPublisher<ScrapBook, Failure> {
+     func createScrapBook(form: CreateScrapBookForm) -> AnyPublisher <ScrapBook, Failure> {
         
     return cuckoo_manager.call(
     """
-    createScrapBook(form: CreateScrapBookForm) -> AnyPublisher<ScrapBook, Failure>
+    createScrapBook(form: CreateScrapBookForm) -> AnyPublisher <ScrapBook, Failure>
     """,
             parameters: (form),
             escapingParameters: (form),
@@ -756,6 +756,66 @@ import Foundation
                 Cuckoo.MockManager.crashOnProtocolSuperclassCall()
                 ,
             defaultCall: __defaultImplStub!.createScrapBook(form: form))
+        
+    }
+    
+    
+    
+    
+    
+     func getScrapBooks() -> AnyPublisher <[ScrapBook], Failure> {
+        
+    return cuckoo_manager.call(
+    """
+    getScrapBooks() -> AnyPublisher <[ScrapBook], Failure>
+    """,
+            parameters: (),
+            escapingParameters: (),
+            superclassCall:
+                
+                Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                ,
+            defaultCall: __defaultImplStub!.getScrapBooks())
+        
+    }
+    
+    
+    
+    
+    
+     func editScrapBook(scrapBook: ScrapBook, form: EditScrapBookForm) -> AnyPublisher <ScrapBook, Failure> {
+        
+    return cuckoo_manager.call(
+    """
+    editScrapBook(scrapBook: ScrapBook, form: EditScrapBookForm) -> AnyPublisher <ScrapBook, Failure>
+    """,
+            parameters: (scrapBook, form),
+            escapingParameters: (scrapBook, form),
+            superclassCall:
+                
+                Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                ,
+            defaultCall: __defaultImplStub!.editScrapBook(scrapBook: scrapBook, form: form))
+        
+    }
+    
+    
+    
+    
+    
+     func deleteScrapBook(scrapBook: ScrapBook) -> AnyPublisher <(), Failure> {
+        
+    return cuckoo_manager.call(
+    """
+    deleteScrapBook(scrapBook: ScrapBook) -> AnyPublisher <(), Failure>
+    """,
+            parameters: (scrapBook),
+            escapingParameters: (scrapBook),
+            superclassCall:
+                
+                Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                ,
+            defaultCall: __defaultImplStub!.deleteScrapBook(scrapBook: scrapBook))
         
     }
     
@@ -771,11 +831,44 @@ import Foundation
         
         
         
-        func createScrapBook<M1: Cuckoo.Matchable>(form: M1) -> Cuckoo.ProtocolStubFunction<(CreateScrapBookForm), AnyPublisher<ScrapBook, Failure>> where M1.MatchedType == CreateScrapBookForm {
+        func createScrapBook<M1: Cuckoo.Matchable>(form: M1) -> Cuckoo.ProtocolStubFunction<(CreateScrapBookForm), AnyPublisher <ScrapBook, Failure>> where M1.MatchedType == CreateScrapBookForm {
             let matchers: [Cuckoo.ParameterMatcher<(CreateScrapBookForm)>] = [wrap(matchable: form) { $0 }]
             return .init(stub: cuckoo_manager.createStub(for: MockScrapBookRepository.self, method:
     """
-    createScrapBook(form: CreateScrapBookForm) -> AnyPublisher<ScrapBook, Failure>
+    createScrapBook(form: CreateScrapBookForm) -> AnyPublisher <ScrapBook, Failure>
+    """, parameterMatchers: matchers))
+        }
+        
+        
+        
+        
+        func getScrapBooks() -> Cuckoo.ProtocolStubFunction<(), AnyPublisher <[ScrapBook], Failure>> {
+            let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+            return .init(stub: cuckoo_manager.createStub(for: MockScrapBookRepository.self, method:
+    """
+    getScrapBooks() -> AnyPublisher <[ScrapBook], Failure>
+    """, parameterMatchers: matchers))
+        }
+        
+        
+        
+        
+        func editScrapBook<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable>(scrapBook: M1, form: M2) -> Cuckoo.ProtocolStubFunction<(ScrapBook, EditScrapBookForm), AnyPublisher <ScrapBook, Failure>> where M1.MatchedType == ScrapBook, M2.MatchedType == EditScrapBookForm {
+            let matchers: [Cuckoo.ParameterMatcher<(ScrapBook, EditScrapBookForm)>] = [wrap(matchable: scrapBook) { $0.0 }, wrap(matchable: form) { $0.1 }]
+            return .init(stub: cuckoo_manager.createStub(for: MockScrapBookRepository.self, method:
+    """
+    editScrapBook(scrapBook: ScrapBook, form: EditScrapBookForm) -> AnyPublisher <ScrapBook, Failure>
+    """, parameterMatchers: matchers))
+        }
+        
+        
+        
+        
+        func deleteScrapBook<M1: Cuckoo.Matchable>(scrapBook: M1) -> Cuckoo.ProtocolStubFunction<(ScrapBook), AnyPublisher <(), Failure>> where M1.MatchedType == ScrapBook {
+            let matchers: [Cuckoo.ParameterMatcher<(ScrapBook)>] = [wrap(matchable: scrapBook) { $0 }]
+            return .init(stub: cuckoo_manager.createStub(for: MockScrapBookRepository.self, method:
+    """
+    deleteScrapBook(scrapBook: ScrapBook) -> AnyPublisher <(), Failure>
     """, parameterMatchers: matchers))
         }
         
@@ -799,11 +892,47 @@ import Foundation
         
         
         @discardableResult
-        func createScrapBook<M1: Cuckoo.Matchable>(form: M1) -> Cuckoo.__DoNotUse<(CreateScrapBookForm), AnyPublisher<ScrapBook, Failure>> where M1.MatchedType == CreateScrapBookForm {
+        func createScrapBook<M1: Cuckoo.Matchable>(form: M1) -> Cuckoo.__DoNotUse<(CreateScrapBookForm), AnyPublisher <ScrapBook, Failure>> where M1.MatchedType == CreateScrapBookForm {
             let matchers: [Cuckoo.ParameterMatcher<(CreateScrapBookForm)>] = [wrap(matchable: form) { $0 }]
             return cuckoo_manager.verify(
     """
-    createScrapBook(form: CreateScrapBookForm) -> AnyPublisher<ScrapBook, Failure>
+    createScrapBook(form: CreateScrapBookForm) -> AnyPublisher <ScrapBook, Failure>
+    """, callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+        }
+        
+        
+        
+        
+        @discardableResult
+        func getScrapBooks() -> Cuckoo.__DoNotUse<(), AnyPublisher <[ScrapBook], Failure>> {
+            let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+            return cuckoo_manager.verify(
+    """
+    getScrapBooks() -> AnyPublisher <[ScrapBook], Failure>
+    """, callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+        }
+        
+        
+        
+        
+        @discardableResult
+        func editScrapBook<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable>(scrapBook: M1, form: M2) -> Cuckoo.__DoNotUse<(ScrapBook, EditScrapBookForm), AnyPublisher <ScrapBook, Failure>> where M1.MatchedType == ScrapBook, M2.MatchedType == EditScrapBookForm {
+            let matchers: [Cuckoo.ParameterMatcher<(ScrapBook, EditScrapBookForm)>] = [wrap(matchable: scrapBook) { $0.0 }, wrap(matchable: form) { $0.1 }]
+            return cuckoo_manager.verify(
+    """
+    editScrapBook(scrapBook: ScrapBook, form: EditScrapBookForm) -> AnyPublisher <ScrapBook, Failure>
+    """, callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+        }
+        
+        
+        
+        
+        @discardableResult
+        func deleteScrapBook<M1: Cuckoo.Matchable>(scrapBook: M1) -> Cuckoo.__DoNotUse<(ScrapBook), AnyPublisher <(), Failure>> where M1.MatchedType == ScrapBook {
+            let matchers: [Cuckoo.ParameterMatcher<(ScrapBook)>] = [wrap(matchable: scrapBook) { $0 }]
+            return cuckoo_manager.verify(
+    """
+    deleteScrapBook(scrapBook: ScrapBook) -> AnyPublisher <(), Failure>
     """, callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
         }
         
@@ -821,8 +950,32 @@ import Foundation
     
     
     
-     func createScrapBook(form: CreateScrapBookForm) -> AnyPublisher<ScrapBook, Failure>  {
-        return DefaultValueRegistry.defaultValue(for: (AnyPublisher<ScrapBook, Failure>).self)
+     func createScrapBook(form: CreateScrapBookForm) -> AnyPublisher <ScrapBook, Failure>  {
+        return DefaultValueRegistry.defaultValue(for: (AnyPublisher <ScrapBook, Failure>).self)
+    }
+    
+    
+    
+    
+    
+     func getScrapBooks() -> AnyPublisher <[ScrapBook], Failure>  {
+        return DefaultValueRegistry.defaultValue(for: (AnyPublisher <[ScrapBook], Failure>).self)
+    }
+    
+    
+    
+    
+    
+     func editScrapBook(scrapBook: ScrapBook, form: EditScrapBookForm) -> AnyPublisher <ScrapBook, Failure>  {
+        return DefaultValueRegistry.defaultValue(for: (AnyPublisher <ScrapBook, Failure>).self)
+    }
+    
+    
+    
+    
+    
+     func deleteScrapBook(scrapBook: ScrapBook) -> AnyPublisher <(), Failure>  {
+        return DefaultValueRegistry.defaultValue(for: (AnyPublisher <(), Failure>).self)
     }
     
     
@@ -832,7 +985,7 @@ import Foundation
 
 
 
-// MARK: - Mocks generated from file: Memoria/Features/Scrapbook/Domain/Repositories/ScrapPageRepository.swift at 2023-04-29 05:59:25 +0000
+// MARK: - Mocks generated from file: Memoria/Features/Scrapbook/Domain/Repositories/ScrapPageRepository.swift at 2023-05-06 17:44:58 +0000
 
 //
 //  ScrapPageEditor.swift
@@ -878,19 +1031,19 @@ import Foundation
     
     
     
-     func addScrapPage(scrapPage: ScrapPage) -> AnyPublisher<ScrapPage, Failure> {
+     func createScrapPage(form: CreateScrapPageForm, page: ScrapPage) -> AnyPublisher <ScrapPage, Failure> {
         
     return cuckoo_manager.call(
     """
-    addScrapPage(scrapPage: ScrapPage) -> AnyPublisher<ScrapPage, Failure>
+    createScrapPage(form: CreateScrapPageForm, page: ScrapPage) -> AnyPublisher <ScrapPage, Failure>
     """,
-            parameters: (scrapPage),
-            escapingParameters: (scrapPage),
+            parameters: (form, page),
+            escapingParameters: (form, page),
             superclassCall:
                 
                 Cuckoo.MockManager.crashOnProtocolSuperclassCall()
                 ,
-            defaultCall: __defaultImplStub!.addScrapPage(scrapPage: scrapPage))
+            defaultCall: __defaultImplStub!.createScrapPage(form: form, page: page))
         
     }
     
@@ -898,19 +1051,39 @@ import Foundation
     
     
     
-     func editScrapPage(scrapPage: ScrapPage) -> AnyPublisher<ScrapPage, Failure> {
+     func getScrapPages() -> AnyPublisher<[ScrapPage], Failure> {
         
     return cuckoo_manager.call(
     """
-    editScrapPage(scrapPage: ScrapPage) -> AnyPublisher<ScrapPage, Failure>
+    getScrapPages() -> AnyPublisher<[ScrapPage], Failure>
     """,
-            parameters: (scrapPage),
-            escapingParameters: (scrapPage),
+            parameters: (),
+            escapingParameters: (),
             superclassCall:
                 
                 Cuckoo.MockManager.crashOnProtocolSuperclassCall()
                 ,
-            defaultCall: __defaultImplStub!.editScrapPage(scrapPage: scrapPage))
+            defaultCall: __defaultImplStub!.getScrapPages())
+        
+    }
+    
+    
+    
+    
+    
+     func editScrapPage(scrapPage: ScrapPage, form: EditScrapPageForm) -> AnyPublisher <ScrapPage, Failure> {
+        
+    return cuckoo_manager.call(
+    """
+    editScrapPage(scrapPage: ScrapPage, form: EditScrapPageForm) -> AnyPublisher <ScrapPage, Failure>
+    """,
+            parameters: (scrapPage, form),
+            escapingParameters: (scrapPage, form),
+            superclassCall:
+                
+                Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                ,
+            defaultCall: __defaultImplStub!.editScrapPage(scrapPage: scrapPage, form: form))
         
     }
     
@@ -946,22 +1119,33 @@ import Foundation
         
         
         
-        func addScrapPage<M1: Cuckoo.Matchable>(scrapPage: M1) -> Cuckoo.ProtocolStubFunction<(ScrapPage), AnyPublisher<ScrapPage, Failure>> where M1.MatchedType == ScrapPage {
-            let matchers: [Cuckoo.ParameterMatcher<(ScrapPage)>] = [wrap(matchable: scrapPage) { $0 }]
+        func createScrapPage<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable>(form: M1, page: M2) -> Cuckoo.ProtocolStubFunction<(CreateScrapPageForm, ScrapPage), AnyPublisher <ScrapPage, Failure>> where M1.MatchedType == CreateScrapPageForm, M2.MatchedType == ScrapPage {
+            let matchers: [Cuckoo.ParameterMatcher<(CreateScrapPageForm, ScrapPage)>] = [wrap(matchable: form) { $0.0 }, wrap(matchable: page) { $0.1 }]
             return .init(stub: cuckoo_manager.createStub(for: MockScrapPageRepository.self, method:
     """
-    addScrapPage(scrapPage: ScrapPage) -> AnyPublisher<ScrapPage, Failure>
+    createScrapPage(form: CreateScrapPageForm, page: ScrapPage) -> AnyPublisher <ScrapPage, Failure>
     """, parameterMatchers: matchers))
         }
         
         
         
         
-        func editScrapPage<M1: Cuckoo.Matchable>(scrapPage: M1) -> Cuckoo.ProtocolStubFunction<(ScrapPage), AnyPublisher<ScrapPage, Failure>> where M1.MatchedType == ScrapPage {
-            let matchers: [Cuckoo.ParameterMatcher<(ScrapPage)>] = [wrap(matchable: scrapPage) { $0 }]
+        func getScrapPages() -> Cuckoo.ProtocolStubFunction<(), AnyPublisher<[ScrapPage], Failure>> {
+            let matchers: [Cuckoo.ParameterMatcher<Void>] = []
             return .init(stub: cuckoo_manager.createStub(for: MockScrapPageRepository.self, method:
     """
-    editScrapPage(scrapPage: ScrapPage) -> AnyPublisher<ScrapPage, Failure>
+    getScrapPages() -> AnyPublisher<[ScrapPage], Failure>
+    """, parameterMatchers: matchers))
+        }
+        
+        
+        
+        
+        func editScrapPage<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable>(scrapPage: M1, form: M2) -> Cuckoo.ProtocolStubFunction<(ScrapPage, EditScrapPageForm), AnyPublisher <ScrapPage, Failure>> where M1.MatchedType == ScrapPage, M2.MatchedType == EditScrapPageForm {
+            let matchers: [Cuckoo.ParameterMatcher<(ScrapPage, EditScrapPageForm)>] = [wrap(matchable: scrapPage) { $0.0 }, wrap(matchable: form) { $0.1 }]
+            return .init(stub: cuckoo_manager.createStub(for: MockScrapPageRepository.self, method:
+    """
+    editScrapPage(scrapPage: ScrapPage, form: EditScrapPageForm) -> AnyPublisher <ScrapPage, Failure>
     """, parameterMatchers: matchers))
         }
         
@@ -996,11 +1180,11 @@ import Foundation
         
         
         @discardableResult
-        func addScrapPage<M1: Cuckoo.Matchable>(scrapPage: M1) -> Cuckoo.__DoNotUse<(ScrapPage), AnyPublisher<ScrapPage, Failure>> where M1.MatchedType == ScrapPage {
-            let matchers: [Cuckoo.ParameterMatcher<(ScrapPage)>] = [wrap(matchable: scrapPage) { $0 }]
+        func createScrapPage<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable>(form: M1, page: M2) -> Cuckoo.__DoNotUse<(CreateScrapPageForm, ScrapPage), AnyPublisher <ScrapPage, Failure>> where M1.MatchedType == CreateScrapPageForm, M2.MatchedType == ScrapPage {
+            let matchers: [Cuckoo.ParameterMatcher<(CreateScrapPageForm, ScrapPage)>] = [wrap(matchable: form) { $0.0 }, wrap(matchable: page) { $0.1 }]
             return cuckoo_manager.verify(
     """
-    addScrapPage(scrapPage: ScrapPage) -> AnyPublisher<ScrapPage, Failure>
+    createScrapPage(form: CreateScrapPageForm, page: ScrapPage) -> AnyPublisher <ScrapPage, Failure>
     """, callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
         }
         
@@ -1008,11 +1192,23 @@ import Foundation
         
         
         @discardableResult
-        func editScrapPage<M1: Cuckoo.Matchable>(scrapPage: M1) -> Cuckoo.__DoNotUse<(ScrapPage), AnyPublisher<ScrapPage, Failure>> where M1.MatchedType == ScrapPage {
-            let matchers: [Cuckoo.ParameterMatcher<(ScrapPage)>] = [wrap(matchable: scrapPage) { $0 }]
+        func getScrapPages() -> Cuckoo.__DoNotUse<(), AnyPublisher<[ScrapPage], Failure>> {
+            let matchers: [Cuckoo.ParameterMatcher<Void>] = []
             return cuckoo_manager.verify(
     """
-    editScrapPage(scrapPage: ScrapPage) -> AnyPublisher<ScrapPage, Failure>
+    getScrapPages() -> AnyPublisher<[ScrapPage], Failure>
+    """, callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+        }
+        
+        
+        
+        
+        @discardableResult
+        func editScrapPage<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable>(scrapPage: M1, form: M2) -> Cuckoo.__DoNotUse<(ScrapPage, EditScrapPageForm), AnyPublisher <ScrapPage, Failure>> where M1.MatchedType == ScrapPage, M2.MatchedType == EditScrapPageForm {
+            let matchers: [Cuckoo.ParameterMatcher<(ScrapPage, EditScrapPageForm)>] = [wrap(matchable: scrapPage) { $0.0 }, wrap(matchable: form) { $0.1 }]
+            return cuckoo_manager.verify(
+    """
+    editScrapPage(scrapPage: ScrapPage, form: EditScrapPageForm) -> AnyPublisher <ScrapPage, Failure>
     """, callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
         }
         
@@ -1042,16 +1238,24 @@ import Foundation
     
     
     
-     func addScrapPage(scrapPage: ScrapPage) -> AnyPublisher<ScrapPage, Failure>  {
-        return DefaultValueRegistry.defaultValue(for: (AnyPublisher<ScrapPage, Failure>).self)
+     func createScrapPage(form: CreateScrapPageForm, page: ScrapPage) -> AnyPublisher <ScrapPage, Failure>  {
+        return DefaultValueRegistry.defaultValue(for: (AnyPublisher <ScrapPage, Failure>).self)
     }
     
     
     
     
     
-     func editScrapPage(scrapPage: ScrapPage) -> AnyPublisher<ScrapPage, Failure>  {
-        return DefaultValueRegistry.defaultValue(for: (AnyPublisher<ScrapPage, Failure>).self)
+     func getScrapPages() -> AnyPublisher<[ScrapPage], Failure>  {
+        return DefaultValueRegistry.defaultValue(for: (AnyPublisher<[ScrapPage], Failure>).self)
+    }
+    
+    
+    
+    
+    
+     func editScrapPage(scrapPage: ScrapPage, form: EditScrapPageForm) -> AnyPublisher <ScrapPage, Failure>  {
+        return DefaultValueRegistry.defaultValue(for: (AnyPublisher <ScrapPage, Failure>).self)
     }
     
     
