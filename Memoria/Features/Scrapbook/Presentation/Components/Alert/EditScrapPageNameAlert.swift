@@ -47,15 +47,15 @@ struct EditScrapPageNameAlert<Presenting>: View where Presenting: View {
 
 }
 
-// extension View {
-//
-//    func textFieldAlert(isShowing: Binding<Bool>,
-//                        text: Binding<String>,
-//                        title: String) -> some View {
-//        EditScrapPageNameAlert(isShowing: isShowing,
-//                       text: text,
-//                       presenting: self,
-//                       title: title)
-//    }
-//
-// }
+ extension View {
+
+    func textFieldAlert(isShowing: Binding<Bool>,
+                        text: Binding<String>,
+                        title: String) -> some View {
+        EditScrapPageNameAlert(isShowing: isShowing,
+                       text: text,
+                       presenting: self,
+                       title: title)
+    }
+
+ }
