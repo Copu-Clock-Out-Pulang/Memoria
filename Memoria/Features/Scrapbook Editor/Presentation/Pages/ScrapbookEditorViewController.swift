@@ -162,7 +162,7 @@ extension ScrapbookEditorViewController {
     @objc func saveProgress(sender: Any) {
         print("Save Progress")
 
-        var savedContent = Content(drawing: "", images: [], canvasColor: RGBValue(colorR: 0, colorG: 0, colorB: 0, colorA: 0))
+        var savedContent = ScrapPageContent(drawing: "", images: [], canvasColor: RGBValue(colorR: 0, colorG: 0, colorB: 0, colorA: 0))
 
         savedContent.drawing = editorViewModel.canvasView.drawing.dataRepresentation().base64EncodedString()
 
@@ -203,11 +203,11 @@ extension ScrapbookEditorViewController {
     @objc func loadData(sender: Any) {
         editorViewModel.imageStacks.removeAll()
 
-        var loadedContent: Content?
+        var loadedContent: ScrapPageContent?
 
         do {
 
-            loadedContent = try JSONDecoder().decode(Content.self, from: Data(base64Encoded: scrapPageContent!)!)
+            loadedContent = try JSONDecoder().decode(ScrapPageContent.self, from: Data(base64Encoded: scrapPageContent!)!)
         } catch {
             print("----", error)
         }
@@ -239,10 +239,10 @@ extension ScrapbookEditorViewController {
     func newLoadData() {
         editorViewModel.imageStacks.removeAll()
 
-        var loadedContent: Content?
+        var loadedContent: ScrapPageContent?
 
         do {
-            loadedContent = try JSONDecoder().decode(Content.self, from: Data(base64Encoded: scrapPageContent!)!)
+            loadedContent = try JSONDecoder().decode(ScrapPageContent.self, from: Data(base64Encoded: scrapPageContent!)!)
         } catch {
             print("----", error)
         }

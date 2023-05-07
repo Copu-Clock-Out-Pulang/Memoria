@@ -50,7 +50,7 @@ class ScrapBookEditorViewModel {
 
     func makeInitialContent(image: UIImage) -> String {
         var encodedContent = ""
-        var content = Content(drawing: "", images: [], canvasColor: RGBValue(colorR: 0, colorG: 0, colorB: 0, colorA: 0))
+        var content = ScrapPageContent(drawing: "", images: [], canvasColor: RGBValue(colorR: 0, colorG: 0, colorB: 0, colorA: 0))
 
         let encodedImage = image.pngData()?.base64EncodedString()
         let screenWH = UIScreen.main.bounds
@@ -77,7 +77,7 @@ class ScrapBookEditorViewModel {
     func makeEmptyContent() -> String {
 
         var encodedContent = ""
-        var content = Content(drawing: "", images: [], canvasColor: RGBValue(colorR: 0, colorG: 0, colorB: 0, colorA: 0))
+        var content = ScrapPageContent(drawing: "", images: [], canvasColor: RGBValue(colorR: 0, colorG: 0, colorB: 0, colorA: 0))
 
         let image = UIImage(named: "ScrapPageThumbnailNew")!
         let encodedImage = image.pngData()?.base64EncodedString()

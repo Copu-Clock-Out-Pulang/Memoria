@@ -13,7 +13,6 @@ struct ScrapPageEditButton: View {
     //    @EnvironmentObject var scrapPageName: String
     var body: some View {
         Button(action: {
-            //            sheet(item: <#T##Binding<Identifiable?>#>, content: <#T##(Identifiable) -> View#>)
             controller.navigateToScrapPageEditor(scrapPage: controller.scrapPage!)
             print("scrap page edit button pressed")
         }
