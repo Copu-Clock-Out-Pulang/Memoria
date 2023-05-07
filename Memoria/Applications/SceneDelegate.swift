@@ -21,6 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         let viewModel = InjectionContainer.shared.container.resolve(SplashViewModel.self)!
         let mainViewController = UINavigationController(rootViewController: SplashViewController(viewModel: viewModel))
+//        let mainViewController = UINavigationController(rootViewController: FirstOnBoardingViewController())
         let window = UIWindow(windowScene: windowScene)
         window.rootViewController = mainViewController
         window.rootViewController?.overrideUserInterfaceStyle = .light
