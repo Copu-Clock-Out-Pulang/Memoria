@@ -18,7 +18,9 @@ class ScrapBookDetailViewController: UIViewController, ObservableObject {
     private let scrapBookViewModel = InjectionContainer.shared.container.resolve(ScrapBookViewModel.self)!
     private let scrapBookEditorViewModel = ScrapBookEditorViewModel()
     
+    @Published var index: Int?
     @Published var scrapBook: ScrapBook?
+    @Published var scrapPage: ScrapPage?
     
     func addScrapPage() -> ScrapPage{
         scrapPageViewModel.addScrapPage(form: CreateScrapPageForm(
@@ -31,7 +33,7 @@ class ScrapBookDetailViewController: UIViewController, ObservableObject {
             scrapBook: scrapBookViewModel.scrapBook!
         )
         )
-        return (scrapBookViewModel.scrapBook?.scrapPages.first)!
+        return scrapPageViewModel.scrapPage!
     }
     
     func deleteScrapPage(scrapPage: ScrapPage) {
@@ -42,9 +44,14 @@ class ScrapBookDetailViewController: UIViewController, ObservableObject {
         scrapBookViewModel.setSelectedScrapPage(scrapPage: scrapPage)
     }
     
-    func getSelectedPage() -> ScrapPage {
-        return scrapBookViewModel.selectedScrapPage ?? addScrapPage()
-    }
+//    func getSelectedPage() -> ScrapPage {
+//        scrapPage = scrapBook?.scrapPages[index!]
+//        if (scrapPage == nil)
+//        {
+//            return (scrapBook?.scrapPages.first)!
+//        }
+//        return scrapPage!
+//    }
     
     func getScrapBookInfo() -> ScrapBookInfo {
         return ScrapBookInfo(name: scrapBookViewModel.scrapBook!.name, tripDate: formatDateRange(start: scrapBookViewModel.scrapBook!.startDate!, end: scrapBookViewModel.scrapBook!.endDate!), tripDescription: scrapBookViewModel.scrapBook!.quote)
@@ -54,11 +61,10 @@ class ScrapBookDetailViewController: UIViewController, ObservableObject {
         return scrapBookViewModel.scrapBook!
     }
     
-    func shareSelectedPage() -> UIImage {
-        let scrapPage = getSelectedPage()
-        let image = UIImage(data: Data(base64Encoded: scrapPage.thumbnail)!) ?? UIImage(named: "ScrapPageThumbnailNew")
-        return image!
-    }
+//    func shareSelectedPage() -> UIImage {
+//        let image = UIImage(data: Data(base64Encoded: scrapPage!.thumbnail)!) ?? UIImage(named: "ScrapPageThumbnailNew")
+//        return image!
+//    }
     
     func updateScrapBook(scrapBook: ScrapBook, tripName: String, tripDescription: String, startDate: Date?, endDate: Date?) {
         scrapBookViewModel.updateScrapBook(scrapBook: scrapBook, form: EditScrapBookForm(name: tripName, scrapPage: scrapBook.scrapPages ,quote: tripDescription, startDate: startDate, endDate: endDate)
@@ -103,7 +109,7 @@ class ScrapBookDetailViewController: UIViewController, ObservableObject {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        scrapBookViewModel.loadScrapBooks()
         // delete this function in final code
         if (scrapBook == nil) {
             scrapBookViewModel.addScrapBook(
@@ -116,6 +122,19 @@ class ScrapBookDetailViewController: UIViewController, ObservableObject {
                     endDate: Date.now))
         }
         scrapBookViewModel.loadScrapBooks()
+        scrapBook = scrapBookViewModel.scrapBook
+        scrapPageViewModel.loadScrapPages()
+        scrapPage = scrapBook?.scrapPages.first
+        if (scrapPage == nil){
+            scrapPageViewModel.addScrapPage(form: CreateScrapPageForm(
+                id: UUID(),
+                name: "New Scrap Page",
+                thumbnail: "",
+                content: scrapBookEditorViewModel.makeEmptyContent(),
+                createdAt: Date.now,
+                updatedAt: Date.now,
+                scrapBook: scrapBook!))
+        }
         scrapPageViewModel.loadScrapPages()
         
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Poppins-Bold", size: 22)!]
