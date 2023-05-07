@@ -97,10 +97,11 @@ struct TripDestinationUI: View {
             if pressedIndex > -1 {
                 DestinationDetail(destination: viewModel.recommendations[pressedIndex].destination)
             }
-        }
-        .onReceive(viewModel.$createdScrapBook) { _ in
-            if viewModel.createdScrapBook != nil {
-                viewController.navigateToScrapBookDetail()
+            .onReceive(viewModel.$createdScrapBook) { scrapBook in
+                if scrapBook != nil {
+                    viewController.navigateToScrapBookDetail()
+                }
+
             }
         }
     }
