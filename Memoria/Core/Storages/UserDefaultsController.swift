@@ -11,6 +11,8 @@ import Foundation
 protocol UserDefaultController {
     func fetchIsNotFirstLaunch() -> Bool
     func setIsNotFirstLaunch()
+    func isOnBoardingDisplayed() -> Bool
+    func setIsOnBoardingDisplayed()
 }
 class UserDefaultsControllerImpl: UserDefaultController {
 
@@ -26,4 +28,12 @@ class UserDefaultsControllerImpl: UserDefaultController {
         userDefault.setValue(true, forKey: "isNotFirst")
     }
 
+    func isOnBoardingDisplayed() -> Bool {
+        return userDefault.bool(forKey: "isOnBoardingDisplayed")
+    }
+    
+    func setIsOnBoardingDisplayed() {
+        userDefault.set(true, forKey: "isOnBoardingDisplayed")
+    }
+    
 }

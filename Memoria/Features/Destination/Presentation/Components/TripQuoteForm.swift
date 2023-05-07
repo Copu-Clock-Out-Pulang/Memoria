@@ -23,7 +23,9 @@ struct TripQuoteForm: View {
                     )
                     .foregroundColor(I.textPrimary.swiftUIColor)
                     .padding(.top, 180)
+                
                 Spacer()
+                
                 VStack {
                     TextField("Comment", text: $quote.max(40), prompt: Text(S.dstQuoteHint), axis: .vertical)
                         .lineLimit(3...5)
@@ -38,28 +40,36 @@ struct TripQuoteForm: View {
                             viewModel.changeQuote(quote: $0)
 
                         }
+                    
                     HStack {
                         Text("(\(quote.count)/40)")
                             .font(Font.custom("Poppins-Light", size: 13))
                             .foregroundColor(I.textPrimary.swiftUIColor.opacity(0.60))
                         Spacer()
                     }.padding(.bottom, 96)
-                    Button {
-                        controller.navigateToTripArea()
-                    } label: {
-                        Text(S.dstNext)
-                            .font(Font.custom("Poppins-Bold", size: 20))
-                            .frame(maxWidth: .infinity, minHeight: 50)
+                    
+                    VStack {
+                        Button {
+                            controller.navigateToTripArea()
+                        } label: {
+                            Text(S.dstNext)
+                                .font(Font.custom("Poppins-Bold", size: 20))
+                                .frame(maxWidth: .infinity, minHeight: 50)
 
+                        }
+                        .disabled(quote.isEmpty)
+                        .background(quote.isEmpty ?
+                                        I.disabledButton.swiftUIColor :
+                                        I.primaryButton.swiftUIColor)
+                        .foregroundColor(.white)
+
+                        .clipShape(Capsule())
+                        .shadow(radius: 2, y: 3)
+                        
+                        Image("Indicators/3")
+                            .padding(.top, 25)
                     }
-                    .disabled(quote.isEmpty)
-                    .background(quote.isEmpty ?
-                                    I.disabledButton.swiftUIColor :
-                                    I.primaryButton.swiftUIColor)
-                    .foregroundColor(.white)
-
-                    .clipShape(Capsule())
-                    .shadow(radius: 2, y: 3)
+                    
                 }
                 .padding(.all, 20)
             }
