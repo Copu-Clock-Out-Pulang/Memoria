@@ -28,6 +28,7 @@ class TripDestinationViewController: UIViewController {
 
         self.title = S.appName
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "SAVE", style: .plain, target: nil, action: #selector(self.createScrapBook))
 
 
         let hostingController = UIHostingController(rootView: TripDestinationUI(viewModel: viewModel, viewController: self))
@@ -43,6 +44,15 @@ class TripDestinationViewController: UIViewController {
         
     }
     
+    @objc func createScrapBook() {
+        viewModel.createScrapbook()
+    }
+    
+    func navigateToScrapBookDetail()  {
+        let scrapBookDetail = ScrapBookDetailViewController()
+        let home = HomeViewController()
+        navigationController?.setViewControllers([home, scrapBookDetail], animated: true)
+    }
 
     /*
     // MARK: - Navigation

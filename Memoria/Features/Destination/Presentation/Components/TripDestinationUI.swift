@@ -11,12 +11,12 @@ struct TripDestinationUI: View {
     @ObservedObject var viewModel: DestinationViewModel
     let viewController: TripDestinationViewController
     @State var show = false
-    @State var pressedIndex = -1
+    @State var pressedIndex: Int = -1
 
 
     let rows = [
         GridItem(.fixed(5), spacing: 250),
-        GridItem(.fixed(5), spacing: 250),
+        GridItem(.fixed(5), spacing: 250)
     ]
     var body: some View {
             ZStack {
@@ -55,7 +55,7 @@ struct TripDestinationUI: View {
                         LazyHGrid(rows: rows, spacing: 40) {
                             ForEach(Array(viewModel.recommendations.enumerated()), id: \.element.id ) { index, element in
                                 
-                                if index % 2 == 0 {
+                                if index.isMultiple(of: 2) {
                                     RightDestinationCard(recommendation: element) {
                                         viewModel.selectRecommendation(recommendation: element)
                                     }
@@ -67,6 +67,7 @@ struct TripDestinationUI: View {
                                         print(index)
                                         pressedIndex = index
                                         show.toggle()
+                                    
                                     }
                                 }
                                 else {
@@ -94,10 +95,16 @@ struct TripDestinationUI: View {
             }
             .ignoresSafeArea()
             .sheet(isPresented: $show){
-                if pressedIndex != -1 {
+                if pressedIndex > -1 {
                     DestinationDetail(destination: viewModel.recommendations[pressedIndex].destination)
                 }
                
+            }
+            .onReceive(viewModel.$createdScrapBook) {
+                if viewModel.createdScrapBook != nil {
+                    viewController.navigateToScrapBookDetail()
+                }
+                return EmptyView()
             }
     }
 }
