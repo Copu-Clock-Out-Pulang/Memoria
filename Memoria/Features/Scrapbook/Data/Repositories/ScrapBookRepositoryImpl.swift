@@ -17,7 +17,7 @@ class ScrapBookRepositoryImpl: ScrapBookRepository {
     }
 
     func createScrapBook(form: CreateScrapBookForm) -> AnyPublisher<ScrapBook, Failure> {
-        return localDataSource.createScrapBook(scrapBook: ScrapBookCoreDataModel.fromDomain(form: form)).map { $0.toDomain() }.eraseToAnyPublisher()
+        return localDataSource.createScrapBook(scrapBook: form).map { $0.toDomain() }.eraseToAnyPublisher()
     }
 
     func getScrapBooks() -> AnyPublisher<[ScrapBook], Failure> {
@@ -30,11 +30,11 @@ class ScrapBookRepositoryImpl: ScrapBookRepository {
             .eraseToAnyPublisher()
     }
     func editScrapBook(scrapBook: ScrapBook, form: EditScrapBookForm) -> AnyPublisher<ScrapBook, Failure> {
-        return localDataSource.editScrapBook(scrapBook: ScrapBookCoreDataModel.fromDomain(editForm: form, scrapBook: scrapBook)).map { $0.toDomain() }.eraseToAnyPublisher()
+        return localDataSource.editScrapBook(scrapBook: scrapBook, form: form).map { $0.toDomain() }.eraseToAnyPublisher()
     }
 
     func deleteScrapBook(scrapBook: ScrapBook) -> AnyPublisher<(), Failure> {
-        return localDataSource.deleteScrapBook(scrapBook: ScrapBookCoreDataModel.fromDomain(scrapBook: scrapBook)).eraseToAnyPublisher()
+        return localDataSource.deleteScrapBook(scrapBook: scrapBook).eraseToAnyPublisher()
     }
 
 }

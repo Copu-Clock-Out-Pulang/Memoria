@@ -8,9 +8,13 @@
 import SwiftUI
 
 struct ScrapPageEditButton: View {
+    //    let onButtonClick: () -> Void
+    @EnvironmentObject var controller: ScrapBookDetailViewController
+    //    @EnvironmentObject var scrapPageName: String
     var body: some View {
         Button(action: {
-            // insert editScrapBookfunction from view model
+            //            sheet(item: <#T##Binding<Identifiable?>#>, content: <#T##(Identifiable) -> View#>)
+            controller.navigateToScrapPageEditor(scrapPage: controller.scrapPage!)
             print("scrap page edit button pressed")
         }
         ) {

@@ -1,5 +1,5 @@
 //
-//  SquareSeparator.swift
+//  ScrapBookCard.swift
 //  Memoria
 //
 //  Created by Winxen Ryandiharvin on 03/05/23.
@@ -9,13 +9,22 @@ import SwiftUI
 
 
 struct ScrapBookCard: View {
+    @EnvironmentObject var scrapBookViewModel: ScrapBookViewModel
+    @EnvironmentObject var scrapPageViewModel: ScrapPageViewModel
+    @EnvironmentObject var controller: ScrapBookDetailViewController
+    
     @State var tripName: String // 25 characters
     @State var tripDate: String // E.g. case: 27 Jan - 3 Feb 2023
     @State var tripDescription: String // 100 characters
+    @State var selectedScrapPage = ScrapPage(id: UUID(), name: "", thumbnail: "", content: "", createdAt: Date(), updatedAt: Date())
+    @State var showSheet = false
+    
+    let scrapPages: [ScrapPage]
+    //    let onButtonClick: () -> Void
 
     private let gradientColors = [
         I.textPrimary.swiftUIColor,
-        I.textPrimary.swiftUIColor, .black.opacity(0.300)
+        I.textPrimary.swiftUIColor, .black.opacity(0.3)
     ]
 
     private let scrapBookDetailDecal = I.scrapBookDetailBackgroundDecal.swiftUIImage
@@ -47,14 +56,17 @@ struct ScrapBookCard: View {
                         .offset(x: geometry.size.width * 0.110, y: geometry.size.height * -0.380)
                 }
                 VStack {
-                    VStack(alignment: .leading, spacing: 10) {
+                    VStack(alignment: .leading, spacing: 5) {
                         HStack {
                             Text(tripName)
                                 .font(.custom("LilitaOne", fixedSize: 36))
                                 .foregroundColor(.white)
                                 .multilineTextAlignment(.leading)
                                 .fixedSize(horizontal: false, vertical: true)
-                            ScrapBookEditButton().padding(.leading, geometry.size.width * 0.25)
+                                .padding(.leading, geometry.size.width * 0.05)
+                            Spacer()
+                            ScrapBookEditButton(name: tripName, startDate: (controller.getScrapBook().startDate) ?? Date(), endDate: (controller.getScrapBook().endDate) ?? Date(), quote: tripDescription, showSheet: showSheet)
+                                .padding(.trailing, geometry.size.width * 0.15)
                         }
                         VStack(alignment: .leading, spacing: -0.41) {
                             Text(tripDate)
@@ -70,12 +82,12 @@ struct ScrapBookCard: View {
                             width: geometry.size.width * 0.617,
                             height: geometry.size.height * 0.206,
                             alignment: .leading)
-                        .padding(.trailing, geometry.size.width * 0.3)
+                        .padding(.leading, geometry.size.width * 0.05)
                         .padding(.bottom, geometry.size.height * 0.65)
                     }
                     // scrapbook carousel
                 }
-                ScrapBookCarousel(selectedCard: 0)
+                ScrapBookCarousel(selectedCard: 1, scrapPages: scrapBookViewModel.scrapBook?.scrapPages ?? [])
                     .offset(x: 0, y: geometry.size.height * 0.3)
                 HStack(alignment: .center) {
                     ScrapPageEditButton()
