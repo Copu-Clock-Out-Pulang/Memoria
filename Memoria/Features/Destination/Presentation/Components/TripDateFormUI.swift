@@ -69,42 +69,49 @@ struct TripDateFormUI: View {
 
                 .clipShape(Capsule())
                 .shadow(radius: 2, y: 3)
+                
                 Spacer()
-                if dateRange == nil || dateRange?.isEmpty == true {
-                    Button {
-                        viewController.navigateToQuoteView()
+                
+                VStack {
+                    if dateRange == nil || dateRange?.isEmpty == true {
+                        Button {
+                            viewController.navigateToQuoteView()
+                        }
+                        label: {
+                            Text("Skip".uppercased())
+                                .font(Font.custom("Poppins-Bold", size: 20))
+                                .frame(maxWidth: .infinity, minHeight: 50)
+
+                        }
+
+                        .background(.white)
+                        .cornerRadius(25)
+                        .foregroundColor(I.primaryButton.swiftUIColor)
+                        .overlay(RoundedRectangle(cornerRadius: 25).stroke(I.primaryButton.swiftUIColor, lineWidth: 3))
+
+
+                        .shadow(radius: 2, y: 3)
+                    } else {
+                        Button {
+                            viewController.navigateToQuoteView()
+                        }
+                        label: {
+                            Text(S.dstNext)
+                                .font(Font.custom("Poppins-Bold", size: 20))
+                                .frame(maxWidth: .infinity, minHeight: 50)
+
+                        }
+                        .disabled(dateRange == nil)
+                        .background(dateRange == nil ?
+                                        I.disabledButton.swiftUIColor :
+                                        I.primaryButton.swiftUIColor)
+                        .foregroundColor(.white)
+                        .clipShape(Capsule())
+                        .shadow(radius: 2, y: 3)
                     }
-                    label: {
-                        Text("Skip".uppercased())
-                            .font(Font.custom("Poppins-Bold", size: 20))
-                            .frame(maxWidth: .infinity, minHeight: 50)
-
-                    }
-
-                    .background(.white)
-                    .cornerRadius(25)
-                    .foregroundColor(I.primaryButton.swiftUIColor)
-                    .overlay(RoundedRectangle(cornerRadius: 25).stroke(I.primaryButton.swiftUIColor, lineWidth: 3))
-
-
-                    .shadow(radius: 2, y: 3)
-                } else {
-                    Button {
-                        viewController.navigateToQuoteView()
-                    }
-                    label: {
-                        Text(S.dstNext)
-                            .font(Font.custom("Poppins-Bold", size: 20))
-                            .frame(maxWidth: .infinity, minHeight: 50)
-
-                    }
-                    .disabled(dateRange == nil)
-                    .background(dateRange == nil ?
-                                    I.disabledButton.swiftUIColor :
-                                    I.primaryButton.swiftUIColor)
-                    .foregroundColor(.white)
-                    .clipShape(Capsule())
-                    .shadow(radius: 2, y: 3)
+                    
+                    Image("Indicators/2")
+                        .padding(.top, 25)
                 }
 
             }
