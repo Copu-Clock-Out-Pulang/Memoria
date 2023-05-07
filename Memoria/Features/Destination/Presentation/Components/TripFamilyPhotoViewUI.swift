@@ -65,7 +65,6 @@ struct TripFamilyPhotoViewUI: View {
                 .shadow(radius: 2, y: 3)
                 .padding(.horizontal, 40)
 
-
                 Button {
                     showCameraCaptureView.toggle()
                 }
@@ -102,7 +101,7 @@ struct TripFamilyPhotoViewUI: View {
                     .clipShape(Capsule())
                     .shadow(radius: 2, y: 3)
                     .padding(.horizontal, 40)
-                    .padding(.bottom, 60)
+                    .padding(.bottom, 25)
 
                     Image("Indicators/4")
                         .padding(.bottom, 40)
