@@ -19,8 +19,8 @@ internal enum S {
   internal static let dstAddYourFamilyPhoto = S.tr("Localizable", "dstAddYourFamilyPhoto", fallback: "Add your family photo!")
   /// Are you sure?
   internal static let dstAreYouSure = S.tr("Localizable", "dstAreYouSure", fallback: "Are you sure?")
-  /// Choose your destination
-  internal static let dstChooseYourDestination = S.tr("Localizable", "dstChooseYourDestination", fallback: "Choose your destination")
+  /// Choose your destination!
+  internal static let dstChooseYourDestination = S.tr("Localizable", "dstChooseYourDestination", fallback: "Choose your destination!")
   /// Confirm Dialog
   internal static let dstConfirmDialog = S.tr("Localizable", "dstConfirmDialog", fallback: "Confirm Dialog")
   /// Create Your Trip
@@ -29,8 +29,8 @@ internal enum S {
   internal static let dstDateExample = S.tr("Localizable", "dstDateExample", fallback: "e.g. 20 Jan - 6 Feb 2023")
   /// Done!
   internal static let dstDone = S.tr("Localizable", "dstDone", fallback: "Done!")
-  /// Encourage yourself with some quote
-  internal static let dstEncourageYourSelf = S.tr("Localizable", "dstEncourageYourSelf", fallback: "Encourage yourself with some quote")
+  /// Encourage yourself with some quote!
+  internal static let dstEncourageYourSelf = S.tr("Localizable", "dstEncourageYourSelf", fallback: "Encourage yourself with some quote!")
   /// Next
   internal static let dstNext = S.tr("Localizable", "dstNext", fallback: "Next")
   /// No

@@ -10,5 +10,5 @@ import Combine
 
 protocol SplashRepository {
     func migrateArea() -> AnyPublisher<Void, Failure>
-    //    func migrateDestination() -> AnyPublisher<Void, Failure>
+    func migrateDestination() -> AnyPublisher<Void, Failure>
 }

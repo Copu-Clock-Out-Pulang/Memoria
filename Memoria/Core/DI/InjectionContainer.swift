@@ -151,10 +151,21 @@ final class InjectionContainer {
             return AnyUseCase(useCase: MigrateAreaImpl(repository: repo))
 
         }
+        container.register(AnyUseCase<Void, NoParams>.self, name: "MigrateDestination") { resolver in
+            let repo = resolver.resolve(SplashRepository.self)!
+            return AnyUseCase(useCase: MigrateDestinationImpl(repository: repo))
+
+        }
         container.register(SplashViewModel.self) { resolver in
             let migrateArea = resolver.resolve(AnyUseCase<Void, NoParams>.self, name: "MigrateArea")!
+            let migrateDestination = resolver.resolve(AnyUseCase<Void, NoParams>.self, name: "MigrateDestination")!
             let controller = resolver.resolve(UserDefaultController.self)!
-            return SplashViewModel(migrateArea: migrateArea, userDefaultController: controller)
+            
+            return SplashViewModel(
+                migrateArea: migrateArea,
+                migrateDestination: migrateDestination,
+                userDefaultController: controller
+            )
 
         }
     }

@@ -29,7 +29,8 @@ class TripFamilyPhotoViewController: UIViewController {
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
 
 
-        let hostingController = UIHostingController(rootView: TripFamilyPhotoViewUI(viewModel: viewModel, controller: self))
+        let hostingController = UIHostingController(
+            rootView: TripFamilyPhotoViewUI(viewModel: viewModel, controller: self))
         addChild(hostingController)
         view.addSubview(hostingController.view)
         hostingController.view.translatesAutoresizingMaskIntoConstraints = false
@@ -39,8 +40,9 @@ class TripFamilyPhotoViewController: UIViewController {
         hostingController.didMove(toParent: self)
     }
     
-    func pickImageFromGallery() {
-       
+    func navigateToDestination() {
+        let destination = TripDestinationViewController(viewModel: viewModel)
+        navigationController?.pushViewController(destination, animated: true)
     }
 
 

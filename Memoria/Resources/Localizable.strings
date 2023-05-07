@@ -15,7 +15,7 @@
 "dstWhenDoYouWantToGo" = "When do you want to go?";
 "dstPickADate" = "Pick a date";
 "dstDateExample" = "e.g. 20 Jan - 6 Feb 2023";
-"dstEncourageYourSelf" = "Encourage yourself with some quote";
+"dstEncourageYourSelf" = "Encourage yourself with some quote!";
 "dstQuoteHint" = "Input quotes";
 "dstWhereDoYouWantToGo" = "Where do you want to go?";
 "dstAddYourFamilyPhoto" = "Add your family photo!";
@@ -27,5 +27,5 @@
 "dstAreYouSure" = "Are you sure?";
 "dstYes" = "Yes";
 "dstNo" = "No";
-"dstChooseYourDestination" = "Choose your destination";
+"dstChooseYourDestination" = "Choose your destination!";
 "dstSave" = "Save";

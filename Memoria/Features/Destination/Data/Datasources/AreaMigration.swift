@@ -20,11 +20,11 @@ class AreaMigrationImpl: AreaMigration {
 
     private lazy var areas: [Area] = {
         return [
-            generateArea(name: "Jakarta", province: "DKI Jakarta", description: "The Capital of Republic Indonesia", image: "Jakarta"),
-            generateArea(name: "Bogor", province: "West Java", description: "The City of Rain", image: "Bogor"),
-            generateArea(name: "Depok", province: "West Java", description: "The City of Star Fruit", image: "Depok"),
-            generateArea(name: "Tangerang", province: "Banten", description: "The City of Fotress", image: "Tangerang"),
-            generateArea(name: "Bekasi", province: "West Java", description: "The City of Patriot", image: "Bekasi")
+            Area(id: UUID(), name: "Jakarta", province: "DKI Jakarta", description: "The Capital of Republic Indonesia", image: "Jakarta"),
+            Area(id: UUID(), name: "Bogor", province: "West Java", description: "The City of Rain", image: "Bogor"),
+            Area(id: UUID(), name: "Depok", province: "West Java", description: "The City of Star Fruit", image: "Depok"),
+            Area(id: UUID(), name: "Tangerang", province: "Banten", description: "The City of Fotress", image: "Tangerang"),
+            Area(id: UUID(), name: "Bekasi", province: "West Java", description: "The City of Patriot", image: "Bekasi")
         ]
     }()
 
@@ -58,15 +58,5 @@ class AreaMigrationImpl: AreaMigration {
     //        }
     //    }
 
-
-    private func generateArea(name: String, province: String, description: String, image: String) -> Area {
-        let area = Area(
-            id: UUID(), name: name, province: province, description: description, image: image
-        )
-        //        area.name = name
-        //        area.descriptions = description
-        //        area.image = image
-        return area
-    }
 
 }

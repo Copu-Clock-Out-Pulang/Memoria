@@ -19,10 +19,12 @@ class SplashViewModel: ObservableObject {
 
     // MARK: - Usecases
     private let migrateArea: AnyUseCase<Void, NoParams>
+    private let migrateDestination: AnyUseCase<Void, NoParams>
     private let userDefaultController: UserDefaultController
-
-    init(migrateArea: AnyUseCase<Void, NoParams>, userDefaultController: UserDefaultController) {
+    
+    init(migrateArea: AnyUseCase<Void, NoParams>, migrateDestination: AnyUseCase<Void, NoParams>, userDefaultController: UserDefaultController) {
         self.migrateArea = migrateArea
+        self.migrateDestination = migrateDestination
         self.userDefaultController = userDefaultController
         self.getIsNotFirstLaunch()
     }
@@ -31,6 +33,9 @@ class SplashViewModel: ObservableObject {
         if !isNotFirstLaunch {
             status = .areaMigration
             migrateArea.execute(params: NoParams())
+                .flatMap {
+                    self.migrateDestination.execute(params: NoParams())
+                }
                 .sink(receiveCompletion: { [weak self] completion in
                     switch completion {
                     case .finished:

@@ -14,7 +14,7 @@ struct TripQuoteForm: View {
     let controller: TripQuoteViewController
     var body: some View {
         ZStack {
-            I.tripBackground3.swiftUIImage.resizable().scaledToFill()
+            I.TripBackgrounds.tripBackground3.swiftUIImage.resizable().scaledToFill()
 
             VStack(spacing: 20) {
                 Text(S.dstEncourageYourSelf)

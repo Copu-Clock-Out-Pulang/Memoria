@@ -24,11 +24,17 @@ internal typealias AssetImageTypeAlias = ImageAsset.Image
 
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
 internal enum I {
-  internal static let accentColor = ColorAsset(name: "AccentColor")
+  internal static let accentButton = ColorAsset(name: "AccentButton")
   internal static let addScrapPageButtonIcon = ImageAsset(name: "AddScrapPageButtonIcon")
+  internal enum Area {
+    internal static let bekasi = ImageAsset(name: "Bekasi")
+    internal static let bogor = ImageAsset(name: "Bogor")
+    internal static let depok = ImageAsset(name: "Depok")
+    internal static let jakarta = ImageAsset(name: "Jakarta")
+    internal static let tangerang = ImageAsset(name: "Tangerang")
+  }
   internal static let background = ColorAsset(name: "Background")
-  internal static let backgroundDecal1 = ImageAsset(name: "BackgroundDecal1")
-  internal static let backgroundImage1 = ImageAsset(name: "BackgroundImage1")
+  internal static let backgroundOverlay = ColorAsset(name: "BackgroundOverlay")
   internal enum CanvasColor {
     internal static let _0 = ColorAsset(name: "CanvasColor/0")
     internal static let _1 = ColorAsset(name: "CanvasColor/1")
@@ -39,6 +45,7 @@ internal enum I {
     internal static let _6 = ColorAsset(name: "CanvasColor/6")
     internal static let _7 = ColorAsset(name: "CanvasColor/7")
   }
+  internal static let checked = ImageAsset(name: "Checked")
   internal static let deleteButtonIcon = ImageAsset(name: "DeleteButtonIcon")
   internal static let disabledButton = ColorAsset(name: "DisabledButton")
   internal static let editButtonIcon = ImageAsset(name: "EditButtonIcon")
@@ -79,6 +86,7 @@ internal enum I {
     internal static let _8 = ImageAsset(name: "Sticker/8")
     internal static let _9 = ImageAsset(name: "Sticker/9")
   }
+  internal static let textOnButton = ColorAsset(name: "TextOnButton")
   internal static let textPrimary = ColorAsset(name: "TextPrimary")
   internal static let textSecondary = ColorAsset(name: "TextSecondary")
   internal enum ToolBarIcon {
@@ -88,11 +96,15 @@ internal enum I {
     internal static let shape = ImageAsset(name: "ToolBarIcon/Shape")
     internal static let sticker = ImageAsset(name: "ToolBarIcon/Sticker")
   }
-  internal static let tripBackground1 = ImageAsset(name: "TripBackground1")
-  internal static let tripBackground2 = ImageAsset(name: "TripBackground2")
-  internal static let tripBackground3 = ImageAsset(name: "TripBackground3")
-  internal static let tripBackground4 = ImageAsset(name: "TripBackground4")
-  internal static let tripBackground5 = ImageAsset(name: "TripBackground5")
+  internal enum TripBackgrounds {
+    internal static let tripBackground1 = ImageAsset(name: "TripBackground1")
+    internal static let tripBackground2 = ImageAsset(name: "TripBackground2")
+    internal static let tripBackground3 = ImageAsset(name: "TripBackground3")
+    internal static let tripBackground4 = ImageAsset(name: "TripBackground4")
+    internal static let tripBackground5 = ImageAsset(name: "TripBackground5")
+    internal static let tripBackground6 = ImageAsset(name: "TripBackground6")
+  }
+  internal static let unchecked = ImageAsset(name: "Unchecked")
   internal static let backgroundScrapBookDetail = ImageAsset(name: "backgroundScrapBookDetail")
   internal static let imageTest = ImageAsset(name: "image_test")
   internal static let mask = ImageAsset(name: "mask")

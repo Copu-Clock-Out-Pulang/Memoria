@@ -13,7 +13,7 @@ struct TripAreaForm: View {
     var body: some View {
         GeometryReader { geo in
             ZStack {
-                I.tripBackground4.swiftUIImage
+                I.TripBackgrounds.tripBackground4.swiftUIImage
                     .resizable()
                     .scaledToFill()
 

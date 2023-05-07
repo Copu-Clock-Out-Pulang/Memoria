@@ -36,31 +36,33 @@ class DestinationImageGeneratorImpl: DestinationImageGenerator {
         let background = to.resized(to: CGSize(width: 512, height: 512))
 
         return imageSegmentor.detectPerson(input: image)
-            .tryMap { [weak self] personMask in
-                guard let self = self else {
-                    throw Failure.imageGenerationFailure
-                }
+            .print("destinatoionGenerator")
+            .flatMap { mask in
+               
+                
+//                guard let wwww = self else {
+//                    return Fail<UIImage, Failure>(error: Failure.imageGenerationFailure).eraseToAnyPublisher()
+//                }
                 // resize background image
 
 
                 // composite the person image
-                guard let output = self.maskImage(input: image, background: background, mask: personMask) else {
-                    throw Failure.imageGenerationFailure
+                guard let output = self.maskImage(input: image, background: background, mask: mask) else {
+                    print("gagal mask image")
+                    return Fail<UIImage, Failure>(error: Failure.imageGenerationFailure).eraseToAnyPublisher()
                 }
-
-                return output
-
-
-            }
-            .mapError { error -> Failure in
-                debugPrint(error)
-                if let failure = error as? Failure {
-                    return failure
-                }
-                return Failure.imageGenerationFailure
+                return Just(output).setFailureType(to: Failure.self).eraseToAnyPublisher()
 
             }
             .eraseToAnyPublisher()
+    
+            
+        
+//            .catch { error  in
+//                print(error)
+//                return Fail(error: Failure.imageGenerationFailure)
+//
+//            }
     }
 
     // MARK: - Private Functions

@@ -14,12 +14,13 @@ struct TripFamilyPhotoViewUI: View {
     @State private var showImagePicker = false
     @State private var showCameraCaptureView = false
     @State private var capturedImage: UIImage?
+    @State private var showConfirmation = false
     
     @ObservedObject var viewModel: DestinationViewModel
     let controller: TripFamilyPhotoViewController
     var body: some View {
         ZStack {
-            I.tripBackground5.swiftUIImage.resizable().scaledToFill()
+            I.TripBackgrounds.tripBackground5.swiftUIImage.resizable().scaledToFill()
             VStack(spacing: 20) {
                 Spacer()
                 Text(S.dstAddYourFamilyPhoto)
@@ -34,8 +35,6 @@ struct TripFamilyPhotoViewUI: View {
                         .scaledToFit()
                         .rotationEffect(Angle(degrees: -11))
                 } else {
-                    
-                   
 
                     if viewModel.familyPhoto!.size.height > viewModel.familyPhoto!.size.width {
                         let current = viewModel.familyPhoto!
@@ -89,6 +88,8 @@ struct TripFamilyPhotoViewUI: View {
 
                 Spacer()
                 Button {
+                    showConfirmation.toggle()
+                    print("Done Clicked")
                 }
                 label: {
                     Text(S.dstDone.uppercased())
@@ -140,6 +141,15 @@ struct TripFamilyPhotoViewUI: View {
                 }
             
             ))
+        }
+        .confirmationDialog("Are you sure?", isPresented: $showConfirmation) {
+            Button("Proceed", role: .destructive) {
+                controller.navigateToDestination()
+            }
+        }
+        message: {
+                Text("Do you want to proceed?")
+
         }
         
     }

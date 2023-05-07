@@ -80,12 +80,12 @@ class DestinationViewModel: ObservableObject {
                 case .failure(let failure):
                     self?.status = .failure(failure: failure)
                 }
-            }, receiveValue: {recommendations in
-                self.recommendations = recommendations
-                recommendations.forEach { recommendation in
+            }, receiveValue: {recs in
+                self.recommendations = recs
+                recs.forEach { recommendation in
                     self.selectedRecommendation[recommendation] = false
-
                 }
+                print(recs)
             })
             .store(in: &cancellables)
 

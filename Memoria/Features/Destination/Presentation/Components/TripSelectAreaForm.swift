@@ -18,8 +18,9 @@ struct TripSelectAreaForm: View {
         let isAreaEmpty = area.isEmpty
         GeometryReader { geo in
             ZStack(alignment: .top) {
-                I.outputTest.swiftUIImage.resizable()
-                    .frame(height: geo.size.height * 0.6)
+                Image(area[showedIndex].image)
+                    .resizable()
+                        .frame(height: geo.size.height * 0.6)
                 VStack(spacing: 20) {
 
                     HStack {

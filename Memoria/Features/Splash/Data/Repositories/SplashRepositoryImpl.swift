@@ -11,9 +11,11 @@ import Combine
 class SplashRepositoryImpl: SplashRepository {
 
     let areaMigration: AreaMigration
+    let destinationMigration: DestinationMigration
 
-    init(areaMigration: AreaMigration) {
+    init(areaMigration: AreaMigration, destinationMigration: DestinationMigration) {
         self.areaMigration = areaMigration
+        self.destinationMigration = destinationMigration
     }
 
 
@@ -21,9 +23,9 @@ class SplashRepositoryImpl: SplashRepository {
         return areaMigration.addArea()
     }
 
-    //    func migrateDestination() -> AnyPublisher<Void, Failure> {
-    //        <#code#>
-    //    }
+    func migrateDestination() -> AnyPublisher<Void, Failure> {
+        return destinationMigration.addDestinations()
+    }
 
 
 }

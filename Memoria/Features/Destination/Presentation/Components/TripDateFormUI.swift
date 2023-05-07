@@ -18,7 +18,7 @@ struct TripDateFormUI: View {
 
     var body: some View {
         ZStack {
-            I.tripBackground2.swiftUIImage
+            I.TripBackgrounds.tripBackground2.swiftUIImage
 
             VStack(spacing: 20) {
                 Spacer()
