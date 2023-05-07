@@ -39,6 +39,8 @@ final class InjectionContainer {
         self.registerScrapPageContainer(container)
         self.registerSplashContainer(container)
 
+        self.registerScrapBookContainer(container)
+        self.registerScrapPageContainer(container)
         return container
     }
 
@@ -132,10 +134,14 @@ final class InjectionContainer {
             let getTripDestination = resolver.resolve(
                 AnyUseCase<[Destination], GetTripDestinationByAreaParams>.self,
                 name: "GetTripDestinationByArea")!
+            let createScrapBook = resolver.resolve(AnyUseCase<ScrapBook, CreateScrapBookParams>.self, name: "CreateScrapBook")!
             return DestinationViewModel(
                 getTripArea: getTripArea,
                 getDestinations: getTripDestination,
-                generateRecommendations: generateRecommendation)
+                generateRecommendations: generateRecommendation,
+                createScrapBook: createScrapBook
+            
+            )
 
         }
         .inObjectScope(.container)

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct KeyboardAwareModifier: ViewModifier {
+
     @State private var keyboardHeight: CGFloat = 0
 
     func body(content: Content) -> some View {

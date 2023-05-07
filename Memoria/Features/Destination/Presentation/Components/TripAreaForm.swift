@@ -19,11 +19,13 @@ struct TripAreaForm: View {
 
                 VStack(spacing: 20) {
                     Spacer()
+                    
                     Text(S.dstWhereDoYouWantToGo)
                         .font(Font.custom("LilitaOne", size: 40))
                         .multilineTextAlignment(.center
                         )
                         .foregroundColor(I.textPrimary.swiftUIColor)
+                    
                     Button {
 
                     }
@@ -87,24 +89,28 @@ struct TripAreaForm: View {
                     }
 
                     Spacer()
-                    Button {
+                    
+                    VStack {
+                        Button {
 
-                        viewController.navigateToUploadPhoto()
-                    } label: {
-                        Text(S.dstNext)
-                            .font(Font.custom("Poppins-Bold", size: 20))
-                            .frame(maxWidth: .infinity, minHeight: 50)
+                            viewController.navigateToUploadPhoto()
+                        } label: {
+                            Text(S.dstNext)
+                                .font(Font.custom("Poppins-Bold", size: 20))
+                                .frame(maxWidth: .infinity, minHeight: 50)
 
+                        }
+                        .disabled(viewModel.selectedArea == nil)
+                        .background(viewModel.selectedArea == nil ?
+                                        I.disabledButton.swiftUIColor :
+                                        I.primaryButton.swiftUIColor)
+                        .foregroundColor(.white)
+                        .clipShape(Capsule())
+                        .shadow(radius: 2, y: 3)
+
+                        Image("Indicators/4")
+                            .padding(.top, 25)
                     }
-                    .disabled(viewModel.selectedArea == nil)
-                    .background(viewModel.selectedArea == nil ?
-                                    I.disabledButton.swiftUIColor :
-                                    I.primaryButton.swiftUIColor)
-                    .foregroundColor(.white)
-
-                    .clipShape(Capsule())
-                    .shadow(radius: 2, y: 3)
-
 
                 }
                 .padding(.all, 40)

@@ -14,10 +14,10 @@ struct DestinationDetail: View {
     let destination: Destination
     @State private var region: MKCoordinateRegion = {
             var mapCoordinate = CLLocationCoordinate2D.init(latitude: -6.175392, longitude: 16.43)
-        var mapZoomLevel = MKCoordinateSpan.init(latitudeDelta: 0.03, longitudeDelta: 0.03)
-            var mapRegion = MKCoordinateRegion.init(center: mapCoordinate, span: mapZoomLevel)
-            return mapRegion
-        }()
+    var mapZoomLevel = MKCoordinateSpan.init(latitudeDelta: 0.03, longitudeDelta: 0.03)
+        var mapRegion = MKCoordinateRegion.init(center: mapCoordinate, span: mapZoomLevel)
+        return mapRegion
+    }()
     @State var locations: [Coordinate] = []
     
     var body: some View {
@@ -108,7 +108,6 @@ struct DestinationDetail: View {
                         
                         Map(coordinateRegion: $region, showsUserLocation: false, annotationItems: locations) { item in
                             MapMarker(coordinate: CLLocationCoordinate2D(latitude: item.latitude, longitude: item.longitude))
-                                    
                             }
                             .frame(width: 250, height: 130)
                             .overlay {
@@ -153,7 +152,6 @@ struct DestinationDetail: View {
                
             }
             .padding(.horizontal, 40)
-            
          
             
             I.treeStraight.swiftUIImage

@@ -12,7 +12,7 @@ import CoreData
 protocol ScrapBookLocalDataSource {
 
     // func createScrapBook, bingung createscrapbook paramsnya apa
-    func createScrapBook(scrapBook: CreateScrapBookForm) -> AnyPublisher<ScrapBookCoreDataModel, Failure>
+    func createScrapBook(scrapBook: CreateScrapBookForm, destinations: [DestinationCoreDataModel]) -> AnyPublisher<ScrapBookCoreDataModel, Failure>
 
     func getScrapBooks() -> AnyPublisher<[ScrapBookCoreDataModel], Failure>
 
@@ -30,8 +30,8 @@ class ScrapBookLocalDataSourceImpl: ScrapBookLocalDataSource {
         self.context = context
     }
 
-    func createScrapBook(scrapBook: CreateScrapBookForm) -> AnyPublisher<ScrapBookCoreDataModel, Failure> {
-        let obj = ScrapBookCoreDataModel.fromDomain(form: scrapBook, context: context)
+    func createScrapBook(scrapBook: CreateScrapBookForm, destinations: [DestinationCoreDataModel]) -> AnyPublisher<ScrapBookCoreDataModel, Failure> {
+        let obj = ScrapBookCoreDataModel.fromDomain(form: scrapBook, destinations: destinations, context: context)
         do {
             try context.save()
             return Just(obj).setFailureType(to: Failure.self).eraseToAnyPublisher()

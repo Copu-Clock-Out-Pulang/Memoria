@@ -22,6 +22,8 @@ class DestinationViewModel: ObservableObject {
     @Published private(set) var recommendations: [Recommendation] = []
     @Published private(set) var selectedRecommendation: [Recommendation: Bool] = [:]
     @Published private(set) var status: DestinationStatus = .initial
+    
+    @Published private(set) var createdScrapBook: ScrapBook?
 
     // MARK: - Cancellables
     private var cancellables = Set<AnyCancellable>()
@@ -30,11 +32,14 @@ class DestinationViewModel: ObservableObject {
     private let getTripArea: AnyUseCase<[Area], NoParams>
     private let getDestinations: AnyUseCase<[Destination], GetTripDestinationByAreaParams>
     private let generateRecommendations: AnyUseCase<[Recommendation], GenerateRecommendationParams>
+    private let createScrapBook: AnyUseCase<ScrapBook, CreateScrapBookParams>
+    
     // MARK: - Initializers
-    init(getTripArea: AnyUseCase<[Area], NoParams>, getDestinations: AnyUseCase<[Destination], GetTripDestinationByAreaParams>, generateRecommendations: AnyUseCase<[Recommendation], GenerateRecommendationParams>) {
+    init(getTripArea: AnyUseCase<[Area], NoParams>, getDestinations: AnyUseCase<[Destination], GetTripDestinationByAreaParams>, generateRecommendations: AnyUseCase<[Recommendation], GenerateRecommendationParams>, createScrapBook: AnyUseCase<ScrapBook, CreateScrapBookParams>) {
         self.getTripArea = getTripArea
         self.getDestinations = getDestinations
         self.generateRecommendations = generateRecommendations
+        self.createScrapBook = createScrapBook
 
     }
 
@@ -85,7 +90,6 @@ class DestinationViewModel: ObservableObject {
                 recs.forEach { recommendation in
                     self.selectedRecommendation[recommendation] = false
                 }
-                print(recs)
             })
             .store(in: &cancellables)
 
@@ -117,25 +121,27 @@ class DestinationViewModel: ObservableObject {
     }
 
     func createScrapbook() {
-        // TODO: sesuaikan dengan usecase winxen
-//        let scrapPage = selectedRecommendation.filter {
-//            $0.value == true
-//        }
-//            .keys.map {
-//                ScrapPage(id: UUID(), name: $0.destination.name, thumbnail: .dest, content: <#T##String#>, createdAt: <#T##Date#>, updatedAt: <#T##Date#>)
-//            }
-//
-//        let scrapbook = ScrapBook(
-//            id: UUID(),
-//            user: User(id: UUID(), name: "User"),
-//            destinations: selectedRecommendation.keys.map {$0.destination},
-//            scrapPages: [],
-//            quote: <#T##String#>,
-//            name: <#T##String#>,
-//            startDate: <#T##Date?#>,
-//            endDate: <#T##Date?#>,
-//            createdAt: <#T##Date#>,
-//            updatedAt: <#T##Date#>)
+        self.status = .createScrapbookLoading
+        let selected = selectedRecommendation.filter {
+            $0.value == true
+        }.keys
+        let scrapPages = selected
+            .map {
+                ScrapPage(id: UUID(), name: $0.destination.name, thumbnail: $0.generatedPhoto.pngData()?.base64EncodedString() ?? "", content: ScrapPageContent.initialContent(image: $0.generatedPhoto), createdAt: Date.now, updatedAt: Date.now)
+        }
+        
+        createScrapBook.execute(params: CreateScrapBookParams(form: CreateScrapBookForm(name: self.tripName ?? "", quote: self.quote ?? "", scrapPages: scrapPages, selectedRecommendations: Array(selected), startDate: Date.now, endDate: Date.now)))
+            .sink(receiveCompletion: {[weak self] completion in
+                switch completion {
+                case .finished:
+                    self?.status = .createScrapbookSuccess
+                case .failure(let failure):
+                    self?.status = .failure(failure: failure)
+                }
+            }, receiveValue: { scrapBook in
+                self.createdScrapBook = scrapBook
+            })
+            .store(in: &cancellables)
     }
 }
 
@@ -154,4 +160,5 @@ enum DestinationStatus {
     case invalidName
     case selectRecommendation
     case createScrapbookSuccess
+    case createScrapbookLoading
 }

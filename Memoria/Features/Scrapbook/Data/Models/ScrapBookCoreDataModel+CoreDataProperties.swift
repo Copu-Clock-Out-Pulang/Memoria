@@ -81,7 +81,7 @@ extension ScrapBookCoreDataModel {
         )
     }
 
-    static func fromDomain(form: CreateScrapBookForm, context: NSManagedObjectContext) -> ScrapBookCoreDataModel {
+    static func fromDomain(form: CreateScrapBookForm, destinations: [DestinationCoreDataModel], context: NSManagedObjectContext) -> ScrapBookCoreDataModel {
         var model = NSEntityDescription.insertNewObject(forEntityName: "ScrapBookCoreDataModel", into: context) as! ScrapBookCoreDataModel
         //        let user = UserCoreDataModel()
         //        user.id = UUID()
@@ -90,9 +90,7 @@ extension ScrapBookCoreDataModel {
         model.id = UUID()
         //        model.user = user
         model.name = form.name
-        model.destinations = NSSet(array: form.selectedRecommendations.map {
-            DestinationCoreDataModel.fromDomain(destination: $0.destination)
-        })
+        model.destinations = NSSet(array: destinations)
         model.scrapPages = NSSet(array: form.scrapPages.map {
             ScrapPageCoreDataModel.fromDomain(scrapPage: $0, context: context)
         })
