@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 struct ScrapBookCard: View {
     @EnvironmentObject var scrapBookViewModel: ScrapBookViewModel
     @EnvironmentObject var scrapPageViewModel: ScrapPageViewModel
@@ -18,7 +17,9 @@ struct ScrapBookCard: View {
     @State var tripDescription: String // 100 characters
     @State var selectedScrapPage = ScrapPage(id: UUID(), name: "", thumbnail: "", content: "", createdAt: Date(), updatedAt: Date())
     @State var showSheet = false
-
+    @State var showTextAlert = false
+    @State private var isConfirmationDialogOpened = false
+    
     let scrapPages: [ScrapPage]
     //    let onButtonClick: () -> Void
 
@@ -90,11 +91,23 @@ struct ScrapBookCard: View {
                 ScrapBookCarousel(selectedCard: 1, scrapPages: scrapBookViewModel.scrapBook?.scrapPages ?? [])
                     .offset(x: 0, y: geometry.size.height * 0.3)
                 HStack(alignment: .center) {
-                    ScrapPageEditButton()
+                    ScrapPageEditButton(isConfirmationDialogOpened: $isConfirmationDialogOpened)
                     ScrapPageShareButton()
                     ScrapPageDeleteButton()
                 }.padding(.top, geometry.size.height * 0.6)
             }
-        }.ignoresSafeArea()
+        }.confirmationDialog("Edit dialog", isPresented: $isConfirmationDialogOpened){
+            Button("Edit Scrap Page Name", action: {
+                isConfirmationDialogOpened = false
+                showTextAlert = true
+                textFieldAlert(isShowing: $showTextAlert, text: $tripName, title: "Edit Scrap Page Name")
+            })
+            Button("Edit Scrap Page", action:
+                    {
+                isConfirmationDialogOpened = false
+                controller.navigateToScrapPageEditor(scrapPage: controller.scrapPage!)
+            })
+        }
+            .ignoresSafeArea()
     }
 }
