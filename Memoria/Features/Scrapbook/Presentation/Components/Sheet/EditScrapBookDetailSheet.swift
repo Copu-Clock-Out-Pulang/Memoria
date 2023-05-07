@@ -33,7 +33,7 @@ struct EditScrapBookDetailSheet: View {
                                     Button("Done") {
                                         controller.updateScrapBook(scrapBook: controller.getScrapBook(), tripName: name, tripDescription: quote, startDate: startDate, endDate: endDate)
                                         showSheet = false
-                                        controller.viewDidLoad()
+                                        controller.viewDidAppear(true)
                                     }
             )
         }

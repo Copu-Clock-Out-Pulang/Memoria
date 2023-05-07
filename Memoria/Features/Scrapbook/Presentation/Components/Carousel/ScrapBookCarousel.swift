@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ScrapBookCarousel: View {
     @EnvironmentObject var controller: ScrapBookDetailViewController
-
+    @EnvironmentObject var scrapPageViewModel: ScrapPageViewModel
     @State var selectedCard: Int = 0
     @GestureState var isLongPress = false
     private let cardSpacing: CGFloat = 10
@@ -37,13 +37,14 @@ struct ScrapBookCarousel: View {
                                 .onTapGesture {
                                     withAnimation {
                                         self.selectedCard = index
+                                        print(index)
                                         if index != 0 {
-
-                                            controller.index = index - 1
+                                            scrapPageViewModel.setScrapPage(scrapPage: scrapPages[index - 1])
+//                                            controller.index = index - 1
                                         } else {
-                                            controller.index = 0
+//                                            controller.index = 0
                                         }
-                                        print(scrapPages[index - 1])
+//                                        print(scrapPages[index - 1])
                                     }
                                 }
                         }

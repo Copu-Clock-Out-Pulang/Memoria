@@ -15,7 +15,8 @@ class ScrapBookViewModel: ObservableObject {
     @Published private(set) var selectedScrapPage: ScrapPage?
     @Published private(set) var scrapBooks: [ScrapBook]?
     @Published private(set) var status: ScrapBookStatus = .initial
-
+    private(set) var scrapBookBuffer: ScrapBook?
+    
     // MARK: - Usecases
     private let createScrapBook: AnyUseCase<ScrapBook, CreateScrapBookParams>
     private let getScrapBooks: AnyUseCase<[ScrapBook], NoParams>
@@ -32,6 +33,10 @@ class ScrapBookViewModel: ObservableObject {
         self.deleteScrapBook = deleteScrapBook
     }
 
+    func setScrapBook (scrapBook: ScrapBook){
+        self.scrapBookBuffer = scrapBook
+    }
+    
     func setSelectedScrapPage(scrapPage: ScrapPage) {
         self.selectedScrapPage = scrapPage
     }
@@ -62,7 +67,10 @@ class ScrapBookViewModel: ObservableObject {
                     break
                 }
             }, receiveValue: {scrapbook in
-                self.scrapBook = scrapbook.first
+                self.scrapBook = scrapbook.first(where: {
+                    element in
+                    element.id == self.scrapBookBuffer!.id
+                })
             }).store(in: &cancellables)
     }
 

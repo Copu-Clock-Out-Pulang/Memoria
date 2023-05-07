@@ -20,7 +20,7 @@ struct ScrapBookCard: View {
     @State var showSheet = false
     @State var showTextAlert = false
     @State private var isConfirmationDialogOpened = false
-    @State var selectedScrapPage = ScrapPage(id: UUID(), name: "", thumbnail: "", content: "", createdAt: Date(), updatedAt: Date())
+//    @State var selectedScrapPage = ScrapPage(id: UUID(), name: "", thumbnail: "", content: "", createdAt: Date(), updatedAt: Date())
     let scrapPages: [ScrapPage]
     //    let onButtonClick: () -> Void
 
@@ -32,7 +32,7 @@ struct ScrapBookCard: View {
     private let scrapBookDetailDecal = I.scrapBookDetailBackgroundDecal.swiftUIImage
 
     func saveEditedScrapPage() {
-        scrapPageViewModel.saveScrapPage(name: scrapPageName, thumbnail: selectedScrapPage.thumbnail, content: selectedScrapPage.content)
+        scrapPageViewModel.saveScrapPage(name: scrapPageName, thumbnail: scrapPageViewModel.scrapPage!.thumbnail, content: scrapPageViewModel.scrapPage!.content)
         controller.viewDidAppear(true)
     }
     
@@ -98,7 +98,7 @@ struct ScrapBookCard: View {
                     .offset(x: 0, y: geometry.size.height * 0.3)
                 HStack(alignment: .center) {
                     ScrapPageEditButton(isConfirmationDialogOpened: $isConfirmationDialogOpened)
-//                    ScrapPageShareButton()
+                    ScrapPageShareButton()
                     ScrapPageDeleteButton()
                 }.padding(.top, geometry.size.height * 0.6)
             }
