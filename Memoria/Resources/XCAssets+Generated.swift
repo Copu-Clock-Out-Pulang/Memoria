@@ -51,6 +51,14 @@ internal enum I {
   internal static let editButtonIcon = ImageAsset(name: "EditButtonIcon")
   internal static let editScrapPageButtonIcon = ImageAsset(name: "EditScrapPageButtonIcon")
   internal static let familyIllustration = ImageAsset(name: "FamilyIllustration")
+  internal enum Jakarta {
+    internal static let dufan = ImageAsset(name: "Dufan")
+    internal static let gbk = ImageAsset(name: "GBK")
+    internal static let kotaTua = ImageAsset(name: "KotaTua")
+    internal static let monas = ImageAsset(name: "Monas")
+    internal static let ragunan = ImageAsset(name: "Ragunan")
+    internal static let tmii = ImageAsset(name: "TMII")
+  }
   internal static let phoneFrame = ImageAsset(name: "PhoneFrame")
   internal static let primaryButton = ColorAsset(name: "PrimaryButton")
   internal static let scrapBookDetailBackgroundDecal = ImageAsset(name: "ScrapBookDetailBackgroundDecal")
@@ -96,6 +104,9 @@ internal enum I {
     internal static let shape = ImageAsset(name: "ToolBarIcon/Shape")
     internal static let sticker = ImageAsset(name: "ToolBarIcon/Sticker")
   }
+  internal static let treeLeft = ImageAsset(name: "TreeLeft")
+  internal static let treeRight = ImageAsset(name: "TreeRight")
+  internal static let treeStraight = ImageAsset(name: "TreeStraight")
   internal enum TripBackgrounds {
     internal static let tripBackground1 = ImageAsset(name: "TripBackground1")
     internal static let tripBackground2 = ImageAsset(name: "TripBackground2")
@@ -107,6 +118,7 @@ internal enum I {
   internal static let unchecked = ImageAsset(name: "Unchecked")
   internal static let backgroundScrapBookDetail = ImageAsset(name: "backgroundScrapBookDetail")
   internal static let imageTest = ImageAsset(name: "image_test")
+  internal static let instagram = ImageAsset(name: "instagram")
   internal static let mask = ImageAsset(name: "mask")
   internal static let outputTest = ImageAsset(name: "output_test")
 }

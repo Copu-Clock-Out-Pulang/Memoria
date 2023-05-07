@@ -154,6 +154,8 @@
 		9BCD421229FD05DE007A7868 /* AreaCoreDataModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCD421029FD05DE007A7868 /* AreaCoreDataModel+CoreDataProperties.swift */; };
 		9BCD421329FD05DE007A7868 /* DestinationCoreDataModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCD421129FD05DE007A7868 /* DestinationCoreDataModel+CoreDataProperties.swift */; };
 		9BCD421529FD0F86007A7868 /* DestinationLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCD421429FD0F86007A7868 /* DestinationLocalDataSource.swift */; };
+		9BD9F1CF2A079D6500346C46 /* DestinationDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD9F1CE2A079D6500346C46 /* DestinationDetail.swift */; };
+		9BD9F1D22A07B2DB00346C46 /* VisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD9F1D12A07B2DB00346C46 /* VisualEffectView.swift */; };
 		9BDA3E5129FBD8B9002D7227 /* ScrapBookRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDA3E5029FBD8B9002D7227 /* ScrapBookRepository.swift */; };
 		9BDA3E5329FBD93D002D7227 /* CreateScrapBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDA3E5229FBD93D002D7227 /* CreateScrapBook.swift */; };
 		9BDA3E5529FBDA51002D7227 /* CreateScrapBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDA3E5429FBDA51002D7227 /* CreateScrapBook.swift */; };
@@ -360,6 +362,8 @@
 		9BCD421029FD05DE007A7868 /* AreaCoreDataModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AreaCoreDataModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		9BCD421129FD05DE007A7868 /* DestinationCoreDataModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DestinationCoreDataModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		9BCD421429FD0F86007A7868 /* DestinationLocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationLocalDataSource.swift; sourceTree = "<group>"; };
+		9BD9F1CE2A079D6500346C46 /* DestinationDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationDetail.swift; sourceTree = "<group>"; };
+		9BD9F1D12A07B2DB00346C46 /* VisualEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectView.swift; sourceTree = "<group>"; };
 		9BDA3E5029FBD8B9002D7227 /* ScrapBookRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrapBookRepository.swift; sourceTree = "<group>"; };
 		9BDA3E5229FBD93D002D7227 /* CreateScrapBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateScrapBook.swift; sourceTree = "<group>"; };
 		9BDA3E5429FBDA51002D7227 /* CreateScrapBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateScrapBook.swift; sourceTree = "<group>"; };
@@ -578,6 +582,7 @@
 				9B853B332A0685B60082F13F /* TripDestinationUI.swift */,
 				9B853B3A2A06968E0082F13F /* LeftDestinationCard.swift */,
 				9B853B3C2A06B1740082F13F /* RightDestinationCard.swift */,
+				9BD9F1CE2A079D6500346C46 /* DestinationDetail.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -1313,6 +1318,7 @@
 		9B5FF8722A027629000B55A9 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				9BD9F1D02A07B2CE00346C46 /* VisualEffect */,
 				9B853B372A068DEB0082F13F /* Shape */,
 				9B5FF8852A027852000B55A9 /* CustomDialog */,
 				9B5FF8732A02762D000B55A9 /* MultiDatePicker */,
@@ -1935,6 +1941,14 @@
 			path = Pages;
 			sourceTree = "<group>";
 		};
+		9BD9F1D02A07B2CE00346C46 /* VisualEffect */ = {
+			isa = PBXGroup;
+			children = (
+				9BD9F1D12A07B2DB00346C46 /* VisualEffectView.swift */,
+			);
+			path = VisualEffect;
+			sourceTree = "<group>";
+		};
 		9BEE4C512A01693300FC6310 /* CustomFonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -2193,6 +2207,7 @@
 				9B12C66329FA574E007B3B3F /* Area.swift in Sources */,
 				9BCD420829FCFC4D007A7868 /* AreaCoreDataModel+CoreDataClass.swift in Sources */,
 				9BB5045B29F2225B00C0D04C /* Failure.swift in Sources */,
+				9BD9F1D22A07B2DB00346C46 /* VisualEffectView.swift in Sources */,
 				9BDA3E5129FBD8B9002D7227 /* ScrapBookRepository.swift in Sources */,
 				9B853B362A0685D30082F13F /* TripDestinationViewController.swift in Sources */,
 				9B34AB172A04ECB100D53921 /* MigrateArea.swift in Sources */,
@@ -2291,6 +2306,7 @@
 				9B1AF19129F23D1000BEF767 /* UIImage+CVPixelBuffer.swift in Sources */,
 				9B1AF17B29F23C8100BEF767 /* ImageSegmentor.swift in Sources */,
 				9B5C5F7029FAE0920032BA64 /* CreateScrapBookForm.swift in Sources */,
+				9BD9F1CF2A079D6500346C46 /* DestinationDetail.swift in Sources */,
 				9111A46B29FD195D00DC3FF2 /* GetScrapBook.swift in Sources */,
 				9B5FF87F2A027638000B55A9 /* MDPDayView.swift in Sources */,
 				9111A45B29FD0F5700DC3FF2 /* ScrapBookRepositoryImpl.swift in Sources */,
