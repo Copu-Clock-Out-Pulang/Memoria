@@ -13,6 +13,7 @@ class ScrapBookViewModel: ObservableObject {
     // MARK: - Attributes
     @Published private(set) var scrapBook: ScrapBook?
     @Published private(set) var selectedScrapPage: ScrapPage?
+    @Published private(set) var scrapBooks: [ScrapBook]?
     @Published private(set) var status: ScrapBookStatus = .initial
 
     // MARK: - Usecases
@@ -34,7 +35,22 @@ class ScrapBookViewModel: ObservableObject {
     func setSelectedScrapPage(scrapPage: ScrapPage) {
         self.selectedScrapPage = scrapPage
     }
-
+    
+    func loadAllScrapBooks() {
+        status = .loading
+        getScrapBooks.execute(params: NoParams())
+            .sink(receiveCompletion: {completion in
+                switch completion {
+                case .finished:
+                    break
+                case .failure(let failure):
+                    break
+                }
+            }, receiveValue: {scrapbooks in
+                self.scrapBooks = scrapbooks
+            }).store(in: &cancellables)
+    }
+    
     func loadScrapBooks() {
         status = .loading
         getScrapBooks.execute(params: NoParams())
