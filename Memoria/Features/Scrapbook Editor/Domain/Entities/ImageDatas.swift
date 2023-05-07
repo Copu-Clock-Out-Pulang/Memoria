@@ -11,7 +11,7 @@ struct ImageDatas: Codable {
     var id: Int
     var image: String
     var center: CGPoint
-//    var rotation: Double
+    //    var rotation: Double
     var frame: CGRect
     var filter: String
     var isShape: Bool

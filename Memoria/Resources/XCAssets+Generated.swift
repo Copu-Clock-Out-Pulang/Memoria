@@ -35,6 +35,22 @@ internal enum I {
   }
   internal static let background = ColorAsset(name: "Background")
   internal static let backgroundOverlay = ColorAsset(name: "BackgroundOverlay")
+  internal enum Bekasi {
+    internal static let binaBangsa = ImageAsset(name: "BinaBangsa")
+    internal static let gedungJuang = ImageAsset(name: "GedungJuang")
+    internal static let rawaGede = ImageAsset(name: "RawaGede")
+    internal static let snowWorld = ImageAsset(name: "SnowWorld")
+    internal static let summarecon = ImageAsset(name: "Summarecon")
+    internal static let transera = ImageAsset(name: "Transera")
+  }
+  internal enum Bogor {
+    internal static let devoyage = ImageAsset(name: "Devoyage")
+    internal static let jungleLand = ImageAsset(name: "JungleLand")
+    internal static let jungleWaterpark = ImageAsset(name: "JungleWaterpark")
+    internal static let kebunRaya = ImageAsset(name: "KebunRaya")
+    internal static let mekarsari = ImageAsset(name: "Mekarsari")
+    internal static let tamanSafari = ImageAsset(name: "TamanSafari")
+  }
   internal enum CanvasColor {
     internal static let _0 = ColorAsset(name: "CanvasColor/0")
     internal static let _1 = ColorAsset(name: "CanvasColor/1")
@@ -47,6 +63,14 @@ internal enum I {
   }
   internal static let checked = ImageAsset(name: "Checked")
   internal static let deleteButtonIcon = ImageAsset(name: "DeleteButtonIcon")
+  internal enum Depok {
+    internal static let alMahri = ImageAsset(name: "AlMahri")
+    internal static let dkandang = ImageAsset(name: "Dkandang")
+    internal static let godongijo = ImageAsset(name: "Godongijo")
+    internal static let pasirPutih = ImageAsset(name: "PasirPutih")
+    internal static let tamanLembah = ImageAsset(name: "TamanLembah")
+    internal static let wiladatika = ImageAsset(name: "Wiladatika")
+  }
   internal static let disabledButton = ColorAsset(name: "DisabledButton")
   internal static let editButtonIcon = ImageAsset(name: "EditButtonIcon")
   internal static let editScrapPageButtonIcon = ImageAsset(name: "EditScrapPageButtonIcon")
@@ -66,6 +90,7 @@ internal enum I {
   internal static let scrapPageEditorBackground = ImageAsset(name: "ScrapPageEditorBackground")
   internal static let scrapPageFilter = ImageAsset(name: "ScrapPageFilter")
   internal static let scrapPageThumbnailDummy = ImageAsset(name: "ScrapPageThumbnailDummy")
+  internal static let scrapPageThumbnailNew = ImageAsset(name: "ScrapPageThumbnailNew")
   internal static let secondaryButton = ColorAsset(name: "SecondaryButton")
   internal enum Shape {
     internal static let _0 = ImageAsset(name: "Shape/0")
@@ -93,6 +118,14 @@ internal enum I {
     internal static let _7 = ImageAsset(name: "Sticker/7")
     internal static let _8 = ImageAsset(name: "Sticker/8")
     internal static let _9 = ImageAsset(name: "Sticker/9")
+  }
+  internal enum Tangerang {
+    internal static let bentengHeritage = ImageAsset(name: "BentengHeritage")
+    internal static let boenTekBio = ImageAsset(name: "BoenTekBio")
+    internal static let branchsto = ImageAsset(name: "Branchsto")
+    internal static let oceanPark = ImageAsset(name: "OceanPark")
+    internal static let scientia = ImageAsset(name: "Scientia")
+    internal static let tamanPotret = ImageAsset(name: "TamanPotret")
   }
   internal static let textOnButton = ColorAsset(name: "TextOnButton")
   internal static let textPrimary = ColorAsset(name: "TextPrimary")

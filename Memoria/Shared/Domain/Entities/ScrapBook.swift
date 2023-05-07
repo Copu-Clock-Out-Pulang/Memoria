@@ -9,7 +9,6 @@ import Foundation
 
 struct ScrapBook: Equatable, Identifiable {
     let id: UUID
-    let user: User
     let destinations: [Destination]
     let scrapPages: [ScrapPage]
     let quote: String
@@ -24,7 +23,6 @@ struct ScrapBook: Equatable, Identifiable {
 extension ScrapBook {
     func with (
         id: UUID?? = nil,
-        user: User?? = nil,
         destinations: [Destination]?? = nil,
         scrapPages: [ScrapPage]?? = nil,
         quote: String?? = nil,
@@ -36,7 +34,6 @@ extension ScrapBook {
     ) -> ScrapBook {
         ScrapBook(
             id: (id ?? self.id)!,
-            user: (user ?? self.user)!,
             destinations: (destinations ?? self.destinations)!,
             scrapPages: (scrapPages ?? self.scrapPages)!,
             quote: (quote ?? self.quote)!,

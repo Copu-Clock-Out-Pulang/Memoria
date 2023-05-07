@@ -18,17 +18,17 @@ class ScrapPageRepositoryImpl: ScrapPageRepository {
 
     func createScrapPage(form: CreateScrapPageForm, page: ScrapPage) -> AnyPublisher<ScrapPage, Failure> {
         return localDataSource
-            .createScrapPage(scrapBook: ScrapBookCoreDataModel.fromDomain(scrapBook: form.scrapBook), page: ScrapPageCoreDataModel.fromDomain(scrapPage: page))
+            .createScrapPage(form: form)
 
             .map { $0.toDomain() }.eraseToAnyPublisher()
     }
 
     func editScrapPage(scrapPage: ScrapPage, form: EditScrapPageForm) -> AnyPublisher<ScrapPage, Failure> {
-        return localDataSource.editScrapPage(scrapPage: ScrapPageCoreDataModel.fromDomain(form: form)).map { $0.toDomain() }.eraseToAnyPublisher()
+        return localDataSource.editScrapPage(scrapPage: scrapPage, form: form).map { $0.toDomain() }.eraseToAnyPublisher()
     }
 
     func deleteScrapPage(scrapPage: ScrapPage) -> AnyPublisher<Void, Failure> {
-        return localDataSource.deleteScrapPage(scrapPage: ScrapPageCoreDataModel.fromDomain(scrapPage: scrapPage))
+        return localDataSource.deleteScrapPage(scrapPage: scrapPage)
     }
 
     func getScrapPages() -> AnyPublisher<[ScrapPage], Failure> {

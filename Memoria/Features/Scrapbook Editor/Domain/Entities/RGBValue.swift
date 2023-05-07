@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct RGBValue {
+struct RGBValue: Codable {
     var colorR: CGFloat
     var colorG: CGFloat
     var colorB: CGFloat

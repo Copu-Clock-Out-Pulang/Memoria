@@ -41,14 +41,14 @@ extension ScrapPageCoreDataModel {
             updatedAt: self.updatedAt!
         )
     }
-    static func fromDomain(form: CreateScrapPageForm) -> ScrapPageCoreDataModel {
+    static func fromDomain(form: CreateScrapPageForm, context: NSManagedObjectContext) -> ScrapPageCoreDataModel {
 
-        var model = ScrapPageCoreDataModel()
+        var model = NSEntityDescription.insertNewObject(forEntityName: "ScrapPageCoreDataModel", into: context) as! ScrapPageCoreDataModel
 
         model.id = UUID()
-        model.name = "new scrap page"
-        model.thumbnail = ""
-        model.content = ""
+        model.name = form.name
+        model.thumbnail = form.thumbnail
+        model.content = form.content
         model.createdAt = Date.now
         model.updatedAt = Date.now
 
@@ -68,8 +68,8 @@ extension ScrapPageCoreDataModel {
 
     }
 
-    static func fromDomain(scrapPage: ScrapPage) -> ScrapPageCoreDataModel {
-        var model = ScrapPageCoreDataModel()
+    static func fromDomain(scrapPage: ScrapPage, context: NSManagedObjectContext) -> ScrapPageCoreDataModel {
+        var model = NSEntityDescription.insertNewObject(forEntityName: "ScrapPageCoreDataModel", into: context) as! ScrapPageCoreDataModel
 
         model.id = scrapPage.id
         model.name = scrapPage.name
