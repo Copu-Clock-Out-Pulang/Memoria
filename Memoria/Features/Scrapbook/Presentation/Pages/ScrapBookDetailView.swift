@@ -23,7 +23,7 @@ struct ScrapBookDetailView: View {
                     ScrapBookCard(
                         tripName: controller.getScrapBookInfo().name ?? "Trip Name",
                         tripDate:
-                        controller.getScrapBookInfo().tripDate ??
+                            controller.getScrapBookInfo().tripDate ??
                             "27 Jan - 3 Feb 2023",
                         tripDescription:
                             controller.getScrapBookInfo().tripDescription ??

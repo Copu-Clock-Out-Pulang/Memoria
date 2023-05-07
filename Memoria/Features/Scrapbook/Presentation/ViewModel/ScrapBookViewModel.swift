@@ -31,10 +31,10 @@ class ScrapBookViewModel: ObservableObject {
         self.deleteScrapBook = deleteScrapBook
     }
 
-    func setSelectedScrapPage(scrapPage: ScrapPage){
+    func setSelectedScrapPage(scrapPage: ScrapPage) {
         self.selectedScrapPage = scrapPage
     }
-    
+
     func loadScrapBooks() {
         status = .loading
         getScrapBooks.execute(params: NoParams())

@@ -37,43 +37,41 @@ struct ScrapBookCarousel: View {
                                 .onTapGesture {
                                     withAnimation {
                                         self.selectedCard = index
-                                        if(index != 0) {
+                                        if index != 0 {
 
                                             controller.index = index - 1
+                                        } else {
+                                            controller.index = 0
                                         }
-                                            else {
-                                                controller.index = 0
-                                            }
                                         print(scrapPages[index - 1])
-                                        }
                                     }
                                 }
-                        }.gesture(
-                            DragGesture()
-                                .onEnded {
-                                    value in
-                                    let offset = value.translation.width
-                                    let newIndex = (CGFloat(selectedCard) * geometry.size.width - offset) / geometry.size.width
-                                    withAnimation {
-                                        selectedCard = max(0, min(Int(newIndex), cards.count - 1 ))
-                                    }
+                        }
+                    }.gesture(
+                        DragGesture()
+                            .onEnded {
+                                value in
+                                let offset = value.translation.width
+                                let newIndex = (CGFloat(selectedCard) * geometry.size.width - offset) / geometry.size.width
+                                withAnimation {
+                                    selectedCard = max(0, min(Int(newIndex), cards.count - 1 ))
                                 }
-                        )
-                    }.frame(
-                        maxHeight: geometry.size.height * 0.5
+                            }
                     )
-                }
-                .frame(
-                    maxWidth: geometry.size.width
+                }.frame(
+                    maxHeight: geometry.size.height * 0.5
                 )
-                .padding(.horizontal, self.cardSpacing)
-                .onAppear {
-                    let pagesView = scrapPages.map { page in
-                        AnyView(ScrapBookCarouselCard(scrapPageName: page.name, scrapPageThumbnail: page.thumbnail, scrapPageContent: page.content))
-                    }
-                    cards.append(contentsOf: pagesView)
+            }
+            .frame(
+                maxWidth: geometry.size.width
+            )
+            .padding(.horizontal, self.cardSpacing)
+            .onAppear {
+                let pagesView = scrapPages.map { page in
+                    AnyView(ScrapBookCarouselCard(scrapPageName: page.name, scrapPageThumbnail: page.thumbnail, scrapPageContent: page.content))
                 }
+                cards.append(contentsOf: pagesView)
             }
         }
     }
-
+}

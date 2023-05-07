@@ -12,13 +12,13 @@ struct ScrapBookCard: View {
     @EnvironmentObject var scrapBookViewModel: ScrapBookViewModel
     @EnvironmentObject var scrapPageViewModel: ScrapPageViewModel
     @EnvironmentObject var controller: ScrapBookDetailViewController
-    
+
     @State var tripName: String // 25 characters
     @State var tripDate: String // E.g. case: 27 Jan - 3 Feb 2023
     @State var tripDescription: String // 100 characters
     @State var selectedScrapPage = ScrapPage(id: UUID(), name: "", thumbnail: "", content: "", createdAt: Date(), updatedAt: Date())
     @State var showSheet = false
-    
+
     let scrapPages: [ScrapPage]
     //    let onButtonClick: () -> Void
 

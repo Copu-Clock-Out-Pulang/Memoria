@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Content: Codable {
+struct ScrapPageContent: Codable {
     var drawing: String
     var images: [ImageDatas]
     var canvasColor: RGBValue

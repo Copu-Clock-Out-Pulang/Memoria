@@ -18,11 +18,11 @@ struct ScrapBookEditButton: View {
             showSheet = true
             print("scrapbook edit button pressed")
         }
-        ){
+        ) {
             I.editButtonIcon.swiftUIImage.renderingMode(Image.TemplateRenderingMode?.init(Image.TemplateRenderingMode.original))
         }
         .sheet(isPresented: $showSheet) {
-                EditScrapBookDetailSheet(name: $name, startDate: $startDate, endDate: $endDate, quote: $quote, showSheet: $showSheet)
-            }
+            EditScrapBookDetailSheet(name: $name, startDate: $startDate, endDate: $endDate, quote: $quote, showSheet: $showSheet)
+        }
     }
 }
