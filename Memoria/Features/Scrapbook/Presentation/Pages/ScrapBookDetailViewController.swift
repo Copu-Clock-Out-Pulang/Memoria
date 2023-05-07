@@ -17,12 +17,12 @@ class ScrapBookDetailViewController: UIViewController, ObservableObject {
     private let scrapPageViewModel = InjectionContainer.shared.container.resolve(ScrapPageViewModel.self)!
     private let scrapBookViewModel = InjectionContainer.shared.container.resolve(ScrapBookViewModel.self)!
     private let scrapBookEditorViewModel = ScrapBookEditorViewModel()
-    
+
     @Published var index: Int?
     @Published var scrapBook: ScrapBook?
     @Published var scrapPage: ScrapPage?
-    
-    func addScrapPage() -> ScrapPage{
+
+    func addScrapPage() -> ScrapPage {
         scrapPageViewModel.addScrapPage(form: CreateScrapPageForm(
             id: UUID(),
             name: "New Scrap Page",
@@ -35,43 +35,43 @@ class ScrapBookDetailViewController: UIViewController, ObservableObject {
         )
         return scrapPageViewModel.scrapPage!
     }
-    
+
     func deleteScrapPage(scrapPage: ScrapPage) {
         scrapPageViewModel.deleteScrapPage(scrapPage: scrapPage)
     }
-    
+
     func selectScrapPage(scrapPage: ScrapPage) {
         scrapBookViewModel.setSelectedScrapPage(scrapPage: scrapPage)
     }
-    
+
     func getScrapBookInfo() -> ScrapBookInfo {
         return ScrapBookInfo(name: scrapBookViewModel.scrapBook!.name, tripDate: formatDateRange(start: scrapBookViewModel.scrapBook!.startDate!, end: scrapBookViewModel.scrapBook!.endDate!), tripDescription: scrapBookViewModel.scrapBook!.quote)
     }
-    
+
     func getScrapBook() -> ScrapBook {
         return scrapBookViewModel.scrapBook!
     }
-    
-    func shareSelectedPage() -> UIImage {
-        var image: UIImage
-        if (scrapPage?.thumbnail == nil){
-            image = UIImage(named: "ScrapPageThumbnailNew")!
-        }
-        else{
-            image = UIImage(data: Data(base64Encoded: scrapPage!.thumbnail)!)!
-        }
-        return image
-    }
-    
+
+    //    func shareSelectedPage() -> UIImage {
+    //        var image: UIImage
+    //        if (scrapPage?.thumbnail == nil){
+    //            image = UIImage(named: "ScrapPageThumbnailNew")!
+    //        }
+    //        else{
+    //            image = UIImage(data: Data(base64Encoded: scrapPage!.thumbnail)!)
+    //        }
+    //        return image
+    //    }
+
     func updateScrapBook(scrapBook: ScrapBook, tripName: String, tripDescription: String, startDate: Date?, endDate: Date?) {
-        scrapBookViewModel.updateScrapBook(scrapBook: scrapBook, form: EditScrapBookForm(name: tripName, scrapPage: scrapBook.scrapPages ,quote: tripDescription, startDate: startDate, endDate: endDate)
+        scrapBookViewModel.updateScrapBook(scrapBook: scrapBook, form: EditScrapBookForm(name: tripName, scrapPage: scrapBook.scrapPages, quote: tripDescription, startDate: startDate, endDate: endDate)
         )
     }
-    
+
     func formatDateRange(start: Date, end: Date) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "d MMM"
-        if(start == nil && end == nil){
+        if start == nil && end == nil {
             return "27 Jan - 3 Feb 2023"
         }
         let startDateString = dateFormatter.string(from: start)
@@ -106,56 +106,13 @@ class ScrapBookDetailViewController: UIViewController, ObservableObject {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        scrapBookViewModel.loadScrapBooks()
-//        // delete this function in final code
-//        if (scrapBook == nil) {
-//            scrapBookViewModel.addScrapBook(
-//                form: CreateScrapBookForm(
-//                    name: "Green Office Park",
-//                    quote: "Jalan Jalan ke Kota Hijau",
-//                    scrapPages: [],
-//                    selectedRecommendations: [],
-//                    startDate: Date.now,
-//                    endDate: Date.now))
-//        }
-//        scrapBookViewModel.loadScrapBooks()
-//        scrapBook = scrapBookViewModel.scrapBook
-//        scrapPageViewModel.loadScrapPages()
-//        scrapPage = scrapBook?.scrapPages.first
-//        if (scrapPage == nil){
-//            scrapPageViewModel.addScrapPage(form: CreateScrapPageForm(
-//                id: UUID(),
-//                name: "New Scrap Page",
-//                thumbnail: "",
-//                content: scrapBookEditorViewModel.makeEmptyContent(),
-//                createdAt: Date.now,
-//                updatedAt: Date.now,
-//                scrapBook: scrapBook!))
-//        }
-//        scrapPageViewModel.loadScrapPages()
-//
-//        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Poppins-Bold", size: 22)!]
-//
-//        self.title = scrapBookTitle
-//
-//        let rootView = ScrapBookDetailView(controller: self, scrapBookViewModel: scrapBookViewModel, scrapPageViewModel: scrapPageViewModel)
-//
-//        let hostingController = UIHostingController(rootView: rootView)
-//
-//        addChild(hostingController)
-//        view.addSubview(hostingController.view)
-//        hostingController.view.translatesAutoresizingMaskIntoConstraints = false
-//        hostingController.view.snp.makeConstraints { make in
-//            make.leading.top.trailing.bottom.equalTo(view)
-//        }
-//        hostingController.didMove(toParent: self)
     }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         navigationController?.toolbar.backgroundColor = .clear
         scrapBookViewModel.loadScrapBooks()
-        // delete this function in final code
-        if (scrapBook == nil) {
+
+        if scrapBook == nil {
             scrapBookViewModel.addScrapBook(
                 form: CreateScrapBookForm(
                     name: "Green Office Park",
@@ -169,18 +126,18 @@ class ScrapBookDetailViewController: UIViewController, ObservableObject {
         scrapBook = scrapBookViewModel.scrapBook
         scrapPageViewModel.loadScrapPages()
         scrapPage = scrapBook?.scrapPages.first
-        if (scrapPage == nil){
+        if scrapPage == nil {
             scrapPageViewModel.addScrapPage(form: CreateScrapPageForm(
-                id: UUID(),
-                name: "New Scrap Page",
-                thumbnail: "",
-                content: scrapBookEditorViewModel.makeEmptyContent(),
-                createdAt: Date.now,
-                updatedAt: Date.now,
-                scrapBook: scrapBook!))
+                                                id: UUID(),
+                                                name: "New Scrap Page",
+                                                thumbnail: "",
+                                                content: scrapBookEditorViewModel.makeEmptyContent(),
+                                                createdAt: Date.now,
+                                                updatedAt: Date.now,
+                                                scrapBook: scrapBook!))
         }
         scrapPageViewModel.loadScrapPages()
-        
+
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Poppins-Bold", size: 22)!]
 
         self.title = scrapBookTitle

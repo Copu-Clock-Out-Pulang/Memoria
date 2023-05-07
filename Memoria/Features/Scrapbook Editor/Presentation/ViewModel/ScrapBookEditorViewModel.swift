@@ -73,12 +73,12 @@ class ScrapBookEditorViewModel {
 
         return encodedContent
     }
-    
+
     func makeEmptyContent() -> String {
-        
+
         var encodedContent = ""
         var content = Content(drawing: "", images: [], canvasColor: RGBValue(colorR: 0, colorG: 0, colorB: 0, colorA: 0))
-        
+
         let image = UIImage(named: "ScrapPageThumbnailNew")!
         let encodedImage = image.pngData()?.base64EncodedString()
         let screenWH = UIScreen.main.bounds

@@ -9,13 +9,13 @@ import SwiftUI
 
 struct EditScrapBookDetailSheet: View {
     @EnvironmentObject var controller: ScrapBookDetailViewController
-    
+
     @Binding var name: String
     @Binding var startDate: Date
     @Binding var endDate: Date
     @Binding var quote: String
     @Binding var showSheet: Bool
-    
+
     var body: some View {
         NavigationView {
             Form {
@@ -30,11 +30,11 @@ struct EditScrapBookDetailSheet: View {
             }
             .navigationBarTitle("Edit Scrap Book")
             .navigationBarItems(trailing:
-                Button("Done") {
-                controller.updateScrapBook(scrapBook: controller.getScrapBook(), tripName: name, tripDescription: quote, startDate: startDate, endDate: endDate)
-                    showSheet = false
-                controller.viewDidLoad()
-                }
+                                    Button("Done") {
+                                        controller.updateScrapBook(scrapBook: controller.getScrapBook(), tripName: name, tripDescription: quote, startDate: startDate, endDate: endDate)
+                                        showSheet = false
+                                        controller.viewDidLoad()
+                                    }
             )
         }
     }

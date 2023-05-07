@@ -10,7 +10,7 @@ import SwiftUI
 struct ScrapPageDeleteButton: View {
     @EnvironmentObject var controller: ScrapBookDetailViewController
     @State private var showingAlert = false
-    
+
     var body: some View {
         Button(action: {
             showingAlert = true
