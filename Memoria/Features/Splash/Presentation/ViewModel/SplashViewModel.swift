@@ -13,6 +13,7 @@ class SplashViewModel: ObservableObject {
     // MARK: - Attributes
     @Published private(set) var status: SplashViewState = .initial
     @Published private(set) var isNotFirstLaunch = false
+    @Published private(set) var isOnBoardingDisplayed = false
 
     // MARK: - Cancellables
     private var cancellables = Set<AnyCancellable>()
@@ -27,6 +28,7 @@ class SplashViewModel: ObservableObject {
         self.migrateDestination = migrateDestination
         self.userDefaultController = userDefaultController
         self.getIsNotFirstLaunch()
+        self.getIsOnBoardingDisplayed()
     }
 
     func startAreaMigration() {
@@ -65,6 +67,15 @@ class SplashViewModel: ObservableObject {
     func setNotFirstLaunch() {
         isNotFirstLaunch = true
         userDefaultController.setIsNotFirstLaunch()
+    }
+    
+    func getIsOnBoardingDisplayed() {
+        isOnBoardingDisplayed = userDefaultController.isOnBoardingDisplayed()
+    }
+    
+    func setIsOnBoardingDisplayed() {
+        isOnBoardingDisplayed = true
+        userDefaultController.setIsOnBoardingDisplayed()
     }
 }
 
