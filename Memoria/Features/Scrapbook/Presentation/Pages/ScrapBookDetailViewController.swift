@@ -21,7 +21,7 @@ class ScrapBookDetailViewController: UIViewController, ObservableObject {
     @Published var index: Int?
     @Published var scrapBook: ScrapBook?
     @Published var scrapPage: ScrapPage?
-
+    
     func addScrapPage() -> ScrapPage {
         scrapPageViewModel.addScrapPage(form: CreateScrapPageForm(
             id: UUID(),
@@ -51,17 +51,6 @@ class ScrapBookDetailViewController: UIViewController, ObservableObject {
     func getScrapBook() -> ScrapBook {
         return scrapBookViewModel.scrapBook!
     }
-
-    //    func shareSelectedPage() -> UIImage {
-    //        var image: UIImage
-    //        if (scrapPage?.thumbnail == nil){
-    //            image = UIImage(named: "ScrapPageThumbnailNew")!
-    //        }
-    //        else{
-    //            image = UIImage(data: Data(base64Encoded: scrapPage!.thumbnail)!)
-    //        }
-    //        return image
-    //    }
 
     func updateScrapBook(scrapBook: ScrapBook, tripName: String, tripDescription: String, startDate: Date?, endDate: Date?) {
         scrapBookViewModel.updateScrapBook(scrapBook: scrapBook, form: EditScrapBookForm(name: tripName, scrapPage: scrapBook.scrapPages, quote: tripDescription, startDate: startDate, endDate: endDate)
