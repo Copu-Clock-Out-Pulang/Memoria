@@ -35,6 +35,8 @@ final class InjectionContainer {
         // register component here
         self.registerSharedContainer(container)
         self.registerDestinationContainer(container)
+        self.registerScrapBookContainer(container)
+        self.registerScrapPageContainer(container)
         self.registerSplashContainer(container)
 
         self.registerScrapBookContainer(container)
