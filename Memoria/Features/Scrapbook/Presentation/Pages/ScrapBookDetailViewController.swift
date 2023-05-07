@@ -22,6 +22,15 @@ class ScrapBookDetailViewController: UIViewController, ObservableObject {
     @Published var scrapBook: ScrapBook?
     @Published var scrapPage: ScrapPage?
     
+    init(scrapBook: ScrapBook? = nil) {
+        super.init(nibName: nil, bundle: nil)
+        self.scrapBook = scrapBook
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     func addScrapPage() -> ScrapPage {
         scrapPageViewModel.addScrapPage(form: CreateScrapPageForm(
             id: UUID(),
