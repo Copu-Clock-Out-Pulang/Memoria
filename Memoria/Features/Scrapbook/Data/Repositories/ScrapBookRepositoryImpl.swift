@@ -11,13 +11,32 @@ import Combine
 class ScrapBookRepositoryImpl: ScrapBookRepository {
 
     let localDataSource: ScrapBookLocalDataSource
+    let destinationLocalDataSource: DestinationLocalDataSource
 
-    init(localDataSource: ScrapBookLocalDataSource) {
+    init(localDataSource: ScrapBookLocalDataSource, destinationLocalDataSource: DestinationLocalDataSource) {
         self.localDataSource = localDataSource
+        self.destinationLocalDataSource = destinationLocalDataSource
     }
 
     func createScrapBook(form: CreateScrapBookForm) -> AnyPublisher<ScrapBook, Failure> {
-        return localDataSource.createScrapBook(scrapBook: form).map { $0.toDomain() }.eraseToAnyPublisher()
+        
+        let destinationPublisher = form.selectedRecommendations.map { recommendation in
+            return destinationLocalDataSource.fetchDestinationById(id: recommendation.destination.id)
+                
+        }
+       return Publishers.MergeMany(destinationPublisher)
+            .collect()
+            .eraseToAnyPublisher()
+            .flatMap { destinationCoreData in
+                return self.localDataSource.createScrapBook(scrapBook: form, destinations: destinationCoreData)
+
+            }
+            .map {
+                $0.toDomain()
+            }
+            .eraseToAnyPublisher()
+          
+//        localDataSource.createScrapBook(scrapBook: form).map { $0.toDomain() }.eraseToAnyPublisher()
     }
 
     func getScrapBooks() -> AnyPublisher<[ScrapBook], Failure> {

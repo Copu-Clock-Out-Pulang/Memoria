@@ -100,11 +100,11 @@ struct TripDestinationUI: View {
                 }
                
             }
-            .onReceive(viewModel.$createdScrapBook) {
+            .onReceive(viewModel.$createdScrapBook) { _ in
                 if viewModel.createdScrapBook != nil {
                     viewController.navigateToScrapBookDetail()
                 }
-                return EmptyView()
+
             }
     }
 }
