@@ -9,8 +9,8 @@ import Foundation
 import UIKit
 import Combine
 
-class DestinationViewModel {
-    
+class DestinationViewModel: ObservableObject {
+
     // MARK: - Attributes
     @Published private(set) var tripName: String?
     @Published private(set) var tripStartDate: Date?
@@ -22,45 +22,48 @@ class DestinationViewModel {
     @Published private(set) var recommendations: [Recommendation] = []
     @Published private(set) var selectedRecommendation: [Recommendation: Bool] = [:]
     @Published private(set) var status: DestinationStatus = .initial
-    
+
     // MARK: - Cancellables
     private var cancellables = Set<AnyCancellable>()
-    
+
     // MARK: - Usecases
     private let getTripArea: AnyUseCase<[Area], NoParams>
     private let getDestinations: AnyUseCase<[Destination], GetTripDestinationByAreaParams>
     private let generateRecommendations: AnyUseCase<[Recommendation], GenerateRecommendationParams>
-    
     // MARK: - Initializers
     init(getTripArea: AnyUseCase<[Area], NoParams>, getDestinations: AnyUseCase<[Destination], GetTripDestinationByAreaParams>, generateRecommendations: AnyUseCase<[Recommendation], GenerateRecommendationParams>) {
         self.getTripArea = getTripArea
         self.getDestinations = getDestinations
         self.generateRecommendations = generateRecommendations
-        
+
     }
-   
-    
+
+
     // MARK: - Actions
     func changeTripName(name: String) {
         self.tripName = name
     }
-    
+
     func changeQuote(quote: String) {
         self.quote = quote
     }
-    
+
     func changeStartEndDate(startDate: Date, endDate: Date) {
         self.tripStartDate = startDate
         self.tripEndDate = endDate
     }
-    
+
     func changeFamilyPhoto(familyPhoto: UIImage) {
         self.familyPhoto = familyPhoto
     }
-    
+
+    func selectArea(area: Area) {
+        self.selectedArea = area
+    }
+
     func fetchDestinations() {
         guard let selected = self.selectedArea,
-        let family = self.familyPhoto else {
+              let family = self.familyPhoto else {
             return
         }
         status = .loading
@@ -68,7 +71,7 @@ class DestinationViewModel {
             .flatMap { destinations in
                 self.generateRecommendations
                     .execute(params: GenerateRecommendationParams(destinations: destinations, familyPhoto: family))
-                
+
             }
             .sink(receiveCompletion: {[weak self] completion in
                 switch completion {
@@ -77,15 +80,15 @@ class DestinationViewModel {
                 case .failure(let failure):
                     self?.status = .failure(failure: failure)
                 }
-            }, receiveValue: {recommendations in
-                self.recommendations = recommendations
-                recommendations.forEach { recommendation in
+            }, receiveValue: {recs in
+                self.recommendations = recs
+                recs.forEach { recommendation in
                     self.selectedRecommendation[recommendation] = false
-                    
                 }
+                print(recs)
             })
             .store(in: &cancellables)
-        
+
         status = .initial
     }
     func selectRecommendation(recommendation: Recommendation) {
@@ -94,8 +97,8 @@ class DestinationViewModel {
     func unselectRecommendation(recommendation: Recommendation) {
         self.selectedRecommendation[recommendation] = false
     }
-    
-    
+
+
     func fetchAreas() {
         status = .loading
         getTripArea.execute(params: NoParams())
@@ -112,7 +115,7 @@ class DestinationViewModel {
             .store(in: &cancellables)
         status = .initial
     }
-    
+
     func createScrapbook() {
         // TODO: sesuaikan dengan usecase winxen
 //        let scrapPage = selectedRecommendation.filter {
@@ -121,7 +124,7 @@ class DestinationViewModel {
 //            .keys.map {
 //                ScrapPage(id: UUID(), name: $0.destination.name, thumbnail: .dest, content: <#T##String#>, createdAt: <#T##Date#>, updatedAt: <#T##Date#>)
 //            }
-//        
+//
 //        let scrapbook = ScrapBook(
 //            id: UUID(),
 //            user: User(id: UUID(), name: "User"),
@@ -137,7 +140,7 @@ class DestinationViewModel {
 }
 
 extension DestinationViewModel {
-    
+
 //    func validateTripName(name: String) -> Bool {
 //
 //    }

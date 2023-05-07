@@ -35,6 +35,7 @@ final class InjectionContainer {
         // register component here
         self.registerSharedContainer(container)
         self.registerDestinationContainer(container)
+        self.registerSplashContainer(container)
 
         return container
     }
@@ -55,11 +56,37 @@ final class InjectionContainer {
 
         }
         .inObjectScope(.container)
-        
+
         container.register(CIContext.self) { _ in
             return CIContext()
         }
         .inObjectScope(.container)
+
+        container.register(AreaMigration.self) { resolver in
+
+            let context = resolver.resolve(NSManagedObjectContext.self)!
+            return AreaMigrationImpl(context: context)
+
+        }
+        .inObjectScope(.container)
+
+        container.register(DestinationMigration.self) { resolver in
+            let context = resolver.resolve(NSManagedObjectContext.self)!
+            return DestinationMigration(context: context)
+
+        }
+        .inObjectScope(.container)
+
+
+        container.register(UserDefaults.self) { _ in
+            return UserDefaults.standard
+
+        }
+        .inObjectScope(.container)
+
+        container.autoregister(
+            UserDefaultController.self, initializer: UserDefaultsControllerImpl.init)
+            .inObjectScope(.container)
     }
 
     private func registerDestinationContainer(_ container: Container) {
@@ -105,6 +132,41 @@ final class InjectionContainer {
                 getTripArea: getTripArea,
                 getDestinations: getTripDestination,
                 generateRecommendations: generateRecommendation)
+
+        }
+        .inObjectScope(.container)
+
+        container.register(TripNameViewController.self) { resolver in
+            return TripNameViewController(viewModel: resolver.resolve(DestinationViewModel.self)!)
+        }
+        container.register(TripDateViewController.self) { resolver in
+            return TripDateViewController(viewModel: resolver.resolve(DestinationViewModel.self)!)
+        }
+    }
+
+    private func registerSplashContainer(_ container: Container) {
+        container.autoregister(SplashRepository.self, initializer: SplashRepositoryImpl.init)
+        container.register(AnyUseCase<Void, NoParams>.self, name: "MigrateArea") { resolver in
+            let repo = resolver.resolve(SplashRepository.self)!
+            return AnyUseCase(useCase: MigrateAreaImpl(repository: repo))
+
+        }
+        container.register(AnyUseCase<Void, NoParams>.self, name: "MigrateDestination") { resolver in
+            let repo = resolver.resolve(SplashRepository.self)!
+            return AnyUseCase(useCase: MigrateDestinationImpl(repository: repo))
+
+        }
+        container.register(SplashViewModel.self) { resolver in
+            let migrateArea = resolver.resolve(AnyUseCase<Void, NoParams>.self, name: "MigrateArea")!
+            let migrateDestination = resolver.resolve(AnyUseCase<Void, NoParams>.self, name: "MigrateDestination")!
+            let controller = resolver.resolve(UserDefaultController.self)!
+            
+            return SplashViewModel(
+                migrateArea: migrateArea,
+                migrateDestination: migrateDestination,
+                userDefaultController: controller
+            )
+
         }
     }
 }
