@@ -16,6 +16,7 @@ struct ScrapBookCard: View {
     @State var tripDate: String // E.g. case: 27 Jan - 3 Feb 2023
     @State var tripDescription: String // 100 characters
     @State var scrapPageName: String = ""
+
     @State var selectedCard: Int = 0
 
     @State var showSheet = false

@@ -185,6 +185,7 @@
 		9BEF3E1529F2475B00F0D384 /* DeepLabV3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 9B2C3EE829F0391900FF554C /* DeepLabV3.mlmodel */; };
 		9BF0036A29F6C2DE007CD42B /* DestinationImageGeneratorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF0036929F6C2DE007CD42B /* DestinationImageGeneratorTest.swift */; };
 		9BF0037029F6CC8C007CD42B /* Cuckoo in Frameworks */ = {isa = PBXBuildFile; productRef = 9BF0036F29F6CC8C007CD42B /* Cuckoo */; };
+		D5974DB52A08096600385D66 /* HomeViewUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5974DB42A08096600385D66 /* HomeViewUI.swift */; };
 		D6C32F142A08008B00E17236 /* FirstOnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C32F132A08008B00E17236 /* FirstOnBoardingViewController.swift */; };
 		D6C32F162A08009800E17236 /* SecondOnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C32F152A08009800E17236 /* SecondOnBoardingViewController.swift */; };
 		D6C32F182A0800AD00E17236 /* ThirdOnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C32F172A0800AD00E17236 /* ThirdOnBoardingViewController.swift */; };
@@ -400,6 +401,7 @@
 		9BEE4C7A2A01696800FC6310 /* LilitaOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LilitaOne-Regular.ttf"; sourceTree = "<group>"; };
 		9BEE4C7B2A01696800FC6310 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
 		9BF0036929F6C2DE007CD42B /* DestinationImageGeneratorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationImageGeneratorTest.swift; sourceTree = "<group>"; };
+		D5974DB42A08096600385D66 /* HomeViewUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewUI.swift; sourceTree = "<group>"; };
 		D6C32F132A08008B00E17236 /* FirstOnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstOnBoardingViewController.swift; sourceTree = "<group>"; };
 		D6C32F152A08009800E17236 /* SecondOnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondOnBoardingViewController.swift; sourceTree = "<group>"; };
 		D6C32F172A0800AD00E17236 /* ThirdOnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdOnBoardingViewController.swift; sourceTree = "<group>"; };
@@ -1279,6 +1281,7 @@
 		9B1C4D8929EF196C00F03AFF /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				D5974DB42A08096600385D66 /* HomeViewUI.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -2280,6 +2283,7 @@
 				9B983DE029F26A5600BCAD3A /* DestinationImageGenerator.swift in Sources */,
 				9B5FF8802A027638000B55A9 /* MDPMonthView.swift in Sources */,
 				D6CE6F752A03903400610641 /* NavigationBarComponent.swift in Sources */,
+				D5974DB52A08096600385D66 /* HomeViewUI.swift in Sources */,
 				9B92287F2A010BDF00B119AE /* UIView+CustomExtensions.swift in Sources */,
 				9BCD421229FD05DE007A7868 /* AreaCoreDataModel+CoreDataProperties.swift in Sources */,
 				9B12C65D29FA478F007B3B3F /* ScrapBook.swift in Sources */,
