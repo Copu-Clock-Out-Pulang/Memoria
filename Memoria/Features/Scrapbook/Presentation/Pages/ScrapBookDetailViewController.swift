@@ -21,12 +21,25 @@ class ScrapBookDetailViewController: UIViewController, ObservableObject {
     @Published var index: Int?
     @Published var scrapBook: ScrapBook?
     @Published var scrapPage: ScrapPage?
-
+    
+    init(scrapBook: ScrapBook) {
+        super.init(nibName: nil, bundle: nil)
+        self.scrapBook = scrapBook
+        scrapBookViewModel.setScrapBook(scrapBook: scrapBook)
+        scrapPageViewModel.setScrapPage(scrapPage: scrapBook.scrapPages.first!
+        )
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     func addScrapPage() -> ScrapPage {
+        let thumbnail = I.scrapPageThumbnailNew.image(compatibleWith: .current).pngData()!.base64EncodedString()
         scrapPageViewModel.addScrapPage(form: CreateScrapPageForm(
             id: UUID(),
             name: "New Scrap Page",
-            thumbnail: "",
+            thumbnail: thumbnail,
             content: scrapBookEditorViewModel.makeEmptyContent(),
             createdAt: Date.now,
             updatedAt: Date.now,
@@ -43,25 +56,18 @@ class ScrapBookDetailViewController: UIViewController, ObservableObject {
     func selectScrapPage(scrapPage: ScrapPage) {
         scrapBookViewModel.setSelectedScrapPage(scrapPage: scrapPage)
     }
+    
+    func setScrapBook(scrapBook: ScrapBook){
+        self.scrapBook = scrapBook
+    }
 
     func getScrapBookInfo() -> ScrapBookInfo {
-        return ScrapBookInfo(name: scrapBookViewModel.scrapBook!.name, tripDate: formatDateRange(start: scrapBookViewModel.scrapBook!.startDate!, end: scrapBookViewModel.scrapBook!.endDate!), tripDescription: scrapBookViewModel.scrapBook!.quote)
+        return ScrapBookInfo(name: scrapBookViewModel.scrapBook!.name, tripDate: formatDateRange(start: scrapBookViewModel.scrapBook!.startDate ?? Date.now, end: scrapBookViewModel.scrapBook!.endDate ?? Date.now), tripDescription: scrapBookViewModel.scrapBook!.quote)
     }
 
     func getScrapBook() -> ScrapBook {
         return scrapBookViewModel.scrapBook!
     }
-
-    //    func shareSelectedPage() -> UIImage {
-    //        var image: UIImage
-    //        if (scrapPage?.thumbnail == nil){
-    //            image = UIImage(named: "ScrapPageThumbnailNew")!
-    //        }
-    //        else{
-    //            image = UIImage(data: Data(base64Encoded: scrapPage!.thumbnail)!)
-    //        }
-    //        return image
-    //    }
 
     func updateScrapBook(scrapBook: ScrapBook, tripName: String, tripDescription: String, startDate: Date?, endDate: Date?) {
         scrapBookViewModel.updateScrapBook(scrapBook: scrapBook, form: EditScrapBookForm(name: tripName, scrapPage: scrapBook.scrapPages, quote: tripDescription, startDate: startDate, endDate: endDate)
@@ -110,8 +116,8 @@ class ScrapBookDetailViewController: UIViewController, ObservableObject {
 
     override func viewDidAppear(_ animated: Bool) {
         navigationController?.toolbar.backgroundColor = .clear
-        scrapBookViewModel.loadScrapBooks()
-
+//        scrapBookViewModel.loadScrapBooks()
+//
 //        if scrapBook == nil {
 //            scrapBookViewModel.addScrapBook(
 //                form: CreateScrapBookForm(
@@ -123,7 +129,6 @@ class ScrapBookDetailViewController: UIViewController, ObservableObject {
 //                    endDate: Date.now))
 //        }
         scrapBookViewModel.loadScrapBooks()
-        scrapBook = scrapBookViewModel.scrapBook
         scrapPageViewModel.loadScrapPages()
         scrapPage = scrapBook?.scrapPages.first
 //        if scrapPage == nil {
@@ -136,8 +141,7 @@ class ScrapBookDetailViewController: UIViewController, ObservableObject {
 //                                                updatedAt: Date.now,
 //                                                scrapBook: scrapBook!))
 //        }
-        scrapPageViewModel.loadScrapPages()
-
+//        scrapPageViewModel.loadScrapPages()
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Poppins-Bold", size: 22)!]
 
         self.title = scrapBookTitle

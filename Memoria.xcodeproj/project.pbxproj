@@ -50,7 +50,6 @@
 		915F0C302A04FEAA0040AEAB /* ScrapPageContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915F0C2F2A04FEAA0040AEAB /* ScrapPageContent.swift */; };
 		915F0C322A0578020040AEAB /* ScrapBookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915F0C312A0578020040AEAB /* ScrapBookViewModel.swift */; };
 		915F0C352A06EC860040AEAB /* EditScrapBookDetailSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915F0C342A06EC860040AEAB /* EditScrapBookDetailSheet.swift */; };
-		915F0C3A2A07F15E0040AEAB /* EditScrapPageNameAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915F0C392A07F15E0040AEAB /* EditScrapPageNameAlert.swift */; };
 		9B12C65429FA4682007B3B3F /* Destination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12C65329FA4682007B3B3F /* Destination.swift */; };
 		9B12C65629FA46E6007B3B3F /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12C65529FA46E6007B3B3F /* Coordinate.swift */; };
 		9B12C65B29FA475E007B3B3F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12C65A29FA475E007B3B3F /* User.swift */; };
@@ -266,7 +265,6 @@
 		915F0C2F2A04FEAA0040AEAB /* ScrapPageContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrapPageContent.swift; sourceTree = "<group>"; };
 		915F0C312A0578020040AEAB /* ScrapBookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrapBookViewModel.swift; sourceTree = "<group>"; };
 		915F0C342A06EC860040AEAB /* EditScrapBookDetailSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditScrapBookDetailSheet.swift; sourceTree = "<group>"; };
-		915F0C392A07F15E0040AEAB /* EditScrapPageNameAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditScrapPageNameAlert.swift; sourceTree = "<group>"; };
 		9B12C65329FA4682007B3B3F /* Destination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Destination.swift; sourceTree = "<group>"; };
 		9B12C65529FA46E6007B3B3F /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
 		9B12C65A29FA475E007B3B3F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -504,14 +502,6 @@
 				915F0C342A06EC860040AEAB /* EditScrapBookDetailSheet.swift */,
 			);
 			path = Sheet;
-			sourceTree = "<group>";
-		};
-		915F0C382A07F13C0040AEAB /* Alert */ = {
-			isa = PBXGroup;
-			children = (
-				915F0C392A07F15E0040AEAB /* EditScrapPageNameAlert.swift */,
-			);
-			path = Alert;
 			sourceTree = "<group>";
 		};
 		9B12C65729FA4745007B3B3F /* Shared */ = {
@@ -973,7 +963,6 @@
 		9B1AF1C929F23EDF00BEF767 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				915F0C382A07F13C0040AEAB /* Alert */,
 				915F0C332A06EC6C0040AEAB /* Sheet */,
 				915F0C292A03C30A0040AEAB /* Carousel */,
 				915F0C282A03C2E30040AEAB /* Background */,
@@ -2372,7 +2361,6 @@
 				9B5FF87F2A027638000B55A9 /* MDPDayView.swift in Sources */,
 				9111A45B29FD0F5700DC3FF2 /* ScrapBookRepositoryImpl.swift in Sources */,
 				9B1AF19E29F23D1000BEF767 /* CVPixelBuffer+Resize.swift in Sources */,
-				915F0C3A2A07F15E0040AEAB /* EditScrapPageNameAlert.swift in Sources */,
 				9B12C65B29FA475E007B3B3F /* User.swift in Sources */,
 				9B2A46F22A03B8F900FD7996 /* TripDateViewController.swift in Sources */,
 				9111A48A29FD274F00DC3FF2 /* CreateScrapPageForm.swift in Sources */,

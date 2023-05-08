@@ -11,6 +11,7 @@ import Combine
 class ScrapPageViewModel: ObservableObject {
     // MARK: - Attributes
     @Published private(set) var scrapPage: ScrapPage?
+    private(set) var scrapPageBuffer: ScrapPage?
     @Published private(set) var status: ScrapPageStatus = .initial
 
     // MARK: - Usecases
@@ -28,7 +29,6 @@ class ScrapPageViewModel: ObservableObject {
         self.editScrapPage = editScrapPage
         self.deleteScrapPage = deleteScrapPage
     }
-
     func loadScrapPages() {
         status = .loading
         getScrapPages.execute(params: NoParams())
@@ -40,10 +40,21 @@ class ScrapPageViewModel: ObservableObject {
                     break
                 }
             }, receiveValue: {scrappage in
-                self.scrapPage = scrappage.first
+                self.scrapPage = scrappage.first(where: {
+                    element in
+                    element.id == self.scrapPageBuffer!.id
+                })
             }).store(in: &cancellables)
     }
 
+    func setScrapPage(scrapPage:ScrapPage){
+        self.scrapPageBuffer = scrapPage
+    }
+    
+    func changeSelectedScrapPage(scrapPage: ScrapPage) {
+        self.scrapPage = scrapPage
+    }
+    
     func saveScrapPage(name: String, thumbnail: String, content: String) {
         editScrapPage.execute(params: EditScrapPageParams(scrapPage: scrapPage!, form: EditScrapPageForm(name: name, thumbnail: thumbnail, content: content)))
             .sink(receiveCompletion: {completion in

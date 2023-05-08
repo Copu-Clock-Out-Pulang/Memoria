@@ -48,10 +48,15 @@ class TripDestinationViewController: UIViewController {
         viewModel.createScrapbook()
     }
     
-    func navigateToScrapBookDetail()  {
-        let scrapBookDetail = ScrapBookDetailViewController()
+    func navigateToScrapBookDetail(book: ScrapBook) {
+//        guard let scrapBookDetail = book else {
+//            print("scrapbook empty")
+//            return
+//        }
+        let scrapBook = ScrapBookDetailViewController(scrapBook: book)
         let home = HomeViewController()
-        navigationController?.setViewControllers([home, scrapBookDetail], animated: true)
+        
+        navigationController?.setViewControllers([home, scrapBook], animated: true)
     }
 
     /*

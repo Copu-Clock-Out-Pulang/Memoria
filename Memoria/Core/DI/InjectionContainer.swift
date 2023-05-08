@@ -181,6 +181,81 @@ final class InjectionContainer {
 
 
     }
+//    private func registerScrapBookContainer(_ container: Container) {
+//        container.autoregister(ScrapBookLocalDataSource.self, initializer: ScrapBookLocalDataSourceImpl.init)
+//        container.autoregister(ScrapBookRepository.self, initializer: ScrapBookRepositoryImpl.init)
+//
+//        container.register(AnyUseCase<ScrapBook, CreateScrapBookParams>.self, name: "CreateScrapBook") { resolver in
+//            let repo = resolver.resolve(ScrapBookRepository.self)!
+//            let usecase = CreateScrapBookImpl(repository: repo)
+//            return usecase.eraseToAnyUseCase()
+//        }
+//
+//        container.register(AnyUseCase<ScrapBook, EditScrapBookParams>.self, name: "EditScrapBook") { resolver in
+//            let repo = resolver.resolve(ScrapBookRepository.self)!
+//            let usecase = EditScrapBookImpl(repository: repo)
+//            return usecase.eraseToAnyUseCase()
+//        }
+//
+//        container.register(AnyUseCase<[ScrapBook], NoParams>.self, name: "GetScrapBook") { resolver in
+//            let repo = resolver.resolve(ScrapBookRepository.self)!
+//            let usecase = GetScrapBookImpl(repository: repo)
+//            return usecase.eraseToAnyUseCase()
+//        }
+//
+//        container.register(AnyUseCase<Void, DeleteScrapBookParams>.self, name: "DeleteScrapBook") { resolver in
+//            let repo = resolver.resolve(ScrapBookRepository.self)!
+//            let usecase = DeleteScrapBookImpl(repository: repo)
+//            return usecase.eraseToAnyUseCase()
+//        }
+//        container.register(ScrapBookViewModel.self) {
+//            resolver in
+//            let createScrapBook = resolver.resolve(AnyUseCase<ScrapBook, CreateScrapBookParams>.self, name: "CreateScrapBook")!
+//            let editScrapBook = resolver.resolve(AnyUseCase<ScrapBook, EditScrapBookParams>.self, name: "EditScrapBook")!
+//            let getScrapBooks = resolver.resolve(AnyUseCase<[ScrapBook], NoParams>.self, name: "GetScrapBook")!
+//            let deleteScrapBook = resolver.resolve(AnyUseCase<Void, DeleteScrapBookParams>.self, name: "DeleteScrapBook")!
+//            return ScrapBookViewModel(createScrapBook: createScrapBook, getScrapBooks: getScrapBooks, editScrapBook: editScrapBook, deleteScrapBook: deleteScrapBook)
+//        }
+//    }
+//
+//    private func registerScrapPageContainer(_ container: Container) {
+//        container.autoregister(ScrapPageLocalDataSource.self, initializer: ScrapPageLocalDataSourceImpl.init)
+//        container.autoregister(ScrapPageRepository.self, initializer: ScrapPageRepositoryImpl.init)
+//
+//        container.register(AnyUseCase<ScrapPage, CreateScrapPageParams>.self, name: "CreateScrapPage") { resolver in
+//            let repo = resolver.resolve(ScrapPageRepository.self)!
+//            let usecase = CreateScrapPageImpl(repository: repo)
+//            return usecase.eraseToAnyUseCase()
+//        }
+//
+//        container.register(AnyUseCase<ScrapPage, EditScrapPageParams>.self, name: "EditScrapPage") { resolver in
+//            let repo = resolver.resolve(ScrapPageRepository.self)!
+//            let usecase = EditScrapPageImpl(repository: repo)
+//            return usecase.eraseToAnyUseCase()
+//        }
+//
+//        container.register(AnyUseCase<[ScrapPage], NoParams>.self, name: "GetScrapPages") { resolver in
+//            let repo = resolver.resolve(ScrapPageRepository.self)!
+//            let usecase = GetScrapPagesImpl(repository: repo)
+//            return usecase.eraseToAnyUseCase()
+//        }
+//
+//        container.register(AnyUseCase<Void, DeleteScrapPageParams>.self, name: "DeleteScrapPage") { resolver in
+//            let repo = resolver.resolve(ScrapPageRepository.self)!
+//            let usecase = DeleteScrapPageImpl(repository: repo)
+//            return usecase.eraseToAnyUseCase()
+//        }
+//        container.register(ScrapPageViewModel.self) {
+//            resolver in
+//            let createScrapPage = resolver.resolve(AnyUseCase<ScrapPage, CreateScrapPageParams>.self, name: "CreateScrapPage")!
+//            let editScrapPage = resolver.resolve(AnyUseCase<ScrapPage, EditScrapPageParams>.self, name: "EditScrapPage")!
+//            let getScrapPages = resolver.resolve(AnyUseCase<[ScrapPage], NoParams>.self, name: "GetScrapPages")!
+//            let deleteScrapPage = resolver.resolve(AnyUseCase<Void, DeleteScrapPageParams>.self, name: "DeleteScrapPage")!
+//            return ScrapPageViewModel(createScrapPage: createScrapPage, getScrapPages: getScrapPages, editScrapPage: editScrapPage, deleteScrapPage: deleteScrapPage)
+//        }
+//
+//
+//    }
     private func registerScrapBookContainer(_ container: Container) {
         container.autoregister(ScrapBookLocalDataSource.self, initializer: ScrapBookLocalDataSourceImpl.init)
         container.autoregister(ScrapBookRepository.self, initializer: ScrapBookRepositoryImpl.init)

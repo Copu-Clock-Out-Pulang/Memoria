@@ -103,7 +103,7 @@ struct TripFamilyPhotoViewUI: View {
                     .padding(.horizontal, 40)
                     .padding(.bottom, 25)
 
-                    Image("Indicators/4")
+                    Image("Indicators/5")
                         .padding(.bottom, 40)
                 }
             }

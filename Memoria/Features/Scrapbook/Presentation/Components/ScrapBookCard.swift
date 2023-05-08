@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 struct ScrapBookCard: View {
     @EnvironmentObject var scrapBookViewModel: ScrapBookViewModel
     @EnvironmentObject var scrapPageViewModel: ScrapPageViewModel
@@ -16,9 +15,12 @@ struct ScrapBookCard: View {
     @State var tripName: String // 25 characters
     @State var tripDate: String // E.g. case: 27 Jan - 3 Feb 2023
     @State var tripDescription: String // 100 characters
-    @State var selectedScrapPage = ScrapPage(id: UUID(), name: "", thumbnail: "", content: "", createdAt: Date(), updatedAt: Date())
-    @State var showSheet = false
+    @State var scrapPageName: String = ""
 
+    @State var showSheet = false
+    @State var showTextAlert = false
+    @State private var isConfirmationDialogOpened = false
+//    @State var selectedScrapPage = ScrapPage(id: UUID(), name: "", thumbnail: "", content: "", createdAt: Date(), updatedAt: Date())
     let scrapPages: [ScrapPage]
     //    let onButtonClick: () -> Void
 
@@ -29,6 +31,11 @@ struct ScrapBookCard: View {
 
     private let scrapBookDetailDecal = I.scrapBookDetailBackgroundDecal.swiftUIImage
 
+    func saveEditedScrapPage() {
+        scrapPageViewModel.saveScrapPage(name: scrapPageName, thumbnail: scrapPageViewModel.scrapPage!.thumbnail, content: scrapPageViewModel.scrapPage!.content)
+        controller.viewDidAppear(true)
+    }
+    
     var body: some View {
         GeometryReader {
             geometry in
@@ -90,11 +97,30 @@ struct ScrapBookCard: View {
                 ScrapBookCarousel(selectedCard: 1, scrapPages: scrapBookViewModel.scrapBook?.scrapPages ?? [])
                     .offset(x: 0, y: geometry.size.height * 0.3)
                 HStack(alignment: .center) {
-                    ScrapPageEditButton()
+                    ScrapPageEditButton(isConfirmationDialogOpened: $isConfirmationDialogOpened)
                     ScrapPageShareButton()
                     ScrapPageDeleteButton()
                 }.padding(.top, geometry.size.height * 0.6)
             }
-        }.ignoresSafeArea()
+        }.confirmationDialog("Edit dialog", isPresented: $isConfirmationDialogOpened){
+            Button("Edit Scrap Page Name", action: {
+                isConfirmationDialogOpened = false
+                showTextAlert = true
+            })
+            Button("Edit Scrap Page", action:
+                    {
+                isConfirmationDialogOpened = false
+                controller.navigateToScrapPageEditor(scrapPage: scrapPageViewModel.scrapPage!)
+            })
+        }.alert("Edit ScrapPage", isPresented: $showTextAlert, actions: {
+            TextField("Scrap Page Name", text: $scrapPageName)
+            Button("Confirm", action: {
+                saveEditedScrapPage()
+            })
+            Button("Cancel", role: .cancel, action: {})
+        }, message: {
+            Text("Please enter scrap page name.")
+        }).ignoresSafeArea()
+
     }
 }

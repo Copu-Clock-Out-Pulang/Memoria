@@ -27,7 +27,7 @@ struct ScrapBookDetailView: View {
                             "27 Jan - 3 Feb 2023",
                         tripDescription:
                             controller.getScrapBookInfo().tripDescription ??
-                            "Liburan terbaik bukanlah soal kemewahan, tetapi soal kebersamaan di tengah keluarga tercinta.", scrapPages: controller.scrapBook?.scrapPages ?? []
+                        "Liburan terbaik bukanlah soal kemewahan, tetapi soal kebersamaan di tengah keluarga tercinta.", scrapPages: scrapBookViewModel.scrapBook?.scrapPages ?? []
                     )
                 }
             }
