@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ScrapPageDeleteButton: View {
     @EnvironmentObject var controller: ScrapBookDetailViewController
+    @EnvironmentObject var scrapPageViewModel: ScrapPageViewModel
     @State private var showingAlert = false
 
     var body: some View {
@@ -23,7 +24,7 @@ struct ScrapPageDeleteButton: View {
                 title: Text("Delete Scrap Page"),
                 message: Text("Are you sure you want to delete this scrap page?"),
                 primaryButton: .destructive(Text("Delete")) {
-                    controller.deleteScrapPage(scrapPage: controller.scrapPage!)
+                    controller.deleteScrapPage(scrapPage: scrapPageViewModel.scrapPage!)
                     controller.viewDidLoad()
                 },
                 secondaryButton: .cancel()

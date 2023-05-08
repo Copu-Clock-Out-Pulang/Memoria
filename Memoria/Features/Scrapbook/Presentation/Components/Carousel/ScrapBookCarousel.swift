@@ -39,7 +39,7 @@ struct ScrapBookCarousel: View {
                                         self.selectedCard = index
                                         print(index)
                                         if index != 0 {
-                                            scrapPageViewModel.setScrapPage(scrapPage: scrapPages[index - 1])
+                                            scrapPageViewModel.changeSelectedScrapPage(scrapPage: scrapPages[index - 1])
 //                                            controller.index = index - 1
                                         } else {
 //                                            controller.index = 0

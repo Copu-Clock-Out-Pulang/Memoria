@@ -51,6 +51,10 @@ class ScrapPageViewModel: ObservableObject {
         self.scrapPageBuffer = scrapPage
     }
     
+    func changeSelectedScrapPage(scrapPage: ScrapPage) {
+        self.scrapPage = scrapPage
+    }
+    
     func saveScrapPage(name: String, thumbnail: String, content: String) {
         editScrapPage.execute(params: EditScrapPageParams(scrapPage: scrapPage!, form: EditScrapPageForm(name: name, thumbnail: thumbnail, content: content)))
             .sink(receiveCompletion: {completion in

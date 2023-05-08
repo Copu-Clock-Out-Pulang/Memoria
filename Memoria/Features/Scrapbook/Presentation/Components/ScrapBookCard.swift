@@ -110,7 +110,7 @@ struct ScrapBookCard: View {
             Button("Edit Scrap Page", action:
                     {
                 isConfirmationDialogOpened = false
-                controller.navigateToScrapPageEditor(scrapPage: controller.scrapPage!)
+                controller.navigateToScrapPageEditor(scrapPage: scrapPageViewModel.scrapPage!)
             })
         }.alert("Edit ScrapPage", isPresented: $showTextAlert, actions: {
             TextField("Scrap Page Name", text: $scrapPageName)
