@@ -28,25 +28,35 @@ struct HomeViewUI: View {
                                 let uiImage = UIImage(data: Data(base64Encoded: scrapBookInfo.thumbnail)!) // Replace 'Data()' with the actual image data
                                 
                                 if index % 6 == 0 {
-                                    TitleDate1(title: scrapBookInfo.name, date: scrapBookInfo.date, image: uiImage!)
+                                    TitleDate1(title: scrapBookInfo.name, date: scrapBookInfo.date, image: uiImage!).onTapGesture {
+                                        controller.navigateToScrapBook(scrapBook: scrapBookInfo.scrapBook)
+                                    }
                                 } else if index % 6 == 1 {
-                                    TitleDate2(title: scrapBookInfo.name, date: scrapBookInfo.date, image: uiImage!)
+                                    TitleDate2(title: scrapBookInfo.name, date: scrapBookInfo.date, image: uiImage!).onTapGesture {
+                                        controller.navigateToScrapBook(scrapBook: scrapBookInfo.scrapBook)
+                                    }
                                 } else if index % 6 == 2 {
-                                    TitleDate3(title: scrapBookInfo.name, date: scrapBookInfo.date, image: uiImage!)
+                                    TitleDate3(title: scrapBookInfo.name, date: scrapBookInfo.date, image: uiImage!).onTapGesture {
+                                        controller.navigateToScrapBook(scrapBook: scrapBookInfo.scrapBook)
+                                    }
                                 } else if index % 6 == 3 {
-                                    TitleDate4(title: scrapBookInfo.name, date: scrapBookInfo.date, image: uiImage!)
+                                    TitleDate4(title: scrapBookInfo.name, date: scrapBookInfo.date, image: uiImage!).onTapGesture {
+                                        controller.navigateToScrapBook(scrapBook: scrapBookInfo.scrapBook)
+                                    }
                                 } else if index % 6 == 4 {
-                                    TitleDate5(title: scrapBookInfo.name, date: scrapBookInfo.date, image: uiImage!)
+                                    TitleDate5(title: scrapBookInfo.name, date: scrapBookInfo.date, image: uiImage!).onTapGesture {
+                                        controller.navigateToScrapBook(scrapBook: scrapBookInfo.scrapBook)
+                                    }
                                 } else {
-                                    TitleDate6(title: scrapBookInfo.name, date: scrapBookInfo.date, image: uiImage!)
+                                    TitleDate6(title: scrapBookInfo.name, date: scrapBookInfo.date, image: uiImage!).onTapGesture {
+                                        controller.navigateToScrapBook(scrapBook: scrapBookInfo.scrapBook)
+                                    }
                                 }
                             }
                             .frame(width: geometry.size.width, height: geometry.size.height, alignment: .top)
                         }
                     }
-                    .onTapGesture {
-                        controller.navigateToScrapBook(scrapBook: scrapBookInfo.scrapBook)
-                    }
+
                 }
             }
             .ignoresSafeArea()
