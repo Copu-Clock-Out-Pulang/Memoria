@@ -21,21 +21,23 @@ struct TripFamilyPhotoViewUI: View {
     var body: some View {
         ZStack {
             I.TripBackgrounds.tripBackground5.swiftUIImage.resizable().scaledToFill()
+            
             VStack(spacing: 20) {
                 Spacer()
+                
                 Text(S.dstAddYourFamilyPhoto)
                     .font(Font.custom("LilitaOne", size: 40))
                     .multilineTextAlignment(.center
                     )
                     .foregroundColor(I.textPrimary.swiftUIColor)
                     .padding()
+                
                 if viewModel.familyPhoto == nil {
                     I.familyIllustration.swiftUIImage
                         .resizable()
                         .scaledToFit()
                         .rotationEffect(Angle(degrees: -11))
                 } else {
-
                     if viewModel.familyPhoto!.size.height > viewModel.familyPhoto!.size.width {
                         let current = viewModel.familyPhoto!
                         let x = current.rotated(by: -270)
@@ -45,9 +47,8 @@ struct TripFamilyPhotoViewUI: View {
                         let image = Image(uiImage: viewModel.familyPhoto!)
                         PhoneFrame(image: image).rotationEffect(Angle(degrees: -11))
                     }
-
-
                 }
+                
                 Button {
                     showImagePicker.toggle()
                 }
@@ -57,15 +58,12 @@ struct TripFamilyPhotoViewUI: View {
                             .font(Font.custom("Poppins-Bold", size: 20))
 
                     }.frame(maxWidth: .infinity, minHeight: 50)
-
                 }
                 .background(I.secondaryButton.swiftUIColor)
                 .foregroundColor(.white)
-
                 .clipShape(Capsule())
                 .shadow(radius: 2, y: 3)
                 .padding(.horizontal, 40)
-
 
                 Button {
                     showCameraCaptureView.toggle()
@@ -74,43 +72,41 @@ struct TripFamilyPhotoViewUI: View {
                     Text(S.dstTakePhoto)
                         .font(Font.custom("Poppins-Bold", size: 20))
                         .frame(maxWidth: .infinity, minHeight: 50)
-
                 }
-
                 .background(.white)
                 .cornerRadius(25)
                 .foregroundColor(I.secondaryButton.swiftUIColor)
                 .overlay(RoundedRectangle(cornerRadius: 25).stroke(I.secondaryButton.swiftUIColor, lineWidth: 3))
-
-
                 .shadow(radius: 2, y: 3)
                 .padding(.horizontal, 40)
 
                 Spacer()
-                Button {
-                    showConfirmation.toggle()
-                    print("Done Clicked")
+                
+                VStack {
+                    Button {
+                        showConfirmation.toggle()
+                        print("Done Clicked")
+                    }
+                    label: {
+                        Text(S.dstDone.uppercased())
+                            .font(Font.custom("Poppins-Bold", size: 20))
+                            .frame(maxWidth: .infinity, minHeight: 50)
+
+                    }
+                    .disabled(viewModel.familyPhoto == nil)
+                    .background(viewModel.familyPhoto == nil ?
+                                    I.disabledButton.swiftUIColor :
+                                    I.primaryButton.swiftUIColor)
+                    .foregroundColor(.white)
+                    .clipShape(Capsule())
+                    .shadow(radius: 2, y: 3)
+                    .padding(.horizontal, 40)
+                    .padding(.bottom, 25)
+
+                    Image("Indicators/4")
+                        .padding(.bottom, 40)
                 }
-                label: {
-                    Text(S.dstDone.uppercased())
-                        .font(Font.custom("Poppins-Bold", size: 20))
-                        .frame(maxWidth: .infinity, minHeight: 50)
-
-                }
-                .disabled(viewModel.familyPhoto == nil)
-                .background(viewModel.familyPhoto == nil ?
-                                I.disabledButton.swiftUIColor :
-                                I.primaryButton.swiftUIColor)
-                .foregroundColor(.white)
-                .clipShape(Capsule())
-                .shadow(radius: 2, y: 3)
-                .padding(.horizontal, 40)
-                .padding(.bottom, 80)
-
-
             }
-
-
         }
         .ignoresSafeArea()
         .sheet(isPresented: $showImagePicker) {

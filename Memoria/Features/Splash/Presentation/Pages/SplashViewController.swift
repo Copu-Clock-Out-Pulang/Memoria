@@ -102,18 +102,17 @@ class SplashViewController: UIViewController {
     }
 
     func navigateToNextPage() {
-        let isFirst = false
+        let isFirst = viewModel.isOnBoardingDisplayed
 
-        if isFirst {
+        if !isFirst {
             self.navigateToOnboarding()
-
         } else {
             self.navigateToHomeScreen()
         }
     }
 
     private func navigateToOnboarding() {
-
+        navigationController?.setViewControllers([FirstOnBoardingViewController()], animated: true)
     }
 
     private func navigateToHomeScreen() {
