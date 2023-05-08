@@ -16,6 +16,7 @@ struct ScrapBookCard: View {
     @State var tripDate: String // E.g. case: 27 Jan - 3 Feb 2023
     @State var tripDescription: String // 100 characters
     @State var scrapPageName: String = ""
+    @State var selectedCard: Int = 0
 
     @State var showSheet = false
     @State var showTextAlert = false
@@ -94,12 +95,14 @@ struct ScrapBookCard: View {
                     }
                     // scrapbook carousel
                 }
-                ScrapBookCarousel(selectedCard: 1, scrapPages: scrapBookViewModel.scrapBook?.scrapPages ?? [])
+                ScrapBookCarousel(selectedCard: $selectedCard, scrapPages: scrapBookViewModel.scrapBook?.scrapPages ?? [])
                     .offset(x: 0, y: geometry.size.height * 0.3)
                 HStack(alignment: .center) {
-                    ScrapPageEditButton(isConfirmationDialogOpened: $isConfirmationDialogOpened)
-                    ScrapPageShareButton()
-                    ScrapPageDeleteButton()
+                    if !(scrapBookViewModel.scrapBook?.scrapPages.isEmpty)! && selectedCard != 0 {
+                        ScrapPageEditButton(isConfirmationDialogOpened: $isConfirmationDialogOpened)
+                        ScrapPageShareButton()
+                        ScrapPageDeleteButton(selectedCard: $selectedCard)
+                    }
                 }.padding(.top, geometry.size.height * 0.6)
             }
         }.confirmationDialog("Edit dialog", isPresented: $isConfirmationDialogOpened){
