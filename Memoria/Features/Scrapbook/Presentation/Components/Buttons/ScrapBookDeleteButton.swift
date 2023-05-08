@@ -25,7 +25,7 @@ struct ScrapPageDeleteButton: View {
                 message: Text("Are you sure you want to delete this scrap page?"),
                 primaryButton: .destructive(Text("Delete")) {
                     controller.deleteScrapPage(scrapPage: scrapPageViewModel.scrapPage!)
-                    controller.viewDidLoad()
+                    controller.viewDidAppear(true )
                 },
                 secondaryButton: .cancel()
             )
