@@ -112,30 +112,30 @@ class ScrapBookDetailViewController: UIViewController, ObservableObject {
         navigationController?.toolbar.backgroundColor = .clear
         scrapBookViewModel.loadScrapBooks()
 
-        if scrapBook == nil {
-            scrapBookViewModel.addScrapBook(
-                form: CreateScrapBookForm(
-                    name: "Green Office Park",
-                    quote: "Jalan Jalan ke Kota Hijau",
-                    scrapPages: [],
-                    selectedRecommendations: [],
-                    startDate: Date.now,
-                    endDate: Date.now))
-        }
+//        if scrapBook == nil {
+//            scrapBookViewModel.addScrapBook(
+//                form: CreateScrapBookForm(
+//                    name: "Green Office Park",
+//                    quote: "Jalan Jalan ke Kota Hijau",
+//                    scrapPages: [],
+//                    selectedRecommendations: [],
+//                    startDate: Date.now,
+//                    endDate: Date.now))
+//        }
         scrapBookViewModel.loadScrapBooks()
         scrapBook = scrapBookViewModel.scrapBook
         scrapPageViewModel.loadScrapPages()
         scrapPage = scrapBook?.scrapPages.first
-        if scrapPage == nil {
-            scrapPageViewModel.addScrapPage(form: CreateScrapPageForm(
-                                                id: UUID(),
-                                                name: "New Scrap Page",
-                                                thumbnail: "",
-                                                content: scrapBookEditorViewModel.makeEmptyContent(),
-                                                createdAt: Date.now,
-                                                updatedAt: Date.now,
-                                                scrapBook: scrapBook!))
-        }
+//        if scrapPage == nil {
+//            scrapPageViewModel.addScrapPage(form: CreateScrapPageForm(
+//                                                id: UUID(),
+//                                                name: "New Scrap Page",
+//                                                thumbnail: "",
+//                                                content: scrapBookEditorViewModel.makeEmptyContent(),
+//                                                createdAt: Date.now,
+//                                                updatedAt: Date.now,
+//                                                scrapBook: scrapBook!))
+//        }
         scrapPageViewModel.loadScrapPages()
 
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Poppins-Bold", size: 22)!]

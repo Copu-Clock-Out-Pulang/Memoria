@@ -46,7 +46,7 @@ public class HomeViewController: UIViewController, ObservableObject {
         
         var result = [(name: String, date: String, quote: String, thumbnail: String)]()
         for scrapBook in scrapBooksData {
-            let info = (name: scrapBook.name, date: formatDateRange(start: scrapBook.startDate ?? Date.now, end: scrapBook.endDate ?? Date.now), quote: scrapBook.quote, thumbnail: scrapBook.scrapPages.first!.thumbnail)
+            let info = (name: scrapBook.name, date: formatDateRange(start: scrapBook.startDate ?? Date.now, end: scrapBook.endDate ?? Date.now), quote: scrapBook.quote, thumbnail: scrapBook.scrapPages.first?.thumbnail ?? I.scrapPageThumbnailNew.image(compatibleWith: .current).pngData()!.base64EncodedString())
             result.append(info)
         }
         return result
@@ -91,6 +91,18 @@ public class HomeViewController: UIViewController, ObservableObject {
     public override func viewDidLoad() {
         super.viewDidLoad()
  
+        self.title = S.appName
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "add"), style: .plain, target: self, action: #selector(self.navigateToTrip))
+
+    }
+    
+    func navigateToTrip() {
+        let vm = InjectionContainer.shared.container.resolve(DestinationViewModel.self)!
+        navigationController?.pushViewController(TripNameViewController(viewModel: vm), animated: true)
+    }
+    
+    func navigateToScrapBook(scrapBook: ScrapBook) {
+        navigationController?.pushViewController(ScrapBookDetailViewController(scrapBook: scrapBook), animated: true)
     }
     
 }
