@@ -10,7 +10,7 @@ import SwiftUI
 struct HomeViewUI: View {
     @ObservedObject var controller: HomeViewController
     @ObservedObject var scrapBookViewModel: ScrapBookViewModel
-    @State var books: [(name: String, date: String, quote: String, thumbnail: String)] = []
+    @State var books: [(name: String, date: String, quote: String, thumbnail: String, scrapBook: ScrapBook)] = []
     var body: some View {
         
         var columns: [GridItem] = Array(repeating: .init(.flexible()), count: 2)
@@ -18,13 +18,13 @@ struct HomeViewUI: View {
         ScrollView(showsIndicators: false) {
             LazyVStack(spacing: 0) {
                 ForEach(books.indices, id: \.self) { index in
+                    let scrapBookInfo = books[index]
                     ZStack {
                         Image("HomeBackground")
                             .resizable()
                             .scaledToFit()
                         GeometryReader { geometry in
                             VStack(spacing: 150) {
-                                let scrapBookInfo = books[index]
                                 let uiImage = UIImage(data: Data(base64Encoded: scrapBookInfo.thumbnail)!) // Replace 'Data()' with the actual image data
                                 
                                 if index % 6 == 0 {
@@ -43,6 +43,9 @@ struct HomeViewUI: View {
                             }
                             .frame(width: geometry.size.width, height: geometry.size.height, alignment: .top)
                         }
+                    }
+                    .onTapGesture {
+                        controller.navigateToScrapBook(scrapBook: scrapBookInfo.scrapBook)
                     }
                 }
             }

@@ -41,12 +41,10 @@ public class HomeViewController: UIViewController, ObservableObject {
     }
 
     
-    func getScrapBookInfo(scrapBooksData: [ScrapBook]) -> [(name: String, date: String, quote: String, thumbnail: String)] {
-
-        
-        var result = [(name: String, date: String, quote: String, thumbnail: String)]()
+    func getScrapBookInfo(scrapBooksData: [ScrapBook]) -> [(name: String, date: String, quote: String, thumbnail: String, scrapBook: ScrapBook)] {
+        var result = [(name: String, date: String, quote: String, thumbnail: String, scrapBook: ScrapBook)]()
         for scrapBook in scrapBooksData {
-            let info = (name: scrapBook.name, date: formatDateRange(start: scrapBook.startDate ?? Date.now, end: scrapBook.endDate ?? Date.now), quote: scrapBook.quote, thumbnail: scrapBook.scrapPages.first?.thumbnail ?? I.scrapPageThumbnailNew.image(compatibleWith: .current).pngData()!.base64EncodedString())
+            let info = (name: scrapBook.name, date: formatDateRange(start: scrapBook.startDate ?? Date.now, end: scrapBook.endDate ?? Date.now), quote: scrapBook.quote, thumbnail: scrapBook.scrapPages.first?.thumbnail ?? I.scrapPageThumbnailNew.image(compatibleWith: .current).pngData()!.base64EncodedString(), scrapBook: scrapBook)
             result.append(info)
         }
         return result
@@ -76,6 +74,14 @@ public class HomeViewController: UIViewController, ObservableObject {
         
         //MARK: BRING SWIFTUI TO UIKIT
         
+        
+    }
+    public override func viewDidLoad() {
+        super.viewDidLoad()
+ 
+        self.title = S.appName
+        self.navigationItem.setRightBarButton(UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: #selector(self.navigateToTrip)), animated: true)
+        
         let hostingController = UIHostingController(
             rootView: HomeViewUI(
             controller: self, scrapBookViewModel: scrapBookViewModel))
@@ -86,17 +92,10 @@ public class HomeViewController: UIViewController, ObservableObject {
             make.leading.trailing.top.bottom.equalTo(view)
         }
         hostingController.didMove(toParent: self)
-        
-    }
-    public override func viewDidLoad() {
-        super.viewDidLoad()
- 
-        self.title = S.appName
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "add"), style: .plain, target: self, action: #selector(self.navigateToTrip))
 
     }
     
-    func navigateToTrip() {
+   @objc func navigateToTrip() {
         let vm = InjectionContainer.shared.container.resolve(DestinationViewModel.self)!
         navigationController?.pushViewController(TripNameViewController(viewModel: vm), animated: true)
     }
