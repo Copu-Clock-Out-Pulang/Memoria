@@ -78,9 +78,9 @@ class ScrapbookEditorViewController: UIViewController, PKCanvasViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print("ScrapPage Title", scrapPageName!)
-        print("ScrapPage Content", scrapPageContent!)
-        print("ScrapPage Thumbnail", scrapPageThumbnail!)
+//        print("ScrapPage Title", scrapPageName!)
+//        print("ScrapPage Content", scrapPageContent!)
+//        print("ScrapPage Thumbnail", scrapPageThumbnail!)
 
         editorViewModel.background.frame = view.frame
         view.insertSubview(editorViewModel.background, at: 0)

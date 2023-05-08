@@ -99,7 +99,7 @@ struct TripDestinationUI: View {
             }
             }.onReceive(viewModel.$createdScrapBook) { scrapBook in
                 if scrapBook != nil {
-                    viewController.navigateToScrapBookDetail()
+                    viewController.navigateToScrapBookDetail(book: scrapBook!)
                 }
         }
     }

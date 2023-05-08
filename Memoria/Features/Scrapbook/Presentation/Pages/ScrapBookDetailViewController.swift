@@ -35,10 +35,11 @@ class ScrapBookDetailViewController: UIViewController, ObservableObject {
     }
     
     func addScrapPage() -> ScrapPage {
+        let thumbnail = I.scrapPageThumbnailNew.image(compatibleWith: .current).pngData()!.base64EncodedString()
         scrapPageViewModel.addScrapPage(form: CreateScrapPageForm(
             id: UUID(),
             name: "New Scrap Page",
-            thumbnail: "",
+            thumbnail: thumbnail,
             content: scrapBookEditorViewModel.makeEmptyContent(),
             createdAt: Date.now,
             updatedAt: Date.now,
