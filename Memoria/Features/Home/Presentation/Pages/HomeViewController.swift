@@ -1,4 +1,4 @@
-//
+//swiftlint:disable large_tuple
 //  HomeViewController.swift
 //  Memoria
 //

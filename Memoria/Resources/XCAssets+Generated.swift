@@ -75,6 +75,15 @@ internal enum I {
   internal static let editButtonIcon = ImageAsset(name: "EditButtonIcon")
   internal static let editScrapPageButtonIcon = ImageAsset(name: "EditScrapPageButtonIcon")
   internal static let familyIllustration = ImageAsset(name: "FamilyIllustration")
+  internal static let homeBackground = ImageAsset(name: "HomeBackground")
+  internal static let homeFrame = ImageAsset(name: "HomeFrame")
+  internal enum Indicators {
+    internal static let _1 = ImageAsset(name: "Indicators/1")
+    internal static let _2 = ImageAsset(name: "Indicators/2")
+    internal static let _3 = ImageAsset(name: "Indicators/3")
+    internal static let _4 = ImageAsset(name: "Indicators/4")
+    internal static let _5 = ImageAsset(name: "Indicators/5")
+  }
   internal enum Jakarta {
     internal static let dufan = ImageAsset(name: "Dufan")
     internal static let gbk = ImageAsset(name: "GBK")
@@ -82,6 +91,11 @@ internal enum I {
     internal static let monas = ImageAsset(name: "Monas")
     internal static let ragunan = ImageAsset(name: "Ragunan")
     internal static let tmii = ImageAsset(name: "TMII")
+  }
+  internal enum OnBoarding {
+    internal static let _1 = ImageAsset(name: "OnBoarding/1")
+    internal static let _2 = ImageAsset(name: "OnBoarding/2")
+    internal static let _3 = ImageAsset(name: "OnBoarding/3")
   }
   internal static let phoneFrame = ImageAsset(name: "PhoneFrame")
   internal static let primaryButton = ColorAsset(name: "PrimaryButton")
