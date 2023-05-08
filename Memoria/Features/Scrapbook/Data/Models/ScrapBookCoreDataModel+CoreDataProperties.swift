@@ -74,8 +74,8 @@ extension ScrapBookCoreDataModel {
             scrapPages: (self.scrapPages!.allObjects as! [ScrapPageCoreDataModel]).map { $0.toDomain() },
             quote: self.quote!,
             name: self.name!,
-            startDate: self.startDate!,
-            endDate: self.endDate!,
+            startDate: self.startDate,
+            endDate: self.endDate,
             createdAt: self.createdAt!,
             updatedAt: self.updatedAt!
         )

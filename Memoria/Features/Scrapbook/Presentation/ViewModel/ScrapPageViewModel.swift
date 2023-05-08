@@ -11,6 +11,8 @@ import Combine
 class ScrapPageViewModel: ObservableObject {
     // MARK: - Attributes
     @Published private(set) var scrapPage: ScrapPage?
+    @Published private(set) var scrapBook: ScrapBook?
+    private(set) var scrapPageBuffer: ScrapPage?
     @Published private(set) var status: ScrapPageStatus = .initial
 
     // MARK: - Usecases
@@ -28,7 +30,7 @@ class ScrapPageViewModel: ObservableObject {
         self.editScrapPage = editScrapPage
         self.deleteScrapPage = deleteScrapPage
     }
-
+    
     func loadScrapPages() {
         status = .loading
         getScrapPages.execute(params: NoParams())
@@ -40,10 +42,21 @@ class ScrapPageViewModel: ObservableObject {
                     break
                 }
             }, receiveValue: {scrappage in
-                self.scrapPage = scrappage.first
+                self.scrapPage = scrappage.first(where: {
+                    element in
+                    element.id == self.scrapPageBuffer!.id
+                })
             }).store(in: &cancellables)
     }
 
+    func setScrapPage(scrapPage:ScrapPage){
+        self.scrapPageBuffer = scrapPage
+    }
+    
+    func changeSelectedScrapPage(scrapPage: ScrapPage) {
+        self.scrapPage = scrapPage
+    }
+    
     func saveScrapPage(name: String, thumbnail: String, content: String) {
         editScrapPage.execute(params: EditScrapPageParams(scrapPage: scrapPage!, form: EditScrapPageForm(name: name, thumbnail: thumbnail, content: content)))
             .sink(receiveCompletion: {completion in
@@ -71,11 +84,13 @@ class ScrapPageViewModel: ObservableObject {
             }, receiveValue: {
                 scrappage in
                 self.scrapPage = scrappage
-                self.loadScrapPages()
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    self.loadScrapPages()
+                }
             }).store(in: &cancellables)
     }
 
-    func deleteScrapPage(scrapPage: ScrapPage) {
+    func deleteScrapPage(scrapPage: ScrapPage, nextScrapPage: ScrapPage) {
         deleteScrapPage.execute(params: DeleteScrapPageParams(scrapPage: scrapPage))
             .sink(receiveCompletion: {completion in
                 switch completion {
@@ -85,7 +100,10 @@ class ScrapPageViewModel: ObservableObject {
                     break
                 }
             }, receiveValue: {
+                self.scrapPageBuffer = nextScrapPage
                 self.loadScrapPages()
+                self.changeSelectedScrapPage(scrapPage: nextScrapPage)
+                print(self.scrapPage?.name)
             }).store(in: &cancellables)
     }
 }

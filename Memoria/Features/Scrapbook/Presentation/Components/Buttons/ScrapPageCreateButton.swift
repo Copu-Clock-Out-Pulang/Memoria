@@ -12,7 +12,7 @@ struct ScrapPageCreateButton: View {
     var body: some View {
         Button(action: {
             controller.addScrapPage()
-            controller.viewDidLoad()
+            controller.viewDidAppear(true)
             print("scrapbook edit button pressed")
         }
         ) {
