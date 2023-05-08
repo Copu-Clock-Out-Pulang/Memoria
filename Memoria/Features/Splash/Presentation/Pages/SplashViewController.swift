@@ -119,7 +119,7 @@ class SplashViewController: UIViewController {
     private func navigateToHomeScreen() {
         // TODO: Change to real HomeScreen
         let destinationViewModel = InjectionContainer.shared.container.resolve(DestinationViewModel.self)!
-        let homeScreen = TripNameViewController(viewModel: destinationViewModel)
+        let homeScreen = HomeViewController()
         navigationController?.setViewControllers([homeScreen], animated: true)
 
     }
