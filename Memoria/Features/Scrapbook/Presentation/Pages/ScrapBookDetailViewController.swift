@@ -26,15 +26,14 @@ class ScrapBookDetailViewController: UIViewController, ObservableObject {
         super.init(nibName: nil, bundle: nil)
         self.scrapBook = scrapBook
         scrapBookViewModel.setScrapBook(scrapBook: scrapBook)
-        scrapPageViewModel.setScrapPage(scrapPage: scrapBook.scrapPages.first!
-        )
+        scrapPageViewModel.setScrapPage(scrapPage: scrapBook.scrapPages.first!)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func addScrapPage() -> ScrapPage {
+    func addScrapPage() {
         let thumbnail = I.scrapPageThumbnailNew.image(compatibleWith: .current).pngData()!.base64EncodedString()
         scrapPageViewModel.addScrapPage(form: CreateScrapPageForm(
             id: UUID(),
@@ -44,13 +43,13 @@ class ScrapBookDetailViewController: UIViewController, ObservableObject {
             createdAt: Date.now,
             updatedAt: Date.now,
             scrapBook: scrapBookViewModel.scrapBook!
-        )
-        )
-        return scrapPageViewModel.scrapPage!
+        ))
+//        return scrapPageViewModel.scrapPage!
     }
 
-    func deleteScrapPage(scrapPage: ScrapPage) {
-        scrapPageViewModel.deleteScrapPage(scrapPage: scrapPage)
+    func deleteScrapPage(scrapPage: ScrapPage, nextScrapPage: ScrapPage) {
+        scrapPageViewModel.deleteScrapPage(scrapPage: scrapPage, nextScrapPage: nextScrapPage)
+        self.viewDidAppear(true)
     }
 
     func selectScrapPage(scrapPage: ScrapPage) {
@@ -116,6 +115,8 @@ class ScrapBookDetailViewController: UIViewController, ObservableObject {
 
     override func viewDidAppear(_ animated: Bool) {
         navigationController?.toolbar.backgroundColor = .clear
+        navigationController?.isToolbarHidden = true
+        
 //        scrapBookViewModel.loadScrapBooks()
 //
 //        if scrapBook == nil {
@@ -130,7 +131,7 @@ class ScrapBookDetailViewController: UIViewController, ObservableObject {
 //        }
         scrapBookViewModel.loadScrapBooks()
         scrapPageViewModel.loadScrapPages()
-        scrapPage = scrapBook?.scrapPages.first
+        scrapPage = scrapBookViewModel.scrapBook?.scrapPages.first
 //        if scrapPage == nil {
 //            scrapPageViewModel.addScrapPage(form: CreateScrapPageForm(
 //                                                id: UUID(),
@@ -142,6 +143,7 @@ class ScrapBookDetailViewController: UIViewController, ObservableObject {
 //                                                scrapBook: scrapBook!))
 //        }
 //        scrapPageViewModel.loadScrapPages()
+
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Poppins-Bold", size: 22)!]
 
         self.title = scrapBookTitle

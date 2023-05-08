@@ -10,7 +10,7 @@ import SwiftUI
 struct ScrapBookCarousel: View {
     @EnvironmentObject var controller: ScrapBookDetailViewController
     @EnvironmentObject var scrapPageViewModel: ScrapPageViewModel
-    @State var selectedCard: Int = 0
+    @Binding var selectedCard: Int
     @GestureState var isLongPress = false
     private let cardSpacing: CGFloat = 10
 

@@ -45,6 +45,9 @@ class TripDestinationViewController: UIViewController {
     }
     
     @objc func createScrapBook() {
+        if viewModel.selectedRecommendation.isEmpty {
+            return
+        }
         viewModel.createScrapbook()
     }
     

@@ -17,6 +17,8 @@ struct ScrapBookCard: View {
     @State var tripDescription: String // 100 characters
     @State var scrapPageName: String = ""
 
+    @State var selectedCard: Int = 0
+
     @State var showSheet = false
     @State var showTextAlert = false
     @State private var isConfirmationDialogOpened = false
@@ -94,12 +96,14 @@ struct ScrapBookCard: View {
                     }
                     // scrapbook carousel
                 }
-                ScrapBookCarousel(selectedCard: 1, scrapPages: scrapBookViewModel.scrapBook?.scrapPages ?? [])
+                ScrapBookCarousel(selectedCard: $selectedCard, scrapPages: scrapBookViewModel.scrapBook?.scrapPages ?? [])
                     .offset(x: 0, y: geometry.size.height * 0.3)
                 HStack(alignment: .center) {
-                    ScrapPageEditButton(isConfirmationDialogOpened: $isConfirmationDialogOpened)
-                    ScrapPageShareButton()
-                    ScrapPageDeleteButton()
+                    if !(scrapBookViewModel.scrapBook?.scrapPages.isEmpty)! && selectedCard != 0 {
+                        ScrapPageEditButton(isConfirmationDialogOpened: $isConfirmationDialogOpened)
+                        ScrapPageShareButton()
+                        ScrapPageDeleteButton(selectedCard: $selectedCard)
+                    }
                 }.padding(.top, geometry.size.height * 0.6)
             }
         }.confirmationDialog("Edit dialog", isPresented: $isConfirmationDialogOpened){
