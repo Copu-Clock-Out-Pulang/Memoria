@@ -11,81 +11,83 @@ import Vision
 import Combine
 
 protocol ImageSegmentor {
+    /**
+     Generate Segmentation Mask by seperating object and background
+     - Parameter input: An Image with a person
+     - Returns: A black and white image mask
+     */
     func detectPerson(input: UIImage?) -> AnyPublisher<UIImage, Failure>
 }
 
 class ImageSegmentorImpl: ImageSegmentor {
 
+    // MARK: - Implementations
     func detectPerson(input: UIImage?) -> AnyPublisher<UIImage, Failure> {
-        
-        return Future {[weak self] promise in
-            guard let self = self else {
-                debugPrint("self not found")
-                promise(.failure(Failure.imageGenerationFailure))
-                return
-            }
-            
-            guard let image = input else {
-                debugPrint("input is Empty")
-                promise(.failure(Failure.imageGenerationFailure))
-                return
-            
-            }
-            guard let model = self.getMLModel() else {
-                debugPrint("cannot get ML Model")
-                promise(.failure(Failure.imageGenerationFailure))
-                return
-            }
 
-            guard let vnCoreMLModel = try? VNCoreMLModel(for: model) else {
-                debugPrint("cannot create ml model")
-                promise(.failure(Failure.imageGenerationFailure))
-                return
-            }
 
-            guard let request = self.createRequest(model: vnCoreMLModel) else {
-                debugPrint("cannot create ml request")
-                promise(.failure(Failure.imageGenerationFailure))
-                return
-            }
-            guard let cgImage = image.cgImage else {
-                debugPrint("Cannot convert to CIImage")
-                promise(.failure(Failure.imageGenerationFailure))
-                return
-            }
+        guard let image = input else {
+            debugPrint("input is Empty")
+//            promise(.failure(Failure.imageGenerationFailure))
+            return Fail(error: Failure.imageGenerationFailure).eraseToAnyPublisher()
 
-            let handler = VNImageRequestHandler(cgImage: cgImage, options: [:])
-            do {
-                try handler.perform([request])
-            } catch {
-                debugPrint(error)
-                promise(.failure(Failure.imageGenerationFailure))
-                return
-            }
-
-            // Extract the segmentation mask from the request's results
-            guard let observation = request.results as? [VNCoreMLFeatureValueObservation] else {
-                debugPrint("cannot create segmentation mask")
-                promise(.failure(Failure.imageGenerationFailure))
-                return
-            }
-
-            let segmentationMap = observation.first?.featureValue.multiArrayValue
-            let segmentationMask = segmentationMap?.image(min: 0, max: 1)
-            guard let outputMask = segmentationMask?.resizedImage(for: image.size) else {
-                debugPrint("cannot create output mask")
-                promise(.failure(Failure.imageGenerationFailure))
-                return
-            }
-
-            DispatchQueue.main.async {
-                promise(.success(outputMask))
-            }
         }
+        guard let model = self.getMLModel() else {
+            debugPrint("cannot get ML Model")
+//            promise(.failure(Failure.imageGenerationFailure))
+            return Fail(error: Failure.imageGenerationFailure).eraseToAnyPublisher()
+        }
+
+        guard let vnCoreMLModel = try? VNCoreMLModel(for: model) else {
+            debugPrint("cannot create ml model")
+//            promise(.failure(Failure.imageGenerationFailure))
+            return Fail(error: Failure.imageGenerationFailure).eraseToAnyPublisher()
+        }
+
+        guard let request = self.createRequest(model: vnCoreMLModel) else {
+            debugPrint("cannot create ml request")
+//            promise(.failure(Failure.imageGenerationFailure))
+            return Fail(error: Failure.imageGenerationFailure).eraseToAnyPublisher()
+        }
+
+        guard let cgImage = image.cgImage else {
+            debugPrint("Cannot convert to CIImage")
+//            promise(.failure(Failure.imageGenerationFailure))
+            return Fail(error: Failure.imageGenerationFailure).eraseToAnyPublisher()
+        }
+
+        let handler = VNImageRequestHandler(cgImage: cgImage, options: [:])
+        do {
+            try handler.perform([request])
+        } catch {
+            debugPrint(error)
+//            promise(.failure(Failure.imageGenerationFailure))
+            return Fail(error: Failure.imageGenerationFailure).eraseToAnyPublisher()
+        }
+
+        // Extract the segmentation mask from the request's results
+        guard let observation = request.results as? [VNCoreMLFeatureValueObservation] else {
+            debugPrint("cannot create segmentation mask")
+//            promise(.failure(Failure.imageGenerationFailure))
+            return Fail(error: Failure.imageGenerationFailure).eraseToAnyPublisher()
+        }
+
+        let segmentationMap = observation.first?.featureValue.multiArrayValue
+
+        let segmentationMask = segmentationMap?.image(min: 0, max: 1)
+        guard let outputMask = segmentationMask?.resizedImage(for: image.size) else {
+            debugPrint("cannot create output mask")
+//            promise(.failure(Failure.imageGenerationFailure))
+            return Fail(error: Failure.imageGenerationFailure).eraseToAnyPublisher()
+        }
+
+        
+        return Just(outputMask).setFailureType(to: Failure.self)
         .eraseToAnyPublisher()
 
 
     }
+
+    // MARK: - Private Function
 
     private func createRequest(model: VNCoreMLModel) -> VNCoreMLRequest? {
         let request = VNCoreMLRequest(model: model) { _, error in

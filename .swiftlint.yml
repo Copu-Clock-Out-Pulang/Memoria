@@ -13,6 +13,7 @@ disabled_rules:
   - todo
   - unused_capture_list
   - blanket_disable_command
+  - line_length
 
 analyzer_rules:
   - unused_import
@@ -33,7 +34,6 @@ opt_in_rules:
   - fatal_error_message
   - first_where
   - implicitly_unwrapped_optional
-  - indentation_width
   - last_where
   - legacy_random
   - literal_expression_end_indentation
@@ -82,14 +82,12 @@ identifier_name:
     - x
     - y
     - z
+    - to
 
-indentation_width:
-  indentation_width: 4
-
-line_length:
-  ignores_urls: true
-  ignores_function_declarations: true
-  ignores_comments: true
+#line_length:
+#  ignores_urls: true
+#  ignores_function_declarations: true
+#  ignores_comments: true
 
 multiline_arguments:
   first_argument_location: next_line
