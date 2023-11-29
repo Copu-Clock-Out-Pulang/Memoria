@@ -28,7 +28,8 @@ final class ImageSegmentorTests: XCTestCase {
 
     func testDetectPersonReturnsSuccess() {
         // given
-        let image = I.imageTest.image
+        let source = I.imageTest.image
+        let image = source.resized(to: CGSize(width: 512, height: 512))
         let expectation = self.expectation(description: "Should succeed")
         // when
         cancellable = sut.detectPerson(input: image)

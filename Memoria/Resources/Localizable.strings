@@ -1,9 +1,31 @@
-/* 
+/*
   Localizable.strings
   Memoria
 
   Created by Adryan Eka Vandra on 19/04/23.
-  
+
 */
 
 "appName" = "Memoria";
+
+// Mark: - Destinations
+"dstCreateYourTrip" = "Create Your Trip";
+"dstTripInputHint" = "Input trip name";
+"dstNext" = "Next";
+"dstWhenDoYouWantToGo" = "When do you want to go?";
+"dstPickADate" = "Pick a date";
+"dstDateExample" = "e.g. 20 Jan - 6 Feb 2023";
+"dstEncourageYourSelf" = "Encourage yourself with some quote!";
+"dstQuoteHint" = "Input quotes";
+"dstWhereDoYouWantToGo" = "Where do you want to go?";
+"dstAddYourFamilyPhoto" = "Add your family photo!";
+"dstSelectFromGallery" = "Select from gallery";
+"dstRandom" = "Random";
+"dstTakePhoto" = "Take photo";
+"dstDone" = "Done!";
+"dstConfirmDialog"= "Confirm Dialog";
+"dstAreYouSure" = "Are you sure?";
+"dstYes" = "Yes";
+"dstNo" = "No";
+"dstChooseYourDestination" = "Choose your destination!";
+"dstSave" = "Save";
